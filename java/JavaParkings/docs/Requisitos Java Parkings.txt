@@ -1,0 +1,215 @@
+Observações - Projeto LPM
+
+Atenção: Este documento constitui o enunciado do Projeto Prático de Laboratório de Programação Modular. Atente-se para:
+
+    Novos requisitos e restrições surgirão conforme o projeto evolua. Fiquem atentos aos artefatos e seus prazos de entrega.
+    Contemplando as características de modularidade e os recursos do paradigma orientado por objetos estudados na disciplina de Programação Modular, o trabalho será realizado de forma incremental. Assim, estejam atentos aos requisitos priorizados para o grupo e às tarefas individuais, que serão cobradas semanalmente.
+    Não é necessário nem aconselhável tentar resolver por conta própria requisitos mais avançados sem que a base esteja bem desenvolvida e testada. Ressalta-se a importância do teste constante das classes à medida em que são desenvolvidas.
+    Esta descrição deverá ser consultada com frequência, pois novos requisitos e instruções serão publicadas nesta página.
+    As entregas serão feitas via GitHub Classroom.
+    O link para o GitHub Classrom é https://classroom.github.com/a/tNcK5myb 
+
+    Links to an external site. 
+
+ 
+
+------------------------------------------------------------------------------------
+
+                          Gestão de Estacionamentos Java Parkings
+
+-----------------------------------------------------------------------------------
+
+A escassez de vagas de estacionamento no centro das grandes cidades brasileiras é um problema bem conhecido. Pensando em explorar este ramo de negócio, a conhecida organização empresarial Xulambs Inc. está interessada em desenvolver um sistema de software para controlar seu futuro negócio, enquanto as negociações para compra dos imóveis necessários estão em andamento.
+
+Seu grupo de trabalho foi contratado para participar da implementação desta solução. Os principais requisitos chegaram a vocês da seguinte maneira:
+
+    A Xulambs Parking pretende inaugurar vários parques de estacionamento na cidade;
+    Cada parque de estacionamento terá um número pré-determinado de vagas. As vagas são identificadas alfanumericamente, por exemplo, vaga Y08 (fila Y, vaga 8).
+    Os veículos que usarem o estacionamento serão registrados por sua placa e devem estar ligados a clientes. O cliente pode ser identificado com nome e identificador ou “anônimo” (nome e identificador neutros).
+    Um cliente pode ter cadastrados para si mais de um veículo.
+    O uso do estacionamento envolve a seleção de uma vaga livre e a ocupação desta. A cobrança é feita por frações de tempo: R$4 a cada 15 minutos, com valor limite de R$50. Obviamente, uma vaga não pode ser utilizada por dois clientes ao mesmo tempo. 
+
+=================================
+
+Sprint 1 - Entrega 01
+
+=================================
+
+    A atividade consiste em elaborar um diagrama de classes para este enunciado inicial do trabalho. Ou seja, os integrantes de cada grupo devem propor uma modelagem que atenda aos requisitos iniciais deste sistema.
+    Preencher corretamente os dados no template do repositório GitHub do grupo.
+
+ 
+
+=================================
+
+Sprint 1 - Entrega 02
+
+=================================
+
+    Diagrama de classes atualizado, considerando as ponderações do professor + código inicial do projeto, de acordo com o diagrama atualizado.
+
+=================================
+
+=================================
+
+=================================
+
+Sprint 2 - Novos Requisitos
+
+=================================
+
+ 
+
+Os gestores do estacionamento estão em busca de atuaizar o sistema pois perceberam que é preciso incluir diferentes tipos de vagas. Além das vagas regulares, agora também serão considerados diferentes tipos de vagas, como:
+
+    Idosos
+    PCD - Pessoas com Deficiência
+    VIP
+
+Cada tipo de vaga possui regras específicas. vagas para idosos têm descontos especiais). Vagas para idosos terão descontos de 15%. Vagas PCD precisam ser maiores, com espaço suficiente para manipular aparelhos tal como cadeira de rodas. Além disso, PCD possui 13% de desconto na tarifa. As vagas VIP são mais próximas ao portão do estacionamento, são maiores, cobertas, e o valor delas são 20% mais caras que as vagas regulares.
+
+=================================
+
+Sprint 2 - Entregas
+
+Início: 24/09
+
+Fim: 08/10 (apresentação)
+
+=================================
+
+    Atualizar o diagrama de classes para incluir novos requisitos
+    Implementar as funcionalidades de classes e métodos 
+    Definir ao menos dois testes unitários por classe
+    Definir o formato dos arquivos que armazenaram as informações na forma de arquivo texto
+    Implementar métodos de leitura e escrita dos dados em arquivos texto
+    Apresentação do sistema
+
+=================================
+
+=================================
+
+Sprint 3 - Novos Requisitos
+
+=================================
+
+Início*: 07, 08 e 10 de Outubro
+
+FIM*: 04, 05 ou 07 de Novembro
+
+* De acordo com a sua aula.
+
+=================================
+
+Os diretores da Xulambs solicitaram que novas funcionalidades fosses incluídas no sistema, a saber:
+
+    Um cliente identificado tem acesso a seu histórico de uso do estacionamento.
+    Este histórico pode ser completo ou filtrado por datas de início e fim.
+    A direção da Xulambs Parking precisa saber:
+        Valor total arrecadado do estacionamento;
+        Valor arrecadado em determinado mês;
+        Valor médio de cada utilização do estacionamento;
+        Ranking dos clientes que mais geraram arrecadação em um determinado mês.
+
+A partir dos requisitos inicialmente solicitados, somados aos novos requisitos, a terceira sprint deste projeto deverá incluir:
+
+    Completa reorganização do código de acordo com a estrutura MVC discutida em sala de aula
+    Atualização da interface de interação com o usuário. Agora, o sistema deverá ser elaborado utilizando o Java Swing para implementar interface gráfica
+
+Data de Apresentação da Sprint 03: 4, 5 e 7 de novembro (de acordo com o dia da sua aula)
+
+Observações:
+
+    O código deverá, sempre, seguir o projeto. Caso sejam identificados problemas de projeto, deve-se atualizar o projeto e manter o código aderente ao projeto.
+    Os requisitos anteriores são cumulativos. Por exemplo, o sistema tem que persistir em arquivos.
+    Como já dito anteriormente, não basta funcionar. Tem que implementar as melhores estratégias.
+    Pensar nos atributos de qualidade e como atingí-los
+    Um exemplo de código usando MVC e Java Swing estádisponível aqui 
+
+    Links to an external site.!
+
+=================================
+
+=================================
+
+Sprint 4 - Release Final
+
+=================================
+
+Início*: 11, 12 e 14 de Novembro
+
+FIM*: 02, 03 ou 05 de Dezembro
+
+* De acordo com a sua aula.
+
+=================================
+
+Para a release final do sistema de gerenciamento de estacionamento, cada grupo deverá alterar a camada de persistência de dados para um Banco de Dados Relacional. O SGBD escolhido poderá ser MariaDB, MySQL, Postgres ou Oracle. Para realizar a conexão entre sua aplicação e o SGBD, será preciso utilizar um conector JDBC.
+
+Neste link
+
+Links to an external site. há um slide de exemplo sobre como conectar sua aplicação utilizando JDBC. Este material poderá ser utilizado para consulta.
+
+No github, é preciso incluir o script de criação do banco de dados (DDL) e o script de população dos dados (com INSERTs para consultas em sala). Sugiro que criem tal script em https://generatedata.com/
+
+Links to an external site.. 
+
+Cada equipe deverá propor pelo menos duas NOVAS pesquisas no banco de dados (selects) e exibir seus resultados na aplicação, via interface gráfica. Vale ressaltar que para tais pesquisas, não devem ser pesquisas simples. É importante utilizar JOIN, GROUP BY, funções de agregação e etc.
+
+Por fim, também devem ser considerados o uso de exceções e seu tratamento adequado (Exceptions). É preciso criar pelo menos três classes de exceções personalizadas para o seu código.
+
+Apresentação final. Considerem uma apresentação utilizando slides, mostrando os detalhes da implementação seguido de uma demonstração do uso do sistema.  Cada grupo terá o tempo de 10 minutos para a sua apresentação final. Logo, a apresentação deve ser breve e focada, considerando os seguintes pontos principais:
+
+    Principais Funcionalidades: Demonstre as funcionalidades mais importantes do sistema, enfatizando como cada uma atende aos requisitos propostos (considerando todas as 4 sprints)
+
+    Arquitetura Aplicada: Descreva a arquitetura do sistema, destacando a implementação do padrão MVC (Model-View-Controller) e a utilização do padrão Singleton.
+
+    Consultas Complexas: Apresente as consultas SQL complexas realizadas, incluindo JOINs, GROUP BY, e funções de agregação, mostrando como elas são executadas na interface gráfica.
+
+    Proposta de Valor: Explique por que seu sistema é a melhor solução para o problema de gestão de estacionamentos. Destaque os benefícios e vantagens únicas que ele oferece. Enfatize como o sistema atende às necessidades dos usuários e quais problemas ele resolve de maneira eficiente e inovadora.
+
+Certifiquem-se de preparar slides claros e objetivos para cada um desses pontos, e pratiquem a apresentação para garantir que todas as informações sejam cobertas dentro do tempo disponível. A demonstração do sistema deve ser fluida e destacar a interação com o usuário e o funcionamento das funcionalidades implementadas.
+
+Relatório Final. Cada grupo deverá entregar um documento PDF no formato de relatório técnico utilizando o template da SBC (disponível neste link
+Links to an external site.). O relatório deverá possuir no máximo 5 páginas. Sugiro fortemente que utilizem a ferramenta Overleaf
+
+Links to an external site.. O relatório técnico deverá contemplar (não se limitando a):
+
+    Visão Geral das Principais Funcionalidades:
+
+        Descrição das funcionalidades implementadas no sistema.
+
+    Principais Consultas SQL:
+
+        Detalhamento das consultas SQL elaboradas e suas finalidades.
+
+    Diagrama de Classes Final:
+
+        Representação visual das classes e suas relações no sistema.
+
+    Diagrama Entidade-Relacionamento:
+
+        Utilizar o dbdiagram 
+
+    Links to an external site. para gerar a imagem.
+
+Decisões de Projeto:
+
+    Discussão sobre as escolhas de SGBD, collections, exceptions, etc.
+
+Relato de Experiência Pessoal:
+
+    Cada integrante deve incluir um breve relato sobre sua experiência no desenvolvimento do sistema.
+
+Principais Dificuldades:
+
+    Descrever os principais desafios enfrentados durante o desenvolvimento.
+
+Principais Aprendizados:
+
+    Refletir sobre os conhecimentos adquiridos ao longo do projeto.
+
+Sugestões de Mudança no Diagrama da Solução:
+
+    Propostas de melhorias no diagrama da solução com base nos conhecimentos aprendidos na disciplina.
+
