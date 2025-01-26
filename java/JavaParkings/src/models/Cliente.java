@@ -5,8 +5,6 @@
 package models;
 
 import dao.ClienteDAO;
-import dao.VeiculoDAO;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -29,18 +27,18 @@ public class Cliente {
         this.nomeCliente = nomeCliente;
         this.veiculos = new ArrayList<>();
         this.idCliente = contadorId++;
-        ClienteDAO.salvar(this); 
+        //ClienteDAO.salvar(this);
     }
 
-    public void cadastrarVeiculo(Veiculo veiculo) {
+    public void adicionarVeiculo(Veiculo veiculo) {
         if (placasCadastradas.contains(veiculo.getPlaca())) {
-            System.out.println("Placa ja existente!");
+            throw new IllegalArgumentException("Placa ja existente!");
         } else {
             if (verificarVeiculoJaCadastrado(veiculo)) {
                 throw new IllegalArgumentException("Placa duplicada!");
             } else {
                 this.veiculos.add(veiculo);
-                veiculo.setIdCliente(idCliente); 
+                veiculo.setIdCliente(idCliente);
                 placasCadastradas.add(veiculo.getPlaca());
             }
         }
@@ -48,25 +46,13 @@ public class Cliente {
 
     public void addTicket(Ticket ticket) {
         this.ticket = ticket;
-        ClienteDAO.addTicket(this);
+        //ClienteDAO.addTicket(this);
     }
 
     public void removerTicket() {
         this.ticket = null;
     }
 
-    /*public void imprimirTicket() {
-        if (ticket != null) {
-            System.out.println("\nID do ticket: " + ticket.getIdTicket());
-            System.out.println("Nome do cliente: " + nomeCliente);
-            System.out.println("Horario de entrada: " + ticket.getHorarioDeEntrada());
-            System.out.println("Vaga ocupada: " + ticket.getVaga().getIdVaga());
-            System.out.println("Data: " + ticket.getData());
-            System.out.println("Horario de saida: " + ticket.getHorarioDeSaida());
-            System.out.println("Preco total: " + ticket.getPrecoTotal());
-        }
-    }
-     */
     private boolean verificarVeiculoJaCadastrado(Veiculo veiculo) {
         for (Veiculo v : veiculos) {
             if (v.getPlaca() == veiculo.getPlaca()) {
@@ -91,5 +77,4 @@ public class Cliente {
     public Ticket getTicket() {
         return ticket;
     }
-
 }

@@ -21,7 +21,7 @@ public class Veiculo {
         if (!placas.contains(placa)) {
             this.placa = placa; 
             placas.add(placa); 
-            VeiculoDAO.salvar(this); 
+            //VeiculoDAO.salvar(this); 
         }
         else {
             System.out.println("Placa duplicada!");
@@ -34,7 +34,7 @@ public class Veiculo {
     
     public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
-        VeiculoDAO.addCliente(idCliente); 
+        //VeiculoDAO.addCliente(idCliente); 
     }
     
 }

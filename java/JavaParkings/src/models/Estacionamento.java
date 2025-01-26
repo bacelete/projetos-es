@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ArrayList;
 import dao.*;
+import models.Cliente;
 
 
 /*
@@ -70,7 +71,7 @@ public class Estacionamento {
 
     private Vaga localizarVagaLivre() {
         for (Vaga vaga : vagas) {
-            if (vaga.isOcupada() == false) {
+            if (!vaga.isOcupada()) {
                 return vaga;
             }
         }
@@ -78,32 +79,38 @@ public class Estacionamento {
     }
 
     public Ticket gerarTicket(Cliente cliente) {
-        if (!vagas.isEmpty()) {
-            List<Veiculo> veiculosCliente = cliente.getVeiculos();
-            //Se o cliente existir e tiver veiculo cadastrado
-            if (cliente != null && (!veiculosCliente.isEmpty())) {
-                //Se o cliente nao possui um ticket vinculado:
-                if (cliente.getTicket() == null) {
-                    Vaga vagaLivre = localizarVagaLivre();
-
-                    Ticket ticket = new Ticket(this.idEstacionamento, vagaLivre);
-                    TicketDAO.salvar(ticket); //Salva o ticket no banco de dados; 
-                    cliente.addTicket(ticket);
-                    this.clientes.add(cliente);
-
-                    if (!tickets.contains(ticket)) { //Se não há um ticket gerado no estacionamento, 
-                        tickets.add(ticket);
-                        atribuirVagaOcupada(vagaLivre);
-
-                        return ticket;
-                    }
-                } else {
-                    throw new IllegalStateException("Cliente ja possui um ticket vinculado.");
-                }
-            } else {
-                throw new IllegalStateException("Cliente invalido ou veiculo nao cadastrado!");
-            }
+        //Se o estacionamento nao possui vagas criadas:
+        if (vagas.isEmpty()) {
+            throw new RuntimeException("Estacionamento nao possui vagas");
         }
+
+        List<Veiculo> veiculosCliente = cliente.getVeiculos();
+        
+        //Se o cliente nao possuir veiculo cadastrado:
+        if (veiculosCliente.isEmpty()) {
+            throw new IllegalStateException("Cliente nao possui veiculo cadastrado.");
+        }
+        //Se o cliente nao possui um ticket vinculado:
+        if (cliente.getTicket() != null) {
+            throw new IllegalStateException("Cliente ja possui um ticket vinculado.");
+        }
+
+        Vaga vagaLivre = localizarVagaLivre();
+        //Se nao ha vaga disponivel: 
+        if (vagaLivre == null) {
+            throw new RuntimeException("Nao ha vagas disponiveis!");
+        }
+
+        Ticket ticket = new Ticket(this.idEstacionamento, vagaLivre);
+        cliente.addTicket(ticket);
+        //TicketDAO.salvar(ticket); 
+
+        if (!tickets.contains(ticket)) { //Se não há um ticket gerado no estacionamento, 
+            tickets.add(ticket);
+            atribuirVagaOcupada(vagaLivre);
+            return ticket;
+        }
+
         return null;
     }
 
