@@ -85,7 +85,7 @@ public class Estacionamento {
         }
 
         List<Veiculo> veiculosCliente = cliente.getVeiculos();
-        
+
         //Se o cliente nao possuir veiculo cadastrado:
         if (veiculosCliente.isEmpty()) {
             throw new IllegalStateException("Cliente nao possui veiculo cadastrado.");
@@ -123,20 +123,25 @@ public class Estacionamento {
     }
 
     public void pagarTicket(Cliente cliente, double valor) {
-        if (clientes.contains(cliente)) {
-            Ticket ticketCliente = cliente.getTicket();
-            LocalDateTime horarioDeSaida = LocalDateTime.now();
-            Vaga vaga = ticketCliente.getVaga();
+        Ticket ticketCliente = cliente.getTicket();
+        LocalDateTime horarioDeSaida = LocalDateTime.now();
 
-            ticketCliente.setHorarioDeSaida(horarioDeSaida);
-            double precoTotal = ticketCliente.calcularValorHora();
-
-            if (valor >= precoTotal) {
-                atribuirVagaDesocupada(vaga);
-                this.tickets.remove(ticketCliente); //So nao seria util se vc quisesse pegar o historico dos tickets;
-                cliente.removerTicket();
-            }
+        if (ticketCliente == null) {
+            throw new RuntimeException("Cliente nao possui ticket vinculado");
         }
+
+        ticketCliente.setHorarioDeSaida(horarioDeSaida);
+        double precoTotal = ticketCliente.calcularValorHora();
+
+        if (valor < precoTotal) {
+            throw new ArithmeticException("Valor insuficiente");
+        }
+
+        Vaga vaga = ticketCliente.getVaga();
+        atribuirVagaDesocupada(vaga);
+        this.tickets.remove(ticketCliente);
+        cliente.removerTicket();
+
     }
 
     public List<Cliente> getClientes() {

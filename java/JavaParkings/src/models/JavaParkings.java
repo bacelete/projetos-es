@@ -15,12 +15,15 @@ public class JavaParkings {
         
         Veiculo v = new Veiculo("XYZ-111");
         Cliente c = new Cliente("Arthur"); 
+        Cliente d = new Cliente("Ana"); 
         
         es.gerarVagas(10);
         
         c.adicionarVeiculo(v); 
-        es.gerarTicket(c); 
         
+        es.gerarTicket(c); 
+        es.pagarTicket(c, 100); 
+        es.imprimirVagas(); 
         
     }
 }
