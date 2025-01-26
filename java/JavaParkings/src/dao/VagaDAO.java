@@ -5,7 +5,7 @@
 package dao;
 import java.sql.*; 
 import java.util.List;
-import model.Vaga; 
+import models.Vaga; 
 import util.BancoDeDados; 
 
 /**

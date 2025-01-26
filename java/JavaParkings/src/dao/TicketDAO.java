@@ -5,7 +5,7 @@
 package dao;
 
 import java.sql.*;
-import model.Ticket;
+import models.Ticket;
 import util.BancoDeDados;
 
 /**

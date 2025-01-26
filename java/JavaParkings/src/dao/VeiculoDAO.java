@@ -7,7 +7,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import model.Veiculo;
+import models.Veiculo;
 import util.BancoDeDados;
 
 /**

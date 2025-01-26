@@ -1,9 +1,9 @@
-package model;
+package models;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ArrayList;
-import dao.*; 
+import dao.*;
 
 
 /*
@@ -28,37 +28,43 @@ public class Estacionamento {
         this.nomeEstacionamento = nomeEstacionamento;
         this.tickets = new ArrayList<>();
         this.clientes = new ArrayList<>();
-        this.idEstacionamento = contadorId++; 
+        this.idEstacionamento = contadorId++;
     }
 
     public void gerarVagas(int numVagas) {
-        this.vagas = new ArrayList<>();
-        this.numVagas = numVagas;
+        if (vagas != null) {
+            throw new RuntimeException("As vagas ja foram criadas!");
+        }
+        if (numVagas < 0) {
+            throw new IllegalArgumentException("O numero de vagas deve ser valido!");
+        } else {
+            this.vagas = new ArrayList<>();
+            this.numVagas = numVagas;
 
-        if (vagas.isEmpty()) {
             for (int i = 0; i < numVagas; i++) {
                 Vaga v = new Vaga(idEstacionamento);
                 vagas.add(v);
             }
-            EstacionamentoDAO.salvar(this);
-            VagaDAO.salvar(vagas);
+            //EstacionamentoDAO.salvar(this);
+            //VagaDAO.salvar(vagas);
+
         }
+
     }
 
     public void imprimirVagas() {
         String status;
         if (!vagas.isEmpty()) {
             for (Vaga v : vagas) {
-                if (v.isOcupada() == false) {
+                if (!v.isOcupada()) {
                     status = "desocupada";
                 } else {
                     status = "ocupada";
                 }
                 System.out.println("ID: " + v.getIdVaga() + ", status: " + status);
             }
-        }
-        else {
-            throw new IllegalStateException("Vagas nao foram geradas ainda!"); 
+        } else {
+            throw new IllegalStateException("O estacionamento nao possui vagas criadas.");
         }
     }
 
@@ -91,12 +97,10 @@ public class Estacionamento {
 
                         return ticket;
                     }
-                }
-                else {
+                } else {
                     throw new IllegalStateException("Cliente ja possui um ticket vinculado.");
                 }
-            }
-            else {
+            } else {
                 throw new IllegalStateException("Cliente invalido ou veiculo nao cadastrado!");
             }
         }
@@ -135,22 +139,22 @@ public class Estacionamento {
     public List<Ticket> getTickets() {
         return tickets;
     }
-    
+
     public List<Vaga> getVagas() {
         return vagas;
     }
-    
+
     public int getIdEstacionamento() {
-        return idEstacionamento; 
+        return idEstacionamento;
     }
 
     public int getNumVagas() {
-        return numVagas; 
+        return numVagas;
     }
-    
+
     public String getNomeEstacionamento() {
-        return nomeEstacionamento; 
+        return nomeEstacionamento;
     }
-    
+
 }
 //e.pagarTicket(ticket1, arthur); 
