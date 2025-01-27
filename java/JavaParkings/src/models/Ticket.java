@@ -35,7 +35,7 @@ public class Ticket {
 
     public double calcularValorHora() {
         if (horarioDeEntrada == null && horarioDeSaida == null) {
-            throw new IllegalStateException("Horário de entrada e/ou saida nao pode ser nulo.");
+            throw new NullPointerException("Horário de entrada e/ou saida nao pode ser nulo.");
         }
         long minutos = ChronoUnit.MINUTES.between(horarioDeEntrada, horarioDeSaida);
         this.precoTotal = PRECO_FIXO * (minutos / 15.0);
