@@ -18,14 +18,7 @@ public class Veiculo {
     private static Set<String> placas = new HashSet();
     
     public Veiculo(String placa) {
-        if (!placas.contains(placa)) {
-            this.placa = placa; 
-            placas.add(placa); 
-            //VeiculoDAO.salvar(this); 
-        }
-        else {
-            System.out.println("Placa duplicada!");
-        }
+        this.placa = placa; 
     }
     
     public String getPlaca() {

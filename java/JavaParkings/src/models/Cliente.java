@@ -11,8 +11,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * Classe para objetos do tipo cliente
  *
- * @author nanda
+ * @author Arthur Bacelete
  */
 public class Cliente {
 
@@ -30,36 +31,33 @@ public class Cliente {
         //ClienteDAO.salvar(this);
     }
 
+    /**
+     * Método para cadastrar um veículo ao cliente
+     *
+     * @param veiculo Veiculo - Obj. do tipo veiculo
+     */
     public void adicionarVeiculo(Veiculo veiculo) {
-        if (placasCadastradas.contains(veiculo.getPlaca())) {
+        String placa = veiculo.getPlaca();
+
+        if (placasCadastradas.contains(placa)) {
             throw new IllegalArgumentException("Placa ja existente!");
-        } else {
-            if (verificarVeiculoJaCadastrado(veiculo)) {
-                throw new IllegalArgumentException("Placa duplicada!");
-            } else {
-                this.veiculos.add(veiculo);
-                veiculo.setIdCliente(idCliente);
-                placasCadastradas.add(veiculo.getPlaca());
-            }
         }
+
+        this.veiculos.add(veiculo);
+        veiculo.setIdCliente(idCliente);
+        placasCadastradas.add(placa);
     }
 
     public void addTicket(Ticket ticket) {
-        this.ticket = ticket;
+        if (this.ticket != null) {
+            throw new RuntimeException("Cliente ja possui um ticket ativo.");
+        }
+        this.ticket = ticket; 
         //ClienteDAO.addTicket(this);
     }
 
     public void removerTicket() {
         this.ticket = null;
-    }
-
-    private boolean verificarVeiculoJaCadastrado(Veiculo veiculo) {
-        for (Veiculo v : veiculos) {
-            if (v.getPlaca() == veiculo.getPlaca()) {
-                return true;
-            }
-        }
-        return false;
     }
 
     public List<Veiculo> getVeiculos() {
