@@ -70,12 +70,15 @@ public class Estacionamento {
     }
 
     private Vaga localizarVagaLivre() {
+        if (this.vagas == null) {
+            throw new IllegalStateException("O estacionamento nao possui vagas criadas.");
+        }
         for (Vaga vaga : vagas) {
-            if (!vaga.isOcupada()) {
-                return vaga;
+            if (vaga.getStatusVaga().equals("livre")) {
+                return vaga; 
             }
         }
-        return null;
+        return null; 
     }
 
     public Ticket gerarTicket(Cliente cliente) {
@@ -114,11 +117,11 @@ public class Estacionamento {
         return null;
     }
 
-    private void atribuirVagaOcupada(Vaga vaga) {
+    public void atribuirVagaOcupada(Vaga vaga) {
         vaga.setStatus(true);
     }
 
-    private void atribuirVagaDesocupada(Vaga vaga) {
+    public void atribuirVagaDesocupada(Vaga vaga) {
         vaga.setStatus(false);
     }
 
