@@ -67,9 +67,8 @@ public class EstacionamentoTest {
     void testaGerarTicketComTodasAsVagasOcupadas() {
         List<Vaga> vagas = estacionamento.getVagas(); 
         
-        for (Vaga v : vagas) {
-            estacionamento.atribuirVagaOcupada(v); 
-        }
+        vagas.stream()
+                .forEach(vaga -> estacionamento.atribuirVagaOcupada(vaga)); 
         
         Cliente cliente = new Cliente("Emanuelly");
         Veiculo veiculo = new Veiculo("XYZ-111");
@@ -80,6 +79,36 @@ public class EstacionamentoTest {
         });
         
         assertEquals(exception.getMessage(), "Nao ha vagas disponiveis!"); 
+    }
+    
+    @Test
+    void testaPagarTicketDeClienteSemTicketAtivo() {
+        Cliente cliente = new Cliente("Emanuelly");
+        Veiculo veiculo = new Veiculo("XYZ-111");
+        double valorTeste = 100; 
+        
+        cliente.adicionarVeiculo(veiculo);
+        Exception exception = assertThrows(RuntimeException.class, () -> {
+            estacionamento.pagarTicket(cliente, valorTeste);
+        }); 
+        
+        assertEquals(exception.getMessage(), "Cliente nao possui ticket vinculado"); 
+    }
+    
+    @Test
+    void testaPagarTicketDeClienteComEntradaInvalida() {
+        Cliente cliente = new Cliente("Emanuelly");
+        Veiculo veiculo = new Veiculo("XYZ-111");
+        
+        cliente.adicionarVeiculo(veiculo); 
+        estacionamento.gerarTicket(cliente); 
+        
+        Exception exception = assertThrows(ArithmeticException.class, () -> {
+            estacionamento.pagarTicket(cliente, -1);
+        }); 
+        
+        assertEquals(exception.getMessage(), "Valor insuficiente"); 
+        
     }
 
 }
