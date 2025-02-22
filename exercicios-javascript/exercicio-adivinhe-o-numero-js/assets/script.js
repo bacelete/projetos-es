@@ -24,16 +24,21 @@ function validarEntradaUsuario() {
 
     tentativas.push(numPalpite);
     imprimirTentativas();
+    limparCampo();
 }
 
 function imprimirTentativas() {
     divTentativas.innerHTML = ""; 
 
     tentativas.forEach((valorTentativa) => {
-        let elemTentativa = document.createElement("p"); 
-        elemTentativa.textContent = valorTentativa;
+        let elemTentativa = document.createElement("span"); 
+        elemTentativa.textContent = `${valorTentativa} `;
         divTentativas.appendChild(elemTentativa);
     });
+}
+
+function limparCampo() {
+    campoPalpite.value = ""; 
 }
 
 btnEnviarPalpite.addEventListener("click", validarEntradaUsuario);
