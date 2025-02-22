@@ -14,23 +14,25 @@ let valor = gerarNumeroAleatorio();
 console.log(`Valor gerado: ${valor}`); 
 
 function validarEntradaUsuario() {
-    let valor = campoPalpite.value;
+    let valor = campoPalpite.value.trim();
 
-    if (valor === "") {
+    if (valor === "" || isNaN(valor)) {
         throw new Error("Entrada inválida"); 
     }
 
     let numPalpite = Number(valor);
+
     tentativas.push(numPalpite);
     imprimirTentativas();
 }
 
 function imprimirTentativas() {
-    let elemTentativa = document.createElement("p"); 
+    divTentativas.innerHTML = ""; 
 
-    tentativas.forEach((valor) => {
-        elemTentativa.innerHTML = `${valor}`;
-        divTentativas.append(elemTentativa);
+    tentativas.forEach((valorTentativa) => {
+        let elemTentativa = document.createElement("p"); 
+        elemTentativa.textContent = valorTentativa;
+        divTentativas.appendChild(elemTentativa);
     });
 }
 
