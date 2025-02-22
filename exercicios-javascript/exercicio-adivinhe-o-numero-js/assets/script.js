@@ -1,5 +1,6 @@
 const minValue = 1;
 const maxValue = 100; 
+const divTentativas = document.getElementById("tentativas");
 const campoPalpite = document.getElementById('inp-texto');
 const btnEnviarPalpite = document.getElementById('btnEnviar');
 let turno = 1;
@@ -21,10 +22,16 @@ function validarEntradaUsuario() {
 
     let numPalpite = Number(valor);
     tentativas.push(numPalpite);
+    imprimirTentativas();
 }
 
 function imprimirTentativas() {
-    
+    let elemTentativa = document.createElement("p"); 
+
+    tentativas.forEach((valor) => {
+        elemTentativa.innerHTML = `${valor}`;
+        divTentativas.append(elemTentativa);
+    });
 }
 
 btnEnviarPalpite.addEventListener("click", validarEntradaUsuario);
