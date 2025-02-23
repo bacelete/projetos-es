@@ -45,7 +45,9 @@ function verificarTentativa(palpite) {
         }
     }
     else {
-        
+        alert("Fim de Jogo!"); 
+        btnEnviarPalpite.disabled = "true"; 
+        gerarMensagemUsuario(); 
     }
 }
 
