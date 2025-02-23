@@ -44,6 +44,9 @@ function verificarTentativa(palpite) {
             alert("O palpite está acima!"); 
         }
     }
+    else {
+        
+    }
 }
 
 function gerarMensagemUsuario() {
