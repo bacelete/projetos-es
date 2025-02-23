@@ -6,10 +6,18 @@ main {
     max-width: 40%;
     margin: 100px auto; 
     padding: 20px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    height: 320px;
+    border-radius: 10px; 
+    box-shadow: rgba(5, 7, 62, 0.2) 0px 8px 24px;
+}
+
+#tentativas {
+    color: rgb(79, 79, 150);
+    font-weight: bolder;
 }
 
 h1 {
+    color: rgb(79, 79, 150);
     text-align: center;
 }
 

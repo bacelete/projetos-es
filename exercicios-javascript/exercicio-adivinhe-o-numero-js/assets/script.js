@@ -27,6 +27,7 @@ function validarEntradaUsuario() {
 
     imprimirTentativa();
     verificarTentativa(palpite);
+    campoPalpite.focus(); 
     turno++; 
 }
 
@@ -34,6 +35,7 @@ function verificarTentativa(palpite) {
     if (palpite === valorGerado) {
         alert("Parabéns, você acertou!"); 
         btnEnviarPalpite.disabled = "true"; 
+        campoPalpite.disabled = "true"; 
         gerarMensagemUsuario(); 
     } 
     if (turno < QTD_MAX_TURNO) {
@@ -47,6 +49,7 @@ function verificarTentativa(palpite) {
     else {
         alert("Fim de Jogo!"); 
         btnEnviarPalpite.disabled = "true"; 
+        campoPalpite.disabled = "true"; 
         gerarMensagemUsuario(); 
     }
 }
