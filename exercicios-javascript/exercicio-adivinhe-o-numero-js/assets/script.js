@@ -25,9 +25,9 @@ function validarEntradaUsuario() {
     let palpite = Number(valor);
     tentativas.push(palpite);
 
+    imprimirTentativa();
     verificarTentativa(palpite);
     turno++; 
-    imprimirTentativa();
 }
 
 function verificarTentativa(palpite) {

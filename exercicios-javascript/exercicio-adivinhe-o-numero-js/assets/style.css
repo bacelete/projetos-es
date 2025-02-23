@@ -1,0 +1,10 @@
+* {
+    font-family: arial ;
+}
+
+header, main {
+    max-width: 40%;
+    margin: 0 auto; 
+    padding: 8px;
+    box-shadow: ;
+}
