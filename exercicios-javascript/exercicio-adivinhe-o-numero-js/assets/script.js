@@ -36,7 +36,7 @@ function verificarTentativa(palpite) {
 }
 
 function bloquearEntradaUsuario() {
-    campoPalpite.disabled = "true"; 
+    btnEnviarPalpite.disabled = "true"; 
 }
 
 function imprimirTentativa() {
