@@ -2,9 +2,29 @@
     font-family: arial ;
 }
 
-header, main {
+main {
     max-width: 40%;
-    margin: 0 auto; 
-    padding: 8px;
-    box-shadow: ;
+    margin: 100px auto; 
+    padding: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.form {
+    text-align: center;
+}
+
+#restart-game {
+    margin-top: 15px;
+}
+
+#restart-game span {
+    display: block;
+}
+
+button {
+    width: 100px;
 }
