@@ -10,8 +10,8 @@ function gerarNumeroAleatorio() {
     return Math.floor(Math.random() * (maxValue - minValue) + minValue);
 }
 
-let valor = gerarNumeroAleatorio();
-console.log(`Valor gerado: ${valor}`); 
+let valorGerado = gerarNumeroAleatorio();
+console.log(`Valor gerado: ${valorGerado}`); 
 
 function validarEntradaUsuario() {
     let valor = campoPalpite.value.trim();
@@ -20,14 +20,20 @@ function validarEntradaUsuario() {
         throw new Error("Entrada inválida"); 
     }
 
-    let numPalpite = Number(valor);
+    let palpite = Number(valor);
 
-    tentativas.push(numPalpite);
-    imprimirTentativas();
-    limparCampo();
+    tentativas.push(palpite);
+    turno++; 
+
+    verificarTentativa(palpite);
+    imprimirTentativa();
 }
 
-function imprimirTentativas() {
+function verificarTentativa(palpite) {
+    if ()
+}
+
+function imprimirTentativa() {
     divTentativas.innerHTML = ""; 
 
     tentativas.forEach((valorTentativa) => {
@@ -35,9 +41,6 @@ function imprimirTentativas() {
         elemTentativa.textContent = `${valorTentativa} `;
         divTentativas.appendChild(elemTentativa);
     });
-}
-
-function limparCampo() {
     campoPalpite.value = ""; 
 }
 
