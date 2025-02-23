@@ -1,5 +1,5 @@
 * {
-    font-family: arial ;
+    font-family: arial;
 }
 
 :root {
@@ -8,11 +8,11 @@
 
 main {
     max-width: 40%;
-    margin: 100px auto; 
+    margin: 100px auto;
     padding: 30px;
     padding-top: 40px;
     min-height: 400px;
-    border-radius: 10px; 
+    border-radius: 10px;
     box-shadow: rgb(198, 198, 200) 0px 8px 24px;
 }
 
@@ -25,6 +25,12 @@ h1 {
     color: rgb(79, 79, 150);
     text-align: center;
     margin-bottom: 30px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+h1:hover {
+    color: rgb(54, 54, 102);
 }
 
 .form {
@@ -40,24 +46,24 @@ h1 {
 }
 
 button {
-   background-color: rgb(79, 79, 150);
-   color: white;
-   border-radius: 5px; 
-   padding: .5rem;
-   width: 20%;
-   border: none; 
-   cursor: pointer; 
-   transition: .4s; 
+    background-color: rgb(79, 79, 150);
+    color: white;
+    border-radius: 5px;
+    padding: .5rem;
+    width: 20%;
+    border: none;
+    cursor: pointer;
+    transition: .4s;
 }
 
-button:hover { 
+button:hover {
     background-color: rgb(54, 54, 102);
 }
 
 #inp-texto {
     background-color: transparent;
     border: none;
-    padding: 5px; 
+    padding: 5px;
     text-align: center;
     outline: none;
     font-size: 1em;
