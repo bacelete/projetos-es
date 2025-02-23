@@ -50,6 +50,10 @@ button {
    transition: .4s; 
 }
 
+button:hover { 
+    background-color: rgb(54, 54, 102);
+}
+
 #inp-texto {
     background-color: transparent;
     border: none;
