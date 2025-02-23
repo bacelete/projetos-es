@@ -6,9 +6,9 @@ main {
     max-width: 40%;
     margin: 100px auto; 
     padding: 20px;
-    height: 320px;
+    min-height: 400px;
     border-radius: 10px; 
-    box-shadow: rgba(5, 7, 62, 0.2) 0px 8px 24px;
+    box-shadow: rgb(206, 206, 246) 0px 8px 24px;
 }
 
 #tentativas {
@@ -19,6 +19,7 @@ main {
 h1 {
     color: rgb(79, 79, 150);
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .form {
@@ -34,5 +35,28 @@ h1 {
 }
 
 button {
-    width: 100px;
+   background-color: rgb(79, 79, 150);
+   color: white;
+   border-radius: 5px; 
+   padding: .5rem;
+   width: 20%;
+   border: none; 
+   cursor: pointer; 
+   transition: .4s; 
+}
+
+#inp-texto {
+    background-color: transparent;
+    border: none;
+    padding: 5px; 
+    text-align: center;
+    outline: none;
+}
+
+#inp-texto:focus {
+    border-bottom: 1px solid rgb(79, 79, 150)
+}
+
+#btnReiniciar {
+    margin-top: 10px;
 }
