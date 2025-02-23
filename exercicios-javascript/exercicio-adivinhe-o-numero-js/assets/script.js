@@ -23,14 +23,20 @@ function validarEntradaUsuario() {
     let palpite = Number(valor);
 
     tentativas.push(palpite);
-    turno++; 
 
     verificarTentativa(palpite);
     imprimirTentativa();
 }
 
 function verificarTentativa(palpite) {
-    if ()
+    if (palpite === valorGerado) {
+        alert("Parabéns, você acertou!"); 
+        bloquearEntradaUsuario(); 
+    } 
+}
+
+function bloquearEntradaUsuario() {
+    campoPalpite.disabled = "true"; 
 }
 
 function imprimirTentativa() {
