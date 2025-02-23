@@ -23,10 +23,10 @@ function validarEntradaUsuario() {
     }
 
     let palpite = Number(valor);
-
     tentativas.push(palpite);
 
     verificarTentativa(palpite);
+    turno++; 
     imprimirTentativa();
 }
 
@@ -36,7 +36,14 @@ function verificarTentativa(palpite) {
         btnEnviarPalpite.disabled = "true"; 
         gerarMensagemUsuario(); 
     } 
-    if ()
+    if (turno < QTD_MAX_TURNO) {
+        if (palpite < valorGerado) {
+            alert("O palpite está abaixo!"); 
+        }
+        if (palpite > valorGerado) {
+            alert("O palpite está acima!"); 
+        }
+    }
 }
 
 function gerarMensagemUsuario() {
