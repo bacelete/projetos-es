@@ -9,6 +9,10 @@ function imprimirNaTela() {
     let btnValor = event.target.textContent;
 
     valorDisplay.innerHTML = btnValor; 
+    realizarOperacoes(btnValor); 
+}
+
+function realizarOperacoes(btnValor) {
     if (btnValor !== "=") {
         display.appendChild(valorDisplay);
         arrValoresDisplay.push(btnValor);
@@ -16,6 +20,7 @@ function imprimirNaTela() {
     else {
         display.innerHTML = "";
         let strArray = arrValoresDisplay.join(''); 
+
         let result = eval(strArray);
         console.log(result);
 
