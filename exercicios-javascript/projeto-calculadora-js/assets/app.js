@@ -1,14 +1,15 @@
 const btnNumbers = document.getElementsByClassName('btn-number');
 const operators = document.getElementsByClassName('operators'); 
-const display = document.getElementsByClassName('display');
+const display = document.querySelector('.display');
 const buttons = document.getElementsByClassName('btn');
 
 function imprimirNaTela() {
-    let value = document.createElement("span"); 
-    value.innerHTML = btn.value;
-    display.appendChild(value);
+    let displayValor = document.createElement("span"); 
+    displayValor.innerHTML = event.target.textContent;
+
+    display.appendChild(displayValor);
 }
 
-for (btn of buttons) {
+for (let btn of buttons) {
     btn.addEventListener("click", imprimirNaTela)
 }
