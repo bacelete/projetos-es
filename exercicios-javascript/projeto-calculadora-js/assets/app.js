@@ -14,9 +14,14 @@ function imprimirNaTela() {
         arrValoresDisplay.push(btnValor);
     }
     else {
-        let op = arrValoresDisplay.find((elem) => (isNaN(elem))); 
-        let numbers = arrValoresDisplay.filter((elem) => !isNaN(Number(elem))); 
-        let result;
+        display.innerHTML = "";
+        let strArray = arrValoresDisplay.join(''); 
+        let result = eval(strArray);
+        console.log(result);
+
+        let resultadoFinal = document.createElement("span"); 
+        resultadoFinal.textContent = result;
+        display.appendChild(resultadoFinal);
     }
 }
 
