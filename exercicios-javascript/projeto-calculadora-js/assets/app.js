@@ -5,8 +5,9 @@ const buttons = document.getElementsByClassName('btn');
 
 function imprimirNaTela() {
     let displayValor = document.createElement("span"); 
-    displayValor.innerHTML = event.target.textContent;
+    let btnValor = event.target.textContent;
 
+    displayValor.innerHTML = btnValor; 
     display.appendChild(displayValor);
 }
 
