@@ -14,8 +14,9 @@ function imprimirNaTela() {
         arrValoresDisplay.push(btnValor);
     }
     else {
-        let op = arrValoresDisplay.filter((elem) => (isNaN(elem))); 
-        let numbers = arrValoresDisplay.filter((elem) => Number(elem)); 
+        let op = arrValoresDisplay.find((elem) => (isNaN(elem))); 
+        let numbers = arrValoresDisplay.filter((elem) => !isNaN(Number(elem))); 
+        let result;
     }
 }
 
