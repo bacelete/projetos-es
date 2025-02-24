@@ -2,13 +2,21 @@ const btnNumbers = document.getElementsByClassName('btn-number');
 const operators = document.getElementsByClassName('operators'); 
 const display = document.querySelector('.display');
 const buttons = document.getElementsByClassName('btn');
+let arrValoresDisplay = []; 
 
 function imprimirNaTela() {
-    let displayValor = document.createElement("span"); 
+    let valorDisplay = document.createElement("span"); 
     let btnValor = event.target.textContent;
 
-    displayValor.innerHTML = btnValor; 
-    display.appendChild(displayValor);
+    valorDisplay.innerHTML = btnValor; 
+    if (btnValor !== "=") {
+        display.appendChild(valorDisplay);
+        arrValoresDisplay.push(btnValor);
+    }
+    else {
+        let op = arrValoresDisplay.filter((elem) => (isNaN(elem))); 
+        let numbers = arrValoresDisplay.filter((elem) => Number(elem)); 
+    }
 }
 
 for (let btn of buttons) {
