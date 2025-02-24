@@ -2,10 +2,12 @@ const btnNumbers = document.getElementsByClassName('btn-number');
 const operators = document.getElementsByClassName('operators'); 
 const display = document.querySelector('.display');
 const buttons = document.getElementsByClassName('btn');
+
 let arrValoresDisplay = []; 
+let valorDisplay;
 
 function imprimirNaTela() {
-    let valorDisplay = document.createElement("span"); 
+    valorDisplay = document.createElement("span"); 
     let btnValor = event.target.textContent;
 
     valorDisplay.innerHTML = btnValor; 
@@ -19,7 +21,8 @@ function realizarOperacoes(btnValor) {
     }
     else {
         display.innerHTML = "";
-        let strArray = arrValoresDisplay.join(''); 
+        let strArray = arrValoresDisplay.join('');
+        console.log(strArray); 
 
         let result = eval(strArray);
         console.log(result);
