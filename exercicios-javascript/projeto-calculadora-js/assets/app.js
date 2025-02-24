@@ -7,15 +7,25 @@ let arrValoresDisplay = [];
 let valorDisplay;
 
 function imprimirNaTela() {
-    valorDisplay = document.createElement("span"); 
-    let btnValor = event.target.textContent;
+    valorDisplay = document.createElement("span");
 
-    valorDisplay.innerHTML = btnValor; 
+    let btnValor = event.target.textContent;
+    console.log(btnValor);
+
+    if (btnValor === "C" || btnValor === "CE") {
+        display.innerHTML = ""; 
+        while(arrValoresDisplay.length) {
+            arrValoresDisplay.pop(); 
+        }
+    }
+    else {
+        valorDisplay.innerHTML = btnValor; 
+    }
     realizarOperacoes(btnValor); 
 }
 
 function realizarOperacoes(btnValor) {
-    if (btnValor !== "=") {
+    if (btnValor !== "=" && btnValor !== "C" && btnValor !== "CE") {
         display.appendChild(valorDisplay);
         arrValoresDisplay.push(btnValor);
     }
