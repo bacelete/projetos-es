@@ -1,6 +1,7 @@
 const operators = document.getElementsByClassName('operators');
 const display = document.querySelector('.display');
 const buttons = document.getElementsByClassName('btn');
+const QTD_MAX_DIGITOS = 12;
 
 var arrValoresDisplay = [];
 
@@ -32,7 +33,11 @@ function clicarBotoesCalculadora(event) {
 }
 
 function atualizarDisplay() {
-    display.innerHTML = arrValoresDisplay.join('');
+
+    if (arrValoresDisplay.length < QTD_MAX_DIGITOS) {
+        display.innerHTML = arrValoresDisplay.join('');
+    }
+
 }
 
 function removerCaracter() {
