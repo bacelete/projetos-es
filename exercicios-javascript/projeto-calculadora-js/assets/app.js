@@ -4,7 +4,7 @@ const buttons = document.getElementsByClassName('btn');
 
 let arrValoresDisplay = []; 
 
-function clicarBotoes(event) {
+function clicarBotoesCalculadora(event) {
     let btnValor = event.target.textContent;
 
     if (btnValor === "C" || btnValor === "CE") {
@@ -75,5 +75,5 @@ function realizarOperacoes() {
 }
 
 for (let btn of buttons) {
-    btn.addEventListener("click", clicarBotoes)
+    btn.addEventListener("click", clicarBotoesCalculadora)
 }
