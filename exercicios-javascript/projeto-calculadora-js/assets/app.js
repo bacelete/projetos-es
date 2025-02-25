@@ -58,6 +58,7 @@ function validarNumero() {
 
     if (aux = i + 1) {
         display.innerHTML = "Error";
+        arrValoresDisplay = []; 
         return false;
     }
     return true;
