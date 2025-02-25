@@ -49,3 +49,7 @@ button:hover {
     background-color: rgb(201, 199, 199);
     transition: .2s;
 }
+
+.target {
+    background-color: rgb(223, 120, 120); 
+}
