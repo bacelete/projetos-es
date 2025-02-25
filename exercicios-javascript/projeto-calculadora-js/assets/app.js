@@ -1,4 +1,3 @@
-const btnNumbers = document.getElementsByClassName('btn-number');
 const operators = document.getElementsByClassName('operators'); 
 const display = document.querySelector('.display');
 const buttons = document.getElementsByClassName('btn');
@@ -8,7 +7,7 @@ let arrValoresDisplay = [];
 function imprimirNaTela(event) {
     let btnValor = event.target.textContent;
 
-    if (btnValor === "C" && btnValor === "CE") {
+    if (btnValor === "C" || btnValor === "CE") {
         limparDisplay(); 
         return;
     }
@@ -31,11 +30,14 @@ function atualizarDisplay() {
 }
 
 function inverterSinal() {
-    
+    display.innerHTML = (-1) * display.innerHTML;
+    arrValoresDisplay.pop();
+    arrValoresDisplay.push(display.innerHTML);
 }
 
 function limparDisplay() { 
     arrValoresDisplay = [];
+    display.innerHTML = 0;
 }
 
 function realizarOperacoes() {
