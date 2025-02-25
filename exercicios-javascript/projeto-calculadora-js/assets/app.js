@@ -40,9 +40,11 @@ function inverterSinal() {
 
 function realizarOperacoes() {
     let resultadoExpressao = eval(arrValoresDisplay.join(''));
+
     while(arrValoresDisplay.length) {
         arrValoresDisplay.pop();
     }
+    
     arrValoresDisplay.push(resultadoExpressao);
     display.innerHTML = resultadoExpressao;
 }
