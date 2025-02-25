@@ -33,7 +33,9 @@ function clicarBotoesCalculadora(event) {
 }
 
 function atualizarDisplay() {
-
+    if (arrValoresDisplay[0] === "0") {
+        arrValoresDisplay.shift();
+    }
     if (arrValoresDisplay.length < QTD_MAX_DIGITOS) {
         display.innerHTML = arrValoresDisplay.join('');
     }
