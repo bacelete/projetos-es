@@ -4,7 +4,7 @@ const buttons = document.getElementsByClassName('btn');
 
 let arrValoresDisplay = []; 
 
-function imprimirNaTela(event) {
+function clicarBotoes(event) {
     let btnValor = event.target.textContent;
 
     if (btnValor === "C" || btnValor === "CE") {
@@ -26,8 +26,9 @@ function imprimirNaTela(event) {
 
     arrValoresDisplay.push(btnValor);
     console.log(arrValoresDisplay);
+
+    //transformarEmPontoFlutuante(); 
     atualizarDisplay();
-    transformarEmPontoFlutuante(); 
 }
 
 function atualizarDisplay() {
@@ -39,14 +40,17 @@ function removerCaracter() {
     atualizarDisplay(); 
 }
 
+/*
 function transformarEmPontoFlutuante() {
-    if (arrValoresDisplay.find((elem) => (elem === ","))) {
+    if (arrValoresDisplay.includes(',')) {
         let valorDisplay = arrValoresDisplay.join(''); 
         valorDisplay = parseFloat(valorDisplay.replace(',', '.'));
-        console.log(valorDisplay); 
+
+        arrValoresDisplay = [valorDisplay]; 
     }
-    return; 
+    atualizarDisplay(); 
 }
+*/
 
 function inverterSinal() {
     display.innerHTML = (-1) * display.innerHTML;
@@ -71,5 +75,5 @@ function realizarOperacoes() {
 }
 
 for (let btn of buttons) {
-    btn.addEventListener("click", imprimirNaTela)
+    btn.addEventListener("click", clicarBotoes)
 }
