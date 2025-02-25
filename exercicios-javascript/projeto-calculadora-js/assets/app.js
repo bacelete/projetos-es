@@ -2,10 +2,10 @@ const operators = document.getElementsByClassName('operators');
 const display = document.querySelector('.display');
 const buttons = document.getElementsByClassName('btn');
 
-let arrValoresDisplay = [];
+var arrValoresDisplay = [];
 
 function clicarBotoesCalculadora(event) {
-    let btnValor = event.target.textContent;
+    btnValor = event.target.textContent;
 
     if (btnValor === "C" || btnValor === "CE") {
         limparDisplay();
@@ -52,15 +52,16 @@ function transformarEmPontoFlutuante() {
 }
 */
 
-function validarNumero() {
+function validarOperacoes() {
     let i = arrValoresDisplay.indexOf('/');
     let aux = arrValoresDisplay.indexOf('0');
 
-    if (aux = i + 1) {
+    if (aux === i + 1) {
         display.innerHTML = "Error";
         arrValoresDisplay = []; 
         return false;
     }
+
     return true;
 }
 
@@ -76,7 +77,7 @@ function limparDisplay() {
 }
 
 function realizarOperacoes() {
-    if (validarNumero()) {
+    if (validarOperacoes()) {
         let resultadoExpressao = eval(arrValoresDisplay.join(''));
 
         while (arrValoresDisplay.length) {
