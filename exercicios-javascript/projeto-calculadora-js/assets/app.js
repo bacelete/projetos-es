@@ -38,6 +38,10 @@ function removerCaracter() {
     atualizarDisplay(); 
 }
 
+function validarOperacao() {
+    
+}
+
 function inverterSinal() {
     display.innerHTML = (-1) * display.innerHTML;
     arrValoresDisplay.pop();
