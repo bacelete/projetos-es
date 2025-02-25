@@ -27,6 +27,7 @@ function imprimirNaTela(event) {
     arrValoresDisplay.push(btnValor);
     console.log(arrValoresDisplay);
     atualizarDisplay();
+    transformarEmPontoFlutuante(); 
 }
 
 function atualizarDisplay() {
@@ -38,8 +39,13 @@ function removerCaracter() {
     atualizarDisplay(); 
 }
 
-function validarOperacao() {
-    
+function transformarEmPontoFlutuante() {
+    if (arrValoresDisplay.find((elem) => (elem === ","))) {
+        let valorDisplay = arrValoresDisplay.join(''); 
+        valorDisplay = parseFloat(valorDisplay.replace(',', '.'));
+        console.log(valorDisplay); 
+    }
+    return; 
 }
 
 function inverterSinal() {
