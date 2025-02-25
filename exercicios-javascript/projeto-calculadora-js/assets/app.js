@@ -3,8 +3,8 @@ const operators = document.getElementsByClassName('operators');
 const display = document.querySelector('.display');
 const buttons = document.getElementsByClassName('btn');
 
-let arrValoresDisplay = []; 
 let valorDisplay;
+let arrValoresDisplay = []; 
 
 function imprimirNaTela(event) {
     valorDisplay = document.createElement("span");
@@ -12,21 +12,26 @@ function imprimirNaTela(event) {
     let btnValor = event.target.textContent;
     console.log(btnValor);
 
-    if (btnValor === "C" || btnValor === "CE") {
+    if (btnValor === "C" && btnValor === "CE") {
         display.innerHTML = ""; 
-        arrValoresDisplay = [];
+        arrValoresDisplay = []; 
+        return;
     }
     if (btnValor === "=") {
         realizarOperacoes(); 
+        return;
     }
     if(btnValor === "±") {
         inverterSinal();
         return;
     }
-    else {
-        valorDisplay.textContent = btnValor; 
-        display.appendChild(valorDisplay); 
-    }
+
+    arrValoresDisplay.push(btnValor);
+    atualizarDisplay();
+}
+
+function atualizarDisplay() {
+    display.innerHTML = arrValoresDisplay.join('');
 }
 
 function inverterSinal() {
@@ -34,7 +39,7 @@ function inverterSinal() {
 }
 
 function realizarOperacoes() {
-    
+   
 }
 
 for (let btn of buttons) {
