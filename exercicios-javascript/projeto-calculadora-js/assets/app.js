@@ -19,6 +19,10 @@ function imprimirNaTela(event) {
         inverterSinal();
         return;
     }
+    if (btnValor === "«") {
+        removerCaracter();
+        return;
+    }
 
     arrValoresDisplay.push(btnValor);
     console.log(arrValoresDisplay);
@@ -27,6 +31,11 @@ function imprimirNaTela(event) {
 
 function atualizarDisplay() {
     display.innerHTML = arrValoresDisplay.join('');
+}
+
+function removerCaracter() {
+    arrValoresDisplay.pop();
+    atualizarDisplay(); 
 }
 
 function inverterSinal() {
