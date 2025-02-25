@@ -19,6 +19,18 @@ function imprimirNaTela(event) {
     if (btnValor === "=") {
         realizarOperacoes(); 
     }
+    if(btnValor === "±") {
+        inverterSinal();
+        return;
+    }
+    else {
+        valorDisplay.textContent = btnValor; 
+        display.appendChild(valorDisplay); 
+    }
+}
+
+function inverterSinal() {
+    
 }
 
 function realizarOperacoes() {
