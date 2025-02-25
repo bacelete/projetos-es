@@ -10,7 +10,6 @@ function imprimirNaTela(event) {
     valorDisplay = document.createElement("span");
 
     let btnValor = event.target.textContent;
-    console.log(btnValor);
 
     if (btnValor === "C" && btnValor === "CE") {
         display.innerHTML = ""; 
@@ -32,6 +31,7 @@ function imprimirNaTela(event) {
 
 function atualizarDisplay() {
     display.innerHTML = arrValoresDisplay.join('');
+    console.log(display.innerHTML);
 }
 
 function inverterSinal() {
@@ -39,7 +39,8 @@ function inverterSinal() {
 }
 
 function realizarOperacoes() {
-   
+    let resultadoExpressao = eval(arrValoresDisplay.join(''));
+    display.innerHTML = resultadoExpressao;
 }
 
 for (let btn of buttons) {
