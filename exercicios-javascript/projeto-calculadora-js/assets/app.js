@@ -37,6 +37,13 @@ function realizarOperacoes(btnValor) {
         let result = eval(strArray);
         console.log(result);
 
+        //Exclui todos os elementos do array e coloca somente o resultado final
+        while(arrValoresDisplay.length) {
+            arrValoresDisplay.pop(); 
+        }
+        arrValoresDisplay.push(result);
+        //
+
         let resultadoFinal = document.createElement("span"); 
         resultadoFinal.textContent = result;
         display.appendChild(resultadoFinal);
