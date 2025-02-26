@@ -36,6 +36,20 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
+.clear {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: rgb(226, 113, 113);
+    color: white;
+}
+
+.clear:hover {
+    background-color: rgb(204, 102, 102);
+    transition: .2s;
+}
+
 button {
     margin: 2px;
     font-size: larger;
@@ -46,8 +60,13 @@ button {
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-button:hover {
+.btn-number:hover {
     background-color: rgb(201, 199, 199);
+    transition: .2s;
+}
+
+.operators:hover {
+    background-color: rgb(223, 223, 108);;
     transition: .2s;
 }
 
@@ -55,6 +74,11 @@ button:hover {
     background-color: #9eabf5; 
 }
 
+.target:hover {
+    background-color: #8b96da; 
+    transition: .2s;
+}
+
 .operators {
-    background-color: rgb(228, 228, 127);
+    background-color: rgb(248, 248, 119);
 }
