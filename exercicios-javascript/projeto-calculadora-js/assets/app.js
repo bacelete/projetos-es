@@ -24,6 +24,9 @@ function clicarBotoesCalculadora(event) {
         removerCaracter();
         return;
     }
+    if (btnValor === ",") {
+        btnValor = '.';
+    }
 
     if (operadores.includes(btnValor) && !verificarOperadores()) {
         return; 
@@ -37,7 +40,7 @@ function clicarBotoesCalculadora(event) {
 
 function atualizarDisplay() {
     if (arrValoresDisplay.length < QTD_MAX_DIGITOS) {
-        display.innerHTML = arrValoresDisplay.join('').replace(',', '.');
+        display.innerHTML = arrValoresDisplay.join('');
     }
 }
 
@@ -89,7 +92,7 @@ function limparDisplay() {
 
 function realizarOperacoes() {
     if (validarOperacoes()) {
-        let resultado = eval(arrValoresDisplay.join('').replace(',', '.'));
+        let resultado = eval(arrValoresDisplay.join(''));
 
         while (arrValoresDisplay.length) {
             arrValoresDisplay.pop();
