@@ -28,7 +28,6 @@ function clicarBotoesCalculadora(event) {
     arrValoresDisplay.push(btnValor);
     console.log(arrValoresDisplay);
 
-    //transformarEmPontoFlutuante(); 
     atualizarDisplay();
 }
 
@@ -37,7 +36,7 @@ function atualizarDisplay() {
         arrValoresDisplay.shift();
     }
     if (arrValoresDisplay.length < QTD_MAX_DIGITOS) {
-        display.innerHTML = arrValoresDisplay.join('');
+        display.innerHTML = arrValoresDisplay.join('').replace(',', '.');
     }
 
 }
@@ -46,18 +45,6 @@ function removerCaracter() {
     arrValoresDisplay.pop();
     atualizarDisplay();
 }
-
-/*
-function transformarEmPontoFlutuante() {
-    if (arrValoresDisplay.includes(',')) {
-        let valorDisplay = arrValoresDisplay.join(''); 
-        valorDisplay = parseFloat(valorDisplay.replace(',', '.'));
-
-        arrValoresDisplay = [valorDisplay]; 
-    }
-    atualizarDisplay(); 
-}
-*/
 
 function validarOperacoes() {
     let i = arrValoresDisplay.indexOf('/');
@@ -85,14 +72,14 @@ function limparDisplay() {
 
 function realizarOperacoes() {
     if (validarOperacoes()) {
-        let resultadoExpressao = eval(arrValoresDisplay.join(''));
+        let resultado = eval(arrValoresDisplay.join('').replace(',', '.'));
 
         while (arrValoresDisplay.length) {
             arrValoresDisplay.pop();
         }
 
-        arrValoresDisplay.push(resultadoExpressao);
-        display.innerHTML = resultadoExpressao;
+        arrValoresDisplay.push(resultado);
+        atualizarDisplay(); 
     }
 }
 
