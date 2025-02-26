@@ -32,13 +32,9 @@ function clicarBotoesCalculadora(event) {
 }
 
 function atualizarDisplay() {
-    if (arrValoresDisplay[0] === "0") {
-        arrValoresDisplay.shift();
-    }
     if (arrValoresDisplay.length < QTD_MAX_DIGITOS) {
         display.innerHTML = arrValoresDisplay.join('').replace(',', '.');
     }
-
 }
 
 function removerCaracter() {
@@ -60,9 +56,10 @@ function validarOperacoes() {
 }
 
 function inverterSinal() {
-    display.innerHTML = (-1) * display.innerHTML;
-    arrValoresDisplay.pop();
-    arrValoresDisplay.push(display.innerHTML);
+    arrValoresDisplay = [];
+    arrValoresDisplay.push(display.innerHTML * (-1));
+    
+    atualizarDisplay(); 
 }
 
 function limparDisplay() {
