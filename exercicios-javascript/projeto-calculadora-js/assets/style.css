@@ -62,6 +62,10 @@ button {
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
+.btn-number {
+    border-bottom: 5px solid rgb(214, 214, 214)
+}
+
 .btn-number:hover {
     background-color: rgb(201, 199, 199);
     transition: .2s;
