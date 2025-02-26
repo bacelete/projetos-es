@@ -8,7 +8,7 @@ var operadores = ["+", "-", "*", "/", "."];
 function clicarBotoesCalculadora(event) {
     btnValor = event.target.textContent;
 
-    if (btnValor === "C" || btnValor === "CE") {
+    if (btnValor === "CLEAR") {
         limparDisplay();
         return;
     }
