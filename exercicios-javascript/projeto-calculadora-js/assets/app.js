@@ -24,6 +24,7 @@ function clicarBotoesCalculadora(event) {
         removerCaracter();
         return;
     }
+    
 
     arrValoresDisplay.push(btnValor);
     console.log(arrValoresDisplay);
@@ -58,7 +59,7 @@ function validarOperacoes() {
 function inverterSinal() {
     arrValoresDisplay = [];
     arrValoresDisplay.push(display.innerHTML * (-1));
-    
+
     atualizarDisplay(); 
 }
 
