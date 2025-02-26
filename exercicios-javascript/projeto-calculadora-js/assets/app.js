@@ -3,6 +3,7 @@ const buttons = document.getElementsByClassName('btn');
 const QTD_MAX_DIGITOS = 12;
 
 var arrValoresDisplay = [];
+var operadores = ["+", "-", "*", "/"]; 
 
 function clicarBotoesCalculadora(event) {
     btnValor = event.target.textContent;
@@ -24,6 +25,10 @@ function clicarBotoesCalculadora(event) {
         return;
     }
 
+    if (operadores.includes(btnValor) && !verificarOperadores()) {
+        return; 
+    }
+
     arrValoresDisplay.push(btnValor);
     console.log(arrValoresDisplay);
 
@@ -41,15 +46,25 @@ function removerCaracter() {
     atualizarDisplay();
 }
 
-function validarOperacoes() {
-    let i = arrValoresDisplay.indexOf('/');
-    let aux = arrValoresDisplay.indexOf('0');
-    let operadores = ["+", "-", "*", "/"]; 
+function verificarOperadores() {
     let ultimoValor = arrValoresDisplay[arrValoresDisplay.length - 1];
 
     if (operadores.includes(ultimoValor)) {
         return false; 
     } 
+    
+    for (let i = 0; i < arrValoresDisplay.length; i++) {
+        if(operadores.includes(arrValoresDisplay[i]) && operadores.includes(arrValoresDisplay[i+1])){
+            return false;
+        }
+    }
+
+    return true; 
+}
+
+function validarOperacoes() {
+    let i = arrValoresDisplay.indexOf('/');
+    let aux = arrValoresDisplay.indexOf('0');
 
     if (aux === i + 1) {
         display.innerHTML = "Error";
