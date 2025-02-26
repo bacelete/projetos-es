@@ -4,6 +4,7 @@ const QTD_MAX_DIGITOS = 12;
 
 var arrValoresDisplay = [];
 var operadores = ["+", "-", "*", "/", "."]; 
+display.innerHTML = 0;
 
 function clicarBotoesCalculadora(event) {
     btnValor = event.target.textContent;
@@ -42,6 +43,9 @@ function atualizarDisplay() {
     if (arrValoresDisplay.length < QTD_MAX_DIGITOS) {
         display.innerHTML = arrValoresDisplay.join('');
     }
+    if (arrValoresDisplay.length === 0) {
+        display.innerHTML = 0; 
+    }
 }
 
 function removerCaracter() {
@@ -74,7 +78,7 @@ function validarOperacoes() {
         arrValoresDisplay = []; 
         return false;
     }
-
+    
     return true;
 }
 
