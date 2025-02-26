@@ -54,3 +54,7 @@ button:hover {
 .target {
     background-color: #9eabf5; 
 }
+
+.operators {
+    background-color: rgb(228, 228, 127);
+}

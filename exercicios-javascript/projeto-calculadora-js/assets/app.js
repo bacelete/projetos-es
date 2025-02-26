@@ -3,7 +3,7 @@ const buttons = document.getElementsByClassName('btn');
 const QTD_MAX_DIGITOS = 12;
 
 var arrValoresDisplay = [];
-var operadores = ["+", "-", "*", "/"]; 
+var operadores = ["+", "-", "*", "/", "."]; 
 
 function clicarBotoesCalculadora(event) {
     btnValor = event.target.textContent;
