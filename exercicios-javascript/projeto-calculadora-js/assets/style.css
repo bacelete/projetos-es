@@ -48,6 +48,7 @@
 
 .clear:hover {
     background-color: rgb(204, 102, 102);
+    color:rgb(216, 216, 216);
     transition: .2s;
 }
 
