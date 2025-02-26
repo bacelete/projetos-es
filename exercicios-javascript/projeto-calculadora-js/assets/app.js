@@ -1,4 +1,3 @@
-const operators = document.getElementsByClassName('operators');
 const display = document.querySelector('.display');
 const buttons = document.getElementsByClassName('btn');
 const QTD_MAX_DIGITOS = 12;
@@ -24,7 +23,6 @@ function clicarBotoesCalculadora(event) {
         removerCaracter();
         return;
     }
-    
 
     arrValoresDisplay.push(btnValor);
     console.log(arrValoresDisplay);
@@ -46,6 +44,12 @@ function removerCaracter() {
 function validarOperacoes() {
     let i = arrValoresDisplay.indexOf('/');
     let aux = arrValoresDisplay.indexOf('0');
+    let operadores = ["+", "-", "*", "/"]; 
+    let ultimoValor = arrValoresDisplay[arrValoresDisplay.length - 1];
+
+    if (operadores.includes(ultimoValor)) {
+        return false; 
+    } 
 
     if (aux === i + 1) {
         display.innerHTML = "Error";
