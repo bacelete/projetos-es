@@ -40,11 +40,15 @@ function clicarBotoesCalculadora(event) {
 }
 
 function atualizarDisplay() {
-    if (arrValoresDisplay.length < QTD_MAX_DIGITOS) {
-        display.innerHTML = arrValoresDisplay.join('');
+    if (arrValoresDisplay[0].length >= QTD_MAX_DIGITOS) {
+        arrValoresDisplay[0] = parseFloat(arrValoresDisplay[0]).toFixed(8); 
+        display.innerHTML = arrValoresDisplay[0]; 
     }
     if (arrValoresDisplay.length === 0) {
         display.innerHTML = 0; 
+    }
+    else {
+        display.innerHTML = arrValoresDisplay.join(''); 
     }
 }
 
@@ -101,8 +105,10 @@ function realizarOperacoes() {
         while (arrValoresDisplay.length) {
             arrValoresDisplay.pop();
         }
-
+        
+        resultado = resultado.toString(); 
         arrValoresDisplay.push(resultado);
+
         atualizarDisplay(); 
     }
 }
