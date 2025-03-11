@@ -34,17 +34,18 @@ function clicarBotoesCalculadora(event) {
     }
 
     arrValoresDisplay.push(btnValor);
-    console.log(arrValoresDisplay);
-
     atualizarDisplay();
 }
 
 function atualizarDisplay() {
-    if (arrValoresDisplay[0].length >= QTD_MAX_DIGITOS) {
-        arrValoresDisplay[0] = parseFloat(arrValoresDisplay[0]).toFixed(8); 
+    console.log(arrValoresDisplay); 
+    console.log("Tamanho: "+arrValoresDisplay.length);
+    
+    if (arrValoresDisplay.length >= QTD_MAX_DIGITOS) {
+        arrValoresDisplay = parseFloat(arrValoresDisplay).toFixed(8); 
         display.innerHTML = arrValoresDisplay[0]; 
     }
-    if (arrValoresDisplay.length === 0) {
+    if (arrValoresDisplay.length == 0) {
         display.innerHTML = 0; 
     }
     else {
