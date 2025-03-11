@@ -2,7 +2,7 @@ const display = document.querySelector('.display');
 const buttons = document.getElementsByClassName('btn');
 const QTD_MAX_DIGITOS = 12;
 
-var arrValoresDisplay = [];
+var arrValoresDisplay = [0];
 var operadores = ["+", "-", "*", "/", "."]; 
 display.innerHTML = 0;
 
@@ -29,7 +29,7 @@ function clicarBotoesCalculadora(event) {
         btnValor = '.';
     }
 
-    if (operadores.includes(btnValor) && !verificarOperadores()) {
+    if (operadores.includes(btnValor) && !verificarOperadoresRepetidosOuSozinhos()) {
         return; 
     }
 
@@ -58,7 +58,7 @@ function removerCaracter() {
     atualizarDisplay();
 }
 
-function verificarOperadores() {
+function verificarOperadoresRepetidosOuSozinhos() {
     let ultimoValor = arrValoresDisplay[arrValoresDisplay.length - 1];
 
     if (operadores.includes(ultimoValor)) {
@@ -74,7 +74,7 @@ function verificarOperadores() {
     return true; 
 }
 
-function validarOperacoes() {
+function validarOperacoesComZero() {
     let i = arrValoresDisplay.indexOf('/');
     let aux = arrValoresDisplay.indexOf('0');
 
@@ -100,12 +100,10 @@ function limparDisplay() {
 }
 
 function realizarOperacoes() {
-    if (validarOperacoes()) {
+    if (validarOperacoesComZero()) {
         let resultado = eval(arrValoresDisplay.join(''));
 
-        while (arrValoresDisplay.length) {
-            arrValoresDisplay.pop();
-        }
+        arrValoresDisplay = []; //Limpa o vetor
         
         resultado = resultado.toString(); 
         arrValoresDisplay.push(resultado);
