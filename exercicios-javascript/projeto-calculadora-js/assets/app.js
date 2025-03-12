@@ -1,6 +1,6 @@
 const display = document.querySelector('.display');
 const buttons = document.getElementsByClassName('btn');
-const QTD_MAX_DIGITOS = 12;
+const QTD_MAX_DIGITOS = 13;
 
 var arrValoresDisplay = [];
 var operadores = ["+", "-", "*", "/", "."]; 
