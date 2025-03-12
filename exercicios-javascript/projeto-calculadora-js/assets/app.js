@@ -99,10 +99,7 @@ function limparDisplay() {
 }
 
 function verificarSeEDecimal(valor) {
-    if (valor % 1 !== 0) {
-        return true;
-    }
-    return false; 
+    return valor % 1 !== 0; 
 }
 
 
@@ -116,12 +113,7 @@ function realizarOperacoes() {
         resultado = resultado.toString(); 
 
         if (eDecimal) {
-            resultado = resultado.split('');
-
-            while (resultado.length > QTD_MAX_DIGITOS - 1) {
-                resultado.pop(); 
-            }
-            resultado = resultado.join('');
+            resultado = parseFloat(resultado).toPrecision(QTD_MAX_DIGITOS - 1);
         }
         
         arrValoresDisplay.push(resultado);
