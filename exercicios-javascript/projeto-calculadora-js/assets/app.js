@@ -2,7 +2,7 @@ const display = document.querySelector('.display');
 const buttons = document.getElementsByClassName('btn');
 const QTD_MAX_DIGITOS = 12;
 
-var arrValoresDisplay = [0];
+var arrValoresDisplay = [];
 var operadores = ["+", "-", "*", "/", "."]; 
 display.innerHTML = 0;
 
@@ -41,15 +41,14 @@ function atualizarDisplay() {
     console.log(arrValoresDisplay); 
     console.log("Tamanho: "+arrValoresDisplay.length);
     
-    if (arrValoresDisplay.length >= QTD_MAX_DIGITOS) {
-        arrValoresDisplay = parseFloat(arrValoresDisplay).toFixed(8); 
-        display.innerHTML = arrValoresDisplay[0]; 
-    }
     if (arrValoresDisplay.length == 0) {
         display.innerHTML = 0; 
     }
+    if (arrValoresDisplay.length < QTD_MAX_DIGITOS) {
+        display.innerHTML = arrValoresDisplay.join('');
+    }
     else {
-        display.innerHTML = arrValoresDisplay.join(''); 
+        arrValoresDisplay.pop(); 
     }
 }
 
@@ -99,15 +98,33 @@ function limparDisplay() {
     display.innerHTML = 0;
 }
 
+function verificarSeEDecimal(valor) {
+    if (valor % 1 !== 0) {
+        return true;
+    }
+    return false; 
+}
+
+
 function realizarOperacoes() {
     if (validarOperacoesComZero()) {
         let resultado = eval(arrValoresDisplay.join(''));
 
         arrValoresDisplay = []; //Limpa o vetor
-        
-        resultado = resultado.toString(); 
-        arrValoresDisplay.push(resultado);
 
+        let eDecimal = verificarSeEDecimal(resultado);
+        resultado = resultado.toString(); 
+
+        if (eDecimal) {
+            resultado = resultado.split('');
+
+            while (resultado.length > QTD_MAX_DIGITOS - 1) {
+                resultado.pop(); 
+            }
+            resultado = resultado.join('');
+        }
+        
+        arrValoresDisplay.push(resultado);
         atualizarDisplay(); 
     }
 }
