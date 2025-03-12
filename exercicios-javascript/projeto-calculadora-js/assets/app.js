@@ -3,7 +3,7 @@ const buttons = document.getElementsByClassName('btn');
 const QTD_MAX_DIGITOS = 13;
 
 var arrValoresDisplay = [];
-var operadores = ["+", "-", "*", "/", "."]; 
+var operadores = ["+", "-", "*", "/", "."];
 display.innerHTML = 0;
 
 function clicarBotoesCalculadora(event) {
@@ -29,8 +29,12 @@ function clicarBotoesCalculadora(event) {
         btnValor = '.';
     }
 
+    if (btnValor === "*") {
+        btnValor = "x";
+    }
+
     if (operadores.includes(btnValor) && !verificarOperadoresRepetidosOuSozinhos()) {
-        return; 
+        return;
     }
 
     arrValoresDisplay.push(btnValor);
@@ -38,17 +42,17 @@ function clicarBotoesCalculadora(event) {
 }
 
 function atualizarDisplay() {
-    console.log(arrValoresDisplay); 
-    console.log("Tamanho: "+arrValoresDisplay.length);
-    
+    console.log(arrValoresDisplay);
+    console.log("Tamanho: " + arrValoresDisplay.length);
+
     if (arrValoresDisplay.length == 0) {
-        display.innerHTML = 0; 
+        display.innerHTML = 0;
     }
     if (arrValoresDisplay.length < QTD_MAX_DIGITOS) {
         display.innerHTML = arrValoresDisplay.join('');
     }
     else {
-        arrValoresDisplay.pop(); 
+        arrValoresDisplay.pop();
     }
 }
 
@@ -61,16 +65,16 @@ function verificarOperadoresRepetidosOuSozinhos() {
     let ultimoValor = arrValoresDisplay[arrValoresDisplay.length - 1];
 
     if (operadores.includes(ultimoValor)) {
-        return false; 
-    } 
-    
+        return false;
+    }
+
     for (let i = 0; i < arrValoresDisplay.length; i++) {
-        if(operadores.includes(arrValoresDisplay[i]) && operadores.includes(arrValoresDisplay[i+1])){
+        if (operadores.includes(arrValoresDisplay[i]) && operadores.includes(arrValoresDisplay[i + 1])) {
             return false;
         }
     }
 
-    return true; 
+    return true;
 }
 
 function validarOperacoesComZero() {
@@ -79,10 +83,10 @@ function validarOperacoesComZero() {
 
     if (aux === i + 1) {
         display.innerHTML = "Error";
-        arrValoresDisplay = []; 
+        arrValoresDisplay = [];
         return false;
     }
-    
+
     return true;
 }
 
@@ -90,7 +94,7 @@ function inverterSinal() {
     arrValoresDisplay = [];
     arrValoresDisplay.push(display.innerHTML * (-1));
 
-    atualizarDisplay(); 
+    atualizarDisplay();
 }
 
 function limparDisplay() {
@@ -99,25 +103,27 @@ function limparDisplay() {
 }
 
 function verificarSeEDecimal(valor) {
-    return valor % 1 !== 0; 
+    return valor % 1 !== 0;
 }
 
-
 function realizarOperacoes() {
+    if (arrValoresDisplay.includes('x')) {
+       arrValoresDisplay =  arrValoresDisplay.join('').replace('x', '*').split(''); 
+    }
+
     if (validarOperacoesComZero()) {
         let resultado = eval(arrValoresDisplay.join(''));
 
-        arrValoresDisplay = []; //Limpa o vetor
-
         let eDecimal = verificarSeEDecimal(resultado);
-        resultado = resultado.toString(); 
+        resultado = resultado.toString();
 
         if (eDecimal) {
             resultado = parseFloat(resultado).toPrecision(QTD_MAX_DIGITOS - 1);
         }
-        
+
+        arrValoresDisplay = [];
         arrValoresDisplay.push(resultado);
-        atualizarDisplay(); 
+        atualizarDisplay();
     }
 }
 

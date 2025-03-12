@@ -19,6 +19,7 @@
 
 .display {
     background-color: rgb(238, 236, 236);
+    max-width: 100%;
     display: flex;
     justify-content: flex-end;
     min-height: 80px;
