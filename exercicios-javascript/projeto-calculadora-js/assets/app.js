@@ -1,9 +1,9 @@
 const display = document.querySelector('.display');
 const buttons = document.getElementsByClassName('btn');
-const QTD_MAX_DIGITOS = 13;
+const QTD_MAX_DIGITOS = 10;
 
 var arrValoresDisplay = [];
-var operadores = ["+", "-", "*", "/", "."];
+var operadores = ["+", "-", "/", ".", "x"];
 display.innerHTML = 0;
 
 function clicarBotoesCalculadora(event) {
