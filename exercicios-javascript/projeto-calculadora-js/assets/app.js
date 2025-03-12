@@ -97,11 +97,10 @@ function inverterSinal() {
     if (ind < 0) return; 
 
     if (!isNaN(ultimoValor)) {
-        arrValoresDisplay[ind] = (ultimoValor * (-1)).toString();
-    }
-
-    if (ind > 0 && isNaN(arrValoresDisplay[ind - 1])) {
-        display.innerHTML = arrValoresDisplay.join('').replace(arrValoresDisplay[ind], `(${arrValoresDisplay[ind]})`);
+        arrValoresDisplay[ind] = (arrValoresDisplay[ind]*(-1)).toString();
+        if (isNaN(arrValoresDisplay[ind - 1])) {
+            display.innerHTML = arrValoresDisplay.join('').replace(arrValoresDisplay[ind], `(${arrValoresDisplay[ind]})`)
+        }
     }
     
     atualizarDisplay();
