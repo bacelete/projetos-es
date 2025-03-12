@@ -1,6 +1,6 @@
 const display = document.querySelector('.display');
 const buttons = document.getElementsByClassName('btn');
-const QTD_MAX_DIGITOS = 10;
+const QTD_MAX_DIGITOS = 9;
 
 var arrValoresDisplay = [];
 var operadores = ["+", "-", "/", ".", "x"];
@@ -91,9 +91,12 @@ function validarOperacoesComZero() {
 }
 
 function inverterSinal() {
-    arrValoresDisplay = [];
-    arrValoresDisplay.push(display.innerHTML * (-1));
+    let ind = arrValoresDisplay.length - 1;
+    let ultimoValor = arrValoresDisplay[ind];
 
+    if (!isNaN(ultimoValor)) {
+        arrValoresDisplay[ind] = arrValoresDisplay[ind] * (-1); 
+    }
     atualizarDisplay();
 }
 
@@ -108,7 +111,7 @@ function verificarSeEDecimal(valor) {
 
 function realizarOperacoes() {
     if (arrValoresDisplay.includes('x')) {
-       arrValoresDisplay =  arrValoresDisplay.join('').replace('x', '*').split(''); 
+        arrValoresDisplay = arrValoresDisplay.join('').replace('x', '*').split('');
     }
 
     if (validarOperacoesComZero()) {
