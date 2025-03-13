@@ -2,7 +2,7 @@ const display = document.querySelector('.display');
 const buttons = document.getElementsByClassName('btn');
 const QTD_MAX_DIGITOS = 9;
 
-var arrValoresDisplay = [];
+var arrValoresDisplay = ['0'];
 var operadores = ["+", "-", "÷", ".", "x"];
 display.innerHTML = 0;
 
