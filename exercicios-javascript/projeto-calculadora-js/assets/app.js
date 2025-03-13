@@ -130,26 +130,17 @@ function verificarSeEDecimal(valor) {
 }
 
 function realizarOperacoes() {
-    if (arrValoresDisplay.includes('x')) {
-        arrValoresDisplay = arrValoresDisplay.join('').replace('x', '*').split('');
-    }
-    if (arrValoresDisplay.includes('÷')) {
-        arrValoresDisplay = arrValoresDisplay.join('').replace('÷', '/').split('');
-    }
-
-    if (validarOperacoesComZero()) {
-        let resultado = eval(arrValoresDisplay.join(''));
-
-        let eDecimal = verificarSeEDecimal(resultado);
-        resultado = resultado.toString();
-
-        if (eDecimal) {
+    let expressao = arrValoresDisplay.join('').replace('x', '*').replace('÷', '/');
+    try {
+        let resultado = eval(expressao);
+        if (verificarSeEDecimal(resultado)) {
             resultado = parseFloat(resultado).toPrecision(QTD_MAX_DIGITOS - 1);
         }
-
-        arrValoresDisplay = [];
-        arrValoresDisplay.push(resultado);
+        arrValoresDisplay = [resultado.toString()];
         atualizarDisplay();
+    } catch {
+        display.textContent = "Error";
+        arrValoresDisplay = ['0'];
     }
 }
 
