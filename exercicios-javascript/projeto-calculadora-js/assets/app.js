@@ -121,7 +121,7 @@ function inverterSinal() {
 }
 
 function limparDisplay() {
-    arrValoresDisplay = [];
+    arrValoresDisplay = ['0'];
     display.innerHTML = 0;
 }
 
