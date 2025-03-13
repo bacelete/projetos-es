@@ -108,7 +108,6 @@ function inverterSinal() {
         }
     }
     
-    //atualizarDisplay();
 }
 
 function limparDisplay() {
