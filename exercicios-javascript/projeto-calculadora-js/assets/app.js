@@ -61,7 +61,14 @@ function atualizarDisplay() {
 
 function removerCaracter() {
     arrValoresDisplay.pop();
-    atualizarDisplay();
+
+    if (arrValoresDisplay.length > 0) {
+        atualizarDisplay();
+    }
+    else {
+        display.innerHTML = "0"; 
+    }
+
 }
 
 function verificarOperadoresRepetidosOuSozinhos() {
