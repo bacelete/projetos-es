@@ -49,9 +49,6 @@ function clicarBotoesCalculadora(event) {
 }
 
 function atualizarDisplay() {
-    console.log(arrValoresDisplay);
-    console.log("Tamanho: " + arrValoresDisplay.length);
-
     if (arrValoresDisplay.length == 0) {
         display.innerHTML = 0;
     }
@@ -61,6 +58,8 @@ function atualizarDisplay() {
     else {
         arrValoresDisplay.pop();
     }
+    console.log(arrValoresDisplay);
+    console.log("Tamanho: " + arrValoresDisplay.length);
 }
 
 function removerCaracter() {
@@ -117,7 +116,7 @@ function inverterSinal() {
 
     if (!isNaN(ultimoValor)) {
         arrValoresDisplay[ind] = (arrValoresDisplay[ind]*(-1)).toString();
-        if (isNaN(arrValoresDisplay[ind - 1])) {
+        if (isNaN(arrValoresDisplay[ind - 1]) || !arrValoresDisplay.includes('0')) {
             display.innerHTML = arrValoresDisplay.join('').replace(arrValoresDisplay[ind], `(${arrValoresDisplay[ind]})`)
         }
     }
@@ -136,10 +135,19 @@ function verificarSeEDecimal(valor) {
 function realizarOperacoes() {
     let expressao = arrValoresDisplay.join('').replace('x', '*').replace('÷', '/');
     try {
-        let resultado = eval(expressao);
+       let resultado = eval(expressao);
+       
         if (verificarSeEDecimal(resultado)) {
-            resultado = parseFloat(resultado).toPrecision(QTD_MAX_DIGITOS - 1);
+            resultado = resultado.toString(); 
+            console.log(resultado);
+            if (!resultado.split('').includes('0')) {
+                resultado = parseFloat(resultado).toPrecision(QTD_MAX_DIGITOS - 1);
+            }
+            else {
+                resultado = parseFloat(resultado).toPrecision(2); 
+            }
         }
+
         arrValoresDisplay = [resultado.toString()];
         atualizarDisplay();
     } catch {
