@@ -3,7 +3,7 @@ const buttons = document.getElementsByClassName('btn');
 const QTD_MAX_DIGITOS = 9;
 
 var arrValoresDisplay = [];
-var operadores = ["+", "-", "/", ".", "x"];
+var operadores = ["+", "-", "÷", ".", "x"];
 display.innerHTML = 0;
 
 function clicarBotoesCalculadora(event) {
@@ -31,6 +31,9 @@ function clicarBotoesCalculadora(event) {
 
     if (btnValor === "*") {
         btnValor = "x";
+    }
+    if (btnValor === "/") {
+        btnValor = "÷"; 
     }
 
     if (operadores.includes(btnValor) && !verificarOperadoresRepetidosOuSozinhos()) {
@@ -122,6 +125,9 @@ function verificarSeEDecimal(valor) {
 function realizarOperacoes() {
     if (arrValoresDisplay.includes('x')) {
         arrValoresDisplay = arrValoresDisplay.join('').replace('x', '*').split('');
+    }
+    if (arrValoresDisplay.includes('÷')) {
+        arrValoresDisplay = arrValoresDisplay.join('').replace('÷', '/').split('');
     }
 
     if (validarOperacoesComZero()) {
