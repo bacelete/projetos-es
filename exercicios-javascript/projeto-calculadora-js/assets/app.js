@@ -61,11 +61,11 @@ function atualizarDisplay() {
 
 function removerCaracter() {
     arrValoresDisplay.pop();
-
     if (arrValoresDisplay.length > 0) {
         atualizarDisplay();
     }
     else {
+        arrValoresDisplay = ['0']; 
         display.innerHTML = "0"; 
     }
 
