@@ -78,7 +78,12 @@ function verificarOperadoresRepetidosOuSozinhos() {
 }
 
 function validarOperacoesComZero() {
-    let i = arrValoresDisplay.indexOf('/');
+    let i; 
+
+    if (arrValoresDisplay.includes('/')) {
+        i = arrValoresDisplay.indexOf('/');
+    }
+
     let aux = arrValoresDisplay.indexOf('0');
 
     if (aux === i + 1) {
@@ -103,7 +108,7 @@ function inverterSinal() {
         }
     }
     
-    atualizarDisplay();
+    //atualizarDisplay();
 }
 
 function limparDisplay() {
