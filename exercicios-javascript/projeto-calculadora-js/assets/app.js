@@ -36,11 +36,15 @@ function clicarBotoesCalculadora(event) {
         btnValor = "÷"; 
     }
 
-    if (operadores.includes(btnValor) && !verificarOperadoresRepetidosOuSozinhos()) {
-        return;
+    if (arrValoresDisplay.length === 1 && arrValoresDisplay[0] === '0' && !operadores.includes(btnValor)) {
+        arrValoresDisplay = [btnValor];
+    } else {
+        if (operadores.includes(btnValor) && !verificarOperadoresRepetidosOuSozinhos()) {
+            return;
+        }
+        arrValoresDisplay.push(btnValor);
     }
 
-    arrValoresDisplay.push(btnValor);
     atualizarDisplay();
 }
 
