@@ -1,13 +1,17 @@
 import conexao from '../database/connection.js'
 
 class UsuarioRepository {
-    async findById(id) {
+    static findById(id) {
         const sql = "SELECT * FROM usuario WHERE id = ?"; 
-        conexao.query(sql, id, (err, result) => {
-            if (err) throw err; 
-            return JSON.parse(JSON.stringify(result)); 
-        })
+
+        return new Promise((resolve, reject) => {
+            conexao.query(sql, [id], (err, result) => {
+                if (err) throw reject(err); 
+                console.log(result[0]);
+                return resolve(result[0]);
+            });
+        });
     }
 }
 
-export default new UsuarioRepository(); 
+export default UsuarioRepository;

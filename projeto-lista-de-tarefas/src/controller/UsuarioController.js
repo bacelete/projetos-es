@@ -1,9 +1,10 @@
 import UsuarioRepository from "../model/UsuarioRepository.js";
 
 class UsuarioController {
-    static getUser(req, res) {
+    async getUser(req, res) {
         const id = req.params.id
-        const usuario = UsuarioRepository.findById(id);
+        const usuario = await UsuarioRepository.findById(id);
+        res.send(usuario); 
     }
 }
 
