@@ -2,8 +2,13 @@ import express from 'express'
 
 const router = express.Router(); 
 
-router.get('/', (req, res) => {
-    res.render('login'); 
+router.post('/user', (req, res) => {
+    const usuario = req.body; 
+    res.json(usuario); 
+})
+
+router.get('/user/:id', (req, res) => {
+    const id = req.params.id; 
 })
 
 export default router;
