@@ -21,11 +21,6 @@ app.listen(PORT, () => {
     console.log(`Servidor rodando em: http://localhost:${PORT}`);
 });
 
-// default route:
-app.get('/', (req, res) => {
-    res.json('Hello World!');
-})
-
 //use routes from 'routes.js'
 app.use(routes); 
 

@@ -1,14 +1,12 @@
 import express from 'express'
+import UsuarioController from './src/controller/UsuarioController.js';
 
 const router = express.Router(); 
 
-router.post('/user', (req, res) => {
-    const usuario = req.body; 
-    res.json(usuario); 
+router.get('/', (req, res) => {
+    res.send('Hello World!'); 
 })
 
-router.get('/user/:id', (req, res) => {
-    const id = req.params.id; 
-})
+router.get('/user/:id', UsuarioController.getUser); 
 
 export default router;
