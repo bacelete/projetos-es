@@ -8,5 +8,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/user/:id', UsuarioController.getUser); 
+router.post('/user', UsuarioController.post);
+router.delete('/user/:id', UsuarioController.delete);
 
 export default router;
