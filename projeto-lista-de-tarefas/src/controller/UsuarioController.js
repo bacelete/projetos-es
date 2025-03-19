@@ -22,6 +22,10 @@ class UsuarioController {
 
         res.status(200).send(usuario);
     }
+    async update(req, res) {
+        const id = req.params.id;
+        const usuario = await UsuarioRepository.update(id); 
+    }
 }
 
 export default new UsuarioController(); 

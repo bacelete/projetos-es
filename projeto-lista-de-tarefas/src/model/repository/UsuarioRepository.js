@@ -1,4 +1,4 @@
-import conexao from '../database/connection.js'
+import conexao from '../../database/connection.js'
 
 class UsuarioRepository {
     static findById(id) {
@@ -26,6 +26,23 @@ class UsuarioRepository {
 
     static async delete(id) {
         const sql = "DELETE FROM usuario WHERE id = ?"
+
+        const user = await this.findById(id);
+        console.log(user);
+
+        if (user !== null && user !== undefined) {
+            return new Promise((resolve, reject) => {
+                conexao.query(sql, [id], (err, result) => {
+                    if (err) throw reject(err);
+                    return JSON.parse(JSON.stringify(resolve(result)));
+                })
+            })
+
+        }
+    }
+
+    static async update(id) {
+        const sql = "ALTER TABLE usuario WHERE id = ?"
 
         const user = await this.findById(id);
         console.log(user);
