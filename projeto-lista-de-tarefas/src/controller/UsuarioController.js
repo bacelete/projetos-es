@@ -6,7 +6,14 @@ class UsuarioController {
         const id = req.params.id
         const usuario = await UsuarioRepository.findById(id);
 
-        res.status(200).send(usuario); 
+        if(!usuario) {
+            res.status(404).json({'erro': 'Usuário não encontrado'});
+            return; 
+        }
+        else {
+            res.status(200).send(usuario);         
+        }
+        
     }
     async post(req, res) {
         const usuario = req.body; 
@@ -25,6 +32,14 @@ class UsuarioController {
     async update(req, res) {
         const id = req.params.id;
         const usuario = await UsuarioRepository.update(id); 
+
+        if(!usuario) {
+            res.status(404).json({'erro': 'Usuáro não encontrado'});
+            return; 
+        }
+        else {
+            res.status(200).send(usuario); 
+        }
     }
 }
 
