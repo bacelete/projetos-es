@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="/static/style_login.css">
+    <link rel="stylesheet" href="/static/styles_login.css">
+    <title>Tela de Login</title>
 </head>
+
 <body>
-    <form class="login-box" action="">
-        <label for="userInput">Usuário:</label>
-        <input type="text" id="userInput">
-        <label for="passwordInput">Senha:</label>
-        <input type="password" id="passwordInput">
-        <button type="submit" id="btnLogin">Enviar</button>
-    </form>
+
+    <div class="login-box">
+        <img src="logo.png" alt="Logo" class="logo">
+        <!-- Tela de Login -->
+        <h1 id="titulo-login">Login</h1>
+        <form action="/login" method="post">
+            <div class="box-input">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="text" id="email" name="email" placeholder="Digite seu e-mail:">
+            </div>
+            <div class="box-input">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha:">
+            </div>
+            <button class="login-button" type="submit">Entrar</button>
+            <a id="sign-in" href="/views/registrar.html">Não possui uma conta? Registrar-se</a>
+        </form>
+    </div>
+    <script src="https://kit.fontawesome.com/291cf6cb9c.js" crossorigin="anonymous"></script>
 </body>
 </html>

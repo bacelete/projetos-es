@@ -1,10 +1,18 @@
 import express from 'express'
 import UsuarioController from './src/controller/UsuarioController.js';
+import app from "./app.js"
 
 const router = express.Router(); 
 
+router.use((req, res, next) => {
+    if (req.path === '/') {
+        console.log('Acessando a tela de login...');
+    }
+    next(); 
+})
+
 router.get('/', (req, res) => {
-    res.send('Hello World!'); 
+    res.render('login'); 
 })
 
 router.get('/user/:id', UsuarioController.getUser); 
