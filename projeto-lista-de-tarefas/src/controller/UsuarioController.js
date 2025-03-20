@@ -13,7 +13,7 @@ class UsuarioController {
         else {
             res.status(200).send(usuario);         
         }
-        
+
     }
     async post(req, res) {
         const usuario = req.body; 
@@ -43,4 +43,5 @@ class UsuarioController {
     }
 }
 
+//Singleton pattern: 
 export default new UsuarioController(); 
