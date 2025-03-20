@@ -12,6 +12,17 @@ class UsuarioRepository {
         });
     }
 
+    static findByUsername(username) {
+        const sql = "SELECT * FROM usuario WHERE username = ?";
+
+        return new Promise((resolve, reject) => {
+            database.query(sql, [username], (err, result) => {
+                if (err) return reject(err);
+                return resolve(result[0]); 
+            }); 
+        });
+    }
+
     static create(usuario) {
         const username = usuario.username;
         const password = usuario.password;
