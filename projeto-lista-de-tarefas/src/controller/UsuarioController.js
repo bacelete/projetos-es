@@ -44,11 +44,10 @@ class UsuarioController {
             res.status(200).send(usuario);
         }
     }
+    
     async login(req, res) {
         const { username, password } = req.body;
-        console.log(req.body);
         const usuario = await UsuarioRepository.findByUsername(username);
-        console.log(usuario);
         let token;
 
         try {
