@@ -11,17 +11,16 @@
 <body>
 
     <div class="login-box">
-        <img src="logo.png" alt="Logo" class="logo">
         <!-- Tela de Login -->
         <h1 id="titulo-login">Login</h1>
         <form action="/login" method="post">
             <div class="box-input">
-                <i class="fa-solid fa-envelope"></i>
-                <input type="text" id="email" name="email" placeholder="Digite seu e-mail:">
+                <i class="fa-solid fa-circle-user"></i>
+                <input type="text" id="username" placeholder="Digite seu usuário:">
             </div>
             <div class="box-input">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" id="senha" name="senha" placeholder="Digite sua senha:">
+                <input type="password" id="password" placeholder="Digite sua senha:">
             </div>
             <button class="login-button" type="submit">Entrar</button>
             <a id="sign-in" href="/views/registrar.html">Não possui uma conta? Registrar-se</a>
