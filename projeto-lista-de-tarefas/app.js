@@ -1,9 +1,10 @@
+//App configuration: 
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import routes from './routes.js'
 import database from './src/database/connection.js'
-//auth-0 confs:
+//Passport Configuration: 
 import passport from "passport";
 import expressSession from 'express-session';
 import Auth0Strategy from 'passport-auth0';
