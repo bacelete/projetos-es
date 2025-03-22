@@ -45,30 +45,6 @@ class UsuarioController {
         }
     }
     
-    async login(req, res) {
-        const { username, password } = req.body;
-        const usuario = await UsuarioRepository.findByUsername(username);
-        let token;
-
-        try {
-            if (!usuario) {
-                return res.status(404).json({ 'erro': 'Usuário não encontrado' });
-            }
-            const validatePassword = (usuario.username === username && usuario.password === password);
-            if (validatePassword) {
-                token = jwt.sign({
-                    username: usuario.username,
-                    password: usuario.password,
-                }, PRIVATE_KEY, { expiresIn: '2h' });
-            }
-            return res.status(200).json({user: usuario, token: token});
-        }
-        catch (error) {
-            console.log(error);
-            res.send(error);
-        }
-
-    }
 }
 
 //Singleton pattern: 

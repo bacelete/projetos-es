@@ -21,6 +21,6 @@ router.delete('/user/:id', UsuarioController.delete);
 router.put('/user/:id', UsuarioController.update);
 
 //login routes
-router.post('/login', UsuarioController.login);
+router.get('/login', UsuarioController.login);
 
 export default router;
