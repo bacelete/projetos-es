@@ -19,12 +19,6 @@ const __dirname = path.dirname(__filename);
 const app = express(); 
 const port = process.env.PORT || "8000"; 
 
-// view and static files conf:
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'src', 'view', 'html'));
-app.use('/static', express.static(path.join(__dirname, 'src', 'view', 'css')));
-app.use(express.json()); 
-
 // session configuration:
 const session = {
     secret: process.env.SESSION_SECRET,
@@ -36,6 +30,13 @@ const session = {
 if (app.get("env") === "production") {
     session.cookie.secure = true;
 }
+
+// view and static files conf:
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'src', 'view', 'html'));
+app.use('/static', express.static(path.join(__dirname, 'src', 'view', 'css')));
+app.use(express.json()); 
+app.use(express(expressSession(session)));
 
 // create a server:
 app.listen(port, () => {
