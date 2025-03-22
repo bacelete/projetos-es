@@ -9,19 +9,9 @@ import database from './src/database/connection.js'
 import passport from "passport";
 import expressSession from 'express-session';
 import Auth0Strategy from 'passport-auth0';
-require("dotenv").config();
+import dotenv from "dotenv";
 
-//Session Configuration:
-const session = {
-    secret: secret.env.SESSION_SECRET,
-    cookie: {},
-    resave: false, 
-    saveUnitializated: false,
-};
-
-if (app.get("env") === "production") {
-    session.secure.cookie = true;
-}
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -35,9 +25,21 @@ app.set('views', path.join(__dirname, 'src', 'view', 'html'));
 app.use('/static', express.static(path.join(__dirname, 'src', 'view', 'css')));
 app.use(express.json()); 
 
+// session configuration:
+const session = {
+    secret: process.env.SESSION_SECRET,
+    cookie: {},
+    resave: false, 
+    saveUnitializated: false,
+};
+
+if (app.get("env") === "production") {
+    session.cookie.secure = true;
+}
+
 // create a server:
 app.listen(port, () => {
-    console.log(`Servidor rodando em: http://localhost:${PORT}`);
+    console.log(`Servidor rodando em: http://localhost:${port}`);
 });
 
 //use routes from 'routes.js'

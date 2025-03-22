@@ -11,8 +11,8 @@ router.use((req, res, next) => {
 })
 
 router.get('/', (req, res) => {
-    res.render('login'); 
-})
+    res.send('Hello World!'); 
+});
 
 //user routes
 router.get('/user/:id', UsuarioController.getUser); 
@@ -21,6 +21,8 @@ router.delete('/user/:id', UsuarioController.delete);
 router.put('/user/:id', UsuarioController.update);
 
 //login routes
-router.get('/login', UsuarioController.login);
+router.get('/login', (req, res) => {
+    res.render('login');
+});
 
 export default router;
