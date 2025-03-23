@@ -1,8 +1,5 @@
 import UsuarioRepository from "../model/repository/UsuarioRepository.js";
-import Usuario from "../model/Usuario.js"
-import jwt from "jsonwebtoken";
 
-const PRIVATE_KEY = 'Cpd@5383';
 
 class UsuarioController {
     async getUser(req, res) {
@@ -22,8 +19,6 @@ class UsuarioController {
         const usuario = req.body;
 
         UsuarioRepository.create(usuario);
-        new Usuario(usuario.id, usuario.username, usuario.password);
-
         res.status(200).send(usuario);
     }
     async delete(req, res) {

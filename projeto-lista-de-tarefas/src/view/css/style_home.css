@@ -1,0 +1,13 @@
+body {
+    font-family: arial;
+    background-color: gray;
+}
+
+#titulo {
+    text-align: center;
+}
+
+.box {
+    background-color: white;
+    padding: 20px; 
+}

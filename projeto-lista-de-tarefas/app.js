@@ -16,7 +16,9 @@ const port = process.env.PORT || "8000";
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src', 'view', 'html'));
 
-app.use('/static', express.static(path.join(__dirname, 'src', 'view', 'css')));
+app.use('/static', express.static(path.join(__dirname, 'src', 'view', 'css',)));
+app.use('/static', express.static(path.join(__dirname, 'src', 'view', 'js',)));
+
 app.use(express.json());  //to use json
 app.use(cors());
 
@@ -26,7 +28,6 @@ app.listen(port, () => {
 });
 
 //use routes from 'routes.js'
-app.use(authRouter);
 app.use(routes);
 
 export default app; 
