@@ -10,7 +10,13 @@
     <div class="box">
         <h1 id="titulo">Lista de Tarefas</h1>
         <div class="task-box">
-            <input type="text" id="task-input" placeholder="Digite a tarefa...">
+            <input type="text" id="task-input" placeholder="Digite o nome da tarefa...">
+            <select id="status-select">
+                <option></option>
+                <option>Pendente</option>
+                <option>Em Progresso</option>
+                <option>Concluído</option>
+            </select>
             <button id="addTask">Adicionar</button>
             <ul id="task-list"></ul>
         </div>
