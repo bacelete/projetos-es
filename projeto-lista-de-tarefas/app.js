@@ -3,7 +3,7 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import routes from './routes.js';
-import auth from './auth.js';
+import authRouter from './auth.js';
 import database from './src/database/connection.js';
 
 //Auth0 Configuration: 
@@ -25,7 +25,7 @@ const session = {
     secret: process.env.SESSION_SECRET,
     cookie: {},
     resave: false,
-    saveUnitializated: false,
+    saveUninitializated: false,
 };
 
 if (app.get("env") === "production") {
@@ -58,12 +58,12 @@ app.set('views', path.join(__dirname, 'src', 'view', 'html'));
 
 app.use('/static', express.static(path.join(__dirname, 'src', 'view', 'css')));
 app.use(express.json());  //to use json
-app.use(express(expressSession(session)));
+app.use(expressSession(session));
 
 //initialize the passport and modify the persistent login session using Passport.js:
-passport.use(strategy);
 app.use(passport.initialize()); 
 app.use(passport.session()); //store data of its sessions
+passport.use(strategy);
 
 passport.serializeUser((user, done) => {
     done(null, user);
@@ -81,6 +81,6 @@ app.listen(port, () => {
 
 //use routes from 'routes.js'
 app.use(routes);
-app.use(auth);
+app.use(authRouter);
 
 export default app; 
