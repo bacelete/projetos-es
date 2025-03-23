@@ -8,7 +8,7 @@ import querystring from 'querystring';
 import dotenv from 'dotenv';
 
 dotenv.config();
-const auth = express();
+const auth = express.Router();
 
 /**
  * Routes Definitions
@@ -27,9 +27,11 @@ auth.get(
 auth.get("/callback", (req, res, next) => {
     passport.authenticate("auth0", (err, user, info) => {
         if (err) {
+            console.error('Error during the authentication: '+err)
             return next(err);
         }
         if (!user) {
+            console.error("User not authenticated:", info);
             return res.redirect("/login");
         }
         req.logIn(user, (err) => {

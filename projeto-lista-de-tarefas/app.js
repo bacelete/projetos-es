@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import routes from './routes.js';
 import authRouter from './auth.js';
 import database from './src/database/connection.js';
+import cors from "cors";
 
 //Auth0 Configuration: 
 import passport from "passport";
@@ -25,7 +26,7 @@ const session = {
     secret: process.env.SESSION_SECRET,
     cookie: {},
     resave: false,
-    saveUninitializated: false,
+    saveUninitialized: false,
 };
 
 if (app.get("env") === "production") {
@@ -40,14 +41,6 @@ const strategy = new Auth0Strategy(
         callbackURL: process.env.AUTH0_CALLBACK_URL
     },
     function (accessToken, refreshToken, extraParams, profile, done) {
-        /**
-         * Access tokens are used to authorize users to an API
-         * (resource server)
-         * accessToken is the token to call the Auth0 API
-         * or a secured third-party API
-         * extraParams.id_token has the JSON Web Token
-         * profile has all the information from the user
-         */
         return done(null, profile);
     }
 );
@@ -58,6 +51,7 @@ app.set('views', path.join(__dirname, 'src', 'view', 'html'));
 
 app.use('/static', express.static(path.join(__dirname, 'src', 'view', 'css')));
 app.use(express.json());  //to use json
+app.use(cors());
 app.use(expressSession(session));
 
 //initialize the passport and modify the persistent login session using Passport.js:
@@ -73,14 +67,13 @@ passport.deserializeUser((user, done) => {
     done(null, user);
 });
 
-
 // create a server:
 app.listen(port, () => {
     console.log(`Servidor rodando em: http://localhost:${port}`);
 });
 
 //use routes from 'routes.js'
-app.use(routes);
 app.use(authRouter);
+app.use(routes);
 
 export default app; 
