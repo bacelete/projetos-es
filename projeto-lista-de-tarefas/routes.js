@@ -20,9 +20,4 @@ router.post('/user', UsuarioController.post);
 router.delete('/user/:id', UsuarioController.delete);
 router.put('/user/:id', UsuarioController.update);
 
-//login routes
-router.get('/login', (req, res) => {
-    res.render('login');
-});
-
 export default router;
