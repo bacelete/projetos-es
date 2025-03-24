@@ -26,7 +26,7 @@ function gerarTarefa(input, option) {
 
 function salvarTarefa(tarefa) {
     try {
-        const request = new Request(`http://localhost:${port}/task`, {
+        const req = new Request(`http://localhost:${port}/task`, {
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -34,7 +34,7 @@ function salvarTarefa(tarefa) {
             },
             body: JSON.stringify({nome: tarefa.nome, status: tarefa.status})
         });
-        fetch(request)
+        fetch(req)
             .then((response) => {
                 if (response.status === 200) {
                     return response.json(); 
