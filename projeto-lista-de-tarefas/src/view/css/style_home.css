@@ -11,3 +11,7 @@ body {
     background-color: white;
     padding: 20px; 
 }
+
+#task-list {
+    list-style-type:square;
+}

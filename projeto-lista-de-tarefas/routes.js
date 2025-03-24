@@ -16,6 +16,8 @@ router.delete('/user/:id', UsuarioController.delete);
 router.put('/user/:id', UsuarioController.update);
 
 //task routes
+router.get('/task/:id', TarefaController.get);
 router.post('/task', TarefaController.post);
+router.delete('/task/:id', TarefaController.delete);
 
 export default router;
