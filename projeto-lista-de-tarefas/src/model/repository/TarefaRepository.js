@@ -1,4 +1,3 @@
-import TarefaController from "../../controller/TarefaController.js";
 import conexao from '../../database/connection.js'
 
 class TarefaRepository {

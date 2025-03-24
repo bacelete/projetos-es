@@ -11,12 +11,19 @@ function adicionarTarefa() {
     if (strInput !== "" && typeof(strInput) === 'string' && options.value) {
         gerarTarefa(strInput, options.value);
     }
+
+    limparTela(); 
+}
+
+function limparTela() {
+    input.value = ""; 
+    options.value = options[0].value; 
 }
 
 function gerarTarefa(input, option) {
     let task = document.createElement('li');
     task.className = 'task'; 
-    task.innerHTML = input;
+    task.innerHTML = `${input} (${option})`;
 
     let obj = {nome: input, status: option};
     
