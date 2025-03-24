@@ -15,10 +15,9 @@ class TarefaController {
     }
     async delete(req, res) {
         const id = req.params.id;
-        const tarefa = await TarefaRepository.delete(id);
-        console.log(tarefa);
+        TarefaRepository.delete(id);
 
-        res.status(200).send(tarefa); 
+        res.status(200).send('Usuário foi excluido com sucesso!'); 
     }
 }
 

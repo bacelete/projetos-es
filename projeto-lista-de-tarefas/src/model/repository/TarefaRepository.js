@@ -8,33 +8,31 @@ class TarefaRepository {
         return new Promise((resolve, reject) => {
             conexao.query(sql, [tarefa.nome, tarefa.status], (erro, result) => {
                 if (erro) throw reject(erro);
-                return resolve(JSON.parse(JSON.stringify(result)));
+                return resolve(result);
             })
         })
     }
 
     static findById(id) {
-        const sql = "SELECT * from tarefa WHERE id = ?"; 
+        const sql = "SELECT * from tarefa WHERE id = ?";
 
-        return new Promise(function(resolve, reject) {
+        return new Promise(function (resolve, reject) {
             conexao.query(sql, [id], (erro, result) => {
-                if (erro) throw reject(erro); 
-                return resolve(JSON.parse(JSON.stringify(result[0]))); 
+                if (erro) throw reject(erro);
+                return resolve(result[0]);
             })
         });
     }
 
     static delete(id) {
-        const sql = "DELETE from tarefa WHERE id = ?"; 
+        const sql = "DELETE from tarefa WHERE id = ?";
 
-        if (this.findById(id)) {
-            return new Promise(function(resolve, reject) {
-                conexao.query(sql, [id], (erro, result) => {
-                    if (erro) throw reject(erro); 
-                    return resolve(JSON.parse(JSON.stringify(result[0]))); 
-                })
-            });
-        }
+        return new Promise(function (resolve, reject) {
+            conexao.query(sql, [id], (erro, result) => {
+                if (erro) throw reject(erro);
+                return resolve(result.affectedRows);
+            })
+        });
     }
 }
 

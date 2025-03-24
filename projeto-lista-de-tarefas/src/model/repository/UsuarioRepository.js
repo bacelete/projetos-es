@@ -37,9 +37,6 @@ class UsuarioRepository {
     static async delete(id) {
         const sql = "DELETE FROM usuario WHERE id = ?"
 
-        const user = await this.findById(id);
-        console.log(user);
-
         if (user !== null && user !== undefined) {
             return new Promise((resolve, reject) => {
                 database.query(sql, [id], (err, result) => {
