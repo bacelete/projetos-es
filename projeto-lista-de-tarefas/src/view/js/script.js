@@ -1,6 +1,9 @@
 const input = document.getElementById('task-input'); 
 const addTask = document.getElementById('addTask');
-const taskList = document.getElementById('task-list');
+const tasksInProgress = document.getElementById('tasks-inprogress');
+const taskCompleted = document.getElementById('tasks-completed');
+const tasksPending = document.getElementById('tasks-pending');
+
 const options = document.querySelector('#status-select');
 
 const port = 8000;
@@ -22,13 +25,19 @@ function limparTela() {
 
 function gerarTarefa(input, option) {
     let task = document.createElement('li');
-    task.className = 'task'; 
-    task.innerHTML = `${input} (${option})`;
+    task.innerHTML = input;
 
-    let obj = {nome: input, status: option};
-    
-    salvarTarefa(obj);
-    taskList.appendChild(task);
+    if (option === "Pendente") {
+        tasksPending.appendChild(task);
+    }
+    if (option === "Em Progresso") {
+        tasksInProgress.appendChild(task);
+    }
+    if (option === "Concluído") {
+        taskCompleted.appendChild(task);
+    }
+
+
 }
 
 function salvarTarefa(tarefa) {

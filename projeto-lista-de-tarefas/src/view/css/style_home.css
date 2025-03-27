@@ -12,7 +12,20 @@ body {
     padding: 20px; 
 }
 
-#task-list {
-    list-style-type:square;
+.lists {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 }
+
+.lists ul {
+    display: inline-block;
+    background-color: rgb(35, 35, 35);
+    width: 300px;
+    min-height: 500px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
 
