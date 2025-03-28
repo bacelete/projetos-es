@@ -1,12 +1,33 @@
 const input = document.getElementById('task-input'); 
 const addTask = document.getElementById('addTask');
+const options = document.querySelector('#status-select');
+
+//task-cards
 const tasksInProgress = document.getElementById('tasks-inprogress');
 const taskCompleted = document.getElementById('tasks-completed');
 const tasksPending = document.getElementById('tasks-pending');
 
-const options = document.querySelector('#status-select');
+const btnDelete = document.getElementById('delete');
 
 const port = 8000;
+
+function deletarTarefa(tarefa) {
+    const value = tarefa.value; 
+    try {
+        const req = new Request(`http://localhost:${port}`, {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'DELETE', 
+            body: value
+        });
+        fetch(req)
+            .then((response) => (response.json()));
+    }
+    catch(error) {
+        console.log('Error: '+error);
+    }
+}
 
 function adicionarTarefa() {
     let strInput = input.value;
@@ -25,7 +46,8 @@ function limparTela() {
 
 function gerarTarefa(input, option) {
     let task = document.createElement('li');
-    task.innerHTML = input;
+    task.innerHTML = `${input}<button id="edit"><i class="fa-solid fa-pen-to-square"></i></button>
+    <button id="delete"><i class="fa-solid fa-trash"></i></button>`;
     task.className = "task";
 
     if (option === "Pendente") {
@@ -37,7 +59,6 @@ function gerarTarefa(input, option) {
     if (option === "Concluído") {
         taskCompleted.appendChild(task);
     }
-
 
 }
 
@@ -70,3 +91,12 @@ function salvarTarefa(tarefa) {
 }
 
 addTask.addEventListener('click', adicionarTarefa);
+document.addEventListener('click', (event) => {
+    if (event.target.closest('#delete')) {
+        const task = event.target.closest('.task');
+        if (task) {
+            task.remove();
+            deletarTarefa(task);
+        }
+    }
+});
