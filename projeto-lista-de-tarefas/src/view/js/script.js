@@ -26,6 +26,7 @@ function limparTela() {
 function gerarTarefa(input, option) {
     let task = document.createElement('li');
     task.innerHTML = input;
+    task.className = "task";
 
     if (option === "Pendente") {
         tasksPending.appendChild(task);

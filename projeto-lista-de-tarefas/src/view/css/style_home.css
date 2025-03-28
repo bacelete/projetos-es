@@ -14,7 +14,7 @@ body {
 .lists {
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    padding: 15px;
     justify-content: center;
 }
 
@@ -24,14 +24,52 @@ body {
     width: 320px;
     min-height: 500px;
     border-radius: 10px;
-    margin-right: 10px;
+    margin: 10px;
+    padding: 0px;
 }
 
 .list-title {
     color: rgb(226, 224, 224);
+    text-align: center;
 }
 
-ul > li {
+#titulo {
+    font-size: 2.5em;
+}
+
+#pending {
+    color: rgb(220, 68, 68);
+}
+
+#completed {
+    color: rgb(33, 207, 33) ;
+}
+
+#inprogress {
+    color: rgb(132, 193, 231);
+}
+
+.task {
+    background-color: rgb(58, 58, 58);
     color: white;
+    font-size: 1.1em;
+    list-style-type: none;
+    line-height: 1.8em;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
 }
 
+.task:hover {
+    background-color: rgb(107, 107, 107);
+    transition: .2s;
+}
+
+.fa-solid {
+    font-size: 0.5em;
+    margin-right: 10px;
+    text-align: center;
+}
