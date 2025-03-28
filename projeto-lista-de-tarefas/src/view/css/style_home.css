@@ -1,6 +1,5 @@
 body {
     font-family: arial;
-    background-color: gray;
 }
 
 #titulo {
@@ -14,18 +13,25 @@ body {
 
 .lists {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     padding: 10px;
+    justify-content: center;
 }
 
 .lists ul {
-    display: inline-block;
+    display: inline;
     background-color: rgb(35, 35, 35);
-    width: 300px;
+    width: 320px;
     min-height: 500px;
     border-radius: 10px;
-    margin: 10px;
+    margin-right: 10px;
 }
 
+.list-title {
+    color: rgb(226, 224, 224);
+}
 
+ul > li {
+    color: white;
+}
 
