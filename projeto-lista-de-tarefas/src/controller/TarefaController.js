@@ -2,10 +2,16 @@ import TarefaRepository from "../model/repository/TarefaRepository.js";
 
 class TarefaController {
     async post(req, res) {
-        const tarefa = req.body;
-        TarefaRepository.create(tarefa); 
-
-        res.status(200).send(tarefa);
+        try {
+            const tarefa = req.body;
+            TarefaRepository.create(tarefa); 
+    
+            res.status(200).send(`Tarefa '${tarefa.nome}' criada com sucesso!`);
+        }
+        catch (error) {
+            console.log('Não foi possível criar a tarefa');
+            res.status(500).send(`Não foi possível criar a tarefa.`)
+        }
     }
     async get(req, res) {
         const id = req.params.id; 
@@ -19,6 +25,9 @@ class TarefaController {
             const affectedRows = await TarefaRepository.delete(nome);
             if (affectedRows > 0) {
                 res.status(200).send(`Tarefa '${nome}' excluída com sucesso!`);                
+            }
+            else {
+                res.status(404).send(`Tarefa ${nome} não foi encontrada`);
             }
         }
         catch (error) {

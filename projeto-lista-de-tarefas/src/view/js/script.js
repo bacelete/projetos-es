@@ -86,16 +86,9 @@ function salvarTarefa(tarefa) {
             body: JSON.stringify({nome, status})
         });
         fetch(req)
-            .then((response) => {
-                if (response.status === 200) {
-                    return response.json(); 
-                }
-                else {
-                    throw new Error('Houve um erro durante a criação da tarefa');
-                }
-            })
-            .then((data) => {
-                console.log('Tarefa criada com sucesso: '+JSON.stringify(data)); 
+            .then((res) => (res.text()))
+            .then((res) => {
+                console.log(res);
             })
     }
     catch(error) {
