@@ -31,7 +31,7 @@ class TarefaController {
             }
         }
         catch (error) {
-            console.error('Erro ao excluir a tarefa: '+tarefa);
+            console.error('Erro ao excluir a tarefa: '+error);
             res.status(500).send('Erro ao excluir a tarefa');
         }
 

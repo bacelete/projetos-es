@@ -32,11 +32,18 @@ function deletarTarefa(tarefa) {
 function adicionarTarefa() {
     let strInput = input.value;
 
+    if (strInput === "") {
+        alert('Digite um nome para sua tarefa.');
+        input.focus();
+    } 
+    if (options.value === "") {
+        alert('Selecione uma opção válida.');
+        options.focus();
+    }
     if (strInput !== "" && typeof(strInput) === 'string' && options.value) {
         gerarTarefa(strInput, options.value);
+        limparTela(); 
     }
-
-    limparTela(); 
 }
 
 function limparTela() {
