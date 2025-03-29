@@ -14,10 +14,18 @@ class TarefaController {
         res.status(200).send(tarefa); 
     }
     async delete(req, res) {
-        const id = req.params.id;
-        TarefaRepository.delete(id);
+        try {
+            const nome = req.params.nome;
+            const affectedRows = await TarefaRepository.delete(nome);
+            if (affectedRows > 0) {
+                res.status(200).send(`Tarefa '${nome}' excluída com sucesso!`);                
+            }
+        }
+        catch (error) {
+            console.error('Erro ao excluir a tarefa: '+tarefa);
+            res.status(500).send('Erro ao excluir a tarefa');
+        }
 
-        res.status(200).send('Usuário foi excluido com sucesso!'); 
     }
 }
 

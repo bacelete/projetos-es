@@ -12,20 +12,20 @@ const btnDelete = document.getElementById('delete');
 const port = 8000;
 
 function deletarTarefa(tarefa) {
-    const value = tarefa.value; 
-    try {
-        const req = new Request(`http://localhost:${port}`, {
-            headers: {
-                'Content-Type': 'application/json'
-            },
+    const nome = tarefa.textContent; 
+   try {
+        const req = new Request(`http://localhost:${port}/task/${nome}`, {
             method: 'DELETE', 
-            body: value
         });
         fetch(req)
-            .then((response) => (response.json()));
+            .then((res) => (res.text()))
+            .then((res) => {
+                console.log(res);
+            })
     }
     catch(error) {
-        console.log('Error: '+error);
+        console.log('Erro ao deleter a tarefa: '+error);
+    
     }
 }
 
@@ -59,18 +59,31 @@ function gerarTarefa(input, option) {
     if (option === "Concluído") {
         taskCompleted.appendChild(task);
     }
-
+    salvarTarefa(task);
 }
 
 function salvarTarefa(tarefa) {
     try {
+        const nome = tarefa.textContent.trim();
+        let status = "";
+
+        if (tasksPending.contains(tarefa)) {
+            status = "Pendente";
+        }
+        if (tasksInProgress.contains(tarefa)) {
+            status = "Em Progresso";
+        }
+        if (taskCompleted.contains(tarefa)) {
+            status = "Concluído";
+        }
+
         const req = new Request(`http://localhost:${port}/task`, {
             method: 'POST',
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({nome: tarefa.nome, status: tarefa.status})
+            body: JSON.stringify({nome, status})
         });
         fetch(req)
             .then((response) => {

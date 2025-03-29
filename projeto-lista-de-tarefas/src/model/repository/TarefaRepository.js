@@ -23,11 +23,11 @@ class TarefaRepository {
         });
     }
 
-    static delete(id) {
-        const sql = "DELETE from tarefa WHERE id = ?";
+    static delete(nome) {
+        const sql = "DELETE FROM tarefa WHERE nome = ?";
 
         return new Promise(function (resolve, reject) {
-            conexao.query(sql, [id], (erro, result) => {
+            conexao.query(sql, [nome], (erro, result) => {
                 if (erro) throw reject(erro);
                 return resolve(result.affectedRows);
             })
