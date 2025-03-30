@@ -22,7 +22,7 @@ body {
     display: inline;
     background-color: rgb(35, 35, 35);
     width: 320px;
-    min-height: 500px;
+    min-height: 650px;
     border-radius: 10px;
     margin: 10px;
     padding: 0px;
@@ -92,5 +92,9 @@ body {
     color: rgb(153, 152, 152);
     transition: transform .3s;
     transform: scale(1.2);
+}
+
+.inputs{
+    padding: 5px;
 }
 

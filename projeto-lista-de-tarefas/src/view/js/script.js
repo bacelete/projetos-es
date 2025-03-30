@@ -24,7 +24,7 @@ function deletarTarefa(tarefa) {
             })
     }
     catch(error) {
-        console.log('Erro ao deleter a tarefa: '+error);
+        console.log('Erro ao deleter a tarefa: '+error.message);
     
     }
 }

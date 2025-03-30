@@ -6,7 +6,7 @@ class TarefaController {
             const tarefa = req.body;
             TarefaRepository.create(tarefa); 
     
-            res.status(200).send(`Tarefa '${tarefa.nome}' criada com sucesso!`);
+            res.status(201).send(`Tarefa '${tarefa.nome}' criada com sucesso!`);
         }
         catch (error) {
             console.log('Não foi possível criar a tarefa');
@@ -20,11 +20,10 @@ class TarefaController {
         res.status(200).send(tarefa); 
     }
     async delete(req, res) {
-        try {
-            const nome = req.params.nome;
+        try {const nome = req.params.nome;
             const affectedRows = await TarefaRepository.delete(nome);
             if (affectedRows > 0) {
-                res.status(200).send(`Tarefa '${nome}' excluída com sucesso!`);                
+                res.status(204).send(`Tarefa '${nome}' excluída com sucesso!`);                
             }
             else {
                 res.status(404).send(`Tarefa ${nome} não foi encontrada`);
@@ -35,6 +34,18 @@ class TarefaController {
             res.status(500).send('Erro ao excluir a tarefa');
         }
 
+    }
+    async update(req, res) {
+        try {
+            const newTarefa = req.body; 
+            const nome = req.params.nome; 
+
+            const tarefa = await TarefaRepository.update(newTarefa, nome);
+            res.status(200).send(`Tarefa '${nome}' foi alterada para '${newTarefa.nome}'`);
+        }
+        catch(error) {
+            res.status(500).send('Erro ao editar a tarefa: '+error);
+        }
     }
 }
 

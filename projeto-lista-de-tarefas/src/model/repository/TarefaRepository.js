@@ -33,6 +33,18 @@ class TarefaRepository {
             })
         });
     }
+
+    static update(newTarefa, nome) {
+        const sql = "UPDATE tarefa SET nome = ?, status = ? WHERE nome = ?";
+
+        return new Promise(function (resolve, reject) {
+            conexao.query(sql, [newTarefa.nome, newTarefa.status, nome], (erro, result) => {
+                if (erro) throw reject(erro);
+                return resolve(result);
+            })
+        });
+    }
+
 }
 
 export default TarefaRepository;
