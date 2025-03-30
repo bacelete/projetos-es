@@ -8,6 +8,7 @@ const taskCompleted = document.getElementById('tasks-completed');
 const tasksPending = document.getElementById('tasks-pending');
 
 const btnDelete = document.getElementById('delete');
+const btnEdit = document.getElementById('edit');
 
 const port = 8000;
 
@@ -69,6 +70,27 @@ function gerarTarefa(input, option) {
     salvarTarefa(task);
 }
 
+/*function editarTarefa(tarefa) {
+    try {
+        const nome = tarefa.textContent;
+
+        const req = new Request(`http://localhost:${port}/task/${nome}`, {
+            headers: {'Content-Type' : 'application-json'}, 
+            method: 'PUT',
+            body: JSON.stringify({newNome, newStatus});
+        });
+        fetch(req)
+            .then((res) => (res.text()))
+            .then((res) => {
+                console.log(res); 
+            });
+    }
+    catch(error) {
+        console.log(`Error: `+error.message); 
+    }
+
+}*/
+
 function salvarTarefa(tarefa) {
     try {
         const nome = tarefa.textContent.trim();
@@ -110,6 +132,14 @@ document.addEventListener('click', (event) => {
         if (task) {
             task.remove();
             deletarTarefa(task);
+        }
+    }
+});
+document.addEventListener('click', (event) => {
+    if (event.target.closest('#edit')) {
+        const task = event.target.closest('task');
+        if (task) {
+            editarTarefa(task);
         }
     }
 });
