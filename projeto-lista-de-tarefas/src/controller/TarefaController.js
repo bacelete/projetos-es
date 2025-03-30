@@ -20,7 +20,8 @@ class TarefaController {
         res.status(200).send(tarefa); 
     }
     async delete(req, res) {
-        try {const nome = req.params.nome;
+        try {
+            const nome = decodeURIComponent(req.params.nome);
             const affectedRows = await TarefaRepository.delete(nome);
             if (affectedRows > 0) {
                 res.status(204).send(`Tarefa '${nome}' excluída com sucesso!`);                
@@ -38,7 +39,7 @@ class TarefaController {
     async update(req, res) {
         try {
             const newTarefa = req.body; 
-            const nome = req.params.nome; 
+            const nome = decodeURIComponent(req.params.nome);
 
             const tarefa = await TarefaRepository.update(newTarefa, nome);
             res.status(200).send(`Tarefa '${nome}' foi alterada para '${newTarefa.nome}'`);
