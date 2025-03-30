@@ -1,13 +1,14 @@
 body {
     font-family: arial;
+    background-color: rgb(50, 49, 49);
 }
 
 #titulo {
     text-align: center;
+    color: white;
 }
 
 .box {
-    background-color: white;
     padding: 20px; 
 }
 
