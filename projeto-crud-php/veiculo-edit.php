@@ -37,7 +37,7 @@ require 'connection.php';
         <div class="container w-50">
             <div id="alert" style="cursor: pointer"></div>
             <div class="class shadow mt-5">
-                <div class="card-header h3 p-3 bg-primary text-white rounded-2">Editar veículo</div>
+                <div class="card-header h3 p-3 bg-warning text-white rounded-2">Editar veículo</div>
                 <div class="card-body mt-2 p-4">
                     <form method="POST" id="formCarro" action="crud.php">
                         <?php

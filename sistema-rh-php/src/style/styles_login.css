@@ -1,0 +1,98 @@
+body {  
+    background-color: #f8f8f8;  
+    display: flex; 
+    justify-content: center; 
+    align-items: center;   
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif; 
+}  
+
+
+.container {  
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+}  
+
+form {
+    padding: 5px;
+}
+
+.login-box {  
+    background-color: white; 
+    padding: 25px;  
+    border-radius: 12px; 
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    text-align: center;
+    width: 400px;
+    height: 65vh;
+}  
+
+#titulo-login {
+    color:rgb(11, 17, 82);
+    font-size: 2.2em;
+}
+
+#sign-in {
+    display: block;
+    font-weight: bolder;
+    font-size: 12px;
+    margin-top: 20px;
+    color: gray;
+    text-decoration-line: none;
+}
+
+#sign-in:hover { 
+    color: black; 
+}
+
+.logo {  
+    width: 175px; 
+    margin-bottom: 10px; 
+}
+
+input {  
+    width: 100%;
+    padding: 15px 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color:transparent;
+}  
+
+input:focus-visible {
+    outline: none; 
+}
+
+.box-input {
+    display: flex;
+    margin-top: 20px;
+    background-color: rgb(247, 247, 247);
+    border-radius: 15px;
+    height: 35px;
+    padding: 3px; 
+}
+
+.box-input i {
+    color: rgb(12, 17, 70);
+    padding: 3px;  
+    font-size: 1em;
+    margin-top: 4px;
+    margin-left: 5px;
+}
+
+.login-button {  
+    background-color: rgb(32, 40, 126);
+    color: white;
+    padding: 10px; 
+    border: none;
+    border-radius: 20px; 
+    cursor: pointer; 
+    margin-top: 40px;
+    width: 40%;  
+}
+
+.login-button:hover {  
+    background-color: rgb(8, 15, 92);  
+}

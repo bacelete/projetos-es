@@ -1,9 +1,10 @@
 <?php
-    require 'connection.php';
+require 'connection.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,37 +48,36 @@
                         </thead>
                         <tbody>
                             <?php
-                                $sql = "SELECT * from carros"; 
-                                $carros = mysqli_query($conn, $sql);
+                            $sql = "SELECT * from carros";
+                            $carros = mysqli_query($conn, $sql);
 
-                                if (mysqli_num_rows($carros) > 0) {
-                                    foreach($carros as $carro) {
+                            if (mysqli_num_rows($carros) > 0) {
+                                foreach ($carros as $carro) {
                             ?>
-                            <tr>
-                                <td><?=$carro['id']?></td>
-                                <td><?=$carro['marca']?></td>
-                                <td><?=$carro['modelo']?></td>
-                                <td><?=$carro['ano']?></td>
-                                <td><?=$carro['placa']?></td>
-                                <td class="d-flex p-1">
-                                    <form action="crud.php" method="POST">
-                                        <button class="btn bg-warning text-white m-1" name="edit_carro" value="<?=$carro['id']?>">Editar</button>
-                                        <button class="btn bg-danger text-white m-1" name="exclude_carro" value="<?=$carro['id']?>">Excluir</button>
-                                    </form>
-                                </td>
-                                <!----> 
-                            </tr>
+                                    <tr>
+                                        <td><?= $carro['id'] ?></td>
+                                        <td><?= $carro['marca'] ?></td>
+                                        <td><?= $carro['modelo'] ?></td>
+                                        <td><?= $carro['ano'] ?></td>
+                                        <td><?= $carro['placa'] ?></td>
+                                        <td class="d-flex p-1">
+                                        <a href="./veiculo-edit.php?edit_carro=<?=$carro['id']?>" class="btn bg-warning text-white m-1" name="edit_carro">Editar</a>
+                                            <form action="crud.php" method="POST">
+                                                <button class="btn bg-danger text-white m-1" name="exclude_carro" value="<?= $carro['id'] ?>">Excluir</button>
+                                            </form>
+                                        </td>
+                                        <!---->
+                                    </tr>
                             <?php
                                 }
-                            }
-                            else {
+                            } else {
                                 echo "<h5>Nenhum carro encontrado</h5>";
                             }
                             ?>
                         </tbody>
                     </table>
                 </div>
-        </div>
+            </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

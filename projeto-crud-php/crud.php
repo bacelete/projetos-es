@@ -34,13 +34,8 @@
         exit;
     }   
 
-    if (isset($_POST['edit_carro'])) {
-        require 'veiculo-edit.php';
-        exit;
-    }
-
     if (isset($_POST['atualizar_carro'])) {
-        $carro_id = $_POST['atualizar_carro']; 
+        $carro_id = mysqli_real_escape_string($conn,$_GET['atualizar_carro']);
 
         $marca = mysqli_real_escape_string($conn, $_POST['marca']);
         $modelo = mysqli_real_escape_string($conn, $_POST['modelo']);
