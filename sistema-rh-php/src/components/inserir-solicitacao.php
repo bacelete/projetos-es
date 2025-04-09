@@ -15,7 +15,7 @@
         <div class="container w-50">
             <div id="liveAlertPlaceholder"></div>
             <div class="shadow mt-5">
-                <div class="card-header h3 p-4 bg-primary text-white rounded-2">Solicitação</div>
+                <div class="card-header h3 p-4 bg-secondary text-white rounded-2">Solicitação</div>
                 <div class="card-body mt-2 p-4">
                     <form method="POST" action="../backend/create.php" class="needs-validation" novalidate>
                         <div>
@@ -64,13 +64,13 @@
 
                             <div class="btn-group" role="group">
                                 <input type="radio" class="btn-check" name="motivo" id="demissao" value="Demissão" autocomplete="off" required>
-                                <label class="btn btn-outline-primary" for="demissao">Demissão</label>
+                                <label class="btn btn-outline-secondary" for="demissao">Demissão</label>
                                 <input type="radio" class="btn-check" name="motivo" id="afastamento" value="Afastamento" autocomplete="off" required>
-                                <label class="btn btn-outline-primary" for="afastamento">Afastamento</label>
+                                <label class="btn btn-outline-secondary" for="afastamento">Afastamento</label>
                                 <input type="radio" class="btn-check" name="motivo" id="ferias" value="Férias" autocomplete="off" required>
-                                <label class="btn btn-outline-primary" for="ferias">Férias</label>
+                                <label class="btn btn-outline-secondary" for="ferias">Férias</label>
                                 <input type="radio" class="btn-check" name="motivo" id="outros" value="Outros" autocomplete="off" required>
-                                <label class="btn btn-outline-primary" for="outros">Outros</label>
+                                <label class="btn btn-outline-secondary" for="outros">Outros</label>
                                 <div class="invalid-feedback">
                                     Por favor, selecione uma das opções.
                                 </div>
@@ -85,8 +85,8 @@
                         </div>
 
                         <div class="d-flex mt-4 justify-content-between">
-                            <a href="#" name="voltar" id="voltar" class="btn w-20 justify-content-center text-white mt-4 bg-danger">Voltar</a>
-                            <button type="submit" class="btn d-block w-20 justify-content-center text-white mt-4 bg-primary" id="enviarSolicitacao" name="enviarSolicitacao">Enviar</button>
+                            <a href="./listar-solicitacao.php" name="voltar" id="voltar" class="btn w-20 justify-content-center text-white mt-4 bg-danger">Voltar</a>
+                            <button type="submit" class="btn d-block w-20 justify-content-center text-white mt-4 bg-success" id="enviarSolicitacao" name="enviarSolicitacao">Enviar</button>
                         </div>
 
                     </form>
