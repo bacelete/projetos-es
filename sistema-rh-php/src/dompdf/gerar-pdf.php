@@ -5,7 +5,7 @@ use Dompdf\Dompdf;
 require __DIR__.'/vendor/autoload.php';
 
 ob_start();
-include('../components/solicitacoes.php');
+include('../components/pdf_solicitacoes.php');
 $html = ob_get_clean();
 
 //conf do dompdf

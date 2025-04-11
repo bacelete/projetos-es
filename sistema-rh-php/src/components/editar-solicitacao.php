@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inserir</title>
+    <title>Editar</title>
     <script src="../js/script.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
 </head>
@@ -15,12 +15,32 @@
         <div class="container w-50">
             <div id="liveAlertPlaceholder"></div>
             <div class="shadow mt-5">
-                <div class="card-header h3 p-4 bg-secondary text-white rounded-2">Solicitação</div>
+                <div class="card-header h3 p-4 bg-secondary text-white rounded-2">Editar solicitação</div>
                 <div class="card-body mt-2 p-4">
-                    <form method="POST" action="../backend/create.php" class="needs-validation" novalidate>
+                    <form method="POST" action="../backend/edit.php" class="needs-validation" novalidate>
+                        <?php
+                            require('../database/connection.php'); 
+
+                            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                $id = mysqli_real_escape_string($conn, $_POST["edit"]); 
+
+                                $sql = "SELECT
+                                    s.id,
+                                    sv.nome AS nome_servidor,
+                                    s.unidade,
+                                    s.data_inicio,
+                                    s.data_fim
+                                    FROM solicitacao s INNER JOIN servidor sv ON s.id_servidor = sv.id WHERE s.id = $id
+                                ";
+
+                                $result = mysqli_query($conn, $sql);
+
+                                if (mysqli_num_rows($result) > 0) {
+                                    foreach($result as $solicitacao) {
+                        ?>
                         <div>
                             <label for="unidade" class="form-label">Unidade (UBS):</label>
-                            <input type="text" name="unidade" id="unidade" class="form-control" placeholder="Digite o nome da unidade" required>
+                            <input type="text" name="unidade" value ="<?=$solicitacao["unidade"]?>" id="unidade" class="form-control" placeholder="Digite o nome da unidade" required>
                             <div class="invalid-feedback">
                                 Por favor, digite o nome da unidade.
                             </div>
@@ -28,7 +48,7 @@
 
                         <div>
                             <label for="nome" class="form-label mt-3">Nome do servidor:</label>
-                            <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite o nome do servidor" required>
+                            <input type="text" value="<?=$solicitacao["nome_servidor"]?>" name="nome" id="nome" class="form-control" placeholder="Digite o nome do servidor" required>
                             <div class="invalid-feedback">
                                 Por favor, digite o nome completo do servidor.
                             </div>
@@ -39,6 +59,7 @@
                                 <label for="data_inicio">Data de início:</label>
                                 <input
                                     type="date"
+                                    value="<?=$solicitacao["data_inicio"]?>"
                                     id="data_inicio"
                                     name="data_inicio"
                                     required />
@@ -50,6 +71,7 @@
                                 <label for="data_fim">Fim do afastamento:</label>
                                 <input
                                     type="date"
+                                    value="<?=$solicitacao["data_fim"]?>"
                                     id="data_fim"
                                     name="data_fim"
                                     required />
@@ -86,9 +108,14 @@
 
                         <div class="d-flex mt-4 justify-content-between">
                             <a href="./listar-solicitacao.php" name="voltar" id="voltar" class="btn w-20 justify-content-center text-white mt-4 bg-danger">Voltar</a>
-                            <button type="submit" class="btn d-block w-20 justify-content-center text-white mt-4 bg-success" id="enviarSolicitacao" name="enviarSolicitacao">Enviar</button>
+                            <button type="submit" class="btn d-block w-20 justify-content-center text-white mt-4 bg-success" id="editar" name="editar">Enviar</button>
+                            <input type="hidden" name="id_solicitacao" value="<?=$solicitacao['id']?>">
                         </div>
-
+                        <?php
+                                }
+                            }
+                        }
+                        ?>
                     </form>
                 </div>
             </div>

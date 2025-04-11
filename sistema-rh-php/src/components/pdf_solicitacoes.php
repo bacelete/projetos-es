@@ -9,22 +9,46 @@ require('../database/connection.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listar</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        h2{
+            color: #777;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        table{
+            width: 100%;
+            margin: 0 auto;
+        }
+        table, th, td {
+            border: 1px solid #c1c1c1;
+            border-collapse: collapse;
+        }
+    	thead{
+        	background-color:rgb(111, 111, 111);
+        }
+        thead th{
+            padding: 20px 0px;
+            text-transform: uppercase;
+            color: white;
+            text-align: center;
+        }
+        tbody{
+            background-color: #f5f5f5;
+            color: #777;
+            text-align: center;
+            border: 1px solid black;
+        }
+        tbody td{
+            padding: 10px 0px;
+        }
+    </style>
 </head>
 
 <body>
-    <?php include('./navbar.php') ?>
-    <div class="container p-3 w-100">
+    <div class="container p-2 w-100">
         <div class="card mt-3">
-            <div class="card-header p-4 d-flex justify-content-between align-items-center flex-wrap">
-                <h2>Lista de solicitações 
-                    <form class="d-inline" action="./inserir-solicitacao.php" method="POST">
-                        <button class="btn btn-outline-secondary btn-sm ms-2"><i class="fa-solid fa-plus"></i></button></h2>
-                    </form>
-
-                <form method="POST">
-                    <button type="submit" name="excluir_tudo" class="btn bg-danger text-white m-2 btn-sm">Excluir tudo<i class="fa-solid fa-trash m-1"></i></button>
-                </form>
+            <div class="card-header d-flex">
+                <h2>Lista de solicitações</h2>
                 <?php
                 require('../database/connection.php');
                 if (isset($_POST["excluir_tudo"])) {
@@ -38,7 +62,7 @@ require('../database/connection.php');
                 <table class="table table-hover" style="cursor:pointer">
                     <thead class="table-light">
                         <tr>
-                            <th>ID da Solicitação</th>
+                            <th>ID</th>
                             <th>Servidor</th>
                             <th>Unidade</th>
                             <th>Motivo</th>
@@ -76,17 +100,7 @@ require('../database/connection.php');
                                     <td><?= $solicitacao["motivo"] ?></td>
                                     <td><?= $solicitacao["data_inicio"] ?></td>
                                     <td><?= $solicitacao["data_fim"] ?></td>
-                                    <td>
-                                        <?= $solicitacao["data_solicitacao"] ?>
-                                        <div class="m-2 d-inline">
-                                            <form class="d-inline" method="POST" action="../components/editar-solicitacao.php">
-                                                <button name="edit" id="edit" value="<?=$solicitacao["id"]?>"class="btn btn-warning text-white">Editar</button>
-                                            </form>
-                                            <form class="d-inline" method="POST" action="../backend/exclude.php">
-                                                <button class="btn btn-danger text-white" name="exclude" value="<?= $solicitacao["id"] ?>">Excluir</button>
-                                            </form>
-                                        </div>
-                                    </td>
+                                    <td><?= $solicitacao["data_solicitacao"] ?></td>
                                 </tr>
                             </tbody>
                     <?php
@@ -94,9 +108,6 @@ require('../database/connection.php');
                     }
                     ?>
                 </table>
-                <form action="../dompdf/gerar-pdf.php" method="POST">
-                    <button class="btn btn-outline-secondary btn-sm" name="gerarPdf">Exportar como PDF</button>
-                </form>
             </div>
         </div>
     </div>
