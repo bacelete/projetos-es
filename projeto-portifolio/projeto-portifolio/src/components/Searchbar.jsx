@@ -1,7 +1,7 @@
 function Searchbar() {
     return (
-        <div>
-            
+        <div className="">
+            <input className="bg-white" type="text" name="searchbar" id="searchbar" placeholder="Pesquisar" />
         </div>
     )
 }
