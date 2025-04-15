@@ -12,13 +12,13 @@
 <body>
     <?php include('./navbar.php')?>
     <main>
-        <div class="container w-50">
+        <div class="container w-70">
             <div id="liveAlertPlaceholder"></div>
             <div class="shadow mt-5">
-                <div class="card-header h3 p-4 bg-secondary text-white rounded-2">Solicitação</div>
+                <div class="card-header target h2 p-4 text-white bg-dark rounded-2">Solicitação</div>
                 <div class="card-body mt-2 p-4">
-                    <form method="POST" action="../backend/create.php" class="needs-validation" novalidate>
-                        <div>
+                    <form method="POST" action="../backend/create.php" class="needs-validatio0n form-floating" novalidate>
+                        <div class="mb-3">
                             <label for="unidade" class="form-label">Unidade (UBS):</label>
                             <input type="text" name="unidade" id="unidade" class="form-control" placeholder="Digite o nome da unidade" required>
                             <div class="invalid-feedback">

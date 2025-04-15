@@ -17,7 +17,7 @@ require('../database/connection.php');
     <?php include('./navbar.php') ?>
     <div class="container p-3 w-100">
         <div id="liveAlertPlaceholder"></div>
-        <div class="card mt-3">
+        <div class="card shadow-lg mt-3">
             <div class="card-header p-4 d-flex justify-content-between align-items-center flex-wrap">
                 <h2>Lista de solicitações
                     <form class="d-inline" action="./inserir-solicitacao.php" method="POST">
@@ -29,7 +29,7 @@ require('../database/connection.php');
                 </form>
             </div>
             <div class="card-body">
-                <table class="table table-hover" style="cursor:pointer">
+                <table class="table table-hover shadow-sm rounded mb-5 mt-3" style="cursor:pointer">
                     <thead class="table-light">
                         <tr>
                             <th>ID da Solicitação</th>
@@ -67,7 +67,7 @@ require('../database/connection.php');
                                     <td><?= $solicitacao["id"] ?></td>
                                     <td><?= $solicitacao["nome_servidor"] ?></td>
                                     <td><?= $solicitacao["unidade"] ?></td>
-                                    <td><?= $solicitacao["motivo"] ?></td>
+                                    <td class="badge text-dark bg-warning align-items-center"><?= $solicitacao["motivo"] ?></td>
                                     <td><?= $solicitacao["data_inicio"] ?></td>
                                     <td><?= $solicitacao["data_fim"] ?></td>
                                     <td>
@@ -89,7 +89,7 @@ require('../database/connection.php');
                     ?>
                 </table>
                 <form action="../dompdf/gerar-pdf.php" method="POST">
-                    <button class="btn btn-outline-secondary btn-sm" name="gerarPdf">Exportar como PDF</button>
+                    <button class="btn btn-outline-secondary btn-sm" name="gerarPdf"><i class="bi bi-file-earmark-pdf"></i>Exportar como PDF</button>
                 </form>
             </div>
         </div>

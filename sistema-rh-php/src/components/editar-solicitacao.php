@@ -12,10 +12,10 @@
 <body>
     <?php include('./navbar.php')?>
     <main>
-        <div class="container w-50">
+        <div class="container w-75">
             <div id="liveAlertPlaceholder"></div>
             <div class="shadow mt-5">
-                <div class="card-header h3 p-4 bg-secondary text-white rounded-2">Editar solicitação</div>
+                <div class="card-header h2 p-4 bg-dark text-white rounded-2">Editar solicitação</div>
                 <div class="card-body mt-2 p-4">
                     <form method="POST" action="../backend/edit.php" class="needs-validation" novalidate>
                         <?php
