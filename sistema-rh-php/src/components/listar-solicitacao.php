@@ -59,25 +59,46 @@ require('../database/connection.php');
 
                     $solicitacoes = mysqli_query($conn, $querySolicitacao);
 
+                    
+                    function badgeClass($motivo)
+                    {
+                        switch (strtolower($motivo)) {
+                            case 'férias':
+                                return 'badge bg-warning text-dark';
+                            case 'demissão':
+                                return 'badge bg-danger text-white';
+                            case 'afastamento':
+                                return 'badge bg-info text-dark';
+                            case 'licença':
+                                return 'badge bg-primary text-white';
+                            default:
+                                return 'basdge bg-secondary text-white';
+                        }
+                    }
+
                     if (mysqli_num_rows($solicitacoes) > 0) {
                         foreach ($solicitacoes as $solicitacao) {
                     ?>
                             <tbody>
                                 <tr>
-                                    <td><?= $solicitacao["id"] ?></td>
+                                    <td class="text-center"><?= $solicitacao["id"] ?></td>
                                     <td><?= $solicitacao["nome_servidor"] ?></td>
                                     <td><?= $solicitacao["unidade"] ?></td>
-                                    <td class="badge text-dark bg-warning align-items-center"><?= $solicitacao["motivo"] ?></td>
+                                    <td>
+                                        <span class="<?=badgeClass($solicitacao["motivo"])?>">
+                                            <?=$solicitacao["motivo"]?>
+                                        </span>
+                                    </td>
                                     <td><?= $solicitacao["data_inicio"] ?></td>
                                     <td><?= $solicitacao["data_fim"] ?></td>
                                     <td>
                                         <?= $solicitacao["data_solicitacao"] ?>
-                                        <div class="m-2 d-inline">
+                                        <div class=" d-inline float-end">
                                             <form class="d-inline" method="POST" action="../components/editar-solicitacao.php">
-                                                <button name="edit" id="edit" value="<?= $solicitacao["id"] ?>" class="btn btn-warning text-white">Editar</button>
+                                                <button name="edit" id="edit" value="<?= $solicitacao["id"] ?>" class="btn btn-warning text-white btn-sm">Editar</button>
                                             </form>
                                             <form class="d-inline" method="POST" action="../backend/exclude.php">
-                                                <button class="btn btn-danger text-white" name="exclude" value="<?= $solicitacao["id"] ?>">Excluir</button>
+                                                <button class="btn btn-danger text-white btn-sm" name="exclude" value="<?= $solicitacao["id"] ?>">Excluir</button>
                                             </form>
                                         </div>
                                     </td>

@@ -64,13 +64,13 @@
 
                             <div class="btn-group" role="group">
                                 <input type="radio" class="btn-check" name="motivo" id="demissao" value="Demissão" autocomplete="off" required>
-                                <label class="btn btn-outline-secondary" for="demissao">Demissão</label>
+                                <label class="btn btn-outline-dark" for="demissao">Demissão</label>
                                 <input type="radio" class="btn-check" name="motivo" id="afastamento" value="Afastamento" autocomplete="off" required>
-                                <label class="btn btn-outline-secondary" for="afastamento">Afastamento</label>
+                                <label class="btn btn-outline-dark" for="afastamento">Afastamento</label>
                                 <input type="radio" class="btn-check" name="motivo" id="ferias" value="Férias" autocomplete="off" required>
-                                <label class="btn btn-outline-secondary" for="ferias">Férias</label>
+                                <label class="btn btn-outline-dark" for="ferias">Férias</label>
                                 <input type="radio" class="btn-check" name="motivo" id="outros" value="Outros" autocomplete="off" required>
-                                <label class="btn btn-outline-secondary" for="outros">Outros</label>
+                                <label class="btn btn-outline-dark" for="outros">Outros</label>
                                 <div class="invalid-feedback">
                                     Por favor, selecione uma das opções.
                                 </div>
