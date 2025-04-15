@@ -15,6 +15,22 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    
+    appendAlert = (mensagem, tipo) => {
+        const wrapper = document.createElement("div");
+        wrapper.innerHTML = [
+            `<div class="alert alert-${tipo}">`,
+                `<div class="d-flex justify-content-between lign-items-start flex-wrap mt-1">`,
+                    `<div>${mensagem}</div>`,
+                    '<button type="submit" class="btn-close" data-bs-dismiss="alert" arial-label="Close"></button>',
+                '</div>',
+            '</div>',
+        ].join('');
+
+        alert.append(wrapper);
+
+    };
+
         //js do bootstrap para validar cada campo do form;
         (() => {
             'use strict'
@@ -26,7 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 form.classList.add('was-validated');
                 if (enviarSolicitacao) {
                     enviarSolicitacao.addEventListener("click", () => {
-                        appendAlert("Solicitação enviada com sucesso!", "success");
+                        event.preventDefault();
+                        setTimeout(() => {
+                            appendAlert("Solicitação enviada com sucesso!", "success");
+                        }, 3000);
                     })
                 }
             }, false)

@@ -32,10 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             unidade = '$unidade', 
             motivo = '$motivo',
             data_inicio = '$data_inicio', 
-            data_fim = '$data_fim, 
+            data_fim = '$data_fim', 
             data_solicitacao = current_timestamp() WHERE id = '$id_solicitacao'";
 
-    mysqli_query($conn, $sql_update_servidor);
+    mysqli_query($conn, $sql_update_solicitacao);
 
     header("Location: ../components/listar-solicitacao.php");
     exit;
