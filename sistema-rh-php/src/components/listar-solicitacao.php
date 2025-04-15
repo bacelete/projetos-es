@@ -72,7 +72,7 @@ require('../database/connection.php');
                             case 'licença':
                                 return 'badge bg-primary text-white';
                             default:
-                                return 'basdge bg-secondary text-white';
+                                return 'badge bg-secondary text-white';
                         }
                     }
 
@@ -107,10 +107,13 @@ require('../database/connection.php');
                     <?php
                         }
                     }
+                    else {
+                        echo "<p class='fw-bold'>Nenhuma solicitação encontrada</p>";
+                    }
                     ?>
                 </table>
                 <form action="../dompdf/gerar-pdf.php" method="POST">
-                    <button class="btn btn-outline-secondary btn-sm" name="gerarPdf"><i class="bi bi-file-earmark-pdf"></i>Exportar como PDF</button>
+                    <button class="btn btn-outline-secondary btn-sm" name="gerarPdf"><i class="fa-solid fa-file-export m-1"></i>Exportar como PDF</button>
                 </form>
             </div>
         </div>
