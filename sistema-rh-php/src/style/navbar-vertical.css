@@ -1,0 +1,15 @@
+.navbar, .container-fluid, .navbar-expand-lg, .navbar-toggler, .navbar-nav{
+    flex-direction: column !important;
+    float: left;
+    align-items: flex-start !important;
+}
+
+.nav-item {
+    display: block;
+}   
+
+.navbar {
+    width: 15%;
+    height: 100vh;
+    margin-right: 80px;
+}

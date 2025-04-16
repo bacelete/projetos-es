@@ -1,4 +1,8 @@
-<nav class="navbar navbar-expand-lg bg-dark">
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid mt-2">
             <a class="navbar-brand text-light fs-3" href="#">SIRH</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,4 +19,7 @@
                 </ul>
             </div>
         </div>
-</nav>
+    </nav>
+</body>
+
+</html>

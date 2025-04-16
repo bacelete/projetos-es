@@ -14,7 +14,7 @@
             $_SESSION["usuario"] = $usuario; 
             $_SESSION["senha"] = $senha; 
 
-            header("Location: ../components/inserir-solicitacao.php");
+            header("Location: ../components/listar-solicitacao.php");
             exit;
         }
 

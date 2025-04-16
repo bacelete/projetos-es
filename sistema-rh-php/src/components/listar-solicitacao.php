@@ -10,23 +10,24 @@ require('../database/connection.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style/navbar-vertical.css">
     <script src="../js/alert.js"></script>
 </head>
 
 <body>
     <?php include('./navbar.php') ?>
-    <div class="container p-3 w-100">
+    <div class="container p-1">
         <div id="liveAlertPlaceholder"></div>
-        <div class="card shadow-lg mt-3">
+        <div class="card shadow-lg mt-4">
             <div class="card-header p-4 d-flex justify-content-between align-items-center flex-wrap">
                 <h2>Lista de solicitações
-                    <form class="d-inline" action="./inserir-solicitacao.php" method="POST">
+                    <form class="d-inline" action="./inserir-solicitacao.php" id="formAdd" method="POST">
                         <button class="btn btn-outline-secondary btn-sm ms-2"><i class="fa-solid fa-plus"></i></button>
                 </h2>
 
                 <input class="ms-auto w-25 p-1" type="text" name="search" id="search" onkeyup="searchFilter()" placeholder="Digite o nome do servidor...">
 
-                <form method="POST" id="formDelete">
+                <form method="POST" id="formDelete" action="../backend/exclude_all.php">
                     <button type="submit" name="excluir_tudo" id="excluir_tudo" class="btn bg-danger text-white m-2 btn-sm">Excluir tudo<i class="fa-solid fa-trash m-1"></i></button>
                 </form>
             </div>
