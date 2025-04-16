@@ -42,6 +42,7 @@ require('../database/connection.php');
                             <th>Início</th>
                             <th>Conclusão</th>
                             <th>Data/hora</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <?php
@@ -95,12 +96,14 @@ require('../database/connection.php');
                                     <td><?= $solicitacao["data_inicio"] ?></td>
                                     <td><?= $solicitacao["data_fim"] ?></td>
                                     <td>
-                                        <?= $solicitacao["data_solicitacao"] ?>
-                                        <div class=" d-inline float-end">
-                                            <form class="d-inline" method="POST" action="../components/editar-solicitacao.php">
+                                        <?=$solicitacao["data_solicitacao"] ?>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-start float-end ms-1">
+                                            <form class="ms-1" method="POST" action="../components/editar-solicitacao.php">
                                                 <button name="edit" id="edit" value="<?= $solicitacao["id"] ?>" class="btn btn-warning text-white btn-sm">Editar</button>
                                             </form>
-                                            <form class="d-inline" method="POST" action="../backend/exclude.php">
+                                            <form class="ms-1" method="POST" action="../backend/exclude.php">
                                                 <button class="btn btn-danger text-white btn-sm" name="exclude" value="<?= $solicitacao["id"] ?>">Excluir</button>
                                             </form>
                                         </div>
