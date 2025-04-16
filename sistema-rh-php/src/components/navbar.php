@@ -4,7 +4,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid mt-2">
-            <a style="font-size: 2.5rem" class="navbar-brand text-light" href="#">SIRH</a>
+            <a style="font-size: 2.5rem" class="navbar-brand text-light align-self-center" href="#">SIRH</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -19,7 +19,7 @@
                 </ul>
             </div>
         </div>
-        <button id="recolherMenu" style="display: none"name="recolherMenu" class="btn btn-sm btn-outline-light mt-auto m-4"><i class="fa-solid fa-arrow-left m-1"></i>Recolher menu</button>
+        <button id="recolherMenu" style="display: none" name="recolherMenu" class="btn btn-sm btn-outline-light mt-auto m-4 align-self-center"><i class="fa-solid fa-arrow-left m-1"></i>Recolher menu</button>
     </nav>
     <script src="https://kit.fontawesome.com/291cf6cb9c.js" crossorigin="anonymous"></script>
     <script src="../js/navbar.js"></script>
