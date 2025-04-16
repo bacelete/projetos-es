@@ -113,9 +113,11 @@ require('../database/connection.php');
                     }
                     ?>
                 </table>
-                <form action="../dompdf/gerar-pdf.php" method="POST">
-                    <button class="btn btn-outline-secondary btn-sm" name="gerarPdf"><i class="fa-solid fa-file-export m-1"></i>Exportar como PDF</button>
-                </form>
+                <footer class="d-flex justify-content-between">
+                    <form action="../dompdf/gerar-pdf.php" method="POST">
+                        <button class="btn btn-outline-secondary btn-sm" name="gerarPdf"><i class="fa-solid fa-file-export m-1"></i>Exportar como PDF</button>
+                    </form>
+                </footer>
             </div>
         </div>
     </div>
@@ -140,6 +142,21 @@ require('../database/connection.php');
 
             }
         }
+
+        const footer = document.getElementsByTagName("footer")[0];
+        
+        function exibirNumeroDeLinhas() {
+            let numLinhas = tr.length - 1;
+
+            let elemHTML = document.createElement("p"); 
+            elemHTML.textContent = `Exibindo 1 a ${numLinhas} de ${numLinhas} linhas`; 
+            elemHTML.classList.add("text-secondary");
+
+            footer.appendChild(elemHTML);
+        }
+
+        exibirNumeroDeLinhas();
+
     </script>
     <script src="https://kit.fontawesome.com/291cf6cb9c.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
