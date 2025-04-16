@@ -22,6 +22,7 @@
         <button id="recolherMenu" style="display: none"name="recolherMenu" class="btn btn-sm btn-outline-light mt-auto m-4"><i class="fa-solid fa-arrow-left m-1"></i>Recolher menu</button>
     </nav>
     <script src="https://kit.fontawesome.com/291cf6cb9c.js" crossorigin="anonymous"></script>
+    <script src="../js/navbar.js"></script>
 </body>
 
 </html>
