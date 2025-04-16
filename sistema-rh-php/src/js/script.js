@@ -15,15 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    
+
     appendAlert = (mensagem, tipo) => {
         const wrapper = document.createElement("div");
         wrapper.innerHTML = [
             `<div class="alert alert-${tipo}">`,
-                `<div class="d-flex justify-content-between lign-items-start flex-wrap mt-1">`,
-                    `<div>${mensagem}</div>`,
-                    '<button type="submit" class="btn-close" data-bs-dismiss="alert" arial-label="Close"></button>',
-                '</div>',
+            `<div class="d-flex justify-content-between lign-items-start flex-wrap mt-1">`,
+            `<div>${mensagem}</div>`,
+            '<button type="submit" class="btn-close" data-bs-dismiss="alert" arial-label="Close"></button>',
+            '</div>',
             '</div>',
         ].join('');
 
@@ -31,24 +31,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     };
 
-        //js do bootstrap para validar cada campo do form;
-        (() => {
-            'use strict'
-            form.addEventListener('submit', event => {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-                form.classList.add('was-validated');
-                if (enviarSolicitacao) {
-                    enviarSolicitacao.addEventListener("click", () => {
-                        event.preventDefault();
-                        setTimeout(() => {
-                            appendAlert("Solicitação enviada com sucesso!", "success");
-                        }, 3000);
-                    })
-                }
-            }, false)
-        })()
+    //js do bootstrap para validar cada campo do form;
+    (() => {
+        'use strict'
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+            form.classList.add('was-validated');
+            if (enviarSolicitacao) {
+                enviarSolicitacao.addEventListener("click", () => {
+                    event.preventDefault();
+                    setTimeout(() => {
+                        appendAlert("Solicitação enviada com sucesso!", "success");
+                    }, 3000);
+                })
+            }
+        }, false)
+    })()
 
 });

@@ -23,7 +23,9 @@ require('../database/connection.php');
                     <form class="d-inline" action="./inserir-solicitacao.php" method="POST">
                         <button class="btn btn-outline-secondary btn-sm ms-2"><i class="fa-solid fa-plus"></i></button>
                 </h2>
-                </form>
+
+                <input class="ms-auto w-25 p-1" type="text" name="search" id="search" onkeyup="searchFilter()" placeholder="Digite o nome do servidor...">
+
                 <form method="POST" id="formDelete">
                     <button type="submit" name="excluir_tudo" id="excluir_tudo" class="btn bg-danger text-white m-2 btn-sm">Excluir tudo<i class="fa-solid fa-trash m-1"></i></button>
                 </form>
@@ -59,7 +61,7 @@ require('../database/connection.php');
 
                     $solicitacoes = mysqli_query($conn, $querySolicitacao);
 
-                    
+
                     function badgeClass($motivo)
                     {
                         switch (strtolower($motivo)) {
@@ -85,8 +87,8 @@ require('../database/connection.php');
                                     <td><?= $solicitacao["nome_servidor"] ?></td>
                                     <td><?= $solicitacao["unidade"] ?></td>
                                     <td>
-                                        <span class="<?=badgeClass($solicitacao["motivo"])?>">
-                                            <?=$solicitacao["motivo"]?>
+                                        <span class="<?= badgeClass($solicitacao["motivo"]) ?>">
+                                            <?= $solicitacao["motivo"] ?>
                                         </span>
                                     </td>
                                     <td><?= $solicitacao["data_inicio"] ?></td>
@@ -106,8 +108,7 @@ require('../database/connection.php');
                             </tbody>
                     <?php
                         }
-                    }
-                    else {
+                    } else {
                         echo "<p class='fw-bold'>Nenhuma solicitação encontrada</p>";
                     }
                     ?>
@@ -118,6 +119,28 @@ require('../database/connection.php');
             </div>
         </div>
     </div>
+
+    <script>
+        const table = document.querySelector("table");
+        const tr = table.getElementsByTagName("tr");
+        const input = document.getElementById("search");
+
+        function searchFilter() {
+            const filter = input.value.toUpperCase();
+            console.log(tr);
+
+            for (let i = 1; i < tr.length; i++) {
+                let td = tr[i].getElementsByTagName("td")[1];
+
+                if (td.textContent.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+
+            }
+        }
+    </script>
     <script src="https://kit.fontawesome.com/291cf6cb9c.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
 </body>

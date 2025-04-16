@@ -26,7 +26,5 @@ document.addEventListener("DOMContentLoaded", function () {
         appendAlert("Deseja excluir todas as solicitações?", "danger");
     })
 
-
-
 });
 
