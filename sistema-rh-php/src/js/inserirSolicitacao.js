@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const outrosMotivoContainer = document.getElementById('outrosMotivoContainer');
     const form = document.querySelector('.needs-validation');
+    const divAlert = document.getElementById('liveAlertPlaceholder');
 
     // adicionar a div de "outros" no motivo da solicitação
     document.querySelectorAll('input[name="motivo"]').forEach((element) => {
@@ -18,27 +19,35 @@ document.addEventListener("DOMContentLoaded", function () {
     appendAlert = (mensagem, tipo) => {
         const wrapper = document.createElement("div");
         wrapper.innerHTML = [
-            `<div class="alert alert-${tipo}">`,
+            `<div class="alert alert-${tipo} mt-2">`,
             `<div class="d-flex justify-content-between lign-items-start flex-wrap mt-1">`,
             `<div>${mensagem}</div>`,
-            '<button type="submit" class="btn-close" data-bs-dismiss="alert" arial-label="Close"></button>',
+            '<button type="submit" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
             '</div>',
             '</div>',
         ].join('');
 
-        alert.append(wrapper);
+        divAlert.append(wrapper);
 
     };
 
     //js do bootstrap para validar cada campo do form;
     (() => {
         'use strict'
-        form.addEventListener('submit', event => {
+        form.addEventListener("submit", event => {
+            event.preventDefault()
+
             if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
+                return; 
             }
+
             form.classList.add("was-validated");
+            appendAlert("Solicitação enviada com sucesso!", "success");   
+
+            setTimeout(() => {
+                form.submit();
+            }, 2000);
+
         }, false)
         
     })()

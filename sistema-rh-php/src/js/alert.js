@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     formDelete.addEventListener("submit", (event) => {
         event.preventDefault();
-        appendAlert("Deseja excluir todas as solicitações?", "danger");
+        appendAlert("Tem certeza que deseja excluir todas as solicitações?", "danger");
     })
 
 });

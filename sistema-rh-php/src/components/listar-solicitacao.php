@@ -17,7 +17,7 @@ require('../database/connection.php');
 <body>
     <?php include('./navbar.php') ?>
     <div class="container p-1">
-        <div class="card shadow-lg mt-4">
+        <div class="card shadow-lg mt-4" id="teste">
         <div id="liveAlertPlaceholder"></div>
             <div class="card-header p-4 d-flex justify-content-between align-items-center flex-wrap">
                 <h2>Lista de solicitações</h2>
@@ -84,7 +84,7 @@ require('../database/connection.php');
                     if (mysqli_num_rows($solicitacoes) > 0) {
                         foreach ($solicitacoes as $solicitacao) {
                     ?>
-                            <tbody>
+                            <tbody data-bs-target="#teste" data-bs-spy="scroll">
                                 <tr>
                                     <td class="text-center"><?= $solicitacao["id"] ?></td>
                                     <td><?= $solicitacao["nome_servidor"] ?></td>
