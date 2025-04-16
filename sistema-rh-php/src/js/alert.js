@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const wrapper = document.createElement("div");
         wrapper.innerHTML = [
             `<div class="alert alert-${tipo}">`,
-            `<div class="d-flex justify-content-between lign-items-start flex-wrap mt-1">`,
+            `<div class="d-flex justify-content-between lign-items-start flex-wrap">`,
                 `<div>${mensagem}</div>`,
                 '<button type="submit" class="btn-close" data-bs-dismiss="alert" arial-label="Close"></button>',
             '</div>',
