@@ -35,7 +35,7 @@ public class Agenda {
         }
 
         for (Contato contato : contatos) {
-            if (contato.getNome() == nome) {
+            if (contato.getNome().toLowerCase() == nome.toLowerCase()) {
                 contatoEncontrado = contato; 
             }
         }
@@ -44,7 +44,11 @@ public class Agenda {
     }
 
     public void removerContato(String nome) {
-
+        for (Contato contato : contatos) {
+            if (contato.getNome().toLowerCase() == nome.toLowerCase()) {
+                contatos.remove(contato); 
+            }
+        }
     }
 
 }
