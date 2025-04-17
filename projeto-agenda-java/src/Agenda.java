@@ -12,7 +12,18 @@ public class Agenda {
     }
 
     public Contato buscarContato(String nome) { 
-      
+        Contato contatoEncontrado; 
+
+        if (nome.isEmpty() || nome.isBlank()) {
+            throw new IllegalArgumentException("Nome deve ser valido"); 
+        }
+        for (Contato contato : contatos) {
+            if (contato.getNome() == nome) {
+                contatoEncontrado = contato; 
+            }
+        }
+        
+        return contatoEncontrado; 
     }
 
     public void removerContato(String nome) {
