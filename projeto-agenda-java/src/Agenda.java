@@ -12,7 +12,15 @@ public class Agenda {
     }
 
     public void listarContatos() {
-        
+        if (contatos.size() < 0) {
+            throw new ArithmeticException("A lista de contatos esta vazia"); 
+        }
+
+        for (Contato contato : contatos) {
+            System.out.println(
+                "Nome: "+contato.getNome()+"| Telefone: "+contato.getTelefone()+ "| E-mail: "+contato.getEmail()
+            );
+        }
     }
 
     public Contato buscarContato(String nome) { 
