@@ -3,6 +3,10 @@ import java.util.ArrayList;
 public class Agenda {
     private ArrayList<Contato> contatos;
 
+    public Agenda() {
+        this.contatos = new ArrayList<>(); 
+    }
+
     public void adicionarContato(Contato contato) {
 
     }
