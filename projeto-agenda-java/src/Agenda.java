@@ -8,7 +8,7 @@ public class Agenda {
     }
 
     public void adicionarContato(Contato contato) {
-
+        contatos.add(contato); 
     }
 
     public void listarContatos() {
