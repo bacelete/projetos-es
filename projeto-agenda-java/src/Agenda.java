@@ -17,6 +17,11 @@ public class Agenda {
         if (nome.isEmpty() || nome.isBlank()) {
             throw new IllegalArgumentException("Nome deve ser valido"); 
         }
+
+        if (contatos.size() < 0) {
+            throw new ArithmeticException("A lista de contatos esta vazia"); 
+        }
+
         for (Contato contato : contatos) {
             if (contato.getNome() == nome) {
                 contatoEncontrado = contato; 
