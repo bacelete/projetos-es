@@ -12,7 +12,7 @@ public class Agenda {
     }
 
     public Contato buscarContato(String nome) { 
-        Contato contatoEncontrado; 
+        Contato contatoEncontrado = null; 
 
         if (nome.isEmpty() || nome.isBlank()) {
             throw new IllegalArgumentException("Nome deve ser valido"); 
@@ -22,7 +22,7 @@ public class Agenda {
                 contatoEncontrado = contato; 
             }
         }
-        
+
         return contatoEncontrado; 
     }
 
