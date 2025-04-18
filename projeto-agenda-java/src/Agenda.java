@@ -44,11 +44,16 @@ public class Agenda {
     }
 
     public void removerContato(String nome) {
+        if (contatos.size() < 0) {
+            throw new ArithmeticException("A lista de contatos esta vazia"); 
+        }
+
         for (Contato contato : contatos) {
             if (contato.getNome().toLowerCase() == nome.toLowerCase()) {
                 contatos.remove(contato); 
             }
         }
+
     }
 
 }
