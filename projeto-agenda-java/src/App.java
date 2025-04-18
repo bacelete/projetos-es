@@ -31,18 +31,22 @@ public class App {
 
                     Contato contato = new Contato(nome, telefone, email); 
                     agenda.adicionarContato(contato);
+
+                    System.out.println("\nContato salvo com sucesso!");
                     break; 
                 case 2: 
                     System.out.println("Nome: ");
                     nome = s.nextLine(); 
 
                     agenda.buscarContato(nome); 
+                    System.out.println("\nContato salvo com sucesso!");
                     break; 
                 case 3: 
                     System.out.println("Nome: ");
                     nome = s.nextLine(); 
                     
                     agenda.removerContato(nome);
+                    System.out.println("\nContato removido com sucesso!");
                     break; 
                 case 4: agenda.listarContatos(); break; 
             }
