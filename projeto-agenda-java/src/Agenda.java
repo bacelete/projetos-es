@@ -12,7 +12,7 @@ public class Agenda {
     }
 
     public void listarContatos() {
-        if (contatos.size() < 0) {
+        if (contatos.size() <= 0) {
             throw new ArithmeticException("A lista de contatos esta vazia"); 
         }
 
@@ -30,7 +30,7 @@ public class Agenda {
             throw new IllegalArgumentException("Nome deve ser valido"); 
         }
 
-        if (contatos.size() < 0) {
+        if (contatos.size() <= 0) {
             throw new ArithmeticException("A lista de contatos esta vazia"); 
         }
 
@@ -44,7 +44,7 @@ public class Agenda {
     }
 
     public void removerContato(String nome) {
-        if (contatos.size() < 0) {
+        if (contatos.size() <= 0) {
             throw new ArithmeticException("A lista de contatos esta vazia"); 
         }
 
