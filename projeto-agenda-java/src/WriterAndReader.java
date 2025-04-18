@@ -1,4 +1,5 @@
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.BufferedReader;
@@ -21,6 +22,18 @@ public class WriterAndReader {
         }
         catch (IOException e) {
             e.getStackTrace();
+        }
+    }
+
+    public static void leitura(String path) throws IOException {
+        try (BufferedReader buffer = new BufferedReader(new FileReader(path))) {
+            String data = ""; 
+            data = buffer.readLine(); 
+
+            buffer.close(); 
+        }
+        catch (IOException e) {
+            e.getStackTrace(); 
         }
     }
 
