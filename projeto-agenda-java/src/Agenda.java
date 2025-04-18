@@ -18,7 +18,7 @@ public class Agenda {
 
         for (Contato contato : contatos) {
             System.out.println(
-                "Nome: "+contato.getNome()+" | Telefone: "+contato.getTelefone()+ " | E-mail: "+contato.getEmail()
+                "\nNome: "+contato.getNome()+" | Telefone: "+contato.getTelefone()+ " | E-mail: "+contato.getEmail()
             );
         }
     }
