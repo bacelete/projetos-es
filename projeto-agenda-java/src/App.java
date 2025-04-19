@@ -54,12 +54,16 @@ public class App {
         }
     }
 
-    public static void main(String[] args) {
+    public static void carregarContatos() {
         try {
             WriterAndReader.leitura("agenda.txt");
-            menu();           
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public static void main(String[] args) {
+        menu();           
     }
 }
