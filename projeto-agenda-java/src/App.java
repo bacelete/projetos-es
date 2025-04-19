@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class App {
     public static Scanner s = new Scanner(System.in);
-    public static Agenda agenda = new Agenda();
+    public static Agenda agenda = new Agenda(); 
 
     public static void menu() {
         int opcao = -1; 

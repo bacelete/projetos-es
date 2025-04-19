@@ -7,11 +7,12 @@ import java.io.BufferedReader;
 
 public class WriterAndReader {
 
-    public WriterAndReader() {}
+    public WriterAndReader() {
+    }
 
     public static void escrever(Contato contato, String path) throws IOException {
         try (BufferedWriter buffer = new BufferedWriter(new FileWriter(path))) {
-            String data = contato.getNome()+";"+contato.getTelefone()+";"+contato.getEmail(); 
+            String data = contato.getNome() + ";" + contato.getTelefone() + ";" + contato.getEmail();
 
             // escreve o dado e salta uma linha
             buffer.write(data);
@@ -29,28 +30,26 @@ public class WriterAndReader {
     }
 
     public static ArrayList<Contato> carregarContatos(String path) throws IOException {
-        ArrayList<Contato> contatos = new ArrayList<>(); 
-        
-        try (BufferedReader buffer = new BufferedReader(new FileReader(path))) {  
-            String data = "";   
+        ArrayList<Contato> contatos = new ArrayList<>();
+
+        try (BufferedReader buffer = new BufferedReader(new FileReader(path))) {
+            String data = "";
 
             while ((data = buffer.readLine()) != null) {
-                if (data != null) {
-                    String[] dados = data.split(";"); 
 
-                    String nome = dados[0]; 
-                    String telefone = dados[1]; 
-                    String email = dados[2]; 
+                String[] dados = data.split(";");
 
-                    contatos.add(new Contato(nome, telefone, email)); 
-                }
+                String nome = dados[0];
+                String telefone = dados[1];
+                String email = dados[2];
+
+                contatos.add(new Contato(nome, telefone, email));
+
             }
-        } catch(IOException e) {
-            e.getMessage(); 
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-        return contatos; 
+        return contatos;
     }
-} 
-
-
+}
