@@ -2,12 +2,12 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.io.BufferedReader;
 
 public class WriterAndReader {
 
-    public WriterAndReader() {
-    }
+    public WriterAndReader() {}
 
     public static void escrever(Contato contato, String path) throws IOException {
         try (BufferedWriter buffer = new BufferedWriter(new FileWriter(path))) {
@@ -28,20 +28,29 @@ public class WriterAndReader {
         }
     }
 
-    public static void leitura(String path) throws IOException {
-        BufferedReader buffer = new BufferedReader(new FileReader(path));
+    public static ArrayList<Contato> leitura(String path) throws IOException {
+        ArrayList<Contato> contatos = new ArrayList<>(); 
         String data = ""; 
         
-        while (data != null) {
-            data = buffer.readLine(); 
+        try (BufferedReader buffer = new BufferedReader(new FileReader(path))) {    
+            while (data != null) {
+                data = buffer.readLine(); 
 
-            if (data != null) {
-                System.out.println(data);
+                if (data != null) {
+                    String[] dados = data.split(";"); 
+
+                    String nome = dados[0]; 
+                    String telefone = dados[1]; 
+                    String email = dados[2]; 
+
+                    contatos.add(new Contato(nome, telefone, email)); 
+                }
             }
-
+        } catch(IOException e) {
+            e.getMessage(); 
         }
 
-        buffer.close(); 
+        return contatos; 
     }
 } 
 
