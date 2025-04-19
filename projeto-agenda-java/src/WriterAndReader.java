@@ -32,10 +32,13 @@ public class WriterAndReader {
         BufferedReader buffer = new BufferedReader(new FileReader(path));
         String data = ""; 
         
-        data = buffer.readLine(); 
+        while (data != null) {
+            data = buffer.readLine(); 
 
-        if (data != null) {
-            System.out.println(data);;
+            if (data != null) {
+                System.out.println(data);
+            }
+
         }
 
         buffer.close(); 
