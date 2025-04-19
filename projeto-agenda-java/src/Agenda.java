@@ -1,11 +1,17 @@
 import java.util.ArrayList;
+import java.io.IOException;
 
 public class Agenda {
     private ArrayList<Contato> contatos;
     private static final String PATH = "arquivo.txt"; 
 
     public Agenda() {
-        this.contatos = WriterAndReader.carregarContatos(PATH); 
+        try {
+            this.contatos = WriterAndReader.carregarContatos(PATH);
+        } catch (IOException e) {
+            e.printStackTrace();
+            this.contatos = new ArrayList<>();
+        }
     }
 
     public void adicionarContato(Contato contato) {
