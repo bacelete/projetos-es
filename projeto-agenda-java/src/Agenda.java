@@ -23,7 +23,7 @@ public class Agenda {
         }
     }
 
-    public String buscarContato(String nome) { 
+    public Contato buscarContato(String nome) { 
         Contato contatoEncontrado = null; 
 
         if (nome.isEmpty() || nome.isBlank()) {
@@ -40,7 +40,7 @@ public class Agenda {
             }
         }
 
-        return contatoEncontrado.toString(); 
+        return contatoEncontrado; 
     }
 
     public void removerContato(String nome) {

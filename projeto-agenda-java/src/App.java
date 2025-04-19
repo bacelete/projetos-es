@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.IOException;
 
 public class App {
     public static Scanner s = new Scanner(System.in);
@@ -54,6 +55,11 @@ public class App {
     }
 
     public static void main(String[] args) {
-        menu();
+        try {
+            WriterAndReader.leitura("agenda.txt");
+            menu();           
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

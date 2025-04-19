@@ -5,36 +5,41 @@ import java.io.IOException;
 import java.io.BufferedReader;
 
 public class WriterAndReader {
+
+    public WriterAndReader() {
+    }
+
     public static void escrever(Contato contato, String path) throws IOException {
         try (BufferedWriter buffer = new BufferedWriter(new FileWriter(path))) {
-            String data = contato.toString(); 
-            
-            //escreve o dado e salta uma linha
-            buffer.write(data); 
+            String data = contato.toString();
+
+            // escreve o dado e salta uma linha
+            buffer.write(data);
             buffer.newLine();
 
-            //certifica de que o buffer vai ser limpo 
+            // certifica de que o buffer vai ser limpo
             buffer.flush();
             System.out.println("Data is flushed to the file. ");
 
-            //fecha o buffer 
+            // fecha o buffer
             buffer.close();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.getStackTrace();
         }
     }
 
     public static void leitura(String path) throws IOException {
-        try (BufferedReader buffer = new BufferedReader(new FileReader(path))) {
-            String data = ""; 
-            data = buffer.readLine(); 
+        BufferedReader buffer = new BufferedReader(new FileReader(path));
+        String data = ""; 
+        
+        data = buffer.readLine(); 
 
-            buffer.close(); 
+        if (data != null) {
+            System.out.println(data);;
         }
-        catch (IOException e) {
-            e.getStackTrace(); 
-        }
+
+        buffer.close(); 
     }
+} 
 
-}
+
