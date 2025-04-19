@@ -30,12 +30,11 @@ public class WriterAndReader {
 
     public static ArrayList<Contato> carregarContatos(String path) throws IOException {
         ArrayList<Contato> contatos = new ArrayList<>(); 
-        String data = ""; 
         
-        try (BufferedReader buffer = new BufferedReader(new FileReader(path))) {    
-            while (data != null) {
-                data = buffer.readLine(); 
+        try (BufferedReader buffer = new BufferedReader(new FileReader(path))) {  
+            String data = "";   
 
+            while ((data = buffer.readLine()) != null) {
                 if (data != null) {
                     String[] dados = data.split(";"); 
 
