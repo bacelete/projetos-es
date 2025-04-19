@@ -2,9 +2,10 @@ import java.util.ArrayList;
 
 public class Agenda {
     private ArrayList<Contato> contatos;
+    private static final String PATH = "arquivo.txt"; 
 
     public Agenda() {
-        this.contatos = new ArrayList<>(); 
+        this.contatos = WriterAndReader.carregarContatos(PATH); 
     }
 
     public void adicionarContato(Contato contato) {
