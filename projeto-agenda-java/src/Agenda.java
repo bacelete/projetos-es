@@ -30,9 +30,10 @@ public class Agenda {
             throw new ArithmeticException("A lista de contatos esta vazia"); 
         }
 
+        System.out.println();
         for (Contato contato : contatos) {
             System.out.println(
-                "\nNome: "+contato.getNome()+" | Telefone: "+contato.getTelefone()+ " | E-mail: "+contato.getEmail()
+                "Nome: "+contato.getNome()+" | Telefone: "+contato.getTelefone()+ " | E-mail: "+contato.getEmail()
             );
         }
     }

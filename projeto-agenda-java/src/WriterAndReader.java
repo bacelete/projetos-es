@@ -19,6 +19,8 @@ public class WriterAndReader {
 
             // certifica de que o buffer vai ser limpo
             buffer.flush();
+            
+            System.out.print("\n"); 
             System.out.println("Data is flushed to the file. ");
 
             // fecha o buffer
