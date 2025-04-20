@@ -54,6 +54,7 @@ public class Agenda {
             }
         }
 
+        exibirInfoContato(contatoEncontrado);
         return contatoEncontrado; 
     }
 
@@ -68,6 +69,12 @@ public class Agenda {
             }
         }
 
+    }
+
+    private void exibirInfoContato(Contato contato) {
+        System.out.println(
+                "Nome: "+contato.getNome()+" | Telefone: "+contato.getTelefone()+ " | E-mail: "+contato.getEmail()
+        );
     }
 
 }
