@@ -15,7 +15,7 @@ public class WriterAndReader {
             String data = contato.getNome() + ";" + contato.getTelefone() + ";" + contato.getEmail();
 
             // escreve o dado e salta uma linha
-            buffer.write(data);
+            buffer.append(data);
             buffer.newLine();
 
             // certifica de que o buffer vai ser limpo
