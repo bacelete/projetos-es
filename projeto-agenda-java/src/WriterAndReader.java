@@ -10,7 +10,7 @@ public class WriterAndReader {
     public WriterAndReader() {}
 
     public static void escrever(Contato contato, String path) throws IOException {
-        try (BufferedWriter buffer = new BufferedWriter(new FileWriter(path))) {
+        try (BufferedWriter buffer = new BufferedWriter(new FileWriter(path, true))) {
             String data = contato.getNome() + ";" + contato.getTelefone() + ";" + contato.getEmail();
 
             // escreve o dado e salta uma linha
