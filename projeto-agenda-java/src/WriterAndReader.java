@@ -7,7 +7,8 @@ import java.io.BufferedReader;
 
 public class WriterAndReader {
 
-    public WriterAndReader() {}
+    public WriterAndReader() {
+    }
 
     public static void escrever(Contato contato, String path) throws IOException {
         try (BufferedWriter buffer = new BufferedWriter(new FileWriter(path, true))) {
@@ -17,10 +18,10 @@ public class WriterAndReader {
             buffer.append(data);
             buffer.newLine();
 
-            // certifica de que o buffer vai ser limpo apos adicionar os dados: 
+            // certifica de que o buffer vai ser limpo apos adicionar os dados:
             buffer.flush();
-            
-            System.out.print("\n"); 
+
+            System.out.print("\n");
             System.out.println("Data is flushed to the file. ");
 
             // fecha o buffer
@@ -40,12 +41,15 @@ public class WriterAndReader {
 
                 String[] dados = data.split(";");
 
+                if (dados.length != 3) {
+                    throw new IOException("Não foi possível carregar os dados.");
+                }
+
                 String nome = dados[0];
                 String telefone = dados[1];
                 String email = dados[2];
 
                 contatos.add(new Contato(nome, telefone, email));
-
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -8,7 +8,6 @@ public class Agenda {
     public Agenda() {
         try {
             this.contatos = WriterAndReader.carregarContatos(PATH); //carrega os contatos do arquivo .txt;
-            System.out.println("\nContatos carregados com sucesso!");
         } catch (IOException e) {
             e.printStackTrace();
             this.contatos = new ArrayList<>();
