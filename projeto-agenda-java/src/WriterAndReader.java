@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 
 public class WriterAndReader {
     private static BufferedWriter bufferWriter;
+    private static BufferedReader bufferReader; 
 
     public WriterAndReader() {
     }
@@ -37,11 +38,11 @@ public class WriterAndReader {
 
     public static ArrayList<Contato> carregarContatos(String path) throws IOException {
         ArrayList<Contato> contatos = new ArrayList<>();
+        bufferReader = new BufferedReader(new FileReader(path));
 
-        try (BufferedReader buffer = new BufferedReader(new FileReader(path))) {
+        try {
             String data = "";
-
-            while ((data = buffer.readLine()) != null) {
+            while ((data = bufferReader.readLine()) != null) {
 
                 String[] dados = data.split(";");
 
