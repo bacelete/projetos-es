@@ -66,6 +66,7 @@ public class Agenda {
         for (Contato contato : contatos) {
             if (contato.getNome().toLowerCase() == nome.toLowerCase()) {
                 contatos.remove(contato); 
+                
             }
         }
 

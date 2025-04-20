@@ -31,6 +31,8 @@ public class WriterAndReader {
         }
     }
 
+    public static void excluirContato(Contato contato, String path) throws IOException {}
+
     public static ArrayList<Contato> carregarContatos(String path) throws IOException {
         ArrayList<Contato> contatos = new ArrayList<>();
 
