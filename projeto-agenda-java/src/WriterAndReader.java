@@ -6,26 +6,28 @@ import java.util.ArrayList;
 import java.io.BufferedReader;
 
 public class WriterAndReader {
+    private static BufferedWriter bufferWriter;
 
     public WriterAndReader() {
     }
 
     public static void escrever(Contato contato, String path) throws IOException {
-        try (BufferedWriter buffer = new BufferedWriter(new FileWriter(path, true))) {
+        bufferWriter = new BufferedWriter(new FileWriter(path, true)); 
+        try {
             String data = contato.getNome() + ";" + contato.getTelefone() + ";" + contato.getEmail();
 
             // escreve salta uma linha e escreve os dados:
-            buffer.newLine();
-            buffer.append(data);
+            bufferWriter.newLine();
+            bufferWriter.append(data);
 
             // certifica de que o buffer vai ser limpo apos adicionar os dados:
-            buffer.flush();
+            bufferWriter.flush();
 
             System.out.print("\n");
             System.out.println("Data is flushed to the file. ");
 
             // fecha o buffer
-            buffer.close();
+            bufferWriter.close();
         } catch (IOException e) {
             e.getStackTrace();
         }
