@@ -17,6 +17,12 @@ public class Agenda {
 
     public void adicionarContato(Contato contato) {
         contatos.add(contato); 
+        try {
+            WriterAndReader.escrever(contato, PATH); 
+        }
+        catch (IOException e) {
+            e.getStackTrace(); 
+        }
     }
 
     public void listarContatos() {
