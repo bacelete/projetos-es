@@ -3,7 +3,7 @@ import java.io.IOException;
 
 public class Agenda {
     private ArrayList<Contato> contatos;
-    private static final String PATH = "arquivo.txt"; 
+    private static final String PATH = "agenda.txt"; 
 
     public Agenda() {
         try {
