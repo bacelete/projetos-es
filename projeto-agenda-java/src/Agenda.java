@@ -49,7 +49,7 @@ public class Agenda {
         }
 
         for (Contato contato : contatos) {
-            if (contato.getNome().toLowerCase() == nome.toLowerCase()) {
+            if (contato.getNome().equalsIgnoreCase(nome)) {
                 contatoEncontrado = contato; 
             }
         }
@@ -66,13 +66,14 @@ public class Agenda {
         for (Contato contato : contatos) {
             if (contato.getNome().toLowerCase() == nome.toLowerCase()) {
                 contatos.remove(contato); 
-                
+
             }
         }
 
     }
 
     private void exibirInfoContato(Contato contato) {
+        System.out.println("\nContato encontrado:");
         System.out.println(
                 "Nome: "+contato.getNome()+" | Telefone: "+contato.getTelefone()+ " | E-mail: "+contato.getEmail()
         );
