@@ -7,8 +7,7 @@ import java.io.BufferedReader;
 
 public class WriterAndReader {
 
-    public WriterAndReader() {
-    }
+    public WriterAndReader() {}
 
     public static void escrever(Contato contato, String path) throws IOException {
         try (BufferedWriter buffer = new BufferedWriter(new FileWriter(path))) {
