@@ -17,7 +17,7 @@ public class WriterAndReader {
             buffer.append(data);
             buffer.newLine();
 
-            // certifica de que o buffer vai ser limpo
+            // certifica de que o buffer vai ser limpo apos adicionar os dados: 
             buffer.flush();
             
             System.out.print("\n"); 
