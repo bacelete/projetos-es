@@ -13,7 +13,7 @@ public class WriterAndReader {
     }
 
     public static void escrever(Contato contato, String path) throws IOException {
-        bufferWriter = new BufferedWriter(new FileWriter(path, true)); 
+        bufferWriter = new BufferedWriter(new FileWriter(path, true)); //argumento true para evitar sobreposicao de dados; 
         try {
             String data = contato.getNome() + ";" + contato.getTelefone() + ";" + contato.getEmail();
 
