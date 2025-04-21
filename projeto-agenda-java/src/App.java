@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.IOException;
+import database.Conexao; //importa a classe do database
 
 public class App {
     public static Scanner s = new Scanner(System.in);
