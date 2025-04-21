@@ -11,17 +11,25 @@ public class Conexao {
     private static String username = "root"; 
     private static String database = "projeto_agenda"; 
     private static String driver = "com.mysql.cj.jdbc.Driver";
-
+    
     public Conexao() {}
 
     public static Connection connect() {
         Connection connection = null; 
-
         try {
-
+            if (connection == null) {
+                Class.forName(driver); //busca o driver 
+                connection = DriverManager.getConnection(url, username, password); //retorna uma conexao com o banco;
+            }
+            else {
+                System.out.println("Conexão com o banco de dados!");
+            }
         }  
-        catch (e) {
+        catch (ClassNotFoundException e) {
             e.printStackTrace(); 
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
         }
 
         return connection;
