@@ -5,11 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException; 
 
 public class Conexao {
-    private static String url = "localhost"; 
-    private static String port = "3000"; 
+    private static String url = "jdbc: mysql:/localhost:3000/projeto_agenda"; 
     private static String password = "root"; 
-    private static String username = "root"; 
-    private static String database = "projeto_agenda"; 
+    private static String username = "root";  
     private static String driver = "com.mysql.cj.jdbc.Driver";
     
     public Conexao() {}
