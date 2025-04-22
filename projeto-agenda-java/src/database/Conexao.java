@@ -16,7 +16,7 @@ public class Conexao {
         try {
             if (connection == null) {
                 connection = DriverManager.getConnection(url, username, password); //retorna uma conexao com o banco;
-                System.out.println("Conectado com o banco de dados "+url);
+                System.out.println("\nBanco de dados conectado com sucesso! "+url);
             }
         }  
         catch (SQLException e) {
