@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.io.IOException;
 import database.Conexao; //importa a classe do database
 
 public class App {
@@ -55,6 +53,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        menu();           
+        Conexao.connect();      
+        menu();     
     }
 }
