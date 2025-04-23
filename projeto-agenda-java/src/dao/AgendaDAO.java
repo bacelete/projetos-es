@@ -11,7 +11,7 @@ public class AgendaDAO extends GenericDAO {
     }
 
     public void salvarContato(Contato contato) {
-        String sql = "INSERT INTO contato VALUES (?, ?, ?)"; 
+        String sql = "INSERT INTO contato (nome, telefone, email) VALUES (?, ?, ?)"; 
         salvar(sql, contato.getNome(), contato.getEmail(), contato.getTelefone()); 
     }
 

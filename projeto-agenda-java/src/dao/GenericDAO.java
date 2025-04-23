@@ -34,7 +34,7 @@ public abstract class GenericDAO {
             query.setString(2, email);
             query.setString(3, telefone);
 
-            ResultSet rs = query.executeQuery(sql);
+            query.executeUpdate(sql);
 
             System.out.println("Dados salvos com sucesso!");
         } catch (SQLException e) {
