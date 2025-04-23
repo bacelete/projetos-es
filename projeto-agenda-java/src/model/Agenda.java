@@ -7,17 +7,14 @@ import model.WriterAndReader;
 public class Agenda {
     private ArrayList<Contato> contatos;
 
-    public Agenda() {
-        try {
-            this.contatos = WriterAndReader.carregarContatos(PATH); //carrega os contatos do arquivo .txt;
-        } catch (IOException e) {
-            e.printStackTrace();
-            this.contatos = new ArrayList<>();
-        }
-    }
+    public Agenda() {}
 
     public ArrayList<Contato> getContatos() {
         return contatos; 
+    }
+
+    public void setContatos(ArrayList<Contato> contatos) {
+        this.contatos = contatos;
     }
 
 }

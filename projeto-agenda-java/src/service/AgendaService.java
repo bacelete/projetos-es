@@ -1,16 +1,27 @@
 package service;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import dao.AgendaDAO;
 import model.Contato;
-import model.Contato;
+import model.Agenda;
 import model.WriterAndReader;
 
 public class AgendaService {
     private AgendaDAO agendaDAO; 
     private Agenda agenda; 
     private static final String PATH = "agenda.txt"; 
+
+    public AgendaService() {
+        agenda = new Agenda(); 
+        try {
+            agenda.setContatos(WriterAndReader.carregarContatos(PATH)); 
+        } catch (IOException e) {
+            e.printStackTrace();
+            this.contatos = new ArrayList<>();
+        }
+    }
 
     public void adicionarContato(Contato contato) {
         try {
