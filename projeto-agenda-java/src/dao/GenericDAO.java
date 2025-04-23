@@ -27,4 +27,16 @@ public abstract class GenericDAO {
         }
     }
 
+    public void salvar(String sql, String nome, String email, String telefone) {
+        con = Conexao.connect(); 
+        try {
+            PreparedStatement query = con.prepareStatement(sql);
+            ResultSet rs = query.executeQuery(sql);
+
+            System.out.println("Dados salvos com sucesso!");
+        } catch (SQLException e) {
+            e.printStackTrace(); 
+        }
+    }
+
 }
