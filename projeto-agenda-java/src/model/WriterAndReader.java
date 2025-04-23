@@ -48,7 +48,7 @@ public class WriterAndReader {
                 String[] dados = data.split(";");
 
                 if (dados.length != 3) {
-                    throw new IOException("Não foi possível carregar os dados.");
+                    throw new IOException("Não foi possível carregar os dados do arquivo "+path);
                 }
 
                 String nome = dados[0];
