@@ -13,6 +13,8 @@ public class AgendaService {
 
     public AgendaService() {
         agenda = new Agenda(); 
+        agendaDAO = new AgendaDAO(); 
+        
         try {
             agenda.setContatos(WriterAndReader.carregarContatos(PATH)); 
         } catch (IOException e) {
@@ -29,6 +31,7 @@ public class AgendaService {
         }
 
         agenda.adicionar(contato);
+        agendaDAO.salvarContato(contato);
     }
 
     public void listarContatos() {
