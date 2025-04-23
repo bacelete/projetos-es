@@ -4,9 +4,10 @@ import java.sql.*;
 import database.Conexao; //importa a classe do database
 
 public class ContatoDAO {
-    static Connection con = Conexao.connect(); 
+    static Connection con = null; 
 
     public static void buscarContato(String nome) {
+        con = Conexao.connect();
         String sql = "SELECT * WHERE nome = ?"; 
         try {
             PreparedStatement query = con.prepareStatement(sql);
