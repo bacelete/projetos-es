@@ -32,7 +32,7 @@ public class App {
 
                     Contato contato = new Contato(nome, telefone, email); 
                     agenda.adicionarContato(contato);
-
+                    
                     System.out.println("Contato salvo com sucesso!");
                     break; 
                 case 2: 

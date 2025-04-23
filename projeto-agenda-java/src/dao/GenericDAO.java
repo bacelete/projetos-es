@@ -1,5 +1,6 @@
 package dao;
 
+import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,7 +13,7 @@ public abstract class GenericDAO {
 
     public void buscar(String sql) {
         try {
-            PreparedStatement query = con.prepareStatement(sql);
+            PreparedStatement query = con.prepareStatement(sql); 
             ResultSet rs = query.executeQuery(sql);
 
             String name = rs.getString("nome"); 
@@ -21,9 +22,11 @@ public abstract class GenericDAO {
 
             System.out.println("Nome: "+name+" | Email: "+email+" | Telefone: "+telefone);
 
+            con.close(); //fecha a conexao com o banco
         } catch (SQLException e) {
             e.printStackTrace(); 
         }
+
     }
 
     public void salvar(String sql, String nome, String email, String telefone) {
@@ -37,6 +40,7 @@ public abstract class GenericDAO {
             query.executeUpdate();
 
             System.out.println("Dados salvos com sucesso!");
+            con.close(); // fecha a conexao com o banco
         } catch (SQLException e) {
             e.printStackTrace(); 
         }
