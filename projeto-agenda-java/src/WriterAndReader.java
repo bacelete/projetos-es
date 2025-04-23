@@ -46,10 +46,6 @@ public class WriterAndReader {
 
                 String[] dados = data.split(";");
 
-                if (dados.length == 0) {
-                    throw new IOException("O arquivo está vazio.");
-                }
-
                 if (dados.length != 3) {
                     throw new IOException("Não foi possível carregar os dados.");
                 }
