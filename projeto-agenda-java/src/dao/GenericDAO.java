@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import database.Conexao;
 
-public class GenericDAO {
+public abstract class GenericDAO {
     Connection con = null; 
 
     public void buscar(String sql) {
