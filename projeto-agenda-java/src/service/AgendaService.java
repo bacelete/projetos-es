@@ -32,10 +32,6 @@ public class AgendaService {
     }
 
     public void listarContatos() {
-        if (agenda.getContatos().size() <= 0) {
-            throw new ArithmeticException("A lista de contatos esta vazia"); 
-        }
-
         System.out.println();
         for (Contato contato : agenda.getContatos()) {
             System.out.println(
@@ -58,10 +54,11 @@ public class AgendaService {
         for (Contato contato : agenda.getContatos()) {
             if (contato.getNome().equalsIgnoreCase(nome)) {
                 contatoEncontrado = contato; 
+                
+                agendaDAO.buscarContato(nome);
             }
         }
 
-        exibirInfoContato(contatoEncontrado);
         return contatoEncontrado; 
     }
 
@@ -78,10 +75,4 @@ public class AgendaService {
 
     }
 
-    private void exibirInfoContato(Contato contato) {
-        System.out.println("\nContato encontrado:");
-        System.out.println(
-                "Nome: "+contato.getNome()+" | Telefone: "+contato.getTelefone()+ " | E-mail: "+contato.getEmail()
-        );
-    }
 }

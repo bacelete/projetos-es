@@ -1,3 +1,4 @@
 
 thuanne;123;teste
 arthur;123;teste
+arthur;31992412598;arthurb2005@gmail.com
