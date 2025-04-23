@@ -9,6 +9,10 @@ public class Agenda {
 
     public Agenda() {}
 
+    public void adicionar(Contato contato) {
+        this.contatos.add(contato); 
+    }
+
     public ArrayList<Contato> getContatos() {
         return contatos; 
     }
@@ -16,5 +20,11 @@ public class Agenda {
     public void setContatos(ArrayList<Contato> contatos) {
         this.contatos = contatos;
     }
+
+    public void remover(Contato contato) {
+        contatos.remove(contato);
+    }
+
+    
 
 }

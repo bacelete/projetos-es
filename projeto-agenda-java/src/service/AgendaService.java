@@ -19,7 +19,6 @@ public class AgendaService {
             agenda.setContatos(WriterAndReader.carregarContatos(PATH)); 
         } catch (IOException e) {
             e.printStackTrace();
-            this.contatos = new ArrayList<>();
         }
     }
 
@@ -30,15 +29,17 @@ public class AgendaService {
         catch (IOException e) {
             e.getStackTrace(); 
         }
+
+        agenda.adicionar(contato);
     }
 
     public void listarContatos() {
-        if (contatos.size() <= 0) {
+        if (agenda.getContatos().size() <= 0) {
             throw new ArithmeticException("A lista de contatos esta vazia"); 
         }
 
         System.out.println();
-        for (Contato contato : contatos) {
+        for (Contato contato : agenda.getContatos()) {
             System.out.println(
                 "Nome: "+contato.getNome()+" | Telefone: "+contato.getTelefone()+ " | E-mail: "+contato.getEmail()
             );
@@ -52,11 +53,11 @@ public class AgendaService {
             throw new IllegalArgumentException("Nome deve ser valido"); 
         }
 
-        if (contatos.size() <= 0) {
+        if (agenda.getContatos().size() <= 0) {
             throw new ArithmeticException("A lista de contatos esta vazia"); 
         }
 
-        for (Contato contato : contatos) {
+        for (Contato contato : agenda.getContatos()) {
             if (contato.getNome().equalsIgnoreCase(nome)) {
                 contatoEncontrado = contato; 
             }
@@ -67,19 +68,18 @@ public class AgendaService {
     }
 
     public void removerContato(String nome) {
-        if (contatos.size() <= 0) {
+        if (agenda.getContatos().size() <= 0) {
             throw new ArithmeticException("A lista de contatos esta vazia"); 
         }
 
-        for (Contato contato : contatos) {
+        for (Contato contato : agenda.getContatos()) {
             if (contato.getNome().toLowerCase() == nome.toLowerCase()) {
-                contatos.remove(contato); 
-                
+                agenda.remover(contato); 
             }
         }
 
     }
-
+    
     private void exibirInfoContato(Contato contato) {
         System.out.println("\nContato encontrado:");
         System.out.println(
