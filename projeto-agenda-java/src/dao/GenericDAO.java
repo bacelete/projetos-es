@@ -8,10 +8,9 @@ import java.sql.SQLException;
 import database.Conexao;
 
 public abstract class GenericDAO {
-    Connection con = null; 
+    Connection con = Conexao.connect();  
 
     public void buscar(String sql) {
-        con = Conexao.connect(); 
         try {
             PreparedStatement query = con.prepareStatement(sql);
             ResultSet rs = query.executeQuery(sql);
@@ -28,7 +27,6 @@ public abstract class GenericDAO {
     }
 
     public void salvar(String sql, String nome, String email, String telefone) {
-        con = Conexao.connect(); 
         try {
             PreparedStatement query = con.prepareStatement(sql);
             ResultSet rs = query.executeQuery(sql);
