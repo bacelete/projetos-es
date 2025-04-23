@@ -22,3 +22,4 @@ arthur;123;teste
 gabriell;123;gabrielsebe
 tesssste;123;tese
 arthur;123;teste
+manu;1234;teste

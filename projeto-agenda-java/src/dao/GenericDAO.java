@@ -22,11 +22,9 @@ public abstract class GenericDAO {
 
             System.out.println("Nome: "+name+" | Email: "+email+" | Telefone: "+telefone);
 
-            con.close(); //fecha a conexao com o banco
         } catch (SQLException e) {
             e.printStackTrace(); 
         }
-
     }
 
     public void salvar(String sql, String nome, String email, String telefone) {
@@ -40,7 +38,7 @@ public abstract class GenericDAO {
             query.executeUpdate();
 
             System.out.println("Dados salvos com sucesso!");
-            con.close(); // fecha a conexao com o banco
+
         } catch (SQLException e) {
             e.printStackTrace(); 
         }
