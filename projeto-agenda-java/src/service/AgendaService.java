@@ -43,7 +43,7 @@ public class AgendaService {
         }
     }
 
-    public Contato buscarContato(String nome) { 
+    public void buscarContato(String nome) { 
         Contato contatoEncontrado = null; 
 
         if (nome.isEmpty() || nome.isBlank()) {
@@ -62,7 +62,6 @@ public class AgendaService {
             }
         }
 
-        return contatoEncontrado; 
     }
 
     public void removerContato(String nome) {
