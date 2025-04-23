@@ -44,8 +44,6 @@ public class AgendaService {
     }
 
     public void buscarContato(String nome) { 
-        Contato contatoEncontrado = null; 
-
         if (nome.isEmpty() || nome.isBlank()) {
             throw new IllegalArgumentException("Nome deve ser valido"); 
         }
@@ -56,8 +54,6 @@ public class AgendaService {
 
         for (Contato contato : agenda.getContatos()) {
             if (contato.getNome().equalsIgnoreCase(nome)) {
-                contatoEncontrado = contato; 
-                
                 agendaDAO.buscarContato(nome);
             }
         }
