@@ -1,8 +1,7 @@
 package model;
 
 import java.util.ArrayList;
-import java.io.IOException;
-import model.WriterAndReader; 
+
 
 public class Agenda {
     private ArrayList<Contato> contatos;
@@ -24,7 +23,5 @@ public class Agenda {
     public void remover(Contato contato) {
         contatos.remove(contato);
     }
-
-    
 
 }

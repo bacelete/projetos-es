@@ -1,11 +1,10 @@
 import java.util.Scanner;
-import database.Conexao; //importa a classe do database
-import model.Agenda;
+import service.AgendaService;
 import model.Contato;
 
 public class App {
     public static Scanner s = new Scanner(System.in);
-    public static Agenda agenda = new Agenda(); 
+    public static AgendaService agenda = new AgendaService(); 
 
     public static void menu() {
         int opcao = -1; 

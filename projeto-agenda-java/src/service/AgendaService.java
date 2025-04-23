@@ -1,8 +1,6 @@
 package service;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import dao.AgendaDAO;
 import model.Contato;
 import model.Agenda;
@@ -79,7 +77,7 @@ public class AgendaService {
         }
 
     }
-    
+
     private void exibirInfoContato(Contato contato) {
         System.out.println("\nContato encontrado:");
         System.out.println(
