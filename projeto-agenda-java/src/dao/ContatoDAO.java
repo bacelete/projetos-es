@@ -3,25 +3,9 @@ package dao;
 import java.sql.*; 
 import database.Conexao; //importa a classe do database
 
-public class ContatoDAO {
-    static Connection con = null; 
-
-    public static void buscarContato(String nome) {
-        con = Conexao.connect();
+public class ContatoDAO extends GenericDAO {
+    public void buscarContato(String nome) {
         String sql = "SELECT * WHERE nome = ?"; 
-        try {
-            PreparedStatement query = con.prepareStatement(sql);
-            ResultSet rs = query.executeQuery(sql);
-
-            String name = rs.getString("nome"); 
-            String email = rs.getString("email");
-            String telefone = rs.getString("telefone"); 
-
-            System.out.println("Nome: "+name+" | Email: "+email+" | Telefone: "+telefone);
-
-        } catch (SQLException e) {
-            e.printStackTrace(); 
-        }
-
+        buscar(sql); 
     }
 }
