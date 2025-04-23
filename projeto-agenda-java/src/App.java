@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import database.Conexao; //importa a classe do database
+import model.Agenda;
+import model.Contato;
 
 public class App {
     public static Scanner s = new Scanner(System.in);
@@ -52,8 +54,7 @@ public class App {
         }
     }
 
-    public static void main(String[] args) {
-        Conexao.connect();      
+    public static void main(String[] args) {   
         menu();     
     }
 }
