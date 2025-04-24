@@ -17,7 +17,7 @@ public abstract class GenericDAO {
 
         try {
             PreparedStatement query = con.prepareStatement(sql); 
-            query.setString(1, nome); //seta o nome na query SQL
+            query.setString(1, nome); //seta o nome na query SQL: "SELECT * from contato WHERE nome = ?"
 
             ResultSet rs = query.executeQuery();
 
