@@ -1,6 +1,5 @@
 package dao;
 
-import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,13 +11,19 @@ public abstract class GenericDAO {
     Connection con = Conexao.connect();  
 
     public void buscar(String sql) {
+        String name = "";
+        String email = ""; 
+        String telefone = "";
+
         try {
             PreparedStatement query = con.prepareStatement(sql); 
-            ResultSet rs = query.executeQuery(sql);
+            ResultSet rs = query.executeQuery();
 
-            String name = rs.getString("nome"); 
-            String email = rs.getString("email");
-            String telefone = rs.getString("telefone"); 
+            while (rs.next()) {
+                name = rs.getString("nome"); 
+                email = rs.getString("email");
+                telefone = rs.getString("telefone"); 
+            }
 
             System.out.println("Nome: "+name+" | Email: "+email+" | Telefone: "+telefone);
 

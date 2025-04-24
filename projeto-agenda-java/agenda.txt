@@ -1,25 +1,3 @@
 
-thuanne;123;teste
 arthur;123;teste
-arthur;31992412598;arthurb2005@gmail.com
-arthur;31992412598;teste
-arthur;123;teste
-teste;123;teste
-arthur;31992412598;arthurbt2005@gmail.com
-arthur;123;teste
-arthur;123;teste
-arthur;123;teste
-arthur;123;teste
-arthur;123;teste
-arthute;123;teste
-arthur;123;teste
-arthur;123;arthurbt2005@gmail.com
-arthur;123;teste
-arthur;123;teste
-arthur;123;arthurtrr
-gabriel;123;teste
-arthur;123;teste
-gabriell;123;gabrielsebe
-tesssste;123;tese
-arthur;123;teste
-manu;1234;teste
+arthuuut;3131;ss
