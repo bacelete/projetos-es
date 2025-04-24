@@ -1,3 +1,5 @@
 
 arthur;123;teste
 arthuuut;3131;ss
+oi;11;ee
+ju;123;teste

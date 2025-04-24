@@ -10,13 +10,15 @@ import database.Conexao;
 public abstract class GenericDAO {
     Connection con = Conexao.connect();  
 
-    public void buscar(String sql) {
+    public void buscar(String sql, String nome) {
         String name = "";
         String email = ""; 
         String telefone = "";
 
         try {
             PreparedStatement query = con.prepareStatement(sql); 
+            query.setString(1, nome);
+            
             ResultSet rs = query.executeQuery();
 
             while (rs.next()) {

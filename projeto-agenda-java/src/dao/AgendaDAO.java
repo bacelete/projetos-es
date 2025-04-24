@@ -7,7 +7,7 @@ public class AgendaDAO extends GenericDAO {
 
     public void buscarContato(String nome) {
         String sql = "SELECT * FROM contato WHERE nome = ?"; 
-        buscar(sql); 
+        buscar(sql, nome); 
     }
 
     public void salvarContato(Contato contato) {
