@@ -26,7 +26,6 @@ public class WriterAndReader {
             bufferWriter.flush();
 
             System.out.print("\n");
-            System.out.println("Data is flushed to the file. ");
 
             // fecha o buffer
             bufferWriter.close();

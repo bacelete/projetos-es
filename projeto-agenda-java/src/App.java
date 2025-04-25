@@ -33,7 +33,6 @@ public class App {
                     Contato contato = new Contato(nome, telefone, email); 
                     agenda.adicionarContato(contato);
                     
-                    System.out.println("Contato salvo com sucesso!");
                     break; 
                 case 2: 
                     System.out.println("Nome: ");
@@ -46,7 +45,6 @@ public class App {
                     nome = s.nextLine(); 
                     
                     agenda.removerContato(nome);
-                    System.out.println("\nContato removido com sucesso!");
                     break; 
                 case 4: agenda.listarContatos(); break; 
             }
