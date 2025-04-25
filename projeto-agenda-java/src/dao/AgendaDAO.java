@@ -16,7 +16,7 @@ public class AgendaDAO extends GenericDAO {
     }
 
     public void listarContatos() {
-        String sql = "SELECT * from contato";
+        String sql = "SELECT * FROM contato";
         buscarTudo(sql); 
     }
 

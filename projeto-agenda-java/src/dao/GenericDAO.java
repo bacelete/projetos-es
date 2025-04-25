@@ -51,8 +51,21 @@ public abstract class GenericDAO {
         }
     }
 
-    public void buscarTudo() {
-        
+    public void buscarTudo(String sql) {
+        try {
+            PreparedStatement query = con.prepareStatement(sql);
+            ResultSet rs = query.executeQuery(); 
+
+            while (rs.next()) {
+                System.out.println(
+                    "Nome: "+rs.getString("nome")+" | Email: "+rs.getString("email")+
+                    " | Telefone: "+rs.getString("telefone"));
+            }
+
+        }
+        catch(SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }
