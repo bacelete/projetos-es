@@ -21,7 +21,7 @@ public class AgendaDAO extends GenericDAO {
     }
 
     public void removerContato(String nome) {
-        String sql = "DELETE * FROM contato WHERE nome = ?"; 
+        String sql = "DELETE FROM contato WHERE nome = ?"; 
         deletar(sql, nome); 
     }
 
