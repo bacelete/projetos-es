@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.ArrayList;
+
 import model.Contato;
 
 public class AgendaDAO extends GenericDAO {
@@ -24,5 +26,7 @@ public class AgendaDAO extends GenericDAO {
         String sql = "DELETE FROM contato WHERE nome = ?"; 
         deletar(sql, nome); 
     }
+
+    public void carregarContatos() {}
 
 }
