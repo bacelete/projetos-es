@@ -68,6 +68,7 @@ public class AgendaService {
         for (Contato contato : agenda.getContatos()) {
             if (contato.getNome().toLowerCase() == nome.toLowerCase()) {
                 agenda.remover(contato); 
+                agendaDAO.removerContato(nome); 
             }
         }
 
