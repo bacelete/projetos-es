@@ -24,14 +24,14 @@ public class AgendaService {
 
     public void adicionarContato(Contato contato) {
         try {
-            WriterAndReader.escrever(contato, PATH); 
+            WriterAndReader.escrever(contato, PATH); //salva o contato no arquivo. 
         }
         catch (IOException e) {
             e.getStackTrace(); 
         }
 
         agenda.adicionar(contato);
-        agendaDAO.salvarContato(contato);
+        agendaDAO.salvarContato(contato); //salva o contato no banco
     }
 
     public void listarContatos() {
@@ -54,7 +54,7 @@ public class AgendaService {
 
         for (Contato contato : agenda.getContatos()) {
             if (contato.getNome().equalsIgnoreCase(nome)) {
-                agendaDAO.buscarContato(nome);
+                agendaDAO.buscarContato(nome); //busca o contato apenas no banco 
             }
         }
 
