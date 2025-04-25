@@ -69,8 +69,17 @@ public abstract class GenericDAO {
         }
     }
 
-    public void deletar(String sql) {
-        
+    public void deletar(String sql, String nome) {
+        try {
+            PreparedStatement query = con.prepareStatement(sql); 
+            query.setString(1, nome);
+
+            query.executeUpdate(); 
+            System.out.println("Contato removido com sucesso!");
+        }
+        catch(SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
