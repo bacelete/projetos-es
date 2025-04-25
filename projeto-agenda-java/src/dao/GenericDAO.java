@@ -27,6 +27,7 @@ public abstract class GenericDAO {
                 telefone = rs.getString("telefone"); 
             }
 
+            System.out.println();
             System.out.println("Nome: "+name+" | Email: "+email+" | Telefone: "+telefone);
 
         } catch (SQLException e) {
@@ -67,5 +68,10 @@ public abstract class GenericDAO {
             e.printStackTrace();
         }
     }
+
+    public void deletar(String sql) {
+        
+    }
+
 
 }

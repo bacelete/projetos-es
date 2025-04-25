@@ -20,4 +20,9 @@ public class AgendaDAO extends GenericDAO {
         buscarTudo(sql); 
     }
 
+    public void removerContato(String nome) {
+        String sql = "DELETE * FROM contato WHERE nome = ?"; 
+        deletar(sql); 
+    }
+
 }
