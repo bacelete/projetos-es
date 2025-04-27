@@ -12,7 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('solicitacao', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
+            $table->string("unidade");
+            $table->string("motivo");
+            $table->date("data_inicio");
+            $table->date("data_fim");
+            $table->dateTime("data_solicitacao")->useCurrent();
             $table->timestamps();
         });
     }
