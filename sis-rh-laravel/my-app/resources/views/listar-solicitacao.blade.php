@@ -1,7 +1,8 @@
 @extends('layouts.navbar')
 
 @section('title', 'Listar Solicitação')
-@section('content')
+
+@section('lista-de-solicitacoes')
 <div class="container p-1">
     <div class="card shadow-lg mt-4" id="teste">
         <div id="liveAlertPlaceholder"></div>
@@ -72,3 +73,4 @@
 
     </script>
 </div>
+@endsection

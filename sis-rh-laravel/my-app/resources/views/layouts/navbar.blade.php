@@ -28,10 +28,11 @@
         </div>
         <button id="recolherMenu" style="display: none" name="recolherMenu" class="btn btn-sm btn-outline-light mt-auto m-4 align-self-center"><i class="fa-solid fa-arrow-left m-1"></i>Recolher menu</button>
     </nav>
-    
+
     <div class="container mt-4">
-        @yield('content')
+        @yield('solicitacao')
     </div>
+
     <script src="https://kit.fontawesome.com/291cf6cb9c.js" crossorigin="anonymous"></script>
 </body>
 
