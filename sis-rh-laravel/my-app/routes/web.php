@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SolicitacaoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -13,9 +14,7 @@ Route::get('/solicitacao', function() {
     return view('gerar-solicitacao'); 
 });
 
-Route::get('/solicitacoes', function() {
-    return view('listar-solicitacao');
-});
+Route::get('/solicitacoes', [SolicitacaoController::class, 'show']);
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
