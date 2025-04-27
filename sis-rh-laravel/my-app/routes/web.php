@@ -14,7 +14,10 @@ Route::get('/solicitacao', function() {
     return view('gerar-solicitacao'); 
 });
 
+//rotas da solicitação
 Route::get('/solicitacoes', [SolicitacaoController::class, 'show']);
+
+//rotas do servidor: 
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {

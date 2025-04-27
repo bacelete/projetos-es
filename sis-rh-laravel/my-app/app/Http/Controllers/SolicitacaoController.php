@@ -13,4 +13,6 @@ class SolicitacaoController extends Controller
         $solicitacoes = DB::table('solicitacao')->get();
         return view('listar-solicitacao', ['solicitacoes' => $solicitacoes]); 
     }
+
+    public function create(): void {}
 }
