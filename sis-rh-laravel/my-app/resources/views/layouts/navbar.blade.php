@@ -30,7 +30,7 @@
     </nav>
 
     <div class="container mt-4">
-        @yield('solicitacao')
+        @yield('content')
     </div>
 
     <script src="https://kit.fontawesome.com/291cf6cb9c.js" crossorigin="anonymous"></script>

@@ -2,7 +2,7 @@
 
 @section('title', 'Gerar Solicitação')
 
-@section('solicitacao')
+@section('content')
 <div class="container w-70">
     <div id="liveAlertPlaceholder"></div>
     <div class="shadow mt-5">
