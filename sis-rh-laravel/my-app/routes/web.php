@@ -10,7 +10,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/solicitacao', function() {
-    return view('create'); 
+    return view('gerar-solicitacao'); 
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
