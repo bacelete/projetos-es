@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('solicitacao', function (Blueprint $table) {
             $table->id()->autoIncrement();
+
+            $table->unsignedBigInteger("id_servidor"); 
+            $table->unsignedBigInteger("id_gestor"); 
             $table->string("unidade");
             $table->string("motivo");
             $table->date("data_inicio");
             $table->date("data_fim");
             $table->dateTime("data_solicitacao")->useCurrent();
+
             $table->timestamps();
         });
     }

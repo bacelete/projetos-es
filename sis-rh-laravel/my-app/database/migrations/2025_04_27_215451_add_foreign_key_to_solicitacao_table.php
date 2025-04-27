@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usuario', function (Blueprint $table) {
-            $table->id()->autoIncrement();
-            $table->string("nome");
-            $table->string("senha");
-            $table->enum("tipo", ["GESTOR", "RH"]); 
-            $table->timestamps();
+        Schema::table('solicitacao', function (Blueprint $table) {
+            $table->foreign("id_servidor")->references("id")->on("servidor"); 
+            $table->foreign("id_gestor")->references("id")->on("usuario"); 
         });
     }
 
@@ -25,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('usuario');
+        Schema::table('solicitacao', function (Blueprint $table) {
+            //
+        });
     }
 };
