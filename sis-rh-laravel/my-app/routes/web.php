@@ -13,7 +13,7 @@ Route::get('/solicitacao', function() {
     return view('gerar-solicitacao'); 
 });
 
-Route::get('/solicitacoes', function() {
+Route::get('/lista-de-solicitacoes', function() {
     return view('listar-solicitacao');
 });
 

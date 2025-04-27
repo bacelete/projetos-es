@@ -1,8 +1,8 @@
 @extends('layouts.navbar')
 
 @section('title', 'Gerar Solicitação')
-
 @section('content')
+
 <div class="container w-70">
     <div id="liveAlertPlaceholder"></div>
     <div class="shadow mt-5">
@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="d-flex mt-4 justify-content-between">
-                    <a href="/solicitacoes" name="voltar" id="voltar" class="btn w-20 justify-content-center text-white mt-4 bg-danger">Voltar</a>
+                    <a href="/lista-de-solicitacoes" name="voltar" id="voltar" class="btn w-20 justify-content-center text-white mt-4 bg-danger">Voltar</a>
                     <button type="submit" class="btn d-block w-20 justify-content-center text-white mt-4 bg-secondary" id="enviarSolicitacao" name="enviarSolicitacao">Enviar</button>
                 </div>
 
