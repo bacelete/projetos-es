@@ -1,4 +1,4 @@
 @extends('layouts.navbar')
 
-@section('title', 'Gerar Solicitação')
+@section('title', 'Listar Solicitação')
 @section('content')
