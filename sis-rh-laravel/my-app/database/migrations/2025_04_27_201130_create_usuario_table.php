@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('usuario', function (Blueprint $table) {
             $table->id();
+            $table->string("nome");
+            $table->string("senha");
+            $table->enum("tipo", ["GESTOR", "RH"]); 
             $table->timestamps();
         });
     }
