@@ -13,6 +13,10 @@ Route::get('/solicitacao', function() {
     return view('gerar-solicitacao'); 
 });
 
+Route::get('/solicitacoes', function() {
+    return view('listar-solicitacao');
+});
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('dashboard');
