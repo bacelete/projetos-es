@@ -34,7 +34,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    @foreach($solicitacoes as $solicitacao)
+                    <td>{{ $solicitacao.id }}</td>
+                    @endforeach
                 </tbody>
             </table>
         </div>
