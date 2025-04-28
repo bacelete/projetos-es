@@ -17,4 +17,8 @@ class SolicitacaoController extends Controller
     public function create(): View {
         return view('gerar-solicitacao'); 
     }
+
+    public function store(): void {
+        
+    }
 }

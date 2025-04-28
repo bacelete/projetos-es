@@ -13,6 +13,7 @@ Route::get('/', function () {
 //rotas da solicitação
 Route::get('/solicitacoes', [SolicitacaoController::class, 'index']);
 Route::get('/solicitacao', [SolicitacaoController::class, 'create']); 
+Route::post('/solicitacao/store', [SolicitacaoController::class, 'store']); 
 
 //rotas do servidor: 
 
