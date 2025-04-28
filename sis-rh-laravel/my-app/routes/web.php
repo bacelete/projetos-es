@@ -15,7 +15,8 @@ Route::get('/solicitacoes', [SolicitacaoController::class, 'index']);
 Route::get('/solicitacao', [SolicitacaoController::class, 'create']); 
 Route::post('/solicitacao/store', [SolicitacaoController::class, 'store']); 
 
-//rotas do servidor: 
+//rota de autenticação: 
+
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
