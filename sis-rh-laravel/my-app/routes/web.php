@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SolicitacaoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -16,7 +17,8 @@ Route::get('/solicitacao', [SolicitacaoController::class, 'create']);
 Route::post('/solicitacao/store', [SolicitacaoController::class, 'store']); 
 
 //rota de autenticação: 
-
+Route::get('/login', [LoginController::class, 'show']); 
+Route::post('/login', [LoginController::class, 'login']); 
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
