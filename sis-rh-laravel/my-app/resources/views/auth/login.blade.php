@@ -6,6 +6,7 @@
 <div class="login-box">
         <h1 id="titulo-login">Login</h1>
         <form action="/login" method="post">
+            @csrf
             <div class="box-input">
                 <i class="fa-solid fa-envelope"></i>
                 <input type="text" name="email" placeholder="Digite seu email">

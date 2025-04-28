@@ -18,9 +18,8 @@ class LoginController extends Controller
     {
         $email = $request->input('email');
         $password = $request->input('password');
-        $credentials = [$email, $password]; 
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt([$email, $password])) {
             return redirect()->intended('gerar-solicitacao'); 
         }
         return back()->withErrors([
