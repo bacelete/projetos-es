@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 
 use Illuminate\Http\Request;
 
@@ -17,10 +16,12 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $credentials = [$email, $password]; 
 
         if (Auth::attempt($credentials)) {
-            return Redirect::intended('listar-solicitacao');
+            return redirect()->intended('gerar-solicitacao'); 
         }
     }
 }

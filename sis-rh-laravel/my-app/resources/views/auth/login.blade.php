@@ -8,7 +8,7 @@
         <form action="/login" method="post">
             <div class="box-input">
                 <i class="fa-solid fa-envelope"></i>
-                <input type="text" name="email" placeholder="Digite seu usuário">
+                <input type="text" name="email" placeholder="Digite seu email">
             </div>
             <div class="box-input">
                 <i class="fa-solid fa-lock"></i>
