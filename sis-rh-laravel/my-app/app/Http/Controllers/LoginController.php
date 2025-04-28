@@ -6,6 +6,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 class LoginController extends Controller
 {
@@ -14,9 +15,12 @@ class LoginController extends Controller
         return view('auth.login'); 
     }
 
-    public function login(Request $request)
+    public function login(Request $request): RedirectResponse
     {
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
 
         if (Auth::attempt($credentials)) { 
             $request->session()->regenerate(); //regenera o id da sessão a cada login (segurança)
