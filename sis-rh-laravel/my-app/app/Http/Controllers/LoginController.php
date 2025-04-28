@@ -23,5 +23,8 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->intended('gerar-solicitacao'); 
         }
+        return back()->withErrors([
+            'email' => 'O e-mail e/ou a senha estão inválidos.',
+        ]);
     }
 }
