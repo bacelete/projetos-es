@@ -8,11 +8,11 @@
         <form action="/login" method="post">
             <div class="box-input">
                 <i class="fa-solid fa-envelope"></i>
-                <input type="text" name="usuario" placeholder="Digite seu usuário">
+                <input type="text" name="email" placeholder="Digite seu usuário">
             </div>
             <div class="box-input">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" name="senha" placeholder="Digite sua senha">
+                <input type="password" name="password" placeholder="Digite sua senha">
             </div>
             <button class="login-button" type="submit">Entrar</button>
         </form>
