@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Solicitacao extends Model
 {
+    protected $table = "solicitacao";
     protected $fillable = [
         'id_servidor',
         'id_gestor',

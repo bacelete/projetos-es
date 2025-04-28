@@ -23,8 +23,10 @@ class SolicitacaoController extends Controller
 
     public function store(Request $request): void {
         $servidor = new Servidor;  
+
         $servidor->nome = $request->nome;
-        
         $servidor->save(); 
+
+        $solicitacao = new Solicitacao; 
     }
 }
