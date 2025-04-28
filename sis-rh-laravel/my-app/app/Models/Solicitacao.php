@@ -15,4 +15,5 @@ class Solicitacao extends Model
         'data_fim',
         'data_solicitacao'
     ];
+
 }
