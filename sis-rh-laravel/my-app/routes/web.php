@@ -3,12 +3,10 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SolicitacaoController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
-use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
-    return Inertia::render('welcome');
+    echo "Home"; 
 })->name('home');
 
 //rotas da solicitação
@@ -18,11 +16,11 @@ Route::post('/solicitacao/store', [SolicitacaoController::class, 'store']);
 
 //rota de autenticação: 
 Route::get('/login', [LoginController::class, 'show']); 
-Route::post('/login', [LoginController::class, 'login']); 
+Route::post('/login', [LoginController::class, 'login'])->name('login'); 
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
-        return Inertia::render('dashboard');
+        return view('dashboard'); 
     })->name('dashboard');
 });
 
