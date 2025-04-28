@@ -38,6 +38,6 @@ class LoginController extends Controller
         $request->session()->invalidate(); //flush the session and regenerate the id 
         $request->session()->regenerateToken(); //regera o token csrf
 
-        return redirect('/');
+        return redirect()->route('login');
     }
 }

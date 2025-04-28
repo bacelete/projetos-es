@@ -17,7 +17,7 @@ Route::post('/solicitacao/store', [SolicitacaoController::class, 'store']);
 //rota de autenticação: 
 Route::get('/login', [LoginController::class, 'show']); 
 Route::post('/login', [LoginController::class, 'login'])->name('login'); 
-Route::post('/logout', [LoginController::class, 'logou'])->name('logout'); 
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout'); 
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
