@@ -8,11 +8,13 @@ use Illuminate\Http\Request;
 
 class SolicitacaoController extends Controller
 {
-    public function show(): View 
+    public function index(): View 
     {
         $solicitacoes = DB::table('solicitacao')->get();
         return view('listar-solicitacao', ['solicitacoes' => $solicitacoes]); 
     }
 
-    public function create(): void {}
+    public function create(): View {
+        return view('gerar-solicitacao'); 
+    }
 }

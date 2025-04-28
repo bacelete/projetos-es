@@ -10,12 +10,9 @@ Route::get('/', function () {
     return Inertia::render('welcome');
 })->name('home');
 
-Route::get('/solicitacao', function() {
-    return view('gerar-solicitacao'); 
-});
-
 //rotas da solicitação
-Route::get('/solicitacoes', [SolicitacaoController::class, 'show']);
+Route::get('/solicitacoes', [SolicitacaoController::class, 'index']);
+Route::get('/solicitacao', [SolicitacaoController::class, 'create']); 
 
 //rotas do servidor: 
 
