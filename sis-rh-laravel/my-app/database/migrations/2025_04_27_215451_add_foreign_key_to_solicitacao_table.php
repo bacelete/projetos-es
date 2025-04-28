@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('solicitacao', function (Blueprint $table) {
             $table->foreign("id_servidor")->references("id")->on("servidor"); 
-            $table->foreign("id_gestor")->references("id")->on("usuario"); 
+            $table->foreign("id_gestor")->references("id")->on("users"); 
         });
     }
 
