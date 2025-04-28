@@ -16,11 +16,10 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $email = $request->input('email');
-        $password = $request->input('password');
+        $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt([$email, $password])) {
-            return redirect()->intended('gerar-solicitacao'); 
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('solicitacoes'); 
         }
         return back()->withErrors([
             'email' => 'O e-mail e/ou a senha estão inválidos.',
