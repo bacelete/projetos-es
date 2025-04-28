@@ -30,4 +30,14 @@ class LoginController extends Controller
             'email' => 'O e-mail e/ou a senha estão inválidos.',
         ]);
     }
+
+    public function logout(Request $request) : RedirectResponse
+    {
+        Auth::logout(); 
+
+        $request->session()->invalidate(); //flush the session and regenerate the id 
+        $request->session()->regenerateToken(); //regera o token csrf
+
+        return redirect('/');
+    }
 }
