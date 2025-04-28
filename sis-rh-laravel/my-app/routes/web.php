@@ -3,7 +3,6 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SolicitacaoController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 Route::get('/', function () {
     echo "Home"; 
@@ -18,12 +17,6 @@ Route::post('/solicitacao/store', [SolicitacaoController::class, 'store']);
 Route::get('/login', [LoginController::class, 'show']); 
 Route::post('/login', [LoginController::class, 'login'])->name('login'); 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout'); 
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('dashboard', function () {
-        return view('dashboard'); 
-    })->name('dashboard');
-});
 
 require __DIR__.'/settings.php';
 // require __DIR__.'/auth.php';
