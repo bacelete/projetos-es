@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RhController;
 use App\Http\Controllers\SolicitacaoController;
 use Illuminate\Support\Facades\Route;
 
@@ -10,7 +11,7 @@ Route::get('/', function () {
 
 //rotas da solicitação
 Route::group(['middleware' => 'auth:rh'], function() {
-    Route::get('/solicitacoes', [SolicitacaoController::class, 'index']);
+    Route::get('/solicitacoes', [RhController::class, 'index']);
 });
 Route::get('/solicitacao', [SolicitacaoController::class, 'create']); 
 Route::post('/solicitacao/store', [SolicitacaoController::class, 'store']); 
