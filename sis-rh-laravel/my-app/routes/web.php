@@ -18,7 +18,7 @@ Route::post('/solicitacao/store', [SolicitacaoController::class, 'store']);
 
 //rota de autenticação: 
 Route::get('/login', [LoginController::class, 'show']); 
-Route::post('/login', [LoginController::class, 'login'])->name('login'); 
+//Route::post('/login', [LoginController::class, 'login'])->name('login'); 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout'); 
 
 require __DIR__.'/settings.php';
