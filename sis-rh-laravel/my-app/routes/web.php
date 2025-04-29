@@ -13,6 +13,9 @@ Route::get('/', function () {
 Route::group(['middleware' => 'auth:rh'], function() {
     Route::get('/solicitacoes', [RhController::class, 'index']);
 });
+Route::group(['middleware' => 'auth:gestor'], function() {
+    Route::get('/solicitacao', [RhController::class, 'index']);
+});
 Route::get('/solicitacao', [SolicitacaoController::class, 'create']); 
 Route::post('/solicitacao/store', [SolicitacaoController::class, 'store']); 
 
