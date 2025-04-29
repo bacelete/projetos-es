@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;   
 
-class Gestor extends Model
+class Gestor extends Authenticatable
 {
     protected $table = "gestor";
     protected $fillable = [
