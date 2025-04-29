@@ -24,6 +24,7 @@
             <button class="login-button" type="submit">Entrar</button>
         </form>
     </div>
+    <script src="https://kit.fontawesome.com/291cf6cb9c.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
