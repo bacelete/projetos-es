@@ -7,6 +7,8 @@ use App\Models\Servidor;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 
 class SolicitacaoController extends Controller
