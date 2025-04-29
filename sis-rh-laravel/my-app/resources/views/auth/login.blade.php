@@ -1,9 +1,15 @@
-@extends('layouts.navbar')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('title', 'Login')
-@section('content')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}"">
+    <title>Login</title>
+</head>
 
-<div class="login-box">
+<body>
+    <div class="login-box">
         <h1 id="titulo-login">Login</h1>
         <form action="/login" method="post">
             @csrf
@@ -17,5 +23,7 @@
             </div>
             <button class="login-button" type="submit">Entrar</button>
         </form>
-</div>
-@endsection
+    </div>
+</body>
+
+</html>
