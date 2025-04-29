@@ -8,10 +8,6 @@ Route::get('/', function () {
     echo "Home"; 
 })->name('home');
 
-Route::group(['middleware' => 'auth:rh'], function () {
-
-})
-
 //rotas da solicitação
 Route::get('/solicitacoes', [SolicitacaoController::class, 'index']);
 Route::get('/solicitacao', [SolicitacaoController::class, 'create']); 
