@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Gestor extends Model
 {
-    //
+    protected $table = "gestor";
+    protected $fillable = [
+        'nome',
+        'email',
+        'password'
+    ];
 }
