@@ -9,7 +9,9 @@ Route::get('/', function () {
 })->name('home');
 
 //rotas da solicitação
-Route::get('/solicitacoes', [SolicitacaoController::class, 'index']);
+Route::group(['middleware' => 'auth:rh'], function() {
+    Route::get('/solicitacoes', [SolicitacaoController::class, 'index']);
+});
 Route::get('/solicitacao', [SolicitacaoController::class, 'create']); 
 Route::post('/solicitacao/store', [SolicitacaoController::class, 'store']); 
 
