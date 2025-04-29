@@ -47,7 +47,11 @@ return [
         'rh' => [
             'driver' => 'session',
             'provider' => 'rh',
-        ] 
+        ],
+        'gestor' => [
+            'driver' => 'session',
+            'provider' => 'gestor',
+        ],
     ],
 
     /*
@@ -80,6 +84,10 @@ return [
             'driver' => 'eloquent',
             'model' => env ('AUTH_MODEL', App\Models\Rh::class),
         ], 
+        'gestor' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Gestor::class),
+        ]
 
         // 'users' => [
         //     'driver' => 'database',
