@@ -15,7 +15,7 @@ Route::get('/solicitacoes', [RhController::class, 'index'])
     ->name('solicitacoes');
 
 //rotas do gestor:
-Route::middleware('auth:gestor', function () {
+Route::middleware(['auth:gestor'], function () {
     Route::get('/solicitacao', [GestorController::class, 'index'])
         ->name('solicitacao');
     Route::post('/solicitacao/store', [GestorController::class, 'store'])
