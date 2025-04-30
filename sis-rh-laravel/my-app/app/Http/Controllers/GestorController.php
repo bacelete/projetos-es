@@ -6,10 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use App\Models\Solicitacao;
 use App\Models\Servidor;
+use Illuminate\Support\Facades\Auth;
 
 class GestorController extends Controller
 {
-    public function index(): View {
+    public function index() {
+        if (!Auth::guard('gestor')->check()) {
+            return redirect()->route('login.form');
+        }
         return view('gerar-solicitacao'); 
     }
     public function store(Request $request): void {

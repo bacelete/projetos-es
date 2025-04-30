@@ -23,7 +23,7 @@
                         <a class="nav-link text-light" href="/solicitacoes">Listar</a>
                     </li>
                     @if(Auth::check())
-                    <li class="nav-item">
+                    <li class="nav-item ms-auto">
                         <a class="nav-link fw-bold text-light fs-3">Bem-vindo, {{ Auth::user()->name }}!</a>
                     </li>
                     @endif
