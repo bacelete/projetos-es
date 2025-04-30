@@ -16,7 +16,6 @@ Route::get('/solicitacoes', [RhController::class, 'index'])->middleware('auth:rh
 Route::get('/solicitacao', [GestorController::class, 'index'])->middleware('auth:gestor');
 Route::post('/solicitacao/store', [GestorController::class, 'store'])->middleware('auth:gestor');
 
-
 //rota de autenticação: 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/login', [LoginController::class, 'show']);

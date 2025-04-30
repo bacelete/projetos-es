@@ -22,15 +22,14 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        if (Auth::attempt($credentials)) { 
-            $request->session()->regenerate(); //regenera o id da sessão a cada login (segurança)
-
-            if (auth()->guard('rh')) {
-                
-            }
-
-            return redirect()->intended('solicitacoes'); 
+        if (Auth::guard('rh')->attempt($credentials)) {
+            return redirect()->intended('/solicitacoes');
         }
+
+        if (Auth::guard('gestor')->attempt($credentials)) {
+            return redirect()->intended('/solicitacao');
+        }
+
         return back()->withErrors([
             'email' => 'O e-mail e/ou a senha estão inválidos.',
         ]);
