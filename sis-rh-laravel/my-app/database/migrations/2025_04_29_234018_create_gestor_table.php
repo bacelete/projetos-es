@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('gestor', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nome');
+            $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
         });

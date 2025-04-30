@@ -23,7 +23,7 @@ class LoginController extends Controller
         ]);
 
         if (Auth::guard('rh')->attempt($credentials)) {
-            $request->session()->regenerate(); 
+            $request->session()->regenerate();
             return redirect()->route('solicitacoes');
         }
 

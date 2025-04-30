@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('servidor', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string("nome");
+            $table->string("name");
             $table->timestamps();
         });
     }

@@ -8,6 +8,9 @@
 </head>
 
 <body>
+    @if(Auth::check())
+        <p>Bem-vindo, {{ Auth::user()->name }}</p>
+    @endif
     <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid mt-2">
             <a style="font-size: 2.5rem" class="navbar-brand text-light align-self-center fw-bold" href="#">SIRH</a>
