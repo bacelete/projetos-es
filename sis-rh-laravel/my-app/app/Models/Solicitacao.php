@@ -23,4 +23,8 @@ class Solicitacao extends Model
         return $this->belongsTo(Gestor::class); 
     } 
 
+    public function servidor(): BelongsTo
+    {
+        return $this->belongsTo(Servidor::class); 
+    } 
 }
