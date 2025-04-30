@@ -46,11 +46,11 @@ return [
         ],
         'rh' => [
             'driver' => 'session',
-            'provider' => 'rh',
+            'provider' => 'rhs',
         ],
         'gestor' => [
             'driver' => 'session',
-            'provider' => 'gestor',
+            'provider' => 'gestores',
         ],
     ],
 
@@ -80,11 +80,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class
         ],
-        'rh' => [
+        'rhs' => [
             'driver' => 'eloquent',
             'model' => App\Models\Rh::class
         ], 
-        'gestor' => [
+        'gestores' => [
             'driver' => 'eloquent',
             'model' => App\Models\Gestor::class
         ]
