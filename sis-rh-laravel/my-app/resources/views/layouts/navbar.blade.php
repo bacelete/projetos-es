@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,19 +16,19 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-2">
+                <ul class="d-flex navbar-nav flex-row ms-2">
                     <li class="nav-item align-self-center">
                         <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item align-self-center">
                         <a class="nav-link text-light" href="/solicitacoes">Listar</a>
                     </li>
-                    @if(Auth::check())
-                    <li class="nav-item ms-auto">
-                        <a class="nav-link fw-bold text-light fs-3">Bem-vindo, {{ Auth::user()->name }}!</a>
-                    </li>
-                    @endif
                 </ul>
+                @if(Auth::check())
+                <span class="navbar-text align-self-center ms-auto fs-4 text-light fw-bold">
+                    Bem-vindo, {{ Auth::user()->name }}!
+                </span>
+                @endif
             </div>
         </div>
         <button id="recolherMenu" style="display: none" name="recolherMenu" class="btn btn-sm btn-outline-light mt-auto m-4 align-self-center"><i class="fa-solid fa-arrow-left m-1"></i>Recolher menu</button>
