@@ -11,17 +11,17 @@ Route::get('/', function () {
 
 //rotas do rh:
 Route::get('/solicitacoes', [RhController::class, 'index'])
-->middleware('auth:rh')
-->name('solicitacoes');
+    ->middleware('auth:rh')
+    ->name('solicitacoes');
 
 //rotas do gestor:
-Route::get('/solicitacao', [GestorController::class, 'index'])
-->middleware('auth:gestor')
-->name('solicitacao');
+Route::middleware('auth:gestor', function () {
+    Route::get('/solicitacao', [GestorController::class, 'index'])
+        ->name('solicitacao');
+    Route::post('/solicitacao/store', [GestorController::class, 'store'])
+        ->name('gerar-solicitacao');
+});
 
-Route::post('/solicitacao/store', [GestorController::class, 'store'])
-->middleware('auth:gestor')
-->name('gerar-solicitacao');
 
 //rota de autenticação: 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
