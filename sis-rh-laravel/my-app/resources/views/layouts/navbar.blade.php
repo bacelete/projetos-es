@@ -8,10 +8,7 @@
 </head>
 
 <body>
-    @if(Auth::check())
-        <p>Bem-vindo, {{ Auth::user()->name }}</p>
-    @endif
-    <nav class="navbar navbar-expand-lg bg-dark">
+    <nav class="d-flex navbar navbar-expand-lg bg-dark">
         <div class="container-fluid mt-2">
             <a style="font-size: 2.5rem" class="navbar-brand text-light align-self-center fw-bold" href="#">SIRH</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,12 +16,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-2">
-                    <li class="nav-item">
+                    <li class="nav-item align-self-center">
                         <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="/solicitacoes"></i>Listar</a>
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link text-light" href="/solicitacoes">Listar</a>
                     </li>
+                    @if(Auth::check())
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold text-light fs-3">Bem-vindo, {{ Auth::user()->name }}!</a>
+                    </li>
+                    @endif
                 </ul>
             </div>
         </div>
