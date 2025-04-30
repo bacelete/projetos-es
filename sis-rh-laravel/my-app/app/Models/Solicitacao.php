@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Solicitacao extends Model
 {
@@ -18,9 +18,9 @@ class Solicitacao extends Model
         'data_solicitacao'
     ];
 
-    public function gestores(): HasMany
+    public function gestores(): BelongsTo
     {
-        return $this->hasMany(Gestor::class); 
+        return $this->belongsTo(Gestor::class); 
     } 
 
 }

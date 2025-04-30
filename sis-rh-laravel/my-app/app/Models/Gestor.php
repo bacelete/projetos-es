@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;   
 
 class Gestor extends Authenticatable
@@ -15,9 +15,9 @@ class Gestor extends Authenticatable
         'password'
     ];
 
-    public function solicitacao(): BelongsTo
+    public function solicitacao(): HasMany
     {
-        return $this->belongsTo(Solicitacao::class);
+        return $this->hasMany(Solicitacao::class);
     }
 
 }
