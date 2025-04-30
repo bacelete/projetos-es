@@ -9,7 +9,7 @@ class Gestor extends Authenticatable
 {
     protected $table = "gestor";
     protected $fillable = [
-        'nome',
+        'name',
         'email',
         'password'
     ];

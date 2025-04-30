@@ -9,7 +9,7 @@ class Rh extends Authenticatable
 {
     protected $table = "rh";
     protected $fillable = [
-        'nome',
+        'name',
         'email',
         'password'
     ];
