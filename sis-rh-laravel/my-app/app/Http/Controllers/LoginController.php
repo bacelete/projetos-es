@@ -23,10 +23,12 @@ class LoginController extends Controller
         ]);
 
         if (Auth::guard('rh')->attempt($credentials)) {
+            $request->session()->regenerate(); 
             return redirect()->intended('/solicitacoes');
         }
 
         if (Auth::guard('gestor')->attempt($credentials)) {
+            $request->session()->regenerate(); 
             return redirect()->intended('/solicitacao');
         }
 
