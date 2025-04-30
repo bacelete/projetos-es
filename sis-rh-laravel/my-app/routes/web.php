@@ -10,10 +10,10 @@ Route::get('/', function () {
 })->name('home');
 
 //rotas da solicitação
-Route::group(['middleware' => 'auth:rh'], function () {
+Route::middleware(('auth:rh'), function () {
     Route::get('/solicitacoes', [RhController::class, 'index']);
 });
-Route::group(['middleware' => 'auth:gestor'], function () {
+Route::middleware(('auth:gestor'), function () {
     Route::get('/solicitacao', [GestorController::class, 'index']);
     Route::post('/solicitacao/store', [GestorController::class, 'store']);
 });
