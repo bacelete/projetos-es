@@ -13,4 +13,5 @@ class Gestor extends Authenticatable
         'email',
         'password'
     ];
+
 }

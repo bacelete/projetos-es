@@ -19,8 +19,8 @@
                 </div>
 
                 <div>
-                    <label for="nome" class="form-label mt-3">Nome do servidor:</label>
-                    <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite o nome do servidor" required>
+                    <label for="name" class="form-label mt-3">Nome do servidor:</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Digite o nome do servidor" required>
                     <div class="invalid-feedback">
                         Por favor, digite o nome completo do servidor.
                     </div>
