@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-
 <body>
     <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid mt-2">
