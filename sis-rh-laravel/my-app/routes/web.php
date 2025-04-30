@@ -19,10 +19,10 @@ Route::get('/solicitacao', [GestorController::class, 'index'])
     ->middleware('auth:gestor')
     ->name('solicitacao');
 Route::post('/solicitacao/store', [GestorController::class, 'store'])
-    ->name('gerar-solicitacao')
-    ->middleware('auth:gestor');
+    ->middleware('auth:gestor')
+    ->name('gerar-solicitacao');
 
-//rota de autenticação: 
+//rotas de autenticação: 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/login', [LoginController::class, 'show'])->name('login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
