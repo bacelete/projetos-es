@@ -10,20 +10,17 @@ Route::get('/', function () {
 })->name('home');
 
 //rotas do rh:
-Route::middleware(('auth:rh'), function () {
-    Route::get('/solicitacoes', [RhController::class, 'index']);
-});
+Route::get('/solicitacoes', [RhController::class, 'index'])->middleware('auth:rh');
 
 //rotas do gestor:
-Route::middleware(('auth:gestor'), function () {
-    Route::get('/solicitacao', [GestorController::class, 'index']);
-    Route::post('/solicitacao/store', [GestorController::class, 'store']);
-});
+Route::get('/solicitacao', [GestorController::class, 'index'])->middleware('auth:gestor');
+Route::post('/solicitacao/store', [GestorController::class, 'store'])->middleware('auth:gestor');
+
 
 //rota de autenticação: 
-//Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-//Route::get('/login', [LoginController::class, 'show']);
-//Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/login', [LoginController::class, 'show']);
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 require __DIR__ . '/settings.php';
 // require __DIR__.'/auth.php';

@@ -24,6 +24,11 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) { 
             $request->session()->regenerate(); //regenera o id da sessão a cada login (segurança)
+
+            if (auth()->guard('rh')) {
+                
+            }
+
             return redirect()->intended('solicitacoes'); 
         }
         return back()->withErrors([
