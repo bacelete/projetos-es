@@ -9,10 +9,6 @@
         <div class="card-header p-4 d-flex justify-content-between align-items-center flex-wrap">
             <h2>Lista de solicitações</h2>
 
-            <form class="d-inline" action="/solicitacao" id="formAdd">
-                <button class="btn btn-outline-secondary btn-sm ms-2"><i class="fa-solid fa-plus"></i></button>
-            </form>
-
             <input class="ms-auto w-25 p-1" type="text" name="search" id="search" onkeyup="searchFilter()" placeholder="Digite o nome do servidor...">
 
             <form method="POST" id="formDelete" action="../backend/exclude_all.php">
