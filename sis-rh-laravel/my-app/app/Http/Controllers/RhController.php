@@ -11,10 +11,7 @@ class RhController extends Controller
 {
     public function index() 
     {
-        if (!Auth::guard('gestor')->check()) {
-            return redirect()->route('login.form');
-        }
         $solicitacoes = Solicitacao::all();
-        return view('listar-solicitacao'); 
+        return view('listar-solicitacao', ['solicitacoes' => $solicitacoes]); 
     }
 }

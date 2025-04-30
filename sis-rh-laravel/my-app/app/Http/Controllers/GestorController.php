@@ -11,11 +11,9 @@ use Illuminate\Support\Facades\Auth;
 class GestorController extends Controller
 {
     public function index() {
-        if (!Auth::guard('gestor')->check()) {
-            return redirect()->route('login.form');
-        }
         return view('gerar-solicitacao'); 
     }
+
     public function store(Request $request): void {
         $servidor = new Servidor;  
 

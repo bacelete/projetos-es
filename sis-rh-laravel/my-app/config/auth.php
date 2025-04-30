@@ -78,15 +78,15 @@ return [
         ],
         'admins' => [
             'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\Admin::class),
+            'model' => App\Models\Admin::class
         ],
         'rh' => [
             'driver' => 'eloquent',
-            'model' => env ('AUTH_MODEL', App\Models\Rh::class),
+            'model' => App\Models\Rh::class
         ], 
         'gestor' => [
             'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\Gestor::class),
+            'model' => App\Models\Gestor::class
         ]
 
         // 'users' => [
