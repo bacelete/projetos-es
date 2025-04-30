@@ -15,17 +15,16 @@ Route::get('/solicitacoes', [RhController::class, 'index'])
     ->name('solicitacoes');
 
 //rotas do gestor:
-Route::middleware(['auth:gestor'], function () {
-    Route::get('/solicitacao', [GestorController::class, 'index'])
-        ->name('solicitacao');
-    Route::post('/solicitacao/store', [GestorController::class, 'store'])
-        ->name('gerar-solicitacao');
-});
-
+Route::get('/solicitacao', [GestorController::class, 'index'])
+    ->middleware('auth:gestor')
+    ->name('solicitacao');
+Route::post('/solicitacao/store', [GestorController::class, 'store'])
+    ->name('gerar-solicitacao')
+    ->middleware('auth:gestor');
 
 //rota de autenticação: 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-Route::get('/login', [LoginController::class, 'show']);
+Route::get('/login', [LoginController::class, 'show'])->name('login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 require __DIR__ . '/settings.php';
