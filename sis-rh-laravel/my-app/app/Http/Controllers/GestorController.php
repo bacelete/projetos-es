@@ -9,7 +9,7 @@ use App\Models\Servidor;
 
 class GestorController extends Controller
 {
-    public function create(): View {
+    public function index(): View {
         return view('gerar-solicitacao'); 
     }
     public function store(Request $request): void {
