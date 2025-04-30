@@ -18,18 +18,15 @@ class LoginController extends Controller
     public function login(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required',
         ]);
 
-        if (Auth::guard('rh')->attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->route('solicitacoes');
-        }
-
-        if (Auth::guard('gestor')->attempt($credentials)) {
-            $request->session()->regenerate(); 
-            return redirect()->route('solicitacao'); 
+        foreach (['rh' => 'solicitacoes', 'gestor' => 'solicitacao'] as $guard => $route) {
+            if (Auth::guard($guard)->attempt($credentials)) {
+                $request->session()->regenerate();
+                return redirect()->route($route);
+            }
         }
 
         return back()->withErrors([
