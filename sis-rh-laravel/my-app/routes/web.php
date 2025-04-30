@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RhController;
-use App\Http\Controllers\SolicitacaoController;
+use App\Http\Controllers\GestorController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,10 +14,10 @@ Route::group(['middleware' => 'auth:rh'], function() {
     Route::get('/solicitacoes', [RhController::class, 'index']);
 });
 Route::group(['middleware' => 'auth:gestor'], function() {
-    Route::get('/solicitacao', [RhController::class, 'index']);
+    Route::get('/solicitacao', [GestorController::class, 'index']);
+    Route::post('/solicitacao/store', [GestorController::class, 'store']); 
 });
-Route::get('/solicitacao', [SolicitacaoController::class, 'create']); 
-Route::post('/solicitacao/store', [SolicitacaoController::class, 'store']); 
+
 
 //rota de autenticação: 
 Route::get('/login', [LoginController::class, 'show']); 
