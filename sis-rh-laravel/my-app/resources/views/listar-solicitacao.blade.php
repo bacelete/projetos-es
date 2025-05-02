@@ -38,6 +38,7 @@
                     @endforeach
                 </tbody>
             </table>
+            <footer class="d-flex justify-content-end"></footer>
         </div>
     </div>
     <script>
