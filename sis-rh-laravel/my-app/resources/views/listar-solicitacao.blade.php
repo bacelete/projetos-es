@@ -8,13 +8,10 @@
         <div id="liveAlertPlaceholder"></div>
         <div class="card-header p-4 d-flex justify-content-between align-items-center flex-wrap">
             <h2><i class="fa-solid fa-list-ul m-2 fs-3"></i>Lista de solicitações</h2>
-
             <input class="ms-auto w-25 p-1" type="text" name="search" id="search" onkeyup="searchFilter()" placeholder="Digite o nome do servidor...">
-
         </div>
         <div class="card-body">
-
-            <table class="table table-hover shadow-sm rounded mb-5 mt-3" style="cursor:pointer">
+            <table class="table table-hover shadow-sm rounded mb-5 mt-3 p-2" style="cursor:pointer">
                 <thead class="table-light">
                     <tr>
                         <th>ID</th>
