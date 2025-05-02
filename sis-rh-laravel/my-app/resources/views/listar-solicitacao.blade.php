@@ -40,7 +40,7 @@
                         <td>{{ $solicitacao->data_inicio }}</td>
                         <td>{{ $solicitacao->data_fim }}</td>
                         <td>{{ $solicitacao->data_solicitacao }}</td>
-                        <td>
+                        <td class="d-flex">
                             <button name="edit" id="edit" class="btn btn-warning text-white btn-sm">Editar</button>
                             <form action="/solicitacao/delete/{{ $solicitacao->id }}" method="POST">
                                 @csrf
