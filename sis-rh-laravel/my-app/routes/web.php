@@ -21,7 +21,7 @@ Route::get('/solicitacao', [GestorController::class, 'index'])
 Route::post('/solicitacao/store', [GestorController::class, 'store'])
     ->middleware('auth:gestor')
     ->name('gerar-solicitacao');
-Route::delete('/solicitacao/{id}', [GestorController::class, 'delete'])
+Route::post('/solicitacao/delete/{id}', [GestorController::class, 'delete'])
     ->middleware('auth:gestor')
     ->name('excluir-solicitacao');
 
