@@ -40,6 +40,10 @@
                         <td>{{ $solicitacao->data_inicio }}</td>
                         <td>{{ $solicitacao->data_fim }}</td>
                         <td>{{ $solicitacao->data_solicitacao }}</td>
+                        <td>
+                            <button name="edit" id="edit" class="btn btn-warning text-white btn-sm">Editar</button>
+                            <button name="exclude" id="exclude" class="btn btn-danger text-white btn-sm">Excluir</button>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
