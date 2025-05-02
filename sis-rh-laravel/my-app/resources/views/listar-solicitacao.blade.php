@@ -31,15 +31,17 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
                     @foreach($solicitacoes as $solicitacao)
-                    <td>{{ $solicitacao->id }}</td>
-                    <td>{{ $solicitacao->servidor->name}}</td>
-                    <td>{{ $solicitacao->unidade }}</td>
-                    <td>{{ $solicitacao->motivo }}</td>
-                    <td>{{ $solicitacao->data_inicio }}</td>
-                    <td>{{ $solicitacao->data_fim }}</td>
-                    <td>{{ $solicitacao->data_solicitacao }}</td>
+                        <td>{{ $solicitacao->id }}</td>
+                        <td>{{ $solicitacao->servidor->name}}</td>
+                        <td>{{ $solicitacao->unidade }}</td>
+                        <td>{{ $solicitacao->motivo }}</td>
+                        <td>{{ $solicitacao->data_inicio }}</td>
+                        <td>{{ $solicitacao->data_fim }}</td>
+                        <td>{{ $solicitacao->data_solicitacao }}</td>
                     @endforeach
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -66,19 +68,18 @@
         }
 
         const footer = document.getElementsByTagName("footer")[0];
-        
+
         function exibirNumeroDeLinhas() {
             let numLinhas = tr.length - 1;
 
-            let elemHTML = document.createElement("p"); 
-            elemHTML.textContent = `Exibindo 1 a ${numLinhas} de ${numLinhas} linhas`; 
+            let elemHTML = document.createElement("p");
+            elemHTML.textContent = `Exibindo 1 a ${numLinhas} de ${numLinhas} linhas`;
             elemHTML.classList.add("text-secondary");
 
             footer.appendChild(elemHTML);
         }
 
         exibirNumeroDeLinhas();
-
     </script>
 </div>
 @endsection
