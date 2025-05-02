@@ -7,7 +7,7 @@
     <div class="card shadow-lg mt-4" id="teste">
         <div id="liveAlertPlaceholder"></div>
         <div class="card-header p-4 d-flex justify-content-between align-items-center flex-wrap">
-            <h2>Lista de solicitações</h2>
+            <h2><i class="fa-solid fa-list-ul m-2"></i>Lista de solicitações</h2>
 
             <input class="ms-auto w-25 p-1" type="text" name="search" id="search" onkeyup="searchFilter()" placeholder="Digite o nome do servidor...">
 
