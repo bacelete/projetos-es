@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Solicitacao;
 use App\Models\Servidor;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class GestorController extends Controller
 {
@@ -28,5 +30,10 @@ class GestorController extends Controller
         $solicitacao->data_fim = $request->data_fim;
 
         $solicitacao->save(); 
+    }
+
+    public function delete(Request $request): RedirectResponse 
+    {
+        
     }
 }
