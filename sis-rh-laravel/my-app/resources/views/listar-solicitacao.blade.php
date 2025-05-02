@@ -31,8 +31,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
                     @foreach($solicitacoes as $solicitacao)
+                    <tr>
                         <td>{{ $solicitacao->id }}</td>
                         <td>{{ $solicitacao->servidor->name}}</td>
                         <td>{{ $solicitacao->unidade }}</td>
@@ -40,8 +40,9 @@
                         <td>{{ $solicitacao->data_inicio }}</td>
                         <td>{{ $solicitacao->data_fim }}</td>
                         <td>{{ $solicitacao->data_solicitacao }}</td>
-                    @endforeach
                     </tr>
+                    @endforeach
+
                 </tbody>
             </table>
         </div>
