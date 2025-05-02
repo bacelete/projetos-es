@@ -32,9 +32,11 @@ class GestorController extends Controller
         $solicitacao->save(); 
     }
 
-    public function delete(Request $id): RedirectResponse 
+    public function delete(Request $request): RedirectResponse 
     {
-        Solicitacao::where('id', $id)->delete();
+        $arrayOfFkIds[] = (string)$request['id'];
+
+        Solicitacao::where('id', $arrayOfFkIds)->delete();
         return redirect()->back(); 
     }
 }
