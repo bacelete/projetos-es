@@ -18,7 +18,7 @@ class Solicitacao extends Model
         'data_solicitacao'
     ];
 
-    public function gestores(): BelongsTo
+    public function gestor(): BelongsTo
     {
         return $this->belongsTo(Gestor::class); 
     } 
