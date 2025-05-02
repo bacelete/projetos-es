@@ -39,4 +39,9 @@ class GestorController extends Controller
         Solicitacao::where('id', $arrayOfFkIds)->delete();
         return redirect()->back(); 
     }
+
+    public function edit(Request $request): RedirectResponse  {
+        return redirect()->route('editar-solicitacao'); 
+    }
+
 }
