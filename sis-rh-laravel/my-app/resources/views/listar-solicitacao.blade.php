@@ -42,7 +42,6 @@
                         <td>{{ $solicitacao->data_solicitacao }}</td>
                     </tr>
                     @endforeach
-
                 </tbody>
             </table>
         </div>
