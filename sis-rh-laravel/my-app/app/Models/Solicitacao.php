@@ -20,11 +20,11 @@ class Solicitacao extends Model
 
     public function gestor(): BelongsTo
     {
-        return $this->belongsTo(Gestor::class); 
+        return $this->belongsTo(Gestor::class, 'id_gestor'); 
     } 
 
     public function servidor(): BelongsTo
     {
-        return $this->belongsTo(Servidor::class); 
+        return $this->belongsTo(Servidor::class, 'id_servidor'); 
     } 
 }
