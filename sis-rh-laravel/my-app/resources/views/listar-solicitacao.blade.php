@@ -33,7 +33,7 @@
                 <tbody>
                     @foreach($solicitacoes as $solicitacao)
                     <td>{{ $solicitacao->id }}</td>
-                    <td>{{ $solicitacao->id }}</td>
+                    <td>{{ $solicitacao->servidor->name}}</td>
                     <td>{{ $solicitacao->unidade }}</td>
                     <td>{{ $solicitacao->motivo }}</td>
                     <td>{{ $solicitacao->data_inicio }}</td>

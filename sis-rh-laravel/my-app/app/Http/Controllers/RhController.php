@@ -11,7 +11,7 @@ class RhController extends Controller
 {
     public function index() 
     {
-        $solicitacoes = Solicitacao::all();
+        $solicitacoes = Solicitacao::with('servidor')->get();
         return view('listar-solicitacao', ['solicitacoes' => $solicitacoes]); 
     }
 }
