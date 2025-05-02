@@ -11,9 +11,6 @@
 
             <input class="ms-auto w-25 p-1" type="text" name="search" id="search" onkeyup="searchFilter()" placeholder="Digite o nome do servidor...">
 
-            <form method="POST" id="formDelete" action="../backend/exclude_all.php">
-                <button type="submit" name="excluir_tudo" id="excluir_tudo" class="btn bg-danger text-white m-2 btn-sm">Excluir tudo<i class="fa-solid fa-trash m-1"></i></button>
-            </form>
         </div>
         <div class="card-body">
 
@@ -40,16 +37,6 @@
                         <td>{{ $solicitacao->data_inicio }}</td>
                         <td>{{ $solicitacao->data_fim }}</td>
                         <td>{{ $solicitacao->data_solicitacao }}</td>
-                        <td class="d-flex">
-                            <form action="/solicitacao/edit/{{ $solicitacao->id }}" method="POST">
-                                @csrf
-                                <button name="edit" id="edit" class="btn btn-warning text-white btn-sm">Editar</button>
-                            </form>
-                            <form action="/solicitacao/delete/{{ $solicitacao->id }}" method="POST">
-                                @csrf
-                                <button type="submit" name="exclude" id="exclude" class="btn btn-danger text-white btn-sm">Excluir</button>
-                            </form>
-                        </td>
                     </tr>
                     @endforeach
                 </tbody>
