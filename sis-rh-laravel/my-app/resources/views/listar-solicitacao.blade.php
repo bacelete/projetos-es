@@ -16,6 +16,7 @@
             </form>
         </div>
         <div class="card-body">
+
             <table class="table table-hover shadow-sm rounded mb-5 mt-3" style="cursor:pointer">
                 <thead class="table-light">
                     <tr>
@@ -35,7 +36,7 @@
                     <td>{{ $solicitacao->id }}</td>
                     <td>{{ $solicitacao->unidade }}</td>
                     <td>{{ $solicitacao->motivo }}</td>
-                    <td>{{ $solicitacao->data_inicio }}</td>]
+                    <td>{{ $solicitacao->data_inicio }}</td>
                     <td>{{ $solicitacao->data_fim }}</td>
                     <td>{{ $solicitacao->data_solicitacao }}</td>
                     @endforeach
