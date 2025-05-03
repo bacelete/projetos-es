@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreSolicitacaoRequest;
 use Illuminate\Http\Request;
 use App\Models\Solicitacao;
 use App\Models\Servidor;
@@ -15,11 +16,11 @@ class GestorController extends Controller
         return view('gerar-solicitacao'); 
     }
 
-    public function store(Request $request): void {
+    public function store(StoreSolicitacaoRequest $request): RedirectResponse {
         $servidor = new Servidor;  
 
         $request->validated(); 
-        
+
         $servidor->name = $request->name;
         $servidor->save(); 
 
@@ -32,6 +33,8 @@ class GestorController extends Controller
         $solicitacao->data_fim = $request->data_fim;
 
         $solicitacao->save(); 
+
+        return redirect()->route('gerar-solicitacao');
     }
 
     public function delete(Request $request): RedirectResponse 
