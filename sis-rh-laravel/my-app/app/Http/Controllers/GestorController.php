@@ -16,7 +16,7 @@ class GestorController extends Controller
         return view('enviar-solicitacao'); 
     }
 
-    public function store(StoreSolicitacaoRequest $request): void {
+    public function store(StoreSolicitacaoRequest $request): RedirectResponse {
         $servidor = new Servidor;  
 
         $request->validated(); //valida a requisicao
@@ -33,6 +33,7 @@ class GestorController extends Controller
         $solicitacao->data_fim = $request->data_fim;
 
         $solicitacao->save(); 
+        return back(); 
     }
 
     public function delete(Request $request): RedirectResponse 
