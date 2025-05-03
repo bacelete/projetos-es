@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Solicitacao;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule; 
 
 class StoreSolicitacaoRequest extends FormRequest
 {
@@ -11,7 +13,7 @@ class StoreSolicitacaoRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return $this->user()->can();
+        return true;
     }
 
     /**
@@ -24,7 +26,10 @@ class StoreSolicitacaoRequest extends FormRequest
         return [
             'unidade' => 'required|max:80',
             'name' => 'required|max:80',
-            'data_inicio' => 'required',
+            'data_inicio' => [
+                'required',
+                Rule::date()->beforeToday()
+            ], 
             'data_fim' => 'required',
             'motivo' => 'required',
         ];
@@ -39,9 +44,9 @@ class StoreSolicitacaoRequest extends FormRequest
     {
         return [
             'unidade.required' => 'O campo unidade deve ser preenchido.',
-            'name.required' => 'O campo unidade deve ser preenchido.',
-            'data_inicio.required' => 'A data de início deve ser preenchida',
-            'data_fim.required' => 'A data de conclusão deve ser preenchida',
+            'name.required' => 'O campo nome deve ser preenchido.',
+            'data_inicio.required' => 'A data de início deve ser válida',
+            'data_fim.required' => 'A data de conclusão deve ser válida',
             'motivo.required' => 'O campo motivo deve ser preenchido.',
         ];
     }
