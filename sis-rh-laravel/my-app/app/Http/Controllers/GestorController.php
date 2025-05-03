@@ -44,6 +44,10 @@ class GestorController extends Controller
         return redirect()->back(); 
     }
 
+    public function show() {
+        return view('editar-solicitacao'); 
+    }
+
     public function edit(Request $request): RedirectResponse  {
         return redirect()->route('editar-solicitacao'); 
     }
