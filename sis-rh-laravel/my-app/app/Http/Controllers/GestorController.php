@@ -19,7 +19,7 @@ class GestorController extends Controller
     public function store(StoreSolicitacaoRequest $request): RedirectResponse {
         $servidor = new Servidor;  
 
-        $request->validated(); 
+        $request->validated(); //valida a requisicao
 
         $servidor->name = $request->name;
         $servidor->save(); 
