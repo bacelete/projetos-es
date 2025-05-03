@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Redirect;
 class GestorController extends Controller
 {
     public function index() {
-        return view('gerar-solicitacao'); 
+        return view('enviar-solicitacao'); 
     }
 
-    public function store(StoreSolicitacaoRequest $request): RedirectResponse {
+    public function store(StoreSolicitacaoRequest $request): void {
         $servidor = new Servidor;  
 
         $request->validated(); //valida a requisicao
@@ -33,7 +33,6 @@ class GestorController extends Controller
         $solicitacao->data_fim = $request->data_fim;
 
         $solicitacao->save(); 
-        return redirect()->route('gerar-solicitacao');
     }
 
     public function delete(Request $request): RedirectResponse 
@@ -44,12 +43,9 @@ class GestorController extends Controller
         return redirect()->back(); 
     }
 
-    public function show() {
+    public function index_edit() {
         return view('editar-solicitacao'); 
     }
 
-    public function edit(Request $request): RedirectResponse  {
-        return redirect()->route('editar-solicitacao'); 
-    }
 
 }
