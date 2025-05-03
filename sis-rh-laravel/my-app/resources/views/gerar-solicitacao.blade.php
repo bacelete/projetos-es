@@ -32,9 +32,6 @@
                 <div>
                     <label for="name" class="form-label mt-3">Nome do servidor:</label>
                     <input type="text" name="name" id="name" class="form-control" placeholder="Digite o nome do servidor" required>
-                    <div class="invalid-feedback">
-                        Por favor, digite o nome completo do servidor.
-                    </div>
                 </div>
 
                 <div class="datas d-flex mt-3">
@@ -45,9 +42,6 @@
                             id="data_inicio"
                             name="data_inicio"
                             required />
-                        <div class="invalid-feedback">
-                            Por favor, selecione uma data.
-                        </div>
                     </div>
                     <div class="mt-3 m-auto">
                         <label for="data_fim">Fim do afastamento:</label>
@@ -56,9 +50,6 @@
                             id="data_fim"
                             name="data_fim"
                             required />
-                        <div class="invalid-feedback">
-                            Por favor, selecione uma data.
-                        </div>
                     </div>
                 </div>
 
@@ -74,9 +65,6 @@
                         <label class="btn btn-outline-dark" for="ferias">Férias</label>
                         <input type="radio" class="btn-check" name="motivo" id="outros" value="Outros" autocomplete="off" required>
                         <label class="btn btn-outline-dark" for="outros">Outros</label>
-                        <div class="invalid-feedback">
-                            Por favor, selecione uma das opções.
-                        </div>
                     </div>
 
                 </div>
