@@ -11,7 +11,7 @@ class StoreSolicitacaoRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return $this->user()->can(); 
+        return $this->user()->can();
     }
 
     /**
@@ -26,7 +26,23 @@ class StoreSolicitacaoRequest extends FormRequest
             'name' => 'required|max:80',
             'data_inicio' => 'required',
             'data_fim' => 'required',
-            'motivo' => 'required', 
+            'motivo' => 'required',
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'unidade.required' => 'O campo unidade deve ser preenchido.',
+            'name.required' => 'O campo unidade deve ser preenchido.',
+            'data_inicio.required' => 'A data de início deve ser preenchida',
+            'data_fim.required' => 'A data de conclusão deve ser preenchida',
+            'motivo.required' => 'O campo motivo deve ser preenchido.',
         ];
     }
 }
