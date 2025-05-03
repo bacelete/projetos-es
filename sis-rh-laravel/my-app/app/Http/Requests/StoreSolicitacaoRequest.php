@@ -27,11 +27,15 @@ class StoreSolicitacaoRequest extends FormRequest
             'unidade' => 'required|max:80',
             'name' => 'required|max:80',
             'data_inicio' => [
-                'required|date',
+                'required', 
+                'date',
+                Rule::date()->format('Y-m-d'),
             ], 
             'data_fim' => [
+                'required', 
+                'date',
+                Rule::date()->format('Y-m-d'),
                 Rule::date()->afterOrEqual(today()), //chama uma instancia do Rule:: e acessa os metodos; 
-                'required|date', 
             ],
             'motivo' => 'required',
         ];
