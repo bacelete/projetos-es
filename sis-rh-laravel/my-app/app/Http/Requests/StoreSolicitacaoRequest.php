@@ -22,7 +22,11 @@ class StoreSolicitacaoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'unidade' => 'required|max:80',
+            'name' => 'required|max:80',
+            'data_inicio' => 'required',
+            'data_fim' => 'required',
+            'motivo' => 'required', 
         ];
     }
 }

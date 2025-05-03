@@ -18,14 +18,8 @@ class GestorController extends Controller
     public function store(Request $request): void {
         $servidor = new Servidor;  
 
-        $request->validate([
-            'unidade' => 'required|max:80',
-            'name' => 'required|max:80',
-            'data_inicio' => 'required',
-            'data_fim' => 'required',
-            'motivo' => 'required', 
-        ]); 
-
+        $request->validated(); 
+        
         $servidor->name = $request->name;
         $servidor->save(); 
 
