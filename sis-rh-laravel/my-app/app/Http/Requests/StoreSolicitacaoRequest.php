@@ -27,10 +27,10 @@ class StoreSolicitacaoRequest extends FormRequest
             'unidade' => 'required|max:80',
             'name' => 'required|max:80',
             'data_inicio' => [
-                'required',
-                Rule::date()->beforeToday()
+                'required|date',
+                Rule::date()->afterOrEqual(today()) //chama uma instancia do Rule:: e acessa os metodos; 
             ], 
-            'data_fim' => 'required',
+            'data_fim' => 'required|date',
             'motivo' => 'required',
         ];
     }
@@ -45,8 +45,9 @@ class StoreSolicitacaoRequest extends FormRequest
         return [
             'unidade.required' => 'O campo unidade deve ser preenchido.',
             'name.required' => 'O campo nome deve ser preenchido.',
-            'data_inicio.required' => 'A data de início deve ser válida',
-            'data_fim.required' => 'A data de conclusão deve ser válida',
+            'data_inicio.required' => 'A data de início deve ser preenchida.',
+            'data_inicio.after_or_equal' => 'A data de início não pode ser anterior à data de hoje.',
+            'data_fim.required' => 'A data de conclusão deve ser preenchida.',
             'motivo.required' => 'O campo motivo deve ser preenchido.',
         ];
     }
