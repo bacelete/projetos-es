@@ -83,5 +83,12 @@
             </form>
         </div>
     </div>
+    <script>
+        const btnClose = document.querySelector('.btn-close')
+        const divAlert = document.querySelector('.alert')
+        btnClose.addEventListener("click", function() {
+            divAlert.style.display = "none"; 
+        });     
+    </script>
 </div>
 @endsection
