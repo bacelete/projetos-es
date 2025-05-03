@@ -4,13 +4,13 @@
 @section('content')
 
 @if ($errors->any())
-    <div class="alert alert-danger d-flex">
+    <div class="alert alert-danger d-flex justify-content-between">
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
         </ul>
-        
+        <button type="button" class="btn-close" aria-label="close"></button>
     </div>
 @endif
 
