@@ -33,7 +33,6 @@ class GestorController extends Controller
         $solicitacao->data_fim = $request->data_fim;
 
         $solicitacao->save(); 
-
         return redirect()->route('gerar-solicitacao');
     }
 
