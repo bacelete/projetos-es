@@ -20,7 +20,7 @@ class GestorController extends Controller
 
         $request->validate([
             'unidade' => 'required|max:80',
-            'name' => 'required|80',
+            'name' => 'required|max:80',
             'data_inicio' => 'required',
             'data_fim' => 'required',
             'motivo' => 'required', 
