@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Http\Request;
 use App\Models\Solicitacao;
 
-class RhController extends Controller
+class SolicitaoController extends Controller
 {
     public function index() 
     {
