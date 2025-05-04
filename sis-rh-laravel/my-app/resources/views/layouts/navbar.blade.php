@@ -19,7 +19,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="d-flex navbar-nav flex-row ms-2">
                     <li class="nav-item align-self-center">
-                        <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active text-light" aria-current="page" href="/solicitacao">Enviar</a>
                     </li>
                     <li class="nav-item align-self-center">
                         <a class="nav-link text-light" href="/solicitacoes">Listar</a>
