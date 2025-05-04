@@ -29,7 +29,10 @@
                 <span class="navbar-text align-self-center ms-auto fs-5 text-light fw-bold">
                     Bem-vindo, {{ Auth::user()->name }}!
                 </span>
-                <button class="btn btn-outline-danger btn-sm m-2 text-white"><i class="fa-solid fa-right-from-bracket"></i></button>
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button class="btn btn-outline-danger btn-sm m-2 text-white"><i class="fa-solid fa-right-from-bracket"></i></button>
+                </form>
                 @endif
             </div>
         </div>
