@@ -34,6 +34,12 @@
                         <td>{{ date("d/m/Y", strtotime($solicitacao->data_inicio)) }}</td>
                         <td>{{ date("d/m/Y", strtotime($solicitacao->data_fim))}}</td>
                         <td>{{ $solicitacao->data_solicitacao }}</td>
+                        @if(Auth::guard('gestor')->check())
+                            <td class="d-flex">
+                                <button type="button" class="btn btn-warning">Editar</button>
+                                <button type="button" class="btn btn-danger">Excluir</button>
+                            </td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>
