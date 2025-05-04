@@ -86,11 +86,19 @@
         </div>
     </div>
     <script>
-        const btnClose = document.querySelector('.btn-close')
-        const divAlert = document.querySelector('.alert')
-        btnClose.addEventListener("click", function() {
-            divAlert.style.display = "none";
+        document.querySelectorAll('input[name="motivo"]').forEach(function(el) {
+            el.addEventListener('change', function() {
+                const outrosContainer = document.getElementById('outrosMotivoContainer');
+                if (this.id === 'outros') {
+                    outrosContainer.style.display = 'block';
+                    document.getElementById('motivo_outros').required = true;
+                } else {
+                    outrosContainer.style.display = 'none';
+                    document.getElementById('motivo_outros').required = false;
+                }
+            });
         });
     </script>
+
 </div>
 @endsection
