@@ -36,8 +36,8 @@
                         <td>{{ $solicitacao->data_solicitacao }}</td>
                         @if(Auth::guard('gestor')->check())
                             <td class="d-flex">
-                                <button type="button" class="btn btn-warning">Editar</button>
-                                <button type="button" class="btn btn-danger">Excluir</button>
+                                <button type="button" class="btn btn-warning btn-sm text-white m-1">Editar</button>
+                                <button type="button" class="btn btn-danger btn-sm text-white m-1">Excluir</button>
                             </td>
                         @endif
                     </tr>
