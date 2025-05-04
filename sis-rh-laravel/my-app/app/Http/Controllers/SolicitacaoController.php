@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Solicitacao;
 
-class SolicitaoController extends Controller
+class SolicitacaoController extends Controller
 {
     public function index() 
     {

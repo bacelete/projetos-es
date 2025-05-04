@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RhController;
+use App\Http\Controllers\SolicitacaoController;
 use App\Http\Controllers\GestorController;
 use Illuminate\Support\Facades\Route;
 
