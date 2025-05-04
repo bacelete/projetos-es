@@ -12,11 +12,15 @@ class LoginController extends Controller
 {
     public function show(): View
     {
-        return view('auth.login'); 
+        return view('auth.login');
     }
 
     public function login(Request $request): RedirectResponse
     {
+        Auth::guard('web')->logout();
+        Auth::guard('gestor')->logout();
+        Auth::guard('rh')->logout();
+
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
@@ -34,9 +38,9 @@ class LoginController extends Controller
         ]);
     }
 
-    public function logout(Request $request) : RedirectResponse
+    public function logout(Request $request): RedirectResponse
     {
-        Auth::logout(); 
+        Auth::logout();
 
         $request->session()->invalidate(); //flush the session and regenerate the id 
         $request->session()->regenerateToken(); //regera o token csrf
