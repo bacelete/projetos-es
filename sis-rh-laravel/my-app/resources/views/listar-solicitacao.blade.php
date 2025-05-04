@@ -31,8 +31,8 @@
                         <td>{{ $solicitacao->servidor->name}}</td>
                         <td>{{ $solicitacao->unidade }}</td>
                         <td>{{ $solicitacao->motivo }}</td>
-                        <td>{{ $solicitacao->data_inicio }}</td>
-                        <td>{{ $solicitacao->data_fim }}</td>
+                        <td>{{ date("d/m/Y", strtotime($solicitacao->data_inicio)) }}</td>
+                        <td>{{ date("d/m/Y", strtotime($solicitacao->data_fim))}}</td>
                         <td>{{ $solicitacao->data_solicitacao }}</td>
                     </tr>
                     @endforeach
