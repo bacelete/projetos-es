@@ -21,7 +21,7 @@
         <div class="card-body mt-2 p-4">
             <form method="POST" action="/solicitacao/store" class="needs-validation form-floating" novalidate>
                 @csrf
-                <div class="mb-3">
+                <div class="mb-4">
                     <label for="unidade" class="form-label">Unidade (UBS):</label>
                     <input type="text" name="unidade" id="unidade" class="form-control" placeholder="Digite o nome da unidade" required>
                     <div class="invalid-feedback">
@@ -34,7 +34,7 @@
                     <input type="text" name="name" id="name" class="form-control" placeholder="Digite o nome do servidor" required>
                 </div>
 
-                <div class="datas d-flex mt-3">
+                <div class="datas d-flex mt-4">
                     <div class="mt-3">
                         <label for="data_inicio">Data de início:</label>
                         <input
@@ -54,7 +54,7 @@
                 </div>
 
                 <div>
-                    <label class="form-label mt-4">Motivo da substituição:</label><br>
+                    <label class="form-label mt-5">Motivo da substituição:</label><br>
 
                     <div class="btn-group" role="group">
                         <input type="radio" class="btn-check" name="motivo" id="demissao" value="Demissão" autocomplete="off" required>
