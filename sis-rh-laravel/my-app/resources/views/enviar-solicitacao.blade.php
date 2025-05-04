@@ -24,14 +24,14 @@
                 <div class="mb-4">
                     <label for="unidade" class="form-label">Unidade (UBS):</label>
                     <div class="input-group">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-building"></i></button>
+                        <button class="btn btn-outline-dark" type="button" id="button-addon1"><i class="fa-solid fa-building"></i></button>
                         <input type="text" name="unidade" id="unidade" class="form-control" placeholder="Digite o nome da unidade" required>
                     </div>
                 </div>
                 <div>
                     <label for="name" class="form-label mt-3">Nome do servidor:</label>
                     <div class="input-group">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-user"></i></button>
+                        <button class="btn btn-outline-dark" type="button" id="button-addon1"><i class="fa-solid fa-user"></i></button>
                         <input type="text" name="name" id="name" class="form-control" placeholder="Digite o nome do servidor" required>
                     </div>
                 </div>
