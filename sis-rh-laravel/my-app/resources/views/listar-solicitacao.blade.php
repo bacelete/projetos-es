@@ -38,6 +38,7 @@
                             <td class="d-flex">
                                 <button type="button" class="btn btn-warning btn-sm text-white m-1">Editar</button>
                                 <form action="/delete/{{$solicitacao->id}}" method="post">
+                                    @csrf
                                     <button type="button" class="btn btn-danger btn-sm text-white m-1">Excluir</button>
                                 </form>
                             </td>
