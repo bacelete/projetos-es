@@ -69,8 +69,7 @@
                     <input type="text" class="form-control" name="motivo_outros" id="motivo_outros">
                 </div>
 
-                <div class="d-flex mt-4 justify-content-end">
-                    <button type="submit" id="btnEnviarSolicitacao" class="btn d-block w-20 justify-content-center text-white mt-4 bg-success">Enviar</button>
+                <div class="d-flex mt-4 justify-content-end" id="react-button">
                 </div>
 
             </form>
