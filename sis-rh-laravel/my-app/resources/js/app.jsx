@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import AlertaSucesso from './components/AlertaSucesso';
 
-const divAlert = document.getElementById('alert');
+const divAlert = document.getElementById('alertSucess');
 const btnEnviarSolicitacao = document.getElementById('btnEnviarSolicitacao'); 
 
 btnEnviarSolicitacao.addEventListener('click', () => {

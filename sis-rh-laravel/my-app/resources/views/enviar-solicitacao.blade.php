@@ -4,7 +4,7 @@
 @section('content')
 
 
-<div id="alert"></div>
+<div id="alertSucess"></div>
 
 
 <div class="container w-70">
