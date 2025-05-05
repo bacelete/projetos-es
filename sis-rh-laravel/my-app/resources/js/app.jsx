@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import AlertaSucesso from './components/AlertaSucesso';
 
-function App() {
-  return (
-    <>
-    </>
-  );
+const divAlert = document.getElementById('alert'); 
+
+if (divAlert) {
+    ReactDOM.createRoot(buscaElement).render(<AlertaSucesso />);
 }
-
-const root = ReactDOM.createRoot(document.getElementById('app'));
-root.render(<App />);

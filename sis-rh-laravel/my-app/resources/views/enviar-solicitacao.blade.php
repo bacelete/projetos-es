@@ -14,7 +14,7 @@
 </div>
 @endif
 
-<div id="app"></div>
+<div id="alert"></div>
 
 <div class="container w-70">
     <div id="liveAlertPlaceholder"></div>
