@@ -3,7 +3,12 @@ import ReactDOM from 'react-dom/client';
 import AlertaSucesso from './components/AlertaSucesso';
 
 const divAlert = document.getElementById('alert');
-ReactDOM.createRoot(divAlert).render(<AlertaSucesso />);
+const btnEnviarSolicitacao = document.getElementById('btnEnviarSolicitacao'); 
+
+btnEnviarSolicitacao.addEventListener('click', () => {
+    ReactDOM.createRoot(divAlert).render(<AlertaSucesso />);
+})
+
 
 
 

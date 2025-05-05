@@ -3,18 +3,9 @@
 @section('title', 'Gerar Solicitação')
 @section('content')
 
-@if ($errors->any())
-<div class="alert alert-danger d-flex justify-content-between">
-    <ul>
-        @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-    <button type="button" class="btn-close" aria-label="close"></button>
-</div>
-@endif
 
 <div id="alert"></div>
+
 
 <div class="container w-70">
     <div id="liveAlertPlaceholder"></div>
@@ -80,7 +71,7 @@
                 </div>
 
                 <div class="d-flex mt-4 justify-content-end">
-                    <button type="submit" class="btn d-block w-20 justify-content-center text-white mt-4 bg-success">Enviar</button>
+                    <button type="submit" id="btnEnviarSolicitacao" class="btn d-block w-20 justify-content-center text-white mt-4 bg-success">Enviar</button>
                 </div>
 
             </form>
