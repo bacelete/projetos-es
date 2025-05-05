@@ -8,7 +8,7 @@
         <div id="liveAlertPlaceholder"></div>
         <div class="card-header p-4 d-flex justify-content-between align-items-center flex-wrap">
             <h2><i class="fa-solid fa-list-ul m-2 fs-3"></i>Lista de solicitações</h2>
-            <input class="ms-auto w-25 p-1" style="border: 1px solid #ccc; border-radius: 6px; box-shadow: none; outline: none;"type="text" name="search" id="search" onkeyup="searchFilter()" placeholder="Digite o nome do servidor...">
+            <input class="ms-auto w-25 p-1" style="border: 1px solid #ccc; border-radius: 6px; box-shadow: none; outline: none;" type="text" name="search" id="search" onkeyup="searchFilter()" placeholder="Digite o nome do servidor...">
         </div>
         <div class="card-body">
             <table class="table table-hover shadow-sm rounded mb-5 mt-3 p-2" style="cursor:pointer">
@@ -35,13 +35,16 @@
                         <td>{{ date("d/m/Y", strtotime($solicitacao->data_fim))}}</td>
                         <td>{{ $solicitacao->data_solicitacao }}</td>
                         @if(Auth::guard('gestor')->check())
-                            <td class="d-flex">
-                                <button type="button" class="btn btn-warning btn-sm text-white m-1">Editar</button>
-                                <form action="/solicitacao/delete/{{ $solicitacao->id }}" method="post">
-                                    @csrf
-                                    <button type="submit" class="btn btn-danger btn-sm text-white m-1">Excluir</button>
-                                </form>
-                            </td>
+                        <td class="d-flex">
+                            <form action="/solicitacao/edit/{{ $solicitacao->id }}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-warning btn-sm text-white m-1">Editar</button>
+                            </form>
+                            <form action="/solicitacao/delete/{{ $solicitacao->id }}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-danger btn-sm text-white m-1">Excluir</button>
+                            </form>
+                        </td>
                         @endif
                     </tr>
                     @endforeach
