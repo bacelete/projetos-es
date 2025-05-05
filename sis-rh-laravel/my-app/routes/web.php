@@ -6,7 +6,7 @@ use App\Http\Controllers\GestorController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    echo "Home";
+    return redirect()->route('login');
 })->name('home');
 
 //rota de exibir as solicitacoes
