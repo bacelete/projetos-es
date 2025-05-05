@@ -33,7 +33,6 @@ class GestorController extends Controller
         if ($request->motivo == "Outros") {
             $solicitacao->motivo = $request->motivo_outros; 
         }
-
         
         $solicitacao->data_inicio = $request->data_inicio;
         $solicitacao->data_fim = $request->data_fim;
