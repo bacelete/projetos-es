@@ -5,5 +5,5 @@ import AlertaSucesso from './components/AlertaSucesso';
 const divAlert = document.getElementById('alert'); 
 
 if (divAlert) {
-    ReactDOM.createRoot(buscaElement).render(<AlertaSucesso />);
+    ReactDOM.createRoot(divAlert).render(<AlertaSucesso />);
 }
