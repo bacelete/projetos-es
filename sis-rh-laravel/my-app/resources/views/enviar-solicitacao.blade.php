@@ -4,8 +4,7 @@
 @section('content')
 
 
-<div id="alertSucess"></div>
-
+<div id="react-alert"></div> <!--alert carregado pelo vite (react)-->
 
 <div class="container w-70">
     <div id="liveAlertPlaceholder"></div>
