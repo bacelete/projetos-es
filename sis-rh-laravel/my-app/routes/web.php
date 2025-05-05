@@ -17,7 +17,7 @@ Route::get('/solicitacoes', [SolicitacaoController::class, 'index'])
 //rotas do gestor:
 Route::get('/solicitacao', [GestorController::class, 'index'])
     ->middleware('auth:gestor')
-    ->name('solicitacao');
+    ->name('solicitacao-view');
 Route::post('/solicitacao/store', [GestorController::class, 'store'])
     ->middleware('auth:gestor')
     ->name('enviar-solicitacao');
@@ -26,7 +26,7 @@ Route::post('/solicitacao/delete/{id}', [GestorController::class, 'delete'])
     ->name('excluir-solicitacao');
 Route::get('/solicitacao/edit', [GestorController::class, 'index_edit'])
     ->middleware('auth:gestor')
-    ->name('editar-solicitacao');
+    ->name('edit-view');
 
 //rotas de autenticação: 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
