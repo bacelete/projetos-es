@@ -10,7 +10,9 @@ Route::get('/', function () {
 })->name('home');
 
 //rota de exibir as solicitacoes
-Route::get('/solicitacoes', [SolicitacaoController::class, 'index'])->name('solicitacoes');
+Route::get('/solicitacoes', [SolicitacaoController::class, 'index'])
+->name('solicitacoes')
+->middleware('auth:rh,gestor'); 
 
 //rotas do gestor:
 Route::get('/solicitacao', [GestorController::class, 'index'])
