@@ -78,7 +78,6 @@
                 </div>
 
                 <div class="d-flex mt-4 justify-content-end">
-
                     <button type="submit" class="btn d-block w-20 justify-content-center text-white mt-4 bg-success">Enviar</button>
                 </div>
 
