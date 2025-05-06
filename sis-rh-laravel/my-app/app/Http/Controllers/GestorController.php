@@ -49,11 +49,12 @@ class GestorController extends Controller
         return redirect()->back(); 
     }
 
-    public function index_edit() {
-        return view('editar-solicitacao'); 
+    public function edit(Request $request) {
+        $id = $request['id']; 
+        return view('editar-solicitacao', $id);
     }
 
-    public function edit(Request $request) {
+    public function salvar() {
         
     }
 

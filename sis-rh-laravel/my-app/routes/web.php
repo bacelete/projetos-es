@@ -24,12 +24,12 @@ Route::post('/solicitacao/store', [GestorController::class, 'store'])
 Route::post('/solicitacao/delete/{id}', [GestorController::class, 'delete'])
     ->middleware('auth:gestor')
     ->name('excluir-solicitacao');
-Route::post('/solicitacao/edit', [GestorController::class, 'index_edit'])
-    ->middleware('auth:gestor')
-    ->name('edit-view');
 Route::post('/solicitacao/edit/{id}', [GestorController::class, 'edit'])
     ->middleware('auth:gestor')
-    ->name('editar-solicitacao');
+    ->name('editar-view');
+Route::post('/solicitacao/edit/save', [GestorController::class, 'save'])
+    ->middleware('auth:gestor')
+    ->name('salvar-solicitacao');
 
 //rotas de autenticação: 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
