@@ -9,6 +9,7 @@
                 <div class="card-header h2 p-4 bg-dark text-white rounded-2">Editar solicitação</div>
                 <div class="card-body mt-2 p-4">
                     <form method="POST" action="/solicitacao/edit/salvar" class="needs-validation" novalidate>
+                        @csrf
                         <div>
                             <label for="unidade" class="form-label">Unidade (UBS):</label>
                             <input type="text" name="unidade" value ="" id="unidade" class="form-control" placeholder="Digite o nome da unidade" required>
