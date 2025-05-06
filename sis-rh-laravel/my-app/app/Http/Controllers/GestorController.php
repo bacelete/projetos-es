@@ -51,11 +51,11 @@ class GestorController extends Controller
 
     public function edit(Request $request) {
         $id = $request['id']; 
-        return view('editar-solicitacao', $id);
+        return view('editar-solicitacao', ['id' => $id]);
     }
 
     public function salvar() {
-        
+
     }
 
 
