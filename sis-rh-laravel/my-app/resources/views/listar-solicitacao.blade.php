@@ -38,7 +38,7 @@
                         <td>{{ $solicitacao->data_solicitacao }}</td>
                         @if(Auth::guard('gestor')->check())
                         <td class="d-flex">
-                            <form action="/solicitacao/edit/{{ $solicitacao->id }}" method="post">
+                            <form action="/solicitacao/edit" method="post">
                                 @csrf
                                 <button type="submit" class="btn btn-warning btn-sm text-white m-1">Editar</button>
                             </form>

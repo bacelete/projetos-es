@@ -53,5 +53,9 @@ class GestorController extends Controller
         return view('editar-solicitacao'); 
     }
 
+    public function edit(Request $request) {
+        
+    }
+
 
 }
