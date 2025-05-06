@@ -1,3 +1,8 @@
+@extends('layouts.navbar')
+
+@section('title', 'Editar Solicitação')
+@section('content')
+
 <div class="container w-75">
             <div id="liveAlertPlaceholder"></div>
             <div class="shadow mt-5">
@@ -81,3 +86,4 @@
                 </div>
             </div>
         </div>
+@endsection
