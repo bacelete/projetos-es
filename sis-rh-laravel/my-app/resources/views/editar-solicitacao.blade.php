@@ -79,7 +79,7 @@
                         </div>
 
                         <div class="d-flex mt-4 justify-content-between">
-                            <a href="./listar-solicitacao.php" name="voltar" id="voltar" class="btn w-20 justify-content-center text-white mt-4 bg-danger">Voltar</a>
+                            <a href="/solicitacoes" name="voltar" id="voltar" class="btn w-20 justify-content-center text-white mt-4 bg-danger">Voltar</a>
                             <button type="submit" class="btn d-block w-20 justify-content-center text-white mt-4 bg-secondary" id="editar" name="editar">Enviar</button>
                             <input type="hidden" name="id_solicitacao" value="">
                         </div>
