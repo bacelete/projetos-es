@@ -17,7 +17,7 @@
 
                         <div>
                             <label for="nome" class="form-label mt-3">Nome do servidor:</label>
-                            <input type="text" value="" name="nome" id="nome" class="form-control" placeholder="Digite o nome do servidor" required>
+                            <input type="text" value="{{ $solicitacao->servidor->name }}" name="nome" id="nome" class="form-control" placeholder="Digite o nome do servidor" required>
                         </div>
 
                         <div class="datas d-flex mt-3">
@@ -25,7 +25,7 @@
                                 <label for="data_inicio">Data de início:</label>
                                 <input
                                     type="date"
-                                    value=""
+                                    value="{{ $solicitacao->data_inicio }}"
                                     id="data_inicio"
                                     name="data_inicio"
                                     required />
@@ -34,7 +34,7 @@
                                 <label for="data_fim">Fim do afastamento:</label>
                                 <input
                                     type="date"
-                                    value=""
+                                    value="{{ $solicitacao->data_fim }}"
                                     id="data_fim"
                                     name="data_fim"
                                     required />
@@ -66,7 +66,6 @@
                         <div class="d-flex mt-4 justify-content-between">
                             <a href="/solicitacoes" name="voltar" id="voltar" class="btn w-20 justify-content-center text-white mt-4 bg-danger">Voltar</a>
                             <button type="submit" class="btn d-block w-20 justify-content-center text-white mt-4 bg-secondary" id="editar" name="editar">Enviar</button>
-                            <input type="hidden" name="id_solicitacao" value="">
                         </div>
                     </form>
                 </div>

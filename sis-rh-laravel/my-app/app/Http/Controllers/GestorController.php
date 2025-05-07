@@ -52,7 +52,7 @@ class GestorController extends Controller
     public function edit(Request $request) {
         $id = $request['id']; 
         $solicitacao = Solicitacao::where('id', $id)->first();
-        return view('editar-solicitacao', ['solicitacao' => $solicitacao]);
+        return view('editar-solicitacao', compact('solicitacao'));
     }
 
     public function salvar() {
