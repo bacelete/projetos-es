@@ -12,18 +12,12 @@
                         @csrf
                         <div>
                             <label for="unidade" class="form-label">Unidade (UBS):</label>
-                            <input type="text" name="unidade" value ="" id="unidade" class="form-control" placeholder="Digite o nome da unidade" required>
-                            <div class="invalid-feedback">
-                                Por favor, digite o nome da unidade.
-                            </div>
+                            <input type="text" name="unidade" value ="{{ $solicitacao->unidade }}" id="unidade" class="form-control" required>
                         </div>
 
                         <div>
                             <label for="nome" class="form-label mt-3">Nome do servidor:</label>
                             <input type="text" value="" name="nome" id="nome" class="form-control" placeholder="Digite o nome do servidor" required>
-                            <div class="invalid-feedback">
-                                Por favor, digite o nome completo do servidor.
-                            </div>
                         </div>
 
                         <div class="datas d-flex mt-3">
@@ -35,9 +29,6 @@
                                     id="data_inicio"
                                     name="data_inicio"
                                     required />
-                                <div class="invalid-feedback">
-                                    Por favor, selecione uma data.
-                                </div>
                             </div>
                             <div class="mt-3 m-auto">
                                 <label for="data_fim">Fim do afastamento:</label>
@@ -47,9 +38,6 @@
                                     id="data_fim"
                                     name="data_fim"
                                     required />
-                                <div class="invalid-feedback">
-                                    Por favor, selecione uma data.
-                                </div>
                             </div>
                         </div>
 
@@ -65,9 +53,6 @@
                                 <label class="btn btn-outline-secondary" for="ferias">Férias</label>
                                 <input type="radio" class="btn-check" name="motivo" id="outros" value="Outros" autocomplete="off" required>
                                 <label class="btn btn-outline-secondary" for="outros">Outros</label>
-                                <div class="invalid-feedback">
-                                    Por favor, selecione uma das opções.
-                                </div>
                             </div>
 
                         </div>
