@@ -55,9 +55,5 @@ class GestorController extends Controller
         return view('editar-solicitacao', compact('solicitacao'));
     }
 
-    public function salvar() {
-        
-    }
-
 
 }
