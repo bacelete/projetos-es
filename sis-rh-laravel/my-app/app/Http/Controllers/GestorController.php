@@ -50,11 +50,12 @@ class GestorController extends Controller
     }
 
     public function edit(Request $request, $id) {
-        $solicitacao = Solicitacao::with('servidor')->firstOrFail($id); 
+        $solicitacao = Solicitacao::with('servidor')->findOrFail($id); 
         return view('editar-solicitacao', compact('solicitacao'));
     }
 
-    public function update(StoreSolicitacaoRequest $request, $id): RedirectResponse{
+    public function update(StoreSolicitacaoRequest $request): RedirectResponse {
+        $id = $request->id; //pega do input hidden do blade
         $request->validated(); //valida a requisicao
 
         $solicitacao = Solicitacao::findOrFail($id); 

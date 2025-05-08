@@ -8,7 +8,7 @@
             <div class="shadow mt-5">
                 <div class="card-header h2 p-4 bg-dark text-white rounded-2">Editar solicitação</div>
                 <div class="card-body mt-2 p-4">
-                    <form method="POST" action="/solicitacao/edit/{{ $solicitacao->id }}/save" class="needs-validation" novalidate>
+                    <form method="POST" action="/solicitacao/edit/save" class="needs-validation" novalidate>
                         @csrf
                         <div>
                             <label for="unidade" class="form-label">Unidade (UBS):</label>
@@ -65,6 +65,7 @@
 
                         <div class="d-flex mt-4 justify-content-between">
                             <a href="/solicitacoes" name="voltar" id="voltar" class="btn w-20 justify-content-center text-white mt-4 bg-danger">Voltar</a>
+                            <input type="hidden" name="id" value="{{ $solicitacao->id }}">
                             <button type="submit" class="btn d-block w-20 justify-content-center text-white mt-4 bg-secondary" id="editar" name="editar">Enviar</button>
                         </div>
                     </form>
