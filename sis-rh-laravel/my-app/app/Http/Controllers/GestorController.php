@@ -56,8 +56,30 @@ class GestorController extends Controller
         return view('editar-solicitacao', compact('solicitacao'));
     }
 
-    public function update() {
+    public function update(StoreSolicitacaoRequest $request): RedirectResponse{
+        $id = $request['id']; //pega o id da solicitacao, que esta na URL 
+        $request->validated(); //valida a requisicao
 
+        $solicitacao = Solicitacao::findOrFail($id); 
+        $servidor = Servidor::findOrFail($solicitacao->servidor->id); 
+
+        // atualiza os dados do servidor: 
+        $servidor->name = $request->name;
+        $servidor->save(); 
+
+        // atualiza os dados da solicitação: 
+        $solicitacao->unidade = $request->unidade;
+        $solicitacao->motivo = $request->motivo;
+
+        if ($request->motivo == "Outros") {
+            $solicitacao->motivo = $request->motivo_outros; 
+        }
+
+        $solicitacao->data_inicio = $request->data_inicio;
+        $solicitacao->data_fim = $request->data_fim;
+
+        $solicitacao->save(); 
+        return redirect()->back(); 
     }
 
 }
