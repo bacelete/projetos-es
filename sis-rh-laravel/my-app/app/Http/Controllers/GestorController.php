@@ -49,15 +49,12 @@ class GestorController extends Controller
         return redirect()->back(); 
     }
 
-    public function edit(Request $request) {
-        $id = $request['id']; 
-        $solicitacao = Solicitacao::where('id', $id)->first(); //pega o primeiro elemento
-
+    public function edit(Request $request, $id) {
+        $solicitacao = Solicitacao::with('servidor')->firstOrFail($id); 
         return view('editar-solicitacao', compact('solicitacao'));
     }
 
-    public function update(StoreSolicitacaoRequest $request): RedirectResponse{
-        $id = $request['id']; //pega o id da solicitacao, que esta na URL 
+    public function update(StoreSolicitacaoRequest $request, $id): RedirectResponse{
         $request->validated(); //valida a requisicao
 
         $solicitacao = Solicitacao::findOrFail($id); 
