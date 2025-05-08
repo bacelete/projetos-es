@@ -3,6 +3,8 @@
 @section('title', 'Editar Solicitação')
 @section('content')
 
+<div id="react-alert-edit"></div>
+
 <div class="container w-75">
             <div id="liveAlertPlaceholder"></div>
             <div class="shadow mt-5">
@@ -66,7 +68,7 @@
                         <div class="d-flex mt-4 justify-content-between">
                             <a href="/solicitacoes" name="voltar" id="voltar" class="btn w-20 justify-content-center text-white mt-4 bg-danger">Voltar</a>
                             <input type="hidden" name="id" value="{{ $solicitacao->id }}">
-                            <button type="submit" class="btn d-block w-20 justify-content-center text-white mt-4 bg-secondary" id="editar" name="editar">Enviar</button>
+                            <button type="submit" class="btn d-block w-20 justify-content-center text-white mt-4 bg-secondary" id="btnEditarSolicitacao" name="btnEditarSolicitacao">Enviar</button>
                         </div>
                     </form>
                 </div>
