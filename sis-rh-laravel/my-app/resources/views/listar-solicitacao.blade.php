@@ -8,6 +8,7 @@
         <div id="liveAlertPlaceholder"></div>
         <div class="card-header p-4 d-flex justify-content-between align-items-center flex-wrap">
             <h2><i class="fa-solid fa-list-ul m-2 fs-3"></i>Lista de solicitações</h2>
+            <a href="/solicitacao" class="btn btn-dark btn-sm m-3"><i class="fa-solid fa-plus p-1"></i></a>
             <input class="ms-auto w-25 p-1" style="border: 1px solid #ccc; border-radius: 6px; box-shadow: none; outline: none;" type="text" name="search" id="search" onkeyup="searchFilter()" placeholder="Digite o nome do servidor...">
         </div>
         <div class="card-body">
