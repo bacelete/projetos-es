@@ -17,7 +17,7 @@
 
                         <div>
                             <label for="nome" class="form-label mt-3">Nome do servidor:</label>
-                            <input type="text" value="{{ $solicitacao->servidor->name }}" name="nome" id="nome" class="form-control" placeholder="Digite o nome do servidor" required>
+                            <input type="text" value="{{ $solicitacao->servidor->name }}" name="name" id="name" class="form-control" placeholder="Digite o nome do servidor" required>
                         </div>
 
                         <div class="datas d-flex mt-3">
