@@ -27,6 +27,9 @@ Route::post('/solicitacao/delete/{id}', [GestorController::class, 'delete'])
 Route::post('/solicitacao/edit/{id}', [GestorController::class, 'edit'])
     ->middleware('auth:gestor')
     ->name('editar-view');
+Route::post('/solicitacao/edit/save', [GestorController::class, 'update'])
+    ->middleware('auth:gestor')
+    ->name('editar');
 
 //rotas de autenticação: 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
