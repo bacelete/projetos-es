@@ -26,7 +26,7 @@ class GestorController extends Controller
 
         $solicitacao = new Solicitacao; 
         $solicitacao->id_servidor = $servidor->id; 
-        $solicitacao->id_gestor = Auth::guard()->id();
+        $solicitacao->id_gestor = Auth::guard('gestor')->id();
         $solicitacao->unidade = $request->unidade;
         $solicitacao->motivo = $request->motivo;
 
