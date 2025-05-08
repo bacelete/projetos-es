@@ -41,7 +41,7 @@ class GestorController extends Controller
         return back(); 
     }
 
-    public function delete(Request $request): RedirectResponse 
+    public function destroy(Request $request): RedirectResponse 
     {
         $arrayOfFkIds[] = (string)$request['id'];
 
@@ -57,7 +57,7 @@ class GestorController extends Controller
     }
 
     public function update() {
-        
+
     }
 
 }
