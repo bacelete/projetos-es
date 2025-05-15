@@ -26,10 +26,10 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        foreach (['rh' => 'solicitacoes', 'gestor' => 'solicitacao-view'] as $guard => $route) {
+        foreach (['rh', 'gestor'] as $guard) {
             if (Auth::guard($guard)->attempt($credentials)) {
                 $request->session()->regenerate();
-                return redirect()->route($route);
+                return redirect()->route('solicitacoes');
             }
         }
 

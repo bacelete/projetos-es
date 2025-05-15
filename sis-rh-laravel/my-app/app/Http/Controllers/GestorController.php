@@ -38,7 +38,7 @@ class GestorController extends Controller
         $solicitacao->data_fim = $request->data_fim;
 
         $solicitacao->save(); 
-        return back(); 
+        return redirect()->route('solicitacao-view'); 
     }
 
     public function destroy(Request $request): RedirectResponse 
