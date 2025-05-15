@@ -7,6 +7,7 @@
     <title>@yield('title')</title> 
     @viteReactRefresh <!--tag pra add o vite-->
     @vite(['resources/js/app.jsx']) <!--tag pra add o vite-->
+    <link rel="stylesheet" href="../../css/app.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src=""></script>
 </head>

@@ -3,7 +3,6 @@
 @section('title', 'Listar Solicitação')
 @section('content')
 
-<div id="react-alert-delete"></div>
 
 <div class="container p-1">
     <div class="card shadow-lg mt-4" id="teste">
@@ -45,7 +44,10 @@
                                 @csrf
                                 <button type="submit" class="btn btn-warning btn-sm text-white m-1">Editar</button>
                             </form>
-                            <button type="submit" id="btnExcluirSolicitacao" class="btn btn-danger btn-sm text-white m-1">Excluir</button>
+                            <form action="/solicitacao/delete/{{ $solicitacao->id }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-danger btn-sm text-white m-1">Excluir</button>
+                            </form>
                         </td>
                         @endif
                     </tr>
