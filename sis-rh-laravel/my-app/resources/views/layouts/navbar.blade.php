@@ -28,7 +28,7 @@
                         <a class="nav-link text-light" href="/solicitacoes">Listar</a>
                     </li>
                 </ul>
-                @if(Auth::check())
+                @if(Auth::guard()->check())
                 <span class="navbar-text align-self-center ms-auto fs-5 text-light fw-bold">
                     Bem-vindo, {{ Auth::user()->name }}!
                 </span>

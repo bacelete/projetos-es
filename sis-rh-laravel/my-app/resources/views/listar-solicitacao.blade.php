@@ -106,7 +106,7 @@
             let numLinhas = tr.length - 1;
 
             let elemHTML = document.createElement("p");
-            elemHTML.textContent = `Exibindo 1 a ${numLinhas} de ${numLinhas} linhas`;
+            elemHTML.textContent = `Exibindo 0 a ${numLinhas} de ${numLinhas} linhas`;
             elemHTML.classList.add("text-secondary");
 
             footer.appendChild(elemHTML);
