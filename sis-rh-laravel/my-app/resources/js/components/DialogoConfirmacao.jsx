@@ -7,7 +7,7 @@ import {
   DialogFooter,
 } from "@material-tailwind/react";
  
-export function DialogDefault() {
+export default function DialogoConfirmacao() {
   const [open, setOpen] = React.useState(false);
  
   const handleOpen = () => setOpen(!open);
