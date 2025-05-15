@@ -23,9 +23,12 @@ if (btnEditarSolicitacao) {
     })
 }
 
-btnExcluirSolicitacao.addEventListener('click', () => {
+
+if (btnExcluirSolicitacao) {
+    btnExcluirSolicitacao.addEventListener('click', () => {
     ReactDOM.createRoot(alertExclusao).render(<DialogoConfirmacao />);
 })
+}
 
 
 
