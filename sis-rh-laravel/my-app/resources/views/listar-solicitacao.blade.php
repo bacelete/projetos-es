@@ -3,6 +3,24 @@
 @section('title', 'Listar Solicitação')
 @section('content')
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Deseja excluir a solicitação?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Ao excluir a solicitação, você não poderá ter acesso a ela. Tem certeza que deseja fazer isso? 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-danger">Excluir</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="container p-1">
     <div class="card shadow-lg mt-4" id="teste">
@@ -44,10 +62,9 @@
                                 @csrf
                                 <button type="submit" class="btn btn-warning btn-sm text-white m-1">Editar</button>
                             </form>
-                            <form action="/solicitacao/delete/{{ $solicitacao->id }}" method="POST">
-                                @csrf
-                                <button type="submit" class="btn btn-danger btn-sm text-white m-1">Excluir</button>
-                            </form>
+                            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Excluir
+                            </button>
                         </td>
                         @endif
                     </tr>
