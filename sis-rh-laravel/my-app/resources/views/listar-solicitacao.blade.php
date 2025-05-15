@@ -3,6 +3,8 @@
 @section('title', 'Listar Solicitação')
 @section('content')
 
+<div id="react-alert-delete"></div>
+
 <div class="container p-1">
     <div class="card shadow-lg mt-4" id="teste">
         <div id="liveAlertPlaceholder"></div>

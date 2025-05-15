@@ -19,7 +19,7 @@ btnEditarSolicitacao.addEventListener('click', () => {
 })
 
 btnExcluirSolicitacao.addEventListener('click', () => {
-     ReactDOM.createRoot(alertExclusao).render(<AlertaSucesso mensagem="A solicitação foi editada." />);
+     ReactDOM.createRoot(alertExclusao).render(<DialogoConfirmacao />);
 })
 
 
