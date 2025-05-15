@@ -69,10 +69,12 @@
                                 Excluir
                             </button>
                         </td>
-                        @endif
                     </tr>
-                    @endforeach
+                    @else
+                        echo "Nenhum usuário encontrado";
+                    @endif
                 </tbody>
+                @endforeach
             </table>
             <footer class="d-flex justify-content-end"></footer>
         </div>
