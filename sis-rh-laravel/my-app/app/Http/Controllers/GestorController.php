@@ -43,9 +43,9 @@ class GestorController extends Controller
 
     public function destroy(Request $request): RedirectResponse 
     {
-        $arrayOfFkIds[] = (string)$request['id'];
+        $id= (string)$request['id'];
 
-        Solicitacao::where('id', $arrayOfFkIds)->delete();
+        Solicitacao::where('id', $id)->delete();
         return redirect()->back(); 
     }
 
