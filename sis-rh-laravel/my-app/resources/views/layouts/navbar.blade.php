@@ -49,7 +49,7 @@
                 <span class="navbar-text align-self-center ms-auto fs-5 text-light fw-bold">
                     Bem-vindo, {{ Auth::user()->name }}!
                 </span>
-                <button class="btn btn-outline-danger btn-sm m-2 text-white" data-bs-toggle="modal" data-bs-target="#logoutModal"><i class="fa-solid fa-right-from-bracket"></i></button>
+                <button class="btn btn-outline-danger btn-sm m-2 text-white rounded-circle" data-bs-toggle="modal" data-bs-target="#logoutModal"><i class="fa-solid fa-right-from-bracket"></i></button>
             </div>
         </div>
         <button id="recolherMenu" style="display: none" name="recolherMenu" class="btn btn-sm btn-outline-light mt-auto m-4 align-self-center"><i class="fa-solid fa-arrow-left m-1"></i>Recolher menu</button>
