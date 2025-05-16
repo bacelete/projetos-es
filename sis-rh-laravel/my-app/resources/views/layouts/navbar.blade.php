@@ -12,6 +12,25 @@
 
 <body>
     @if(Auth::user())
+    <!-- Vertically centered modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Fazer logout</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Tem certeza que deseja fazer logout? </p>
+                </div>
+                <div class="modal-footer">
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Confirmar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav class="d-flex navbar navbar-expand-lg bg-dark">
         <div class="container-fluid mt-2">
             <a style="font-size: 2.5rem" class="navbar-brand text-light align-self-center fw-bold" href="#">SIRH</a>
@@ -30,10 +49,7 @@
                 <span class="navbar-text align-self-center ms-auto fs-5 text-light fw-bold">
                     Bem-vindo, {{ Auth::user()->name }}!
                 </span>
-                <form action="/logout" method="POST">
-                    @csrf
-                    <button class="btn btn-outline-danger btn-sm m-2 text-white"><i class="fa-solid fa-right-from-bracket"></i></button>
-                </form>
+                <button class="btn btn-outline-danger btn-sm m-2 text-white" data-bs-toggle="modal" data-bs-target="#logoutModal"><i class="fa-solid fa-right-from-bracket"></i></button>
             </div>
         </div>
         <button id="recolherMenu" style="display: none" name="recolherMenu" class="btn btn-sm btn-outline-light mt-auto m-4 align-self-center"><i class="fa-solid fa-arrow-left m-1"></i>Recolher menu</button>

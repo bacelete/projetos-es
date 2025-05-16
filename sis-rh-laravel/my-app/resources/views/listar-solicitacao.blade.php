@@ -69,9 +69,10 @@
                                 Excluir
                             </button>
                         </td>
+                        @endif
                     </tr>
-                    @else
-                        echo "Nenhum usuário encontrado";
+                    @if(!$solicitacoes)
+                        <p>Nenhum usuário encontrado!</p>
                     @endif
                 </tbody>
                 @endforeach
