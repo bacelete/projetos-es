@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title')</title> 
+    <title>@yield('title')</title>
     @viteReactRefresh <!--tag pra add o vite-->
     @vite(['resources/js/app.jsx']) <!--tag pra add o vite-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
+    @if(Auth::user())
     <nav class="d-flex navbar navbar-expand-lg bg-dark">
         <div class="container-fluid mt-2">
             <a style="font-size: 2.5rem" class="navbar-brand text-light align-self-center fw-bold" href="#">SIRH</a>
@@ -26,7 +27,6 @@
                         <a class="nav-link text-light" href="/solicitacoes">Listar</a>
                     </li>
                 </ul>
-                @if(Auth::guard()->check())
                 <span class="navbar-text align-self-center ms-auto fs-5 text-light fw-bold">
                     Bem-vindo, {{ Auth::user()->name }}!
                 </span>
@@ -34,10 +34,10 @@
                     @csrf
                     <button class="btn btn-outline-danger btn-sm m-2 text-white"><i class="fa-solid fa-right-from-bracket"></i></button>
                 </form>
-                @endif
             </div>
         </div>
         <button id="recolherMenu" style="display: none" name="recolherMenu" class="btn btn-sm btn-outline-light mt-auto m-4 align-self-center"><i class="fa-solid fa-arrow-left m-1"></i>Recolher menu</button>
+        @endif
     </nav>
 
     <div class="container mt-4">

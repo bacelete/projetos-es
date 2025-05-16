@@ -1,10 +1,8 @@
 import ReactDOM from 'react-dom/client';
 import AlertaSucesso from './components/AlertaSucesso';
-import '../css/app.css';
 
 const alertSucesso = document.getElementById('react-alert-success');
 const alertEdit = document.getElementById('react-alert-edit');
-const alertExclusao = document.getElementById('react-alert-delete');
 
 const btnEnviarSolicitacao = document.getElementById('btnEnviarSolicitacao');
 const btnEditarSolicitacao = document.getElementById('btnEditarSolicitacao');
