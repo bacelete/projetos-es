@@ -29,6 +29,10 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @if(count($solicitacoes) <= 0)
+                    <h5>Nenhuma solicitação foi encontrada!</h5>
+                    @endif
+                    
                     @foreach($solicitacoes as $solicitacao)
                     <!-- Modal -->
                     <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -70,12 +74,9 @@
                             </button>
                         </td>
                         @endif
+                        @endforeach
                     </tr>
-                    @if(!$solicitacoes)
-                        <p>Nenhum usuário encontrado!</p>
-                    @endif
                 </tbody>
-                @endforeach
             </table>
             <footer class="d-flex justify-content-end"></footer>
         </div>
