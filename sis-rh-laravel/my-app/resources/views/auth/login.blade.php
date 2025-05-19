@@ -9,22 +9,24 @@
 </head>
 
 <body>
-    <div class="card border-light mx-auto w-50">
-        <div class="card-header">
+    <div id="card-login" class="card border-light mx-auto w-75 shadow-sm" style="margin-top: 100px; height: 350px;">
+        <div class="card-header text-center">
             <h2>Login</h2>
         </div>
-        <div class="card-body">
-            <div class="form-floating mb-3">
+        <div class="card-body mx-auto">
+            <div class="form-floating mb-3" style="width: 300px;">
                 <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Endereço de email</label>
             </div>
-            <div class="form-floating">
+            <div class="form-floating mb-4" style="width: 300px;">
                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                 <label for="floatingPassword">Senha</label>
             </div>
         </div>
-        <form action="/login" method="post"></form>
-        <button class="btn btn-dark">Entrar</button>
+        <form action="/login" class="mx-auto" method="post">
+            @csrf
+            <button type="submit" class="btn btn-dark" style="width: 300px;">Entrar</button>
+        </form>
     </div>
     </div>
     <script src="https://kit.fontawesome.com/291cf6cb9c.js" crossorigin="anonymous"></script>
