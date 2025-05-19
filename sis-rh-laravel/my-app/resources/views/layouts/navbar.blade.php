@@ -7,7 +7,7 @@
     <title>@yield('title')</title>
     @viteReactRefresh <!--tag pra add o vite-->
     @vite(['resources/js/app.jsx']) <!--tag pra add o vite-->
-    @vite(['resources/js/filtrar-usuario.js'])
+    @vite(['resources/js/scripts/filtrar-usuario.js'])
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
