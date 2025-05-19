@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const table = document.querySelector("table");
     const tr = table.getElementsByTagName("tr");
+    const body = document.querySelector("tbody"); 
     const input = document.getElementById("search");
+    const elem = document.createElement("h5"); 
 
     input.addEventListener("keyup", function () {
         const filter = input.value.toUpperCase();
@@ -12,8 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (td.textContent.toUpperCase().indexOf(filter) > -1) {
                 tr[i].style.display = "";
+                body.removeChild(elem);
             } else {
                 tr[i].style.display = "none";
+                elem.textContent = "Nenhuma solicitação foi encontrada!";
+                body.appendChild(elem)
             }
 
         }
