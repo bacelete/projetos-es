@@ -23,7 +23,7 @@
                     <p>Tem certeza que deseja fazer logout? </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
                     <form action="/logout" method="post">
                         @csrf
                         <button type="submit" class="btn btn-danger">Confirmar</button>
