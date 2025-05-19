@@ -32,7 +32,7 @@
                     @if(count($solicitacoes) <= 0)
                     <h5>Nenhuma solicitação foi encontrada!</h5>
                     @endif
-                    
+
                     @foreach($solicitacoes as $solicitacao)
                     <!-- Modal -->
                     <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -69,7 +69,7 @@
                                 @csrf
                                 <button type="submit" class="btn btn-warning btn-sm text-white m-1">Editar</button>
                             </form>
-                            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" class="btn btn-sm btn-danger m-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Excluir
                             </button>
                         </td>
