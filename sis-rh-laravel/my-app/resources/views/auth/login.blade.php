@@ -11,10 +11,11 @@
 <body>
     <div id="card-login" class="card border-light mx-auto w-75 shadow-sm" style="margin-top: 100px; height: 450px;">
         <div class="card-header text-center">
-            <h2>SIGA</h2>
+            <h1>SIRH</h1>
         </div>
         <div class="card-body mx-auto mt-4">
-            <h5 class="card-title mb-3 text-center">Faça login na sua conta</h5>
+            <h4 class="card-title mb-4 text-center">Faça login na sua conta</h4>
+            <hr>
             <div class="form-floating mb-3" style="width: 300px;">
                 <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Endereço de email</label>
