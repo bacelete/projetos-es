@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <div id="card-login" class="card border-light mx-auto w-75 shadow-sm" style="margin-top: 100px; height: 350px;">
+    <div id="card-login" class="card border-light mx-auto w-75 shadow-sm" style="margin-top: 100px; height: 450px;">
         <div class="card-header text-center">
             <h2>Login</h2>
         </div>
-        <div class="card-body mx-auto">
+        <div class="card-body mx-auto mt-4">
             <div class="form-floating mb-3" style="width: 300px;">
                 <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Endereço de email</label>
@@ -23,7 +23,7 @@
                 <label for="floatingPassword">Senha</label>
             </div>
         </div>
-        <form action="/login" class="mx-auto" method="post">
+        <form action="/login" class="mx-auto mb-5" method="post">
             @csrf
             <button type="submit" class="btn btn-dark" style="width: 300px;">Entrar</button>
         </form>
