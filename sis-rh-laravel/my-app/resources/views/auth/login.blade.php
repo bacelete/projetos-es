@@ -4,25 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}"">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Login</title>
 </head>
 
 <body>
-    <div class="login-box">
-        <h1 id="titulo-login">Login</h1>
-        <form action="/login" method="post">
-            @csrf
-            <div class="box-input">
-                <i class="fa-solid fa-envelope"></i>
-                <input type="text" name="email" placeholder="Digite seu email">
+    <div class="card border-light mb-3 w-50">
+        <div class="card-header"><h2>Login</h2></div>
+        <div class="card-body">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
             </div>
-            <div class="box-input">
-                <i class="fa-solid fa-lock"></i>
-                <input type="password" name="password" placeholder="Digite sua senha">
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
             </div>
-            <button class="login-button" type="submit">Entrar</button>
-        </form>
+        </div>
+        
     </div>
     <script src="https://kit.fontawesome.com/291cf6cb9c.js" crossorigin="anonymous"></script>
 </body>
