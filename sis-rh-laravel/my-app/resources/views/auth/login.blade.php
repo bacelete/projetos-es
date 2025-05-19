@@ -13,20 +13,20 @@
         <div class="card-header text-center">
             <h1>SIRH</h1>
         </div>
-        <div class="card-body mx-auto mt-4">
-            <h4 class="card-title mb-4 text-center">Faça login na sua conta</h4>
-            <hr>
-            <div class="form-floating mb-3" style="width: 300px;">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Endereço de email</label>
-            </div>
-            <div class="form-floating mb-4" style="width: 300px;">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Senha</label>
-            </div>
-        </div>
         <form action="/login" class="mx-auto mb-5" method="post">
             @csrf
+            <div class="card-body mx-auto mt-4">
+                <h4 class="card-title mb-4 text-center">Faça login na sua conta</h4>
+                <hr>
+                <div class="form-floating mb-3" style="width: 300px;">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                    <label for="email">Endereço de email</label>
+                </div>
+                <div class="form-floating mb-4" style="width: 300px;">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    <label for="password">Senha</label>
+                </div>
+            </div>
             <button type="submit" class="btn btn-dark" style="width: 300px;">Entrar</button>
         </form>
     </div>
