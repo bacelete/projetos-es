@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
     @viteReactRefresh <!--tag pra add o vite-->
     @vite(['resources/js/app.jsx']) <!--tag pra add o vite-->
+    @vite(['resources/js/filtrar-usuario.js'])
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -34,7 +35,7 @@
     </div>
     <nav class="d-flex navbar navbar-expand-lg bg-dark">
         <div class="container-fluid mt-2">
-            <a style="font-size: 2.5rem" class="navbar-brand text-light align-self-center fw-bold" href="#">SIRH</a>
+            <a style="font-size: 2.5rem" class="navbar-brand text-light align-self-center fw-bold" href="#">SIGA</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -60,7 +61,6 @@
     <div class="container mt-4">
         @yield('content')
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/291cf6cb9c.js" crossorigin="anonymous"></script>
 </body>
