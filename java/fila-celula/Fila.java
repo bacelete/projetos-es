@@ -52,11 +52,7 @@ public class Fila<T> {
         this.tras.setProximo(outra.frente.getProximo());
         this.tras = outra.tras; 
     }
-
-    public int obterNumItensAFrente(T item) {
-        
-    }
-
+    
     public void copiar() {
         Fila copia = new Fila(); 
         Celula<T> atual = frente.getProximo(); 
