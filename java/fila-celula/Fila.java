@@ -35,4 +35,19 @@ public class Fila<T> {
         return item; 
     }
 
+    public void concatenar(Fila<T> outra) {
+        if (this.isEmpty() || outra.isEmpty()) { throw new RuntimeException("Fila vazia");}
+        this.tras.setProximo(outra.frente.getProximo());
+        this.tras = outra.tras; 
+    }
+
+    public void imprimir() {
+        if (this.isEmpty()) { throw new RuntimeException("Fila vazia"); }
+        Celula<T> atual = frente.getProximo(); 
+
+        while (atual != null) {
+            System.out.println(atual.getItem());
+            atual = atual.getProximo(); 
+        }
+    }
 }
