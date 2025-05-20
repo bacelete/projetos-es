@@ -11,7 +11,7 @@ public class Fila<T> {
     }
 
     public boolean isFull() {
-        return (tras + 1 % tamanho) == (frente % tamanho); 
+        return (obterIndice(tras + 1)) == (obterIndice(frente)); 
     }
 
     public boolean isEmpty() {
@@ -36,6 +36,8 @@ public class Fila<T> {
     }
 
     public void imprimir() {
+        if (isEmpty()) { throw new RuntimeException("Empty"); }
+
         for (int i = this.frente; i < this.tras; i++) {
             System.out.println(fila[obterIndice(i)]);
         }
