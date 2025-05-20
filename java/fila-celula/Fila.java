@@ -18,6 +18,19 @@ public class Fila<T> {
         tras = tras.getProximo(); 
     }
 
+    public boolean verificarExistencia(T item) {
+        Celula<T> atual = frente; 
+
+        if (atual != null) {
+            if (atual.getItem() == item) {
+                return true;
+            }
+            atual = atual.getProximo(); 
+        }
+
+        return false;
+    }
+
     //lembrando que o frente nesse caso é a célula logo após o sentinela (variável de controle)
     public T desenfileirar() { 
         Celula<T> primeiro; 
@@ -40,6 +53,16 @@ public class Fila<T> {
         this.tras.setProximo(outra.frente.getProximo());
         this.tras = outra.tras; 
     }
+
+    public void copiar() {
+        Fila copia = new Fila(); 
+        Celula<T> atual = frente.getProximo(); 
+
+        while(atual != null) {
+            copia.enfileirar(atual.getItem());
+            atual = atual.getProximo();  
+        }
+    }   
 
     public void imprimir() {
         if (this.isEmpty()) { throw new RuntimeException("Fila vazia"); }
