@@ -19,15 +19,14 @@ public class Fila<T> {
     }
 
     public boolean verificarExistencia(T item) {
-        Celula<T> atual = frente; 
+        Celula<T> atual = frente.getProximo(); 
 
-        if (atual != null) {
-            if (atual.getItem() == item) {
+        while (atual != null) {
+            if (atual.getItem().equals(item)) {
                 return true;
             }
             atual = atual.getProximo(); 
         }
-
         return false;
     }
 
@@ -72,5 +71,13 @@ public class Fila<T> {
             System.out.println(atual.getItem());
             atual = atual.getProximo(); 
         }
+    }
+
+    public static void main(String[] args) {
+        Fila fila = new Fila();
+
+        fila.enfileirar(1);
+        fila.enfileirar(2);
+        System.out.println(fila.verificarExistencia(2));
     }
 }
