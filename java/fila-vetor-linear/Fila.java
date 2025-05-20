@@ -24,13 +24,13 @@ public class Fila<T> {
 
     public void enfileirar(T elem) {
         if (isFull()) { throw new RuntimeException("Stack Overflow!"); }
-        fila[tras] = elem;
+        fila[obterIndice(tras)] = elem;
         tras++;
     }
 
     public T desenfileirar() {
         if (isEmpty()) { throw new RuntimeException("Empty"); }
-        T item = fila[frente]; 
+        T item = fila[obterIndice(frente)]; 
         frente++;         
         return item; 
     }
