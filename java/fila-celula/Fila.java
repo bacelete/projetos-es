@@ -53,6 +53,10 @@ public class Fila<T> {
         this.tras = outra.tras; 
     }
 
+    public int obterNumItensAFrente(T item) {
+        
+    }
+
     public void copiar() {
         Fila copia = new Fila(); 
         Celula<T> atual = frente.getProximo(); 
@@ -78,6 +82,8 @@ public class Fila<T> {
 
         fila.enfileirar(1);
         fila.enfileirar(2);
-        System.out.println(fila.verificarExistencia(2));
+        fila.enfileirar(3);
+
+        System.out.println(fila.obterNumItensAFrente(1));
     }
 }
