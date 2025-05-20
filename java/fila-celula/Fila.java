@@ -18,6 +18,7 @@ public class Fila<T> {
         tras = tras.getProximo(); 
     }
 
+    //lembrando que o frente nesse caso é a célula logo após o sentinela (variável de controle)
     public T desenfileirar() { 
         Celula<T> primeiro; 
         T item = frente.getProximo().getItem(); 
