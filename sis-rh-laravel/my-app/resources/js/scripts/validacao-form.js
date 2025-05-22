@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.querySelectorAll('.needs-validation')
+        var alert = document.querySelector('.alert-dismissible'); 
 
         // Loop over them and prevent submission
         Array.prototype.slice.call(forms)
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (!form.checkValidity()) {
                         event.preventDefault()
                         event.stopPropagation()
+                        alert.style.display = "";
                     }
 
                     form.classList.add('was-validated')
