@@ -18,7 +18,7 @@
 
     <div id="card-login" class="card border-light mx-auto w-75 shadow-sm" style="margin-top: 80px; height: 575px;">
         <div class="card-header text-center">
-            <h1>SIRH</h1>
+            <span style="font-size: 60px;"><strong>SIRH</strong></span>
         </div>
         <form action="/login" class="mx-auto mb-5 needs-validation" method="post" novalidate>
             @csrf
