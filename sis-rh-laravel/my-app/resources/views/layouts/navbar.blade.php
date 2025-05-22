@@ -39,14 +39,16 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="d-flex navbar-nav flex-row ms-2">
-                    <li class="nav-item align-self-center">
-                        <a class="nav-link active text-light" aria-current="page" href="/solicitacao">Enviar</a>
-                    </li>
-                    <li class="nav-item align-self-center">
-                        <a class="nav-link text-light" href="/solicitacoes">Listar</a>
-                    </li>
-                </ul>
+                <!-- Example single danger button -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Solicitação
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/solicitacao">Enviar</a></li>
+                        <li><a class="dropdown-item" href="/solicitacoes">Listar</a></li>
+                    </ul>
+                </div>
                 <span class="navbar-text align-self-center ms-auto fs-5 text-light fw-bold">
                     Bem-vindo, {{ Auth::user()->name }}!
                 </span>
