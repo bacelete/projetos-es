@@ -3,7 +3,6 @@
 @section('title', 'Listar Solicitação')
 @section('content')
 
-
 <div class="container p-1">
     <div class="card shadow-lg mt-4" id="teste">
         <div id="liveAlertPlaceholder"></div>
@@ -30,54 +29,66 @@
                 </thead>
                 <tbody>
                     @if(count($solicitacoes) <= 0)
-                    <h5>Nenhuma solicitação foi encontrada!</h5>
-                    @endif
+                        <h5>Nenhuma solicitação foi encontrada!</h5>
+                        @endif
 
-                    @foreach($solicitacoes as $solicitacao)
-                    <!-- Modal -->
-                    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Deseja excluir a solicitação?</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    Ao excluir a solicitação, você não poderá ter acesso a ela. <br>Tem certeza que deseja fazer isso?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Fechar</button>
-                                    <form action="/solicitacao/delete/{{ $solicitacao->id }}" method="POST">
-                                        @csrf
-                                        <button type="submit" class="btn btn-danger">Excluir</button>
-                                    </form>
+                        @foreach($solicitacoes as $solicitacao)
+                        <!-- Modal -->
+                        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Deseja excluir a solicitação?</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Ao excluir a solicitação, você não poderá ter acesso a ela. <br>Tem certeza que deseja fazer isso?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Fechar</button>
+                                        <form action="/solicitacao/delete/{{ $solicitacao->id }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger">Excluir</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <tr>
-                        <td>{{ $solicitacao->id }}</td>
-                        <td>{{ $solicitacao->servidor->name}}</td>
-                        <td>{{ $solicitacao->unidade }}</td>
-                        <td>{{ $solicitacao->motivo }}</td>
-                        <td>{{ date("d/m/Y", strtotime($solicitacao->data_inicio)) }}</td>
-                        <td>{{ date("d/m/Y", strtotime($solicitacao->data_fim))}}</td>
-                        <td>{{ $solicitacao->data_solicitacao }}</td>
-                        @if(Auth::guard('gestor')->check())
-                        <td class="d-flex">
-                            <form action="/solicitacao/edit/{{ $solicitacao->id }}" method="GET">
-                                @csrf
-                                <button type="submit" class="btn btn-warning btn-sm text-white m-1">Editar</button>
-                            </form>
-                            <button type="button" class="btn btn-sm btn-danger m-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Excluir
-                            </button>
-                        </td>
-                        @endif
-                        @endforeach
-                    </tr>
+                        <tr>
+                            <td>{{ $solicitacao->id }}</td>
+                            <td>{{ $solicitacao->servidor->name}}</td>
+                            <td>{{ $solicitacao->unidade }}</td>
+                            <td>{{ $solicitacao->motivo }}</td>
+                            <td>{{ date("d/m/Y", strtotime($solicitacao->data_inicio)) }}</td>
+                            <td>{{ date("d/m/Y", strtotime($solicitacao->data_fim))}}</td>
+                            <td>{{ $solicitacao->data_solicitacao }}</td>
+                            @if(Auth::guard('gestor')->check())
+                            <td class="d-flex">
+                                <form action="/solicitacao/edit/{{ $solicitacao->id }}" method="GET">
+                                    @csrf
+                                    <button type="submit" class="btn btn-warning btn-sm text-white m-1">Editar</button>
+                                </form>
+                                <button type="button" class="btn btn-sm btn-danger m-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Excluir
+                                </button>
+                            </td>
+                            @endif
+                            @endforeach
+                        </tr>
+                        
                 </tbody>
             </table>
+            <nav aria-label="...">
+                            <ul class="pagination pagination-sm">
+                                <li class="page-item"><a href="#" class="page-link">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#" aria-current="page">2</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
             <footer class="d-flex justify-content-end"></footer>
         </div>
     </div>
