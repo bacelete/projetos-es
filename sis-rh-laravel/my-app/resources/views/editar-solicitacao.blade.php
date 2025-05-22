@@ -14,7 +14,7 @@
                         @csrf
                         <div>
                             <label for="unidade" class="form-label">Unidade (UBS):</label>
-                            <input type="text" name="unidade" value ="{{ $solicitacao->unidade }}" id="unidade" class="form-control" required>
+                            <input type="text" name="unidade" value ="{{ $solicitacao->unidade }}" id="unidade" class="form-control" placeholder="Digite o nome da unidade" required>
                         </div>
 
                         <div>
