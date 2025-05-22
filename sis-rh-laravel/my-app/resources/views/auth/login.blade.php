@@ -25,7 +25,7 @@
             <div class="card-body mx-auto mt-4">
                 <h4 class="card-title mb-4 text-center">Faça login na sua conta</h4>
                 <hr>
-                <div class="form-floating mb-3" style="width: 300px;">
+                <div class="form-floating mb-3 mt-5" style="width: 300px;">
                     <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
                     <label for="email">Endereço de email</label>
                     <div class="invalid-feedback"></div>
