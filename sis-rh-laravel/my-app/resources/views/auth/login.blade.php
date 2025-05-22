@@ -11,6 +11,12 @@
 
 <body>
     <div id="card-login" class="card border-light mx-auto w-75 shadow-sm" style="margin-top: 100px; height: 575px;">
+        
+        <!--Div de alerta -->
+        <div class="alert alert-danger" role="alert">
+            A simple danger alert—check it out!
+        </div>
+
         <div class="card-header text-center">
             <h1>SIRH</h1>
         </div>
@@ -22,16 +28,12 @@
                 <div class="form-floating mb-3" style="width: 300px;">
                     <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
                     <label for="email">Endereço de email</label>
-                    <div class="invalid-feedback">
-                        Por favor, digite um e-mail válido.
-                    </div>
+                    <div class="invalid-feedback"></div>
                 </div>
                 <div class="form-floating mb-4" style="width: 300px;">
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                     <label for="password">Senha</label>
-                    <div class="invalid-feedback">
-                        Por favor, digite uma senha válida.
-                    </div>
+                    <div class="invalid-feedback"></div>
                 </div>
                 <button type="submit" class="btn btn-dark mt-5" style="width: 300px;">Entrar</button>
             </div>
