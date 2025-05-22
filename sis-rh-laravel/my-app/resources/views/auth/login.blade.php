@@ -10,14 +10,13 @@
 </head>
 
 <body>
-    <div id="card-login" class="card border-light mx-auto w-75 shadow-sm" style="margin-top: 100px; height: 575px;">
+    <!--Div de alerta -->
+    <div class="alert alert-danger alert-dismissible fade show mx-auto mt-2 p-4 w-75" role="alert" style="display: none;">
+        Endereço de e-mail e/ou senha inválidos.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 
-        <!--Div de alerta -->
-        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
-            Endereço de e-mail e/ou senha inválidos.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-
+    <div id="card-login" class="card border-light mx-auto w-75 shadow-sm" style="margin-top: 80px; height: 575px;">
         <div class="card-header text-center">
             <h1>SIRH</h1>
         </div>
