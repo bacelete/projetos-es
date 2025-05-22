@@ -14,7 +14,7 @@
             <input class="ms-auto w-25 p-1" style="border: 1px solid #ccc; border-radius: 6px; box-shadow: none; outline: none;" type="text" name="search" id="search" placeholder="Digite o nome do servidor...">
         </div>
         <div class="card-body">
-            <table class="table table-hover shadow-sm rounded mb-5 mt-3 p-2" style="cursor:pointer">
+            <table class="table table-hover table-striped shadow-sm rounded mb-5 mt-3 p-2" style="cursor:pointer">
                 <thead class="table-light">
                     <tr>
                         <th>ID</th>
