@@ -6,27 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Login</title>
+    @vite(['resources/js/scripts/validacao-form.js'])
 </head>
 
 <body>
-    <div id="card-login" class="card border-light mx-auto w-75 shadow-sm" style="margin-top: 100px; height: 450px;">
+    <div id="card-login" class="card border-light mx-auto w-75 shadow-sm" style="margin-top: 100px; height: 575px;">
         <div class="card-header text-center">
             <h1>SIRH</h1>
         </div>
-        <form action="/login" class="mx-auto mb-5" method="post">
+        <form action="/login" class="mx-auto mb-5 needs-validation" method="post" novalidate>
             @csrf
             <div class="card-body mx-auto mt-4">
                 <h4 class="card-title mb-4 text-center">Faça login na sua conta</h4>
                 <hr>
                 <div class="form-floating mb-3" style="width: 300px;">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
                     <label for="email">Endereço de email</label>
+                    <div class="invalid-feedback">
+                        Por favor, digite um e-mail válido.
+                    </div>
                 </div>
                 <div class="form-floating mb-4" style="width: 300px;">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                     <label for="password">Senha</label>
+                    <div class="invalid-feedback">
+                        Por favor, digite uma senha válida.
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-dark" style="width: 300px;">Entrar</button>
+                <button type="submit" class="btn btn-dark mt-5" style="width: 300px;">Entrar</button>
             </div>
         </form>
     </div>
