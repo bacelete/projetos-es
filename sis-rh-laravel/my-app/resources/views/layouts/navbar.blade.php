@@ -42,7 +42,7 @@
                 <!-- Example single danger button -->
                 <div class="btn-group">
                     <button type="button" class="btn btn-dark btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <strong>Solicitação</strong>
+                        <span class="fs-6">Solicitação</span>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/solicitacao">Enviar</a></li>

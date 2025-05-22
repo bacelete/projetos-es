@@ -44,7 +44,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        Ao excluir a solicitação, você não poderá ter acesso a ela. <br>Tem certeza que deseja fazer isso?
+                                        Ao excluir a solicitação, você <strong>não poderá</strong> ter acesso a ela. <br>Tem certeza que deseja fazer isso?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Fechar</button>
@@ -65,7 +65,7 @@
                             <td>{{ date("d/m/Y", strtotime($solicitacao->data_fim))}}</td>
                             <td>{{ $solicitacao->data_solicitacao }}</td>
                             @if(Auth::guard('gestor')->check())
-                            <td class="d-flex">
+                            <td class="d-flex justify-content-end">
                                 <form action="/solicitacao/edit/{{ $solicitacao->id }}" method="GET">
                                     @csrf
                                     <button type="submit" class="btn btn-warning btn-sm text-white m-1">Editar</button>
