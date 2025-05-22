@@ -11,10 +11,11 @@
 
 <body>
     <div id="card-login" class="card border-light mx-auto w-75 shadow-sm" style="margin-top: 100px; height: 575px;">
-        
+
         <!--Div de alerta -->
-        <div class="alert alert-danger" role="alert">
-            A simple danger alert—check it out!
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            Endereço de e-mail e/ou senha inválidos.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
 
         <div class="card-header text-center">
@@ -40,6 +41,7 @@
         </form>
     </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/291cf6cb9c.js" crossorigin="anonymous"></script>
 </body>
 
