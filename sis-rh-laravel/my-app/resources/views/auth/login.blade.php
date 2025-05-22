@@ -26,8 +26,8 @@
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                     <label for="password">Senha</label>
                 </div>
+                <button type="submit" class="btn btn-dark" style="width: 300px;">Entrar</button>
             </div>
-            <button type="submit" class="btn btn-dark" style="width: 300px;">Entrar</button>
         </form>
     </div>
     </div>
