@@ -41,8 +41,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <!-- Example single danger button -->
                 <div class="btn-group">
-                    <button type="button" class="btn btn-danger btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        Solicitação
+                    <button type="button" class="btn btn-dark btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <strong>Solicitação</strong>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/solicitacao">Enviar</a></li>
