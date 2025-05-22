@@ -24,7 +24,9 @@
                         <th>Início</th>
                         <th>Conclusão</th>
                         <th>Data/hora</th>
+                        @if(Auth::guard('gestor')->check()) 
                         <th></th>
+                        @endif
                     </tr>
                 </thead>
                 <tbody>
