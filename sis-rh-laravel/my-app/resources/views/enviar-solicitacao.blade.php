@@ -69,7 +69,7 @@
                 <div>
                     <span>Observações: </span> <span class="target"> *</span>
                     <div class="input-group input-group-lg">
-                          <textarea class="form-control"></textarea>
+                          <textarea class="form-control" name="observacao" id="observacao"></textarea>
                     </div>
                 </div>
 
