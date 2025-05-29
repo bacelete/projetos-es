@@ -22,6 +22,7 @@ class GestorController extends Controller
         $request->validated(); //valida a requisicao;
 
         $servidor->name = $request->name;
+        $servidor->cpf = $request->cpf; 
         $servidor->save(); 
 
         $solicitacao = new Solicitacao; 
@@ -33,7 +34,8 @@ class GestorController extends Controller
         if ($request->motivo == "Outros") {
             $solicitacao->motivo = $request->motivo_outros; 
         }
-        
+
+        $solicitacao->observacao = $request->observacao; 
         $solicitacao->data_inicio = $request->data_inicio;
         $solicitacao->data_fim = $request->data_fim;
 
