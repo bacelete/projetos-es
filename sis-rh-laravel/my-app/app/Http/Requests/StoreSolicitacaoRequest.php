@@ -28,11 +28,11 @@ class StoreSolicitacaoRequest extends FormRequest
             'name' => 'required|max:80',
             'cpf' => 'required|numeric',
             'data_inicio' => [
-                'date',
+                'nullable|date',
                 Rule::date()->format('Y-m-d'),
             ],
             'data_fim' => [
-                'date',
+                'nullable|date',
                 Rule::date()->format('Y-m-d'),
                 Rule::date()->afterOrEqual(today()), //chama uma instancia do Rule:: e acessa os metodos; 
             ],
