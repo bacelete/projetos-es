@@ -7,7 +7,7 @@
 <div id="react-alert-success" class="mb-2"></div> <!--alert carregado pelo vite (react)-->
 
 <div class="alert alert-light shadow-sm mt-3" role="alert">
-  Os campos marcados com <span class="target">*</span> são campos obrigatórios.
+    Os campos marcados com <span class="target">*</span> são campos obrigatórios.
 </div>
 
 <div class="container w-70">
@@ -21,18 +21,27 @@
                     <label for="name" class="form-label mt-1">Nome Completo:</label><span class="target"> *</span>
                     <div class="input-group">
                         <input type="text" name="name" id="name" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Digite o nome do servidor.
+                        </div>
                     </div>
                 </div>
                 <div class="mt-4">
                     <label for="cpf" class="form-label mt-1">CPF: </label><span class="target"> *</span>
                     <div class="input-group">
-                        <input type="text" name="cpf" id="cpf" class="form-control">
+                        <input type="text" name="cpf" id="cpf" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Digite o CPF do servidor.
+                        </div>
                     </div>
                 </div>
                 <div class="mt-4">
                     <label for="unidade" class="form-label">Unidade (UBS):</label><span class="target"> *</span>
                     <div class="input-group">
                         <input type="text" name="unidade" id="unidade" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Digite o nome da unidade.
+                        </div>
                     </div>
                 </div>
 
@@ -73,7 +82,10 @@
                 <div class="mt-4">
                     <span>Observações: </span> <span class="target"> *</span>
                     <div class="input-group input-group-lg">
-                          <textarea class="form-control" name="observacao" id="observacao"></textarea>
+                        <textarea class="form-control mt-3" name="observacao" id="observacao"></textarea>
+                        <div class="invalid-feedback">
+                            Digite alguma observação.
+                        </div>
                     </div>
                 </div>
 
