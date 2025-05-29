@@ -4,9 +4,9 @@
 @section('content')
 
 
-<div id="react-alert-success"></div> <!--alert carregado pelo vite (react)-->
+<div id="react-alert-success" class="mb-2"></div> <!--alert carregado pelo vite (react)-->
 
-<div class="alert alert-light shadow-sm" role="alert">
+<div class="alert alert-light shadow-sm mt-3" role="alert">
   Os campos marcados com <span class="target">*</span> são campos obrigatórios.
 </div>
 
