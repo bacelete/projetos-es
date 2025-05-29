@@ -79,13 +79,11 @@
                     </div>
                 </div>
 
-                <div class="mt-4">
-                    <span>Observações: </span> <span class="target"> *</span>
-                    <div class="input-group input-group-lg">
-                        <textarea class="form-control mt-3" name="observacao" id="observacao"></textarea>
-                        <div class="invalid-feedback">
-                            Digite alguma observação.
-                        </div>
+                <div class="form-floating mt-4">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Observações: </label>
+                    <div class="invalid-feedback">
+                        Digite alguma observação.
                     </div>
                 </div>
 
