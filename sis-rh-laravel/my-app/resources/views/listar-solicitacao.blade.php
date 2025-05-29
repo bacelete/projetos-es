@@ -19,7 +19,6 @@
                     <tr>
                         <th>ID</th>
                         <th>Servidor</th>
-                        <th>CPF</th>
                         <th>Unidade</th>
                         <th>Motivo</th>
                         <th>Início</th>
@@ -60,7 +59,6 @@
                         <tr>
                             <td>{{ $solicitacao->id }}</td>
                             <td>{{ $solicitacao->servidor->name}}</td>
-                            <td>{{ $solicitacao->servidor->cpf}}</td>
                             <td>{{ $solicitacao->unidade }}</td>
                             <td>{{ $solicitacao->motivo }}</td>
                             @if($solicitacao->data_inicio)

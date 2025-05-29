@@ -6,6 +6,10 @@
 
 <div id="react-alert-success"></div> <!--alert carregado pelo vite (react)-->
 
+<div class="alert alert-light shadow-sm" role="alert">
+  Os campos marcados com <span class="target">*</span> são campos obrigatórios.
+</div>
+
 <div class="container w-70">
     <div id="liveAlertPlaceholder"></div>
     <div class="shadow mt-5">
