@@ -14,17 +14,21 @@
             <form method="POST" action="/solicitacao/store" class="needs-validation form-floating" novalidate>
                 @csrf
                 <div>
-                    <label for="name" class="form-label mt-1">Nome do servidor:</label>
+                    <label for="name" class="form-label mt-1">Nome Completo:</label>
                     <div class="input-group">
-                        <button class="btn btn-outline-dark" type="button" id="button-addon1"><i class="fa-solid fa-user"></i></button>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Digite o nome do servidor" required>
+                        <input type="text" name="name" id="name" class="form-control" required>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <label for="cpf" class="form-label mt-1">CPF: </label>
+                    <div class="input-group">
+                        <input type="text" name="cpf" id="cpf" class="form-control">
                     </div>
                 </div>
                 <div class="mt-4">
                     <label for="unidade" class="form-label">Unidade (UBS):</label>
                     <div class="input-group">
-                        <button class="btn btn-outline-dark" type="button" id="button-addon1"><i class="fa-solid fa-building"></i></button>
-                        <input type="text" name="unidade" id="unidade" class="form-control" placeholder="Digite o nome da unidade" required>
+                        <input type="text" name="unidade" id="unidade" class="form-control" required>
                     </div>
                 </div>
 
