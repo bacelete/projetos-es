@@ -13,43 +13,23 @@
         <div class="card-body mt-2 p-4">
             <form method="POST" action="/solicitacao/store" class="needs-validation form-floating" novalidate>
                 @csrf
-                <div class="mb-4">
+                <div>
+                    <label for="name" class="form-label mt-1">Nome do servidor:</label>
+                    <div class="input-group">
+                        <button class="btn btn-outline-dark" type="button" id="button-addon1"><i class="fa-solid fa-user"></i></button>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Digite o nome do servidor" required>
+                    </div>
+                </div>
+                <div class="mt-4">
                     <label for="unidade" class="form-label">Unidade (UBS):</label>
                     <div class="input-group">
                         <button class="btn btn-outline-dark" type="button" id="button-addon1"><i class="fa-solid fa-building"></i></button>
                         <input type="text" name="unidade" id="unidade" class="form-control" placeholder="Digite o nome da unidade" required>
                     </div>
                 </div>
-                <div>
-                    <label for="name" class="form-label mt-3">Nome do servidor:</label>
-                    <div class="input-group">
-                        <button class="btn btn-outline-dark" type="button" id="button-addon1"><i class="fa-solid fa-user"></i></button>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Digite o nome do servidor" required>
-                    </div>
-                </div>
-
-                <div class="datas d-flex mt-4">
-                    <div class="mt-3">
-                        <label for="data_inicio">Data de início:</label>
-                        <input
-                            type="date"
-                            id="data_inicio"
-                            name="data_inicio"
-                            required />
-                    </div>
-                    <div class="mt-3 m-auto">
-                        <label for="data_fim">Fim do afastamento:</label>
-                        <input
-                            type="date"
-                            id="data_fim"
-                            name="data_fim"
-                            required />
-                    </div>
-                </div>
 
                 <div>
-                    <label class="form-label mt-5">Motivo da substituição:</label><br>
-
+                    <label class="form-label mt-4">Motivo da substituição:</label><br>
                     <div class="btn-group" role="group">
                         <input type="radio" class="btn-check" name="motivo" id="demissao" value="Demissão" autocomplete="off" required>
                         <label class="btn btn-outline-dark" for="demissao">Demissão</label>
@@ -61,6 +41,32 @@
                         <label class="btn btn-outline-dark" for="outros">Outros</label>
                     </div>
 
+                </div>
+
+                <div class="datas d-flex mt-4">
+                    <div class="mt-3" style="display: none;">
+                        <label for="data_inicio">Data de início:</label>
+                        <input
+                            type="date"
+                            id="data_inicio"
+                            name="data_inicio"
+                            required />
+                    </div>
+                    <div class="mt-3 m-auto" style="display: none;">
+                        <label for="data_fim">Fim do afastamento:</label>
+                        <input
+                            type="date"
+                            id="data_fim"
+                            name="data_fim"
+                            required />
+                    </div>
+                </div>
+
+                <div>
+                    <p>Observações: </p>
+                    <div class="input-group input-group-lg">
+                        <input type="text" class="form-control" name="observacao" id="observacao">
+                    </div>
                 </div>
 
 
