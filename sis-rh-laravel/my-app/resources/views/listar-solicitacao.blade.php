@@ -18,7 +18,7 @@
                 <thead class="table-light">
                     <tr>
                         <th>ID</th>
-                        <th>Servidor</th>
+                        <th>Nome</th>
                         <th>Unidade</th>
                         <th>Motivo</th>
                         <th>Início</th>
