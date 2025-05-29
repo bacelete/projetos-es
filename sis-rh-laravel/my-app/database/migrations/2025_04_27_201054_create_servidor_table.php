@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('servidor', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string("name");
+            $table->string("cpf")->unique();
             $table->timestamps();
         });
     }

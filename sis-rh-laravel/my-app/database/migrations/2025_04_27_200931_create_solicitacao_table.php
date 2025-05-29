@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger("id_gestor"); 
             $table->string("unidade");
             $table->string("motivo");
+            $table->string("observacao");
             $table->date("data_inicio");
             $table->date("data_fim");
             $table->dateTime("data_solicitacao")->useCurrent();
