@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="datas d-flex mt-4">
-                    <div class="mt-3" style="display: none;">
+                    <div class="mt-3">
                         <label for="data_inicio">Data de início:</label>
                         <input
                             type="date"
@@ -56,7 +56,7 @@
                             name="data_inicio"
                             required />
                     </div>
-                    <div class="mt-3 m-auto" style="display: none;">
+                    <div class="mt-3 m-auto">
                         <label for="data_fim">Fim do afastamento:</label>
                         <input
                             type="date"
@@ -66,7 +66,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="mt-4">
                     <span>Observações: </span> <span class="target"> *</span>
                     <div class="input-group input-group-lg">
                           <textarea class="form-control" name="observacao" id="observacao"></textarea>
