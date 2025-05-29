@@ -26,6 +26,7 @@ class StoreSolicitacaoRequest extends FormRequest
         return [
             'unidade' => 'required|max:80',
             'name' => 'required|max:80',
+            'cpf' => 'required|numeric', 
             'data_inicio' => [
                 'required', 
                 'date',
@@ -38,6 +39,7 @@ class StoreSolicitacaoRequest extends FormRequest
                 Rule::date()->afterOrEqual(today()), //chama uma instancia do Rule:: e acessa os metodos; 
             ],
             'motivo' => 'required',
+            'observacao' => 'required|max:255'
         ];
     }
 
