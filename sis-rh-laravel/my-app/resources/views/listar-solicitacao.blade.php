@@ -19,12 +19,13 @@
                     <tr>
                         <th>ID</th>
                         <th>Servidor</th>
+                        <th>CPF</th>
                         <th>Unidade</th>
                         <th>Motivo</th>
                         <th>Início</th>
                         <th>Conclusão</th>
                         <th>Data/hora</th>
-                        @if(Auth::guard('gestor')->check()) 
+                        @if(Auth::guard('gestor')->check())
                         <th></th>
                         @endif
                     </tr>
@@ -59,10 +60,19 @@
                         <tr>
                             <td>{{ $solicitacao->id }}</td>
                             <td>{{ $solicitacao->servidor->name}}</td>
+                            <td>{{ $solicitacao->servidor->cpf}}</td>
                             <td>{{ $solicitacao->unidade }}</td>
                             <td>{{ $solicitacao->motivo }}</td>
-                            <td>{{ date("d/m/Y", strtotime($solicitacao->data_inicio)) }}</td>
-                            <td>{{ date("d/m/Y", strtotime($solicitacao->data_fim))}}</td>
+                            @if($solicitacao->data_inicio)
+                                <td>{{ date("d/m/Y", strtotime($solicitacao->data_inicio)) }}</td>
+                            @else
+                                <td>-</td>
+                            @endif
+                            @if($solicitacao->data_fim)
+                                <td>{{ date("d/m/Y", strtotime($solicitacao->data_fim))}}</td>
+                            @else
+                                <td>-</td>
+                            @endif
                             <td>{{ $solicitacao->data_solicitacao }}</td>
                             @if(Auth::guard('gestor')->check())
                             <td class="d-flex justify-content-end">
@@ -77,7 +87,7 @@
                             @endif
                             @endforeach
                         </tr>
-                        
+
                 </tbody>
             </table>
             <footer class="d-flex justify-content-end"></footer>
