@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Models\Solicitacao;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule; 
+use Illuminate\Validation\Rule;
 
 class StoreSolicitacaoRequest extends FormRequest
 {
@@ -26,14 +26,12 @@ class StoreSolicitacaoRequest extends FormRequest
         return [
             'unidade' => 'required|max:80',
             'name' => 'required|max:80',
-            'cpf' => 'required|numeric', 
+            'cpf' => 'required|numeric',
             'data_inicio' => [
-                'required', 
                 'date',
                 Rule::date()->format('Y-m-d'),
-            ], 
+            ],
             'data_fim' => [
-                'required', 
                 'date',
                 Rule::date()->format('Y-m-d'),
                 Rule::date()->afterOrEqual(today()), //chama uma instancia do Rule:: e acessa os metodos; 
