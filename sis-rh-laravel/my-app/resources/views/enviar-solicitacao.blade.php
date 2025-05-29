@@ -14,26 +14,26 @@
             <form method="POST" action="/solicitacao/store" class="needs-validation form-floating" novalidate>
                 @csrf
                 <div>
-                    <label for="name" class="form-label mt-1">Nome Completo:</label>
+                    <label for="name" class="form-label mt-1">Nome Completo:</label><span class="target"> *</span>
                     <div class="input-group">
                         <input type="text" name="name" id="name" class="form-control" required>
                     </div>
                 </div>
                 <div class="mt-4">
-                    <label for="cpf" class="form-label mt-1">CPF: </label>
+                    <label for="cpf" class="form-label mt-1">CPF: </label><span class="target"> *</span>
                     <div class="input-group">
                         <input type="text" name="cpf" id="cpf" class="form-control">
                     </div>
                 </div>
                 <div class="mt-4">
-                    <label for="unidade" class="form-label">Unidade (UBS):</label>
+                    <label for="unidade" class="form-label">Unidade (UBS):</label><span class="target"> *</span>
                     <div class="input-group">
                         <input type="text" name="unidade" id="unidade" class="form-control" required>
                     </div>
                 </div>
 
                 <div>
-                    <label class="form-label mt-4">Motivo da substituição:</label><br>
+                    <label class="form-label mt-4">Motivo da substituição:</label><span class="target"> *</span><br>
                     <div class="btn-group" role="group">
                         <input type="radio" class="btn-check" name="motivo" id="demissao" value="Demissão" autocomplete="off" required>
                         <label class="btn btn-outline-dark" for="demissao">Demissão</label>
@@ -67,7 +67,7 @@
                 </div>
 
                 <div>
-                    <p>Observações: </p>
+                    <span>Observações: </span> <span class="target"> *</span>
                     <div class="input-group input-group-lg">
                           <textarea class="form-control"></textarea>
                     </div>
