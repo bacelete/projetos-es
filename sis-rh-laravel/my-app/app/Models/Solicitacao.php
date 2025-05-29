@@ -13,6 +13,7 @@ class Solicitacao extends Model
         'id_gestor',
         'unidade',
         'motivo',
+        'observacao', 
         'data_inicio',
         'data_fim',
         'data_solicitacao'
