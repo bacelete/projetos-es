@@ -45,6 +45,9 @@
                     <button type="button" class="btn btn-dark btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="fs-6">Solicitação</span>
                     </button>
+                    <button type="button" class="btn btn-dark btn-sm">
+                        <span class="fs-6">Configuração</span>
+                    </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/solicitacao"><i class="fa-solid fa-arrow-right m-2"></i>Enviar</a></li>
                         <li><hr class="dropdown-divider"></li>
