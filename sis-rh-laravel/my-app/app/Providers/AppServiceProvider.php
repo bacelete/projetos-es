@@ -22,8 +22,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Gate::define('update-solicitacao', function (Gestor $user, Solicitacao $solicitacao) {
-            return $user->id === $solicitacao->user_id;
-        });
+        
     }
 }
