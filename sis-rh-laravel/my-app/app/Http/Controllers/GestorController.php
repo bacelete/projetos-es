@@ -74,4 +74,8 @@ class GestorController extends Controller
         return redirect()->route('solicitacoes'); 
     }
 
+    public function view(Request $request) {
+        return view('visualizar-solicitacao'); 
+    }
+
 }
