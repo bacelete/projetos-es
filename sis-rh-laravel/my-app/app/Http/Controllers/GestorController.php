@@ -74,8 +74,11 @@ class GestorController extends Controller
         return redirect()->route('solicitacoes'); 
     }
 
-    public function view(Request $request) {
-        return view('visualizar-solicitacao'); 
+    public function view(Request $request)
+    {
+        $id = $request->id;
+        $solicitacao = Solicitacao::with('servidor')->findOrFail($id); 
+        return view('visualizar-solicitacao', compact('solicitacao')); 
     }
 
 }
