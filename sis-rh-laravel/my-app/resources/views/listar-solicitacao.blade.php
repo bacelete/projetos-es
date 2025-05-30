@@ -79,9 +79,6 @@
                                     @csrf
                                     <button type="submit" class="btn btn-warning btn-sm text-white m-1">Editar</button>
                                 </form>
-                                <button type="button" class="btn btn-sm btn-danger m-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Excluir
-                                </button>
                                 @endif
                             </td>
                             @endforeach

@@ -42,15 +42,7 @@ class GestorController extends Controller
         $solicitacao->save(); 
         return redirect()->route('solicitacao-view'); 
     }
-
-    public function destroy(Request $request): RedirectResponse 
-    {
-        $id= (string)$request['id'];
-
-        Solicitacao::where('id', $id)->delete();
-        return redirect()->back(); 
-    }
-
+    
     public function edit(Request $request, $id) {
         $solicitacao = Solicitacao::with('servidor')->findOrFail($id); 
         return view('editar-solicitacao', compact('solicitacao'));
