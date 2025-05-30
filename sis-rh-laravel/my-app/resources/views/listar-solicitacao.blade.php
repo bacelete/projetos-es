@@ -62,18 +62,19 @@
                             <td>{{ $solicitacao->unidade }}</td>
                             <td>{{ $solicitacao->motivo }}</td>
                             @if($solicitacao->data_inicio)
-                                <td>{{ date("d/m/Y", strtotime($solicitacao->data_inicio)) }}</td>
+                            <td>{{ date("d/m/Y", strtotime($solicitacao->data_inicio)) }}</td>
                             @else
-                                <td>-</td>
+                            <td>-</td>
                             @endif
                             @if($solicitacao->data_fim)
-                                <td>{{ date("d/m/Y", strtotime($solicitacao->data_fim))}}</td>
+                            <td>{{ date("d/m/Y", strtotime($solicitacao->data_fim))}}</td>
                             @else
-                                <td>-</td>
+                            <td>-</td>
                             @endif
                             <td>{{ $solicitacao->data_solicitacao }}</td>
-                            @if(Auth::guard('gestor')->check())
                             <td class="d-flex justify-content-end">
+                                <button type="button" class="btn btn-sm btn-primary m-1"><i class="fa-solid fa-eye"></i></button>
+                                @if(Auth::guard('gestor')->check())
                                 <form action="/solicitacao/edit/{{ $solicitacao->id }}" method="GET">
                                     @csrf
                                     <button type="submit" class="btn btn-warning btn-sm text-white m-1">Editar</button>
@@ -81,8 +82,8 @@
                                 <button type="button" class="btn btn-sm btn-danger m-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Excluir
                                 </button>
+                                @endif
                             </td>
-                            @endif
                             @endforeach
                         </tr>
 
