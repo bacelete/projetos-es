@@ -5,6 +5,10 @@
 
 <div id="react-alert-edit"></div>
 
+<div class="alert alert-light shadow-sm mt-3" role="alert">
+    Os campos marcados com <span class="target">*</span> são campos obrigatórios.
+</div>
+
 <div class="container w-75">
     <div id="liveAlertPlaceholder"></div>
     <div class="shadow mt-5">
@@ -12,7 +16,6 @@
         <div class="card-body mt-2 p-4">
             <form method="POST" action="/solicitacao/edit/{{ $solicitacao->id }}/save" class="needs-validation" novalidate>
                 @csrf
-
                 <div>
                     <label for="nome" class="form-label mt-3">Nome Completo:<span class="target"> *</span></label>
                     <input type="text" value="{{ $solicitacao->servidor->name }}" name="name" id="name" class="form-control" placeholder="Digite o nome do servidor" required>
