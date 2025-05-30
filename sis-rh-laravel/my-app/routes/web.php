@@ -23,10 +23,13 @@ Route::post('/solicitacao/store', [GestorController::class, 'store'])
     ->name('enviar-solicitacao');
 Route::get('/solicitacao/edit/{id}', [GestorController::class, 'edit'])
     ->middleware('auth:gestor')
-    ->name('editar-view');
+    ->name('view-editar');
 Route::post('/solicitacao/edit/{id}/save', [GestorController::class, 'update'])
     ->middleware('auth:gestor')
     ->name('editar');
+Route::get('/solicitacao/{id}', [GestorController::class], 'view')
+    ->middleware('auth:gestor')
+    ->name('visualizar');
 
 //rotas de autenticação: 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

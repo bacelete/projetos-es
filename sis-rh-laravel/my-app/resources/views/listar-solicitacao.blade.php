@@ -71,7 +71,7 @@
                             @endif
                             <td>{{ $solicitacao->data_solicitacao }}</td>
                             <td class="d-flex justify-content-end">
-                                <button type="button" class="btn btn-sm btn-primary m-1"><i class="fa-solid fa-eye"></i></button>
+                                <a href="/solicitacao/{{ $solicitacao->id }}" type="button" class="btn btn-sm btn-primary m-1"><i class="fa-solid fa-eye"></i></a>
                                 @if(Auth::guard('gestor')->check())
                                 <form action="/solicitacao/edit/{{ $solicitacao->id }}" method="GET">
                                     @csrf
