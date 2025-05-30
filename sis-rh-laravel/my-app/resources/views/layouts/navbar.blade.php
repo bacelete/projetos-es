@@ -49,9 +49,9 @@
                         <span class="fs-6">Configuração</span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/solicitacao"><i class="fa-solid fa-arrow-right m-2"></i>Enviar</a></li>
+                        <li><a class="dropdown-item" href="/solicitacao">Enviar</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="/solicitacoes"><i class="fa-solid fa-list-ol m-2"></i>Listar</a></li>
+                        <li><a class="dropdown-item" href="/solicitacoes">Listar</a></li>
                     </ul>
                 </div>
                 <span class="navbar-text align-self-center ms-auto fs-5 text-light fw-bold">
