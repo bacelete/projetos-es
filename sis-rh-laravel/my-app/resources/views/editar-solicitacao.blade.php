@@ -9,7 +9,7 @@
     Os campos marcados com <span class="target">*</span> são campos obrigatórios.
 </div>
 
-<div class="container w-75">
+<div class="container" style="width: 85%;">
     <div id="liveAlertPlaceholder"></div>
     <div class="shadow mt-5">
         <div class="card-header h2 p-4 bg-dark text-white rounded-2"><i class="fa-solid fa-pen-to-square m-2"></i>Editar solicitação</div>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
 
-                <div class="form-floating mt-4">
+                <div class="form-floating mt-5">
                     <textarea class="form-control" value="{{ $solicitacao->observacao }}" id="floatingTextarea2" style="height: 100px"></textarea>
                     <label for="floatingTextarea2">Observações: <span class="target"> *</span></label>
                     <div class="invalid-feedback">

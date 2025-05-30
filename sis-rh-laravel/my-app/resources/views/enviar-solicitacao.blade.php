@@ -10,7 +10,7 @@
     Os campos marcados com <span class="target">*</span> são campos obrigatórios.
 </div>
 
-<div class="container w-70">
+<div class="container" style="width: 85%;">
     <div id="liveAlertPlaceholder"></div>
     <div class="shadow mt-5">
         <div class="card-header target h2 p-4 text-white bg-dark rounded-2">Solicitação</div>
@@ -79,7 +79,7 @@
                     </div>
                 </div>
 
-                <div class="form-floating mt-4">
+                <div class="form-floating mt-5">
                     <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                     <label for="floatingTextarea2">Observações<span class="target"> *</span>: </label>
                     <div class="invalid-feedback">
