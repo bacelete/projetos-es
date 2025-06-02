@@ -57,7 +57,9 @@
                         <input type="radio" class="btn-check" name="motivo" id="outros" value="Outros" autocomplete="off" required>
                         <label class="btn btn-outline-dark" for="outros">Outros</label>
                     </div>
-
+                    <div class="invalid-feedback">
+                        
+                    </div>
                 </div>
 
                 <div class="datas d-flex mt-4">
@@ -67,7 +69,7 @@
                             type="date"
                             id="data_inicio"
                             name="data_inicio"
-                            required />
+                        />
                     </div>
                     <div class="mt-3 m-auto">
                         <label for="data_fim">Fim do afastamento:</label>
@@ -75,7 +77,7 @@
                             type="date"
                             id="data_fim"
                             name="data_fim"
-                            required />
+                        />
                     </div>
                 </div>
 
