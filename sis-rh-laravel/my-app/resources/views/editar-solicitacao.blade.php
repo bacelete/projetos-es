@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="form-floating mt-5">
-                    <textarea class="form-control" value="{{ $solicitacao->observacao }}" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <textarea class="form-control" name="observacao" id="floatingTextarea2" style="height: 100px">{{ $solicitacao->observacao }}</textarea>
                     <label for="floatingTextarea2">Observações: <span class="target"> *</span></label>
                     <div class="invalid-feedback">
                         Digite alguma observação.

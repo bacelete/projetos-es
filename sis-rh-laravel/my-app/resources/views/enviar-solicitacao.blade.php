@@ -80,7 +80,7 @@
                 </div>
 
                 <div class="form-floating mt-5">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <textarea class="form-control" name="observacao" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                     <label for="floatingTextarea2">Observações<span class="target"> *</span>: </label>
                     <div class="invalid-feedback">
                         Digite alguma observação.
