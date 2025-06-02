@@ -42,12 +42,7 @@ class StoreSolicitacaoRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'unidade.required' => 'O campo unidade deve ser preenchido.',
-            'name.required' => 'O campo nome deve ser preenchido.',
-            'data_inicio.required' => 'A data de início deve ser preenchida.',
-            'data_fim.after_or_equal' => 'A data de conclusão não pode ser anterior à data de hoje.',
-            'data_fim.required' => 'A data de conclusão deve ser preenchida.',
-            'motivo.required' => 'O campo motivo deve ser preenchido.',
+            
         ];
     }
 }
