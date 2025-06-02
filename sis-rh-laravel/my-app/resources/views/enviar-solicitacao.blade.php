@@ -56,9 +56,9 @@
                         <label class="btn btn-outline-dark" for="ferias">Férias</label>
                         <input type="radio" class="btn-check" name="motivo" id="outros" value="Outros" autocomplete="off" required>
                         <label class="btn btn-outline-dark" for="outros">Outros</label>
-                    </div>
-                    <div class="invalid-feedback">
-                        
+                        <div class="invalid-feedback">
+                            <span class="m-3 align-center text-center">Escolha um motivo.</span>
+                        </div>
                     </div>
                 </div>
 
@@ -68,24 +68,22 @@
                         <input
                             type="date"
                             id="data_inicio"
-                            name="data_inicio"
-                        />
+                            name="data_inicio" />
                     </div>
                     <div class="mt-3 m-auto">
                         <label for="data_fim">Fim do afastamento:</label>
                         <input
                             type="date"
                             id="data_fim"
-                            name="data_fim"
-                        />
+                            name="data_fim" />
                     </div>
                 </div>
 
                 <div class="form-floating mt-5">
-                    <textarea class="form-control" name="observacao" placeholder="Digite uma observação aqui" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <textarea class="form-control" name="observacao" placeholder="Digite uma observação aqui" id="floatingTextarea2" style="height: 100px" required></textarea>
                     <label for="floatingTextarea2">Observações<span class="target"> *</span>: </label>
                     <div class="invalid-feedback">
-                        Digite alguma observação.
+                        Digite uma observação.
                     </div>
                 </div>
 
