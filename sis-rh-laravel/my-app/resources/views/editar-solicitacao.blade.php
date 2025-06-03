@@ -58,7 +58,7 @@
                             value="{{ $solicitacao->data_inicio }}"
                             id="data_inicio"
                             name="data_inicio"
-                            required />
+                            />
                     </div>
                     <div class="mt-3 m-auto">
                         <label for="data_fim">Fim do afastamento:</label>
@@ -67,7 +67,7 @@
                             value="{{ $solicitacao->data_fim }}"
                             id="data_fim"
                             name="data_fim"
-                            required />
+                            />
                     </div>
                 </div>
 
