@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Login</title>
-    @vite(['resources/js/scripts/validacao-form.js'])
 </head>
 
 <body>
@@ -20,7 +19,7 @@
         <div class="card-header text-center">
             <span style="font-size: 60px;"><strong>SIRH</strong></span>
         </div>
-        <form action="/login" class="mx-auto mb-5 needs-validation" method="post" novalidate>
+        <form action="/login" class="mx-auto mb-5 needs-validation" method="POST" novalidate>
             @csrf
             <div class="card-body mx-auto mt-4">
                 <h4 class="card-title mb-4 text-center">Faça login na sua conta</h4>
@@ -41,6 +40,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/291cf6cb9c.js" crossorigin="anonymous"></script>
+    <script src="../../js/scripts/validacao-form.js"></script>
 </body>
 
 </html>
