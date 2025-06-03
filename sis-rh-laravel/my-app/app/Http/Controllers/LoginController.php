@@ -26,12 +26,13 @@ class LoginController extends Controller
 
         foreach (['rh', 'gestor'] as $guard) {
             if (Auth::guard($guard)->attempt($credentials)) {
-                return redirect()->route('solicitacoes');
+                $request->session()->regenerate();
+                return redirect()->intended('solicitacoes');
             }
         }
 
         return back()->withErrors([
-            'email' => 'O e-mail e/ou a senha estão inválidos.',
+            'email' => 'As credenciais fornecidas estão incorretas.',
         ]);
     }
 
