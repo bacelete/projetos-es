@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,24 +16,19 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
-    public function login(Request $request): RedirectResponse
+    public function login(LoginRequest $request): RedirectResponse
     {
         Auth::guard('web')->logout();
         Auth::guard('gestor')->logout();
         Auth::guard('rh')->logout();
 
-        $credentials = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
+        $credentials = $request->validated(); 
 
         foreach (['rh', 'gestor'] as $guard) {
             if (Auth::guard($guard)->attempt($credentials)) {
                 return redirect()->route('solicitacoes');
             }
         }
-
-
 
         return back()->withErrors([
             'email' => 'O e-mail e/ou a senha estão inválidos.',
