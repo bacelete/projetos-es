@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
+    @viteReactRefresh <!--tag pra add o vite-->
+    @vite(['resources/js/app.jsx', 'resources/css/pagination.css', 'resources/css/target.css', 'resources/js/scripts/validacao-form.js']) <!--tag pra add o vite-->
     <title>Login</title>
 </head>
 
@@ -40,7 +42,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/291cf6cb9c.js" crossorigin="anonymous"></script>
-    <script src="../../js/scripts/validacao-form.js"></script>
 </body>
 
 </html>
