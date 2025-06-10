@@ -26,7 +26,7 @@ class StoreSolicitacaoRequest extends FormRequest
         return [
             'unidade' => 'required|max:80',
             'name' => 'required|max:80',
-            'cpf' => 'required|numeric',
+            'cpf' => 'required|cpf',
             'data_inicio' => 'nullable|date',
             'data_fim' => 'nullable|date',
             'motivo' => 'required',
@@ -42,7 +42,7 @@ class StoreSolicitacaoRequest extends FormRequest
     public function messages(): array
     {
         return [
-            
+            'cpf' => 'CPF inválido!'
         ];
     }
 }
