@@ -32,6 +32,11 @@
                             Digite o CPF do servidor.
                         </div>
                     </div>
+                    @error('cpf')
+                    <div class="invalid-feedback d-block">
+                        {{ $message }}
+                    </div>
+                    @enderror
                 </div>
                 <div class="mt-4">
                     <label for="unidade" class="form-label">Unidade (UBS):</label><span class="target"> *</span>
