@@ -84,6 +84,10 @@
 
                 </tbody>
             </table>
+            <form action="/gerar-pdf">
+                @csrf
+                <button type="submit" class="btn btn-outline-dark">Gerar PDF</button>
+            </form>
             <footer class="d-flex justify-content-end"></footer>
         </div>
     </div>

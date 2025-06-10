@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SolicitacaoController;
 use App\Http\Controllers\GestorController;
+use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -28,8 +29,10 @@ Route::post('/solicitacao/edit/{id}/save', [GestorController::class, 'update'])
     ->middleware('auth:gestor')
     ->name('editar');
 Route::get('/solicitacao/{id}', [GestorController::class], 'view')
-    ->middleware('auth:gestor')
-    ->name('visualizar');
+    ->middleware('auth:gestor');
+
+//rota de gerar PDF: 
+Route::get('/gerar-pdf', [PdfController::class, 'index'])->name('gerar-pdf');
 
 //rotas de autenticação: 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
