@@ -8,6 +8,14 @@
     Os campos marcados com <span class="target">*</span> são campos obrigatórios.
 </div>
 
+@error('cpf')
+<div class="invalid-feedback d-block">
+    <div class="alert alert-danger shadow-sm mt-3" role="alert">
+        CPF inválido!
+    </div>
+</div>
+@enderror
+
 <div class="container" style="width: 85%;">
     <div id="liveAlertPlaceholder"></div>
     <div class="shadow mt-5">
@@ -32,11 +40,6 @@
                             Digite o CPF do servidor.
                         </div>
                     </div>
-                    @error('cpf')
-                    <div class="invalid-feedback d-block">
-                        {{ $message }}
-                    </div>
-                    @enderror
                 </div>
                 <div class="mt-4">
                     <label for="unidade" class="form-label">Unidade (UBS):</label><span class="target"> *</span>
@@ -83,11 +86,11 @@
                 </div>
 
                 <div class="form-floating mt-5">
-                    <textarea class="form-control" name="observacao" placeholder="Digite uma observação aqui" id="floatingTextarea2" style="height: 100px" required></textarea>
-                    <label for="floatingTextarea2">Observações<span class="target"> *</span>: </label>
                     <div class="invalid-feedback">
                         Digite uma observação.
                     </div>
+                    <textarea class="form-control" name="observacao" placeholder="Digite uma observação aqui" id="floatingTextarea2" style="height: 100px" required></textarea>
+                    <label for="floatingTextarea2">Observações<span class="target"> *</span>: </label>
                 </div>
 
 
