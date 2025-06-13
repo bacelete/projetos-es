@@ -4,5 +4,5 @@
 @section('content')
 
 <div class="container">
-    <h1>{{ $solicitacao->id }}</h1>
+    <h1>Oi!</h1>
 </div>

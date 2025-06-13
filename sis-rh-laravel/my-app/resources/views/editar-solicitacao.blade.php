@@ -9,6 +9,15 @@
     Os campos marcados com <span class="target">*</span> são campos obrigatórios.
 </div>
 
+@error('cpf')
+<div class="invalid-feedback d-block">
+    <div class="alert alert-danger shadow-sm mt-3" role="alert">
+        CPF inválido!
+    </div>
+</div>
+@enderror
+
+
 <div class="container" style="width: 85%;">
     <div id="liveAlertPlaceholder"></div>
     <div class="shadow mt-5">
