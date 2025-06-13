@@ -29,7 +29,7 @@
                 </thead>
                 <tbody>
                     @if(count($solicitacoes) <= 0)
-                        <h5>Nenhuma solicitação foi encontrada!</h5>
+                        <h5 class="p-2">Nenhuma solicitação foi encontrada!</h5>
                         @endif
 
                         @foreach($solicitacoes as $solicitacao)
@@ -71,8 +71,11 @@
                             @endif
                             <td>{{ $solicitacao->data_solicitacao }}</td>
                             <td class="d-flex justify-content-end">
-                                <a href="/solicitacao/{{ $solicitacao->id }}" type="button" class="btn btn-sm btn-primary m-1"><i class="fa-solid fa-eye"></i></a>
                                 @if(Auth::guard('gestor')->check())
+                                <form action="/solicitacao/{{ $solicitacao->id }}" method="GET">
+                                    @csrf
+                                    <button type="submit" class="btn btn-primary btn-sm m-1"><i class="fa-solid fa-eye"></i></button>
+                                </form>
                                 <form action="/solicitacao/edit/{{ $solicitacao->id }}" method="GET">
                                     @csrf
                                     <button type="submit" class="btn btn-warning btn-sm text-white m-1">Editar</button>
@@ -84,10 +87,12 @@
 
                 </tbody>
             </table>
+            @if(count($solicitacoes) > 0)
             <form action="/gerar-pdf">
                 @csrf
                 <button type="submit" class="btn btn-outline-dark">Gerar PDF</button>
             </form>
+            @endif
             <footer class="d-flex justify-content-end"></footer>
         </div>
     </div>
