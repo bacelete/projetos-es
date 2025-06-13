@@ -18,6 +18,10 @@
 </div>
 @enderror
 
+<div class="alert alert-success" role="alert">
+  <i class="fa-solid fa-circle-check m-2"></i>Sucesso! A solicitação foi enviada com sucesso!
+</div>
+
 <div class="container" style="width: 85%;">
     <div id="liveAlertPlaceholder"></div>
     <div class="shadow mt-5">
