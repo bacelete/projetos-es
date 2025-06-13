@@ -11,7 +11,7 @@
 @error('cpf')
 <div class="invalid-feedback d-block">
     <div class="alert alert-danger shadow-sm mt-3" role="alert">
-        CPF inválido!
+        <h5>CPF Inválido!</h5>
     </div>
 </div>
 @enderror
