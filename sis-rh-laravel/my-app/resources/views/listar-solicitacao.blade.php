@@ -9,7 +9,7 @@
         <div class="card-header p-4 d-flex justify-content-between align-items-center flex-wrap">
             <h2><i class="fa-solid fa-list-ul m-2 fs-3"></i>Lista de solicitações</h2>
             @if(Auth::guard('gestor')->check())
-            <a href="/solicitacao" class="btn btn-lg fs-3 ms-2"><i class="fa-solid fa-square-plus"></i></a>
+            <a href="/solicitacao" class="btn btn-lg fs-3 ms-2"><i class="fa-solid fa-circle-plus"></i></a>
             @endif
             <input class="ms-auto w-25 p-1" style="border: 1px solid #ccc; border-radius: 6px; box-shadow: none; outline: none;" type="text" name="search" id="search" placeholder="Digite o nome do servidor...">
         </div>
