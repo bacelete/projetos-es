@@ -11,8 +11,10 @@
 
 @error('cpf')
 <div class="invalid-feedback d-block">
-    <div class="alert alert-danger shadow-sm mt-3" role="alert">
-        <h5>CPF inválido!</h5>
+    <div class="alert alert-danger shadow-sm mt-3 flex" role="alert">
+        <span class="fs-5"><strong>CPF Inválido!</strong></span>
+        {{-- A classe 'ms-auto' (margin-start: auto) empurra o botão para o final --}}
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 </div>
 @enderror
