@@ -74,7 +74,7 @@
                                 @if(Auth::guard('gestor')->check())
                                 <form action="/solicitacao/{{ $solicitacao->id }}" method="GET">
                                     @csrf
-                                    <button type="submit" class="btn btn-primary btn-sm m-1"><i class="fa-solid fa-eye"></i></button>
+                                    <button type="submit" class="btn btn-primary btn-sm m-1">Visualizar</button>
                                 </form>
                                 <form action="/solicitacao/edit/{{ $solicitacao->id }}" method="GET">
                                     @csrf
