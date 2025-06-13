@@ -42,7 +42,7 @@ class StoreSolicitacaoRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'cpf' => 'CPF inválido!'
+            'cpf' => 'CPF inválido'
         ];
     }
 }
