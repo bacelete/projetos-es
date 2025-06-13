@@ -9,7 +9,7 @@
         <div class="card-header p-4 d-flex justify-content-between align-items-center flex-wrap">
             <h2><i class="fa-solid fa-list-ul m-2 fs-3"></i>Lista de solicitações</h2>
             @if(Auth::guard('gestor')->check())
-            <a href="/solicitacao" class="btn btn-lg fs-3 ms-2"><i class="fa-solid fa-circle-plus"></i></a>
+            <a href="/solicitacao" class="button btn btn-lg fs-3 ms-2"><i class="fa-solid fa-circle-plus"></i></a>
             @endif
             <input class="ms-auto w-25 p-1" style="border: 1px solid #ccc; border-radius: 6px; box-shadow: none; outline: none;" type="text" name="search" id="search" placeholder="Digite o nome do servidor...">
         </div>
@@ -74,11 +74,11 @@
                                 @if(Auth::guard('gestor')->check())
                                 <form action="/solicitacao/{{ $solicitacao->id }}" method="GET">
                                     @csrf
-                                    <button type="submit" class="btn btn-primary btn-sm m-1">Visualizar</button>
+                                    <button type="submit" class="button btn btn-primary btn-sm m-1">Visualizar</button>
                                 </form>
                                 <form action="/solicitacao/edit/{{ $solicitacao->id }}" method="GET">
                                     @csrf
-                                    <button type="submit" class="btn btn-warning btn-sm text-white m-1">Editar</button>
+                                    <button type="submit" class="button btn btn-warning btn-sm text-white m-1">Editar</button>
                                 </form>
                                 @endif
                             </td>
@@ -90,7 +90,7 @@
             @if(count($solicitacoes) > 0)
             <form action="/gerar-pdf">
                 @csrf
-                <button type="submit" class="btn btn-outline-dark">Gerar PDF</button>
+                <button type="submit" class="button btn btn-outline-dark">Gerar PDF</button>
             </form>
             @endif
             <footer class="d-flex justify-content-end"></footer>
