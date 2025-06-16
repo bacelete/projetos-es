@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div id="card-login" class="card border-light mx-auto w-75 shadow-sm" style="margin-top: 80px; height: 600px;">
+    <div id="card-login" class="card border-light mx-auto w-75 shadow-sm" style="margin-top: 80px; height: 750px;">
         <div class="card-header text-center">
             <span style="font-size: 60px;"><strong>SIRH</strong></span>
         </div>

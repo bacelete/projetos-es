@@ -16,7 +16,8 @@ class Solicitacao extends Model
         'observacao', 
         'data_inicio',
         'data_fim',
-        'data_solicitacao'
+        'data_solicitacao',
+        'status'
     ];
 
     public function gestor(): BelongsTo

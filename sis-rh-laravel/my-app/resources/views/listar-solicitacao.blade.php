@@ -24,6 +24,7 @@
                         <th>Início</th>
                         <th>Conclusão</th>
                         <th>Data/hora</th>
+                        <th>Status</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -44,11 +45,17 @@
                             <td>-</td>
                             @endif
                             @if($solicitacao->data_fim)
-                            <td>{{ date("d/m/Y", strtotime($solicitacao->data_fim))}}</td>
+                                <td>{{ date("d/m/Y", strtotime($solicitacao->data_fim))}}</td>
                             @else
-                            <td>-</td>
+                                <td>-</td>
                             @endif
                             <td>{{ $solicitacao->data_solicitacao }}</td>
+                            @if($solicitacao->status)
+                                <td>$solicitacao->status</td>
+                            @else
+                                <td>-</td>
+                            @endif
+
                             <td class="d-flex justify-content-end">
                                 @if(Auth::guard('gestor')->check())
                                 <form action="/solicitacao/{{ $solicitacao->id }}" method="GET">
@@ -63,7 +70,6 @@
                             </td>
                             @endforeach
                         </tr>
-
                 </tbody>
             </table>
             @if(count($solicitacoes) > 0)
