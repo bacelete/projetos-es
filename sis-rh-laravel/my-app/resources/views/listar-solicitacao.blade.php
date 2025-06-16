@@ -51,7 +51,7 @@
                             @endif
                             <td>{{ $solicitacao->data_solicitacao }}</td>
                             @if($solicitacao->status)
-                                <td>$solicitacao->status</td>
+                                <td>{{$solicitacao->status}}</td>
                             @else
                                 <td>-</td>
                             @endif

@@ -31,6 +31,9 @@ Route::post('/solicitacao/edit/{id}/save', [GestorController::class, 'update'])
 Route::get('/solicitacao/{id}', [GestorController::class, 'view'])
     ->middleware('auth:gestor')
     ->name('visualizar');
+Route::post('/solicitacao/edit/{id}/update-status', [GestorController::class, 'update_status'])
+    ->middleware('auth:gestor')
+    ->name('editar-status');
 
 //rota de gerar PDF: 
 Route::get('/gerar-pdf', [PdfController::class, 'index'])->name('gerar-pdf');

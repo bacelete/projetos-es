@@ -45,7 +45,7 @@
             <div class="mt-4 mx-2">
                 <h5>Ações</h5>
                 <hr class="mt-0">
-                <form action="/solicitacao/edit/{{ $solicitacao->id }}/save" method="POST">
+                <form method="POST" action="/solicitacao/edit/{{ $solicitacao->id }}/update-status">
                     @csrf
                     <div class="row align-items-end p-2">
                         <div class="col-md-4">
