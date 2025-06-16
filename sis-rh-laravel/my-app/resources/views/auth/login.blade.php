@@ -11,13 +11,7 @@
 </head>
 
 <body>
-    <!--Div de alerta -->
-    <div class="alert alert-danger alert-dismissible fade show mx-auto mt-2 p-4 w-75" role="alert" style="display: none;">
-        Endereço de e-mail e/ou senha inválidos.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-
-    <div id="card-login" class="card border-light mx-auto w-75 shadow-sm" style="margin-top: 80px; height: 575px;">
+    <div id="card-login" class="card border-light mx-auto w-75 shadow-sm" style="margin-top: 80px; height: 600px;">
         <div class="card-header text-center">
             <span style="font-size: 60px;"><strong>SIRH</strong></span>
         </div>
@@ -40,7 +34,14 @@
                         Digite a senha.
                     </div>
                 </div>
-                <button type="submit" class="btn btn-dark mt-5" style="width: 300px;">Entrar</button>
+                
+                @error('email')
+                <div class="alert d-flex justify-content-between alert-danger mx-auto mt-2 p-3" role="alert" style="width: 300px">
+                    Endereço de e-mail e/ou senha inválidos.
+                </div>
+                @endif
+                
+                <button type="submit" class="btn btn-dark mt-4" style="width: 300px;">Entrar</button>
             </div>
         </form>
     </div>
