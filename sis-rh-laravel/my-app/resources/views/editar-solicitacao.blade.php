@@ -99,7 +99,7 @@
                 <div class="d-flex mt-4 justify-content-between">
                     <a href="/solicitacoes" name="voltar" id="voltar" class="btn w-20 justify-content-center text-white mt-4 bg-danger">Voltar</a>
                     <input type="hidden" name="id" value="{{ $solicitacao->id }}">
-                    <button type="submit" class="btn d-block w-20 justify-content-center text-white mt-4 bg-secondary" id="btnEditarSolicitacao" name="btnEditarSolicitacao">Enviar</button>
+                    <button type="submit" class="btn d-block w-20 justify-content-center text-white mt-4 bg-secondary">Enviar</button>
                 </div>
             </form>
         </div>

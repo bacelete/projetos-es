@@ -76,6 +76,10 @@ class GestorController extends Controller
         $solicitacao->data_inicio = $request->data_inicio;
         $solicitacao->data_fim = $request->data_fim;
 
+        if ($request->status) { //se ele envia o status na requisicao
+            $solicitacao->status = $request->status; //atualiza no model
+        }
+
         $solicitacao->save();
         return redirect()->route('solicitacoes');
     }
