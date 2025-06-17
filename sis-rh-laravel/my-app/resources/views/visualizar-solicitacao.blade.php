@@ -3,6 +3,10 @@
 @section('title', 'Visualizar Solicitação')
 @section('content')
 
+<div class="alert alert-success" role="alert" style="display: none;">
+  <i class="fa-solid fa-circle-check m-2"></i>Sucesso! A solicitação foi enviada com sucesso!
+</div>
+
 <div class="container mt-5">
     <div class="card shadow">
         <div class="card-body p-4">
