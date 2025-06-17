@@ -34,7 +34,7 @@
                         @endif
 
                         @foreach($solicitacoes as $solicitacao)
-                        <tr>
+                        <tr class="clickable-row" data-url="/solicitacao/{{ $solicitacao->id }}">
                             <td>{{ $solicitacao->id }}</td>
                             <td>{{ $solicitacao->servidor->name}}</td>
                             <td>{{ $solicitacao->unidade }}</td>
@@ -82,4 +82,26 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Garante que o script só vai rodar depois que a página carregar completamente
+    document.addEventListener('DOMContentLoaded', function() {
+        // Pega todas as linhas que têm a classe 'clickable-row'
+        const rows = document.querySelectorAll('.clickable-row');
+
+        // Para cada linha encontrada...
+        rows.forEach(row => {
+            // Adiciona um "ouvinte" de evento de clique
+            row.addEventListener('click', () => {
+                // Pega a URL que guardamos no atributo 'data-url'
+                const url = row.dataset.url;
+                // Redireciona a página para a URL
+                window.location.href = url;
+            });
+        });
+    });
+</script>
+
+
+
 @endsection
