@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="container mt-5">
-    <div class="card shadow" style="border:none;">
+    <div class="card shadow">
         <div class="card-body p-4">
             <h3 class="card-title">Solicitação</h3>
             <h6 class="card-subtitle mb-2 text-body-secondary">Visualize as informações da solicitação.</h6>
