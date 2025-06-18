@@ -6,12 +6,11 @@
 <div class="container p-1">
     <div class="card shadow-lg mt-4" id="teste">
         <div id="liveAlertPlaceholder"></div>
-        <div class="card-header p-4 d-flex justify-content-between align-items-center flex-wrap">
+        <div class="card-header p-4 d-flex align-items-center flex-wrap">
             <h2><i class="fa-solid fa-list-ul m-2 fs-3"></i>Lista de solicitações</h2>
             @if(Auth::guard('gestor')->check())
             <a href="/solicitacao" class="button btn btn-lg fs-2 ms-1"><i class="fa-solid fa-circle-plus"></i></a>
             @endif
-            <input class="ms-auto w-25 p-1" style="border: 1px solid #ccc; border-radius: 6px; box-shadow: none; outline: none;" type="text" name="search" id="search" placeholder="Digite o nome do servidor...">
         </div>
         <div class="card-body">
             <table class="table table-hover table-striped shadow-sm rounded mb-5 mt-3 p-2" style="cursor:pointer">
