@@ -4,6 +4,9 @@
 @section('content')
 
 <div class="container p-1">
+    <div class="alert alert-light shadow-sm mt-3" role="alert">
+        Para atribuir ou alterar o status de uma solicitação, clique no botão <button type="submit" class="button btn btn-primary btn-sm mx-1">Visualizar</button>
+    </div>
     <div class="card shadow-lg mt-4" id="teste">
         <div id="liveAlertPlaceholder"></div>
         <div class="card-header p-4 d-flex align-items-center flex-wrap">
@@ -44,15 +47,15 @@
                             <td>-</td>
                             @endif
                             @if($solicitacao->data_fim)
-                                <td>{{ date("d/m/Y", strtotime($solicitacao->data_fim))}}</td>
+                            <td>{{ date("d/m/Y", strtotime($solicitacao->data_fim))}}</td>
                             @else
-                                <td>-</td>
+                            <td>-</td>
                             @endif
                             <td>{{ $solicitacao->data_solicitacao }}</td>
                             @if($solicitacao->status)
-                                <td class="status">{{$solicitacao->status}}</td>
+                            <td class="status">{{$solicitacao->status}}</td>
                             @else
-                                <td>-</td>
+                            <td>-</td>
                             @endif
 
                             <td class="d-flex justify-content-end">
