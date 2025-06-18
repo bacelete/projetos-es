@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="alert alert-success" role="alert" style="display: none;">
-  <i class="fa-solid fa-circle-check m-2"></i>Sucesso! A solicitação foi enviada com sucesso!
+    <i class="fa-solid fa-circle-check m-2"></i>Sucesso! A solicitação foi enviada com sucesso!
 </div>
 
 <div class="container mt-5">
@@ -63,12 +63,14 @@
                             </select>
                         </div>
                         <div class="col-md-8">
-                            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                            <button type="submit" class="btn btn-primary button">Salvar Alterações</button>
                         </div>
                     </div>
                 </form>
             </div>
+            <a href="/solicitacoes" name="voltar" id="voltar" class="btn btn-sm w-10 text-white mt-5 bg-danger button">Voltar</a>
         </div>
     </div>
+
 </div>
 @endsection
