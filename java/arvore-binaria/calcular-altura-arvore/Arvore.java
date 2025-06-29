@@ -1,46 +1,42 @@
+
+import pesquisar.No;
+
 public class Arvore<T extends Comparable<T>> {
     public No<T> raiz;
 
-    public Arvore(No no) {
-        this.raiz = no;
+    public Arvore(No<T> raiz) {
+        this.raiz = raiz;
     }
 
     public boolean isEmpty() {
-        return raiz == null; 
+        return raiz == null;
     }
 
-    public T pesquisar(T chave) {
-        return pesquisar(this.raiz, chave); 
+    public int calcularAltura() {
+        return calcularAltura(this.raiz); 
     }
 
-    private T pesquisar(No<T> atual, T chave) {
-        int comparacao; 
+    private int calcularAltura(No<T> raiz) {
+        if (raiz == null) {
+            return -1;
+        }
+        int alturaEsq = calcularAltura(raiz.esq);
+        int alturaDir = calcularAltura(raiz.dir);
 
-        if (atual == null) { throw new ArithmeticException("Item não encontrado"); }
-        comparacao = chave.compareTo(atual.valor); 
-
-        if (comparacao == 0) {
-            return atual.valor;
-        }
-        else if (comparacao < 0) {
-            return pesquisar(atual.esq, chave);
-        }
-        else {
-            return pesquisar(atual.dir, chave);
-        }
+        return Math.max(alturaEsq, alturaDir) + 1;
     }
-    
 
     public static void main(String[] args) {
+
         No raiz = new No(12);
+        raiz.dir = new No(18);
+        raiz.esq = new No(8);
+        raiz.esq.esq = new No(5);
+        raiz.esq.dir = new No(11);
 
-        raiz.esq = new No(10); 
-        raiz.dir = new No(20); 
+        Arvore arvore = new Arvore(raiz); 
+        int maxHeight = arvore.calcularAltura();
 
-        Arvore arvore = new Arvore(raiz);
-
-        System.out.println(arvore.pesquisar(20));
-        //System.out.println(arvore.pesquisar(100));
-
+        System.out.println(maxHeight);
     }
 }

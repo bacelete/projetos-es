@@ -1,3 +1,5 @@
+
+package pesquisar;
 public class No<T> {
     public T valor; 
     public No<T> esq, dir; 
@@ -6,6 +8,10 @@ public class No<T> {
         this.valor = valor; 
         esq = null; 
         dir = null; 
+    }
+
+    public T getValor() {
+        return valor; 
     }
 
 }
