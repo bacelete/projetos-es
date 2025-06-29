@@ -12,7 +12,7 @@ public class Arvore<T extends Comparable<T>> {
     }
 
     public Arvore<T> clonar() {
-        return new Arvore(clonarSubArvore(this.raiz));
+        return new Arvore<>(clonarSubArvore(this.raiz));
     }
 
     public No<T> clonarSubArvore(No<T> atual) {

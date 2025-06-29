@@ -33,7 +33,7 @@ public class Arvore<T extends Comparable<T>> {
     }
 
     public static void main(String[] args) {
-        Arvore arvore = new Arvore(); 
+        Arvore<Integer> arvore = new Arvore<>(); 
         arvore.adicionar(12);
         arvore.adicionar(10); 
         arvore.adicionar(5); 
