@@ -1,6 +1,4 @@
-package adicionar;
-
-
+package adicionar; 
 public class Arvore<T extends Comparable<T>> {
     public No<T> raiz;
 

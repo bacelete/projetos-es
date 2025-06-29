@@ -1,10 +1,9 @@
-
 package pesquisar;
 
 public class Arvore<T extends Comparable<T>> {
     public No<T> raiz;
 
-    public Arvore(No no) {
+    public Arvore(No<T> no) {
         this.raiz = no;
     }
 
@@ -35,12 +34,12 @@ public class Arvore<T extends Comparable<T>> {
     
 
     public static void main(String[] args) {
-        No raiz = new No(12);
+        No<Integer> raiz = new No<>(12);
 
-        raiz.esq = new No(10); 
-        raiz.dir = new No(20); 
+        raiz.esq = new No<>(10); 
+        raiz.dir = new No<>(20); 
 
-        Arvore arvore = new Arvore(raiz);
+        Arvore<Integer> arvore = new Arvore<>(raiz);
 
         System.out.println(arvore.pesquisar(20));
         //System.out.println(arvore.pesquisar(100));

@@ -1,8 +1,9 @@
+package ordenado;
 
 public class Arvore<T extends Comparable<T>> {
     public No<T> raiz;
 
-    public Arvore(No raiz) {
+    public Arvore(No<T> raiz) {
         this.raiz = raiz;
     }
 
@@ -24,11 +25,11 @@ public class Arvore<T extends Comparable<T>> {
     }
 
     public static void main(String[] args) {
-        No raiz = new No(12); 
-        raiz.dir = new No(20); 
-        raiz.esq = new No(10); 
+        No<Integer> raiz = new No<>(12); 
+        raiz.dir = new No<>(20); 
+        raiz.esq = new No<>(10); 
 
-        Arvore arvore = new Arvore(raiz); 
+        Arvore<Integer> arvore = new Arvore<>(raiz); 
         arvore.caminhamentoEmOrdem(); 
     }
 }

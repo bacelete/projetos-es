@@ -1,5 +1,4 @@
-
-import pesquisar.No;
+package altura;
 
 public class Arvore<T extends Comparable<T>> {
     public No<T> raiz;
@@ -28,13 +27,13 @@ public class Arvore<T extends Comparable<T>> {
 
     public static void main(String[] args) {
 
-        No raiz = new No(12);
-        raiz.dir = new No(18);
-        raiz.esq = new No(8);
-        raiz.esq.esq = new No(5);
-        raiz.esq.dir = new No(11);
+        No<Integer> raiz = new No<>(12);
+        raiz.dir = new No<>(18);
+        raiz.esq = new No<>(8);
+        raiz.esq.esq = new No<>(5);
+        raiz.esq.dir = new No<>(11);
 
-        Arvore arvore = new Arvore(raiz); 
+        Arvore<Integer> arvore = new Arvore<>(raiz); 
         int maxHeight = arvore.calcularAltura();
 
         System.out.println(maxHeight);

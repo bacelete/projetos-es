@@ -1,3 +1,5 @@
+package altura;
+
 public class No<T> {
     public T valor; 
     public No<T> esq, dir; 
