@@ -9,7 +9,7 @@ public class Main {
 
     private static class MyRegex {
         private final String string;
-        //0-255
+        //0-255, format: xxx.xxx.xxx.xxx with leading zeros;
         static String pattern = "^(([0-1]?[0-9]?[0-9]?|2[0-4][0-9]|25[0-5])\\.){3}([0-1]?[0-9]?[0-9]?|2[0-4][0-9]|25[0-5]){1}$";
 
         private MyRegex(String string) {
