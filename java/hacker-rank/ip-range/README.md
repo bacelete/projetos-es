@@ -23,10 +23,10 @@ Hello.IP
 
 **Formato de Saída**
 
-Examples:
-true
-true
-true
-false
-false
+Examples: <br>
+true <br>
+true <br>
+true <br>
+false <br>
+false <br>
 false
