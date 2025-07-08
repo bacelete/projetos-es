@@ -13,12 +13,12 @@ Just write the MyRegex class which contains a String pattern. The string should 
 
 **Formato de Entrada**
 
-Examples:
-000.12.12.034
-121.234.12.12
-23.45.12.56
-00.12.123.123123.123
-122.23
+Examples: <br>
+000.12.12.034 <br>
+121.234.12.12 <br>
+23.45.12.56 <br>
+00.12.123.123123.123 <br>
+122.23 <br>
 Hello.IP
 
 **Formato de Saída**
