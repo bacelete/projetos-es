@@ -1,4 +1,4 @@
-# HackerRank Java IP Range
+# HackerRank Java Valid Username Checker
 https://www.hackerrank.com/challenges/valid-username-checker/problem?isFullScreen=true
 ## Problema
 
