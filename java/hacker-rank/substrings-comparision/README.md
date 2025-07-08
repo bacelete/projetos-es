@@ -19,10 +19,19 @@ getSmallestAndLargest has the following parameters: <br>
 * string s : a string
 * int k : the length of the substrings to find
 
+Returns:<br> 
+* string: the string ' + "\n" + ' where and are the two substrings
+
 **Formato de Entrada**
 
-Há três linhas de entrada, e cada linha contém um único inteiro.
+The first line contains a string denoting s. <br>
+The second line contains an integer denoting k. <br>
+
+Example: <br>
+welcometojava <br>
+3
 
 **Formato de Saída**
 
-Você deve imprimir os três inteiros, cada um em uma nova linha.
+ava <br>
+wel
