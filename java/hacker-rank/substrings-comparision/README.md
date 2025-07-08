@@ -1,5 +1,5 @@
 # HackerRank Java Substring Comparisons
-
+https://www.hackerrank.com/challenges/java-string-compare/problem?isFullScreen=true
 ## Problema
 
 We define the following terms: <br>
