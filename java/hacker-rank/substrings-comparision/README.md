@@ -9,7 +9,7 @@ A < B < ... < Y < Z < a < b < ... < y < z <br>
 For example, ball < cat, dog < dorm, Happy < happy. <br> 
 * A substring of a string is a contiguous block of characters in the string. For example, the substrings of abc are a, b, c, ab, bc, and abc. <br>
 
-**Tarefa**
+## Tarefa 
 
 Given a string, s, and an integer, k, complete the function so that it finds the lexicographically smallest and largest substrings of length k. <br>
 
@@ -22,7 +22,7 @@ getSmallestAndLargest has the following parameters: <br>
 Returns:<br> 
 * string: the string ' + "\n" + ' where and are the two substrings
 
-**Formato de Entrada**
+## Formato de Entrada
 
 The first line contains a string denoting s. <br>
 The second line contains an integer denoting k. <br>
