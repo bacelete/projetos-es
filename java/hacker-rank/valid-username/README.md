@@ -19,7 +19,6 @@ The first line of input contains an integer n, describing the total number of us
 
 ![image](https://github.com/user-attachments/assets/c145021c-1142-4a34-8128-90bcd91297b9)
 
-Examples: <br>
 8 <br>
 Julia <br>
 Samantha <br>
