@@ -12,7 +12,7 @@ Note: India does not have a built-in Locale, so you must construct one where the
 
 ## Formato de Entrada
 
-A single double-precision number denoting payment. <br>
+A single double-precision number denoting payment. <br><br>
 Example: <br>
 12324.134
 
@@ -21,6 +21,6 @@ Example: <br>
 On the first line, print US: u where is payment formatted for US currency. <br>
 On the second line, print India: i where is payment formatted for Indian currency. <br>
 On the third line, print China: c where is payment formatted for Chinese currency. <br>
-On the fourth line, print France: f, where is payment formatted for French currency. <br>
+On the fourth line, print France: f, where is payment formatted for French currency. <br><br>
 Example: <br>
 ![image](https://github.com/user-attachments/assets/f5783974-17a0-4e46-b7f0-620e41d46cb4)
