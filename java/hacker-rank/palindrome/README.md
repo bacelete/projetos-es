@@ -10,7 +10,7 @@ Given a string 'A', print Yes if it is a palindrome, print No otherwise.
 
 ## Formato de Entrada
 
-'A' will consist at most 50 lower case english letters. Example: <br>
+'A' will consist at most 50 lower case english letters. <br> Example: <br>
 madam
 
 ## Formato de Saída
