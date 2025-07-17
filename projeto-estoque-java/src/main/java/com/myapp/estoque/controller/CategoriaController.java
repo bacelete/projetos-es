@@ -1,6 +1,6 @@
 package com.myapp.estoque.controller;
 
-import com.myapp.estoque.exceptions.EmptyObjectException;
+import com.myapp.estoque.exception.EmptyObjectException;
 import com.myapp.estoque.model.Categoria;
 import com.myapp.estoque.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;

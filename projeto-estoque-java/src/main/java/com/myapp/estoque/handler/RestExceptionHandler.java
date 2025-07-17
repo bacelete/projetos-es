@@ -1,7 +1,7 @@
 package com.myapp.estoque.handler;
 
-import com.myapp.estoque.exceptions.EmptyObjectException;
-import com.myapp.estoque.exceptions.NotEnoughException;
+import com.myapp.estoque.exception.EmptyObjectException;
+import com.myapp.estoque.exception.NotEnoughException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

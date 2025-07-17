@@ -1,8 +1,8 @@
 package com.myapp.estoque.controller;
 
 import com.myapp.estoque.dto.ControleEstoqueDTO;
-import com.myapp.estoque.exceptions.EmptyObjectException;
-import com.myapp.estoque.exceptions.NotEnoughException;
+import com.myapp.estoque.exception.EmptyObjectException;
+import com.myapp.estoque.exception.NotEnoughException;
 import com.myapp.estoque.model.MovimentacaoEstoque;
 import com.myapp.estoque.model.Produto;
 import com.myapp.estoque.enums.TipoMovimentacao;

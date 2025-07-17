@@ -1,7 +1,6 @@
 package com.myapp.estoque.controller;
 
-import com.myapp.estoque.exceptions.EmptyObjectException;
-import com.myapp.estoque.handler.RestExceptionHandler;
+import com.myapp.estoque.exception.EmptyObjectException;
 import com.myapp.estoque.model.Produto;
 import com.myapp.estoque.service.CategoriaService;
 import com.myapp.estoque.service.FornecedorService;

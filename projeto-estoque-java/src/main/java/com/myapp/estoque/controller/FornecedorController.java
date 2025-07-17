@@ -1,10 +1,8 @@
 package com.myapp.estoque.controller;
 
-import com.myapp.estoque.exceptions.EmptyObjectException;
+import com.myapp.estoque.exception.EmptyObjectException;
 import com.myapp.estoque.model.Fornecedor;
-import com.myapp.estoque.model.Produto;
 import com.myapp.estoque.service.FornecedorService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
