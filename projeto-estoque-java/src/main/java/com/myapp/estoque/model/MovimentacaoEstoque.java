@@ -1,8 +1,8 @@
 package com.myapp.estoque.model;
 
+import com.myapp.estoque.enums.TipoMovimentacao;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.FutureOrPresent;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,6 +22,7 @@ public class MovimentacaoEstoque {
     private TipoMovimentacao tipo_movimentacao;
 
     @PositiveOrZero
+    @Max(value = 100)
     private int quantidade;
 
     private LocalDateTime data_hora;

@@ -2,9 +2,10 @@ package com.myapp.estoque.controller;
 
 import com.myapp.estoque.dto.ControleEstoqueDTO;
 import com.myapp.estoque.exceptions.EmptyObjectException;
+import com.myapp.estoque.exceptions.NotEnoughException;
 import com.myapp.estoque.model.MovimentacaoEstoque;
 import com.myapp.estoque.model.Produto;
-import com.myapp.estoque.model.TipoMovimentacao;
+import com.myapp.estoque.enums.TipoMovimentacao;
 import com.myapp.estoque.service.MovimentacaoEstoqueService;
 import com.myapp.estoque.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,8 +52,8 @@ public class MovimentacaoEstoqueController {
 
         Produto produto = produtoService.buscarPorId(id).get();
 
-        if (produto.getQuantidade() < dto.getQuantidade()) {
-            return ResponseEntity.badRequest().build();
+        if (movimentacaoService.isLower(produto.getQuantidade(), dto.getQuantidade())) {
+            throw new NotEnoughException();
         }
 
         produto.setQuantidade(produto.getQuantidade() - dto.getQuantidade());

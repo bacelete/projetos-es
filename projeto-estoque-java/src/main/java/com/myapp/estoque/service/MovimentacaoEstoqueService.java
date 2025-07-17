@@ -13,4 +13,8 @@ public class MovimentacaoEstoqueService {
     public MovimentacaoEstoque registrarMovimentacao(MovimentacaoEstoque movimentacao) {
         return movimentacaoRepository.save(movimentacao);
     }
+
+    public boolean isLower(int qtdProduto, int qtdSolicitada) {
+        return qtdProduto < qtdSolicitada;
+    }
 }
