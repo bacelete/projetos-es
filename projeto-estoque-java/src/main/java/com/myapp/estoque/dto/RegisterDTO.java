@@ -1,5 +1,6 @@
 package com.myapp.estoque.dto;
 
+import com.myapp.estoque.enums.TipoUsuario;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,5 +11,5 @@ import lombok.Setter;
 public class RegisterDTO {
     private String login;
     private String password;
-    private String tipo;
+    private TipoUsuario tipo;
 }

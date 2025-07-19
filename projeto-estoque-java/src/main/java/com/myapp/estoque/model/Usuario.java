@@ -34,6 +34,12 @@ public class Usuario implements UserDetails {
     @NotBlank
     private TipoUsuario role;
 
+    public Usuario(String login, String encryptedPassword, TipoUsuario role) {
+        this.login = login;
+        this.password = encryptedPassword;
+        this.role = role;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         if (role == TipoUsuario.ADMIN) {
