@@ -1,11 +1,9 @@
 package com.myapp.estoque.model;
 
 import com.myapp.estoque.enums.TipoUsuario;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,7 +29,8 @@ public class Usuario implements UserDetails {
     @NotBlank
     private String password;
 
-    @NotBlank
+    @NotNull
+    @Enumerated(EnumType.STRING)
     private TipoUsuario role;
 
     public Usuario(String login, String encryptedPassword, TipoUsuario role) {
@@ -39,6 +38,8 @@ public class Usuario implements UserDetails {
         this.password = encryptedPassword;
         this.role = role;
     }
+
+    public Usuario() { }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -51,8 +52,11 @@ public class Usuario implements UserDetails {
 
     @Override
     public String getUsername() {
-        return login;
+        return this.login;
     }
+
+    @Override
+    public String getPassword() { return this.password; }
 
     @Override
     public boolean isAccountNonExpired() {

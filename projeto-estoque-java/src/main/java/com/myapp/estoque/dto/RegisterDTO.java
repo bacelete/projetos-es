@@ -11,5 +11,5 @@ import lombok.Setter;
 public class RegisterDTO {
     private String login;
     private String password;
-    private TipoUsuario tipo;
+    private TipoUsuario role;
 }

@@ -6,9 +6,11 @@ import com.myapp.estoque.model.Usuario;
 import com.myapp.estoque.repository.UsuarioRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,22 +27,30 @@ public class AuthController {
     private UsuarioRepository usuarioRepository;
 
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody @Valid AuthDTO data) {
-        var usernamePassword = new UsernamePasswordAuthenticationToken(data.getLogin(), data.getPassword());
-        var auth = authenticationManager.authenticate(usernamePassword);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<?> login(@RequestBody @Valid AuthDTO data) {
+        try {
+            var usernamePassword = new UsernamePasswordAuthenticationToken(data.getLogin(), data.getPassword());
+            var auth = this.authenticationManager.authenticate(usernamePassword);
+
+            System.out.println("Autenticado com sucesso: " + auth.getPrincipal());
+
+            return ResponseEntity.ok("Login bem-sucedido!");
+        } catch (AuthenticationException e) {
+
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuário ou senha inválidos");
+        }
     }
 
     @PostMapping("/register")
-    public ResponseEntity<Usuario> register(@RequestBody @Valid RegisterDTO data) {
-        if(usuarioRepository.findByLogin(data.getLogin()) != null) {
+    public ResponseEntity<?> register(@RequestBody @Valid RegisterDTO data) {
+        if (usuarioRepository.findByLogin(data.getLogin()) != null) {
             return ResponseEntity.badRequest().build();
         }
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.getPassword());
-        Usuario usuario = new Usuario(data.getLogin(), encryptedPassword, data.getTipo());
+        Usuario usuario = new Usuario(data.getLogin(), encryptedPassword, data.getRole());
 
-        usuarioRepository.save(usuario);
+        this.usuarioRepository.save(usuario);
 
-        return ResponseEntity.ok(usuario);
+        return ResponseEntity.ok().build();
     }
 }
