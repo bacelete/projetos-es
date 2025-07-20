@@ -36,7 +36,6 @@ public class AuthController {
 
             return ResponseEntity.ok("Login bem-sucedido!");
         } catch (AuthenticationException e) {
-
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuário ou senha inválidos");
         }
     }
