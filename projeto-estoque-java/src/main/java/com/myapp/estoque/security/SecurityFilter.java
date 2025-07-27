@@ -20,9 +20,6 @@ public class SecurityFilter extends OncePerRequestFilter {
     @Autowired
     private TokenService tokenService;
 
-    @Value("${api.security.token.secret}")
-    private String secret;
-
     @Autowired
     private UsuarioRepository usuarioRepository;
 
@@ -32,6 +29,9 @@ public class SecurityFilter extends OncePerRequestFilter {
 
         if (token != null) {
             String subject = tokenService.validateToken(token);
+
+            System.out.println("DEBUG: Subject do token: " + subject);
+
             UserDetails user = usuarioRepository.findByLogin(subject);
 
             var authentication = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());

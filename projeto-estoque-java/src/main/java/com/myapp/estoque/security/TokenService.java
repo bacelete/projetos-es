@@ -20,6 +20,7 @@ public class TokenService {
 
     public String generateToken(Usuario usuario) {
         try {
+            System.out.println("Secret: "+secret); //remover dps
             Algorithm algorithm = Algorithm.HMAC256(secret);
             String token = JWT.create()
                     .withIssuer("auth-api")
@@ -37,13 +38,14 @@ public class TokenService {
 
     public String validateToken(String token) {
         try {
+            System.out.println("Secret: "+secret); //remover dps
             Algorithm algorithm = Algorithm.HMAC256(secret);
             DecodedJWT decoded = JWT.require(algorithm)
                     .withIssuer("auth-api")
                     .build()
                     .verify(token);
 
-            return decoded.getToken();
+            return decoded.getSubject();
         }
         catch(JWTVerificationException exception) {
             throw new RuntimeException("Token inválido: "+ exception.getMessage());
