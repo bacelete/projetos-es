@@ -4,8 +4,10 @@ import com.myapp.estoque.dto.AuthDTO;
 import com.myapp.estoque.dto.RegisterDTO;
 import com.myapp.estoque.model.Usuario;
 import com.myapp.estoque.repository.UsuarioRepository;
+import com.myapp.estoque.security.TokenService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -26,15 +28,21 @@ public class AuthController {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    @Autowired
+    private TokenService tokenService;
+
+    @Value("${api.security.token.secret}")
+    private String secret;
+
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody @Valid AuthDTO data) {
         try {
             var usernamePassword = new UsernamePasswordAuthenticationToken(data.getLogin(), data.getPassword());
             var auth = this.authenticationManager.authenticate(usernamePassword);
 
-            System.out.println("Autenticado com sucesso: " + auth.getPrincipal());
+            String token = tokenService.generateToken((Usuario) auth.getPrincipal());
+            return ResponseEntity.ok("Autenticado com sucesso!");
 
-            return ResponseEntity.ok("Login bem-sucedido!");
         } catch (AuthenticationException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuário ou senha inválidos");
         }
@@ -45,6 +53,7 @@ public class AuthController {
         if (usuarioRepository.findByLogin(data.getLogin()) != null) {
             return ResponseEntity.badRequest().build();
         }
+
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.getPassword());
         Usuario usuario = new Usuario(data.getLogin(), encryptedPassword, data.getRole());
 
