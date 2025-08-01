@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/categoria")
 public class CategoriaController {
@@ -37,6 +39,17 @@ public class CategoriaController {
         }
 
         return ResponseEntity.ok(categoria);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Categoria>> getAllCategorias() {
+        List<Categoria> categorias = categoriaService.buscarTodas();
+
+        if (categorias.isEmpty()) {
+            throw new EmptyObjectException("Categorias indisponíveis.");
+        }
+
+        return ResponseEntity.ok(categorias);
     }
 
 }

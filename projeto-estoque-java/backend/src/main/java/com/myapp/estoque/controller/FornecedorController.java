@@ -1,6 +1,7 @@
 package com.myapp.estoque.controller;
 
 import com.myapp.estoque.exception.EmptyObjectException;
+import com.myapp.estoque.model.Categoria;
 import com.myapp.estoque.model.Fornecedor;
 import com.myapp.estoque.service.FornecedorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/fornecedor")
@@ -39,6 +42,17 @@ public class FornecedorController {
         }
 
         return ResponseEntity.ok(fornecedor);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Fornecedor>> getAllFornecedores() {
+        List<Fornecedor> fornecedores = fornecedorService.buscarTodos();
+
+        if (fornecedores.isEmpty()) {
+            throw new EmptyObjectException("Fornecedores indisponíveis.");
+        }
+
+        return ResponseEntity.ok(fornecedores);
     }
 
     @DeleteMapping("/id/{id}")

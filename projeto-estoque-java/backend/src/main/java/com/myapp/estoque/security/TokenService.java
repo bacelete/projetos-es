@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
+import java.util.Objects;
 
 @Service
 public class TokenService {
@@ -37,6 +38,8 @@ public class TokenService {
     }
 
     public String validateToken(String token) {
+        Objects.requireNonNull(secret, "A chave secreta não pode ser nula.");
+
         try {
             System.out.println("Secret: "+secret); //remover dps
             Algorithm algorithm = Algorithm.HMAC256(secret);

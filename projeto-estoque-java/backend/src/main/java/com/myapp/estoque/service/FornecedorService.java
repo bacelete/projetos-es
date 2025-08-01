@@ -5,6 +5,8 @@ import com.myapp.estoque.repository.FornecedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -23,5 +25,6 @@ public class FornecedorService {
         fornecedorRepository.deleteById(id);
     }
     public Fornecedor buscarPeloCnpj(String cnpj) { return fornecedorRepository.findByCnpj(cnpj); }
+    public List<Fornecedor> buscarTodos() { return fornecedorRepository.findAll(); }
 
 }
