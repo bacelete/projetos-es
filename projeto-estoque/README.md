@@ -17,7 +17,7 @@ Sistema completo para controle de estoque, com autenticação JWT, desenvolvido 
 
 ### 💅 Frontend (em desenvolvimento):
 - React.js
-- Vite
+- Next.js
 - Material UI
 - Fetch API (com `credentials: "include"`)
 
