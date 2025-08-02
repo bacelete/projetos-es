@@ -55,7 +55,7 @@ public class AuthController {
                     .httpOnly(true)
                     .maxAge( 24 * 60 * 60)
                     .path("/")
-                    .secure(true)
+                    .secure(false)
                     .sameSite(SameSiteCookies.STRICT.toString())
                     .build();
 
