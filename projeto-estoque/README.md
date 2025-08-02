@@ -71,31 +71,4 @@ Sistema completo para controle de estoque, com autenticação JWT, desenvolvido 
 ---
 
 ## 📁 Estrutura do Projeto (Backend)
-src/
-├── main/
-│   ├── java/
-│   │   └── com/
-│   │       └── myapp/
-│   │           └── estoque/
-│   │               ├── controller/       # Controladores REST
-│   │               ├── dto/              # Data Transfer Objects
-│   │               ├── exception/        # Classes de exceção e handler global
-│   │               ├── model/            # Entidades JPA
-│   │               ├── repository/       # Interfaces do Spring Data JPA
-│   │               ├── security/         # Configurações de segurança e JWT
-│   │               ├── service/          # Lógica de negócio
-│   │               ├── config/           # Configurações gerais (CORS, beans, etc.)
-│   │               └── EstoqueApplication.java  # Classe principal
-│   │
-│   └── resources/
-│       ├── application.properties        # Configurações do Spring Boot
-│       ├── static/                       # Recursos estáticos (se necessário)
-│       └── templates/                    # Templates (caso use com Thymeleaf, etc.)
-│
-└── test/
-    └── java/
-        └── com/
-            └── myapp/
-                └── estoque/
-                    └── ...               # Testes unitários e de integração
 
